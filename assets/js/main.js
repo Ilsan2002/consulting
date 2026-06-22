@@ -195,4 +195,45 @@
       });
     }, 150);
   });
+
+  /* ---- contact form: AJAX submit (works with Web3Forms / Formspree / Getform) ---- */
+  const cform = $("form[data-ajax]");
+  if (cform) {
+    const okPanel = $("#form-success");
+    const submitBtn = cform.querySelector('[type="submit"]');
+    const hp = cform.querySelector(".hp");
+    const clearErr = () => { const m = $(".form-error", cform); if (m) m.remove(); };
+    cform.addEventListener("submit", async (e) => {
+      if (hp && hp.checked) { e.preventDefault(); return; } // honeypot tripped → silently drop
+      e.preventDefault();
+      if (!cform.checkValidity()) { cform.reportValidity(); return; }
+      const original = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending…";
+      try {
+        const res = await fetch(cform.action, {
+          method: "POST",
+          body: new FormData(cform),
+          headers: { Accept: "application/json" },
+        });
+        if (!res.ok) throw new Error("bad status " + res.status);
+        clearErr();
+        cform.reset();
+        if (okPanel) {
+          cform.hidden = true;
+          okPanel.hidden = false;
+          okPanel.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "center" });
+        }
+      } catch (err) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = original;
+        clearErr();
+        const m = document.createElement("p");
+        m.className = "form-note form-error";
+        m.style.color = "#B4452A";
+        m.textContent = "Sorry — that didn't send. Please email hello@kenius.us instead.";
+        submitBtn.insertAdjacentElement("afterend", m);
+      }
+    });
+  }
 })();

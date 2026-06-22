@@ -108,9 +108,15 @@ Everything is designed to be edited by hand.
 4. **Replace the content.** Update the copy, the case studies in
    `work.html`, the logos in the home-page strip, the team in `about.html`,
    and the testimonials. Keep the numbers *specific* and real.
-5. **Wire up the form.** `contact.html` posts to a placeholder
-   `formspree.io/f/your-form-id`. Swap the `action` for your own Formspree
-   endpoint, email handler, or CRM webhook.
+5. **Wire up the form.** `contact.html` is set up for
+   [Web3Forms](https://web3forms.com) (free, no account needed). Grab an
+   access key — enter the email you want enquiries delivered to — then paste
+   it into the `access_key` hidden field in `contact.html` (replace
+   `REPLACE_WITH_WEB3FORMS_ACCESS_KEY`). Submissions then arrive in your
+   inbox; the page shows an in-line "thank you" and has a honeypot for spam
+   (handled in `assets/js/main.js`). Prefer Formspree, Getform or Basin?
+   Just change the form's `action` URL — the same AJAX handler works with any
+   of them.
 
 ## Design notes
 
