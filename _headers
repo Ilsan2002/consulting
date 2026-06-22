@@ -1,0 +1,12 @@
+# Cloudflare Pages headers — https://developers.cloudflare.com/pages/configuration/headers/
+
+# Long-cache fingerprint-free assets are fine to revalidate; cache for a day.
+/assets/*
+  Cache-Control: public, max-age=86400
+
+# Sensible security defaults for a static marketing site.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: geolocation=(), microphone=(), camera=()

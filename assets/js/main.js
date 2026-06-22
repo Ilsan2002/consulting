@@ -1,5 +1,5 @@
 /* =================================================================
-   NORTHLIGHT — interactions
+   KENIUS — interactions
    Vanilla JS, no dependencies. Progressive enhancement:
    everything degrades gracefully without JS and respects
    prefers-reduced-motion.

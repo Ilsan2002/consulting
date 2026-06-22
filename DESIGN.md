@@ -1,6 +1,6 @@
-# DESIGN.md — Northlight
+# DESIGN.md — Kenius
 
-A `DESIGN.md` for the Northlight brand, in the format popularised by
+A `DESIGN.md` for the Kenius brand, in the format popularised by
 [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md).
 Drop this into a project (or hand it to a coding agent) to generate UI that
 matches the site. The whole system is intentionally built to *avoid* the
@@ -121,7 +121,7 @@ floating elements (CTA, demo, Relay) lift. On dark bands, depth is luminance
 
 ## 9. Agent Prompt Guide
 
-> Build a marketing page for **Northlight**, an AI studio that builds "AI
+> Build a marketing page for **Kenius**, an AI studio that builds "AI
 > agents & AI coworkers" for small-to-mid-sized businesses. Tone: warm,
 > plain-English, no hype, gently opinionated. **Palette:** warm paper
 > `#FBF8F2`, warm ink `#16130D`, single amber accent `#E5862F` used only for

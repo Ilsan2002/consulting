@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-# Serve the Northlight site locally.
+# Serve the Kenius site locally.
 #   ./serve.sh         → http://localhost:8000/
 #   ./serve.sh 9000    → pick a port
 #
@@ -10,7 +10,7 @@ PORT="${1:-8000}"
 DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$DIR" || exit 1
 
-printf '\n  Northlight → http://localhost:%s/\n  Serving:    %s\n  Stop with Ctrl+C\n\n' "$PORT" "$DIR"
+printf '\n  Kenius → http://localhost:%s/\n  Serving:    %s\n  Stop with Ctrl+C\n\n' "$PORT" "$DIR"
 
 if command -v python3 >/dev/null 2>&1; then
   exec python3 -m http.server "$PORT"

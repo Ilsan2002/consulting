@@ -1,7 +1,7 @@
-# Northlight — AI agency website
+# Kenius — AI agency website
 
-A complete, hand-built marketing site for a fictional AI studio called
-**Northlight** — a company that builds *AI agents & AI coworkers* (chat,
+A complete, hand-built marketing site for **Kenius** (kenius.us) — an AI
+studio that builds *AI agents & AI coworkers* (chat,
 voice/ASR-TTS, back-office automation, copilots, integrations) for
 small-to-mid-sized businesses, explained in plain English for non-technical
 buyers.
@@ -10,9 +10,9 @@ It's a static site: hand-written HTML, **one** CSS file of design tokens +
 components, and a little vanilla JavaScript. **No framework, no build step,
 no dependencies** — open it in a browser and it works.
 
-> ⚠️ **It's a demo brand.** The company name, client names, logos,
-> testimonials, metrics and case studies are all *illustrative placeholders*.
-> Rename the brand and replace the content with your own before going live
+> ⚠️ **Heads up:** the brand is set to **Kenius** (kenius.us), but the client
+> names, logos, testimonials, metrics and case studies are still *illustrative
+> placeholders*. Replace them with real content before you promote the site
 > (see **Make it yours** below).
 
 ---
@@ -46,13 +46,34 @@ the relative paths and fonts behave.
 > works. To silence them, drop a `favicon.ico` and `apple-touch-icon.png`
 > in this folder.
 
-## Deploy it
+## Deploy to Cloudflare Pages (kenius.us)
 
-Drop the folder on any static host:
+The domain is already on Cloudflare, so Pages is the easiest host — DNS for
+the custom domain is wired up automatically.
 
-- **GitHub Pages** — push and enable Pages on the branch.
-- **Netlify / Vercel / Cloudflare Pages** — drag-and-drop the folder, or
-  point it at the repo. No build command needed (it's static).
+**Option A — connect the GitHub repo (auto-deploys on every push):**
+
+1. Cloudflare dashboard → **Workers & Pages** → **Create** → **Pages** →
+   **Connect to Git** → pick `Ilsan2002/consulting`.
+2. **Production branch:** the branch this site lives on (or `main` if merged).
+3. **Build settings:** Framework preset **None**, Build command **(empty)**,
+   Build output directory **`/`**. → **Save and Deploy**.
+4. After it builds, open **Custom domains** → **Set up a domain** → add
+   `kenius.us` and `www.kenius.us`. Cloudflare adds the DNS records for you.
+
+**Option B — Wrangler CLI from your laptop:**
+
+```bash
+npx wrangler login
+npx wrangler pages deploy . --project-name kenius
+# then attach kenius.us under the project's Custom domains
+```
+
+No build step either way — it's plain static files. The `_headers` file sets
+caching and basic security headers automatically on Pages.
+
+> Other static hosts (Netlify, Vercel, GitHub Pages) work too — just point
+> them at the repo with no build command and output directory `/`.
 
 ## Structure
 
@@ -73,7 +94,7 @@ Drop the folder on any static host:
 
 Everything is designed to be edited by hand.
 
-1. **Rename the brand.** Find-and-replace `Northlight` across the `.html`
+1. **Rename the brand.** Find-and-replace `Kenius` across the `.html`
    files and `DESIGN.md`. Swap the wordmark (it's an inline SVG star in the
    header/footer) and the favicon (an inline data-URI SVG in each `<head>`).
 2. **Recolor.** Edit the CSS custom properties at the top of
