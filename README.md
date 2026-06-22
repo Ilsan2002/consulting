@@ -19,19 +19,32 @@ no dependencies** — open it in a browser and it works.
 
 ## Run it
 
-It's just files. Any static server works:
+It's just files. From inside the repo folder:
 
 ```bash
-# Python
-python3 -m http.server 8000
-# then open http://localhost:8000
+./serve.sh          # → http://localhost:8000/
+./serve.sh 9000     # or pick a port
+```
 
-# or Node
+`serve.sh` always serves from its own folder (so it works from any
+directory) and falls back across `python3` / `python` / `npx serve`.
+
+Prefer to do it by hand? Any static server works — just run it **from this
+repo folder**, not your home directory:
+
+```bash
+python3 -m http.server 8000   # then open http://localhost:8000
+# or
 npx serve .
 ```
 
-You can also just double-click `index.html` — though a local server is
-better so the relative paths and fonts behave.
+You can also double-click `index.html`, though a local server is better so
+the relative paths and fonts behave.
+
+> The `favicon.ico` / `apple-touch-icon.png` 404s some browsers log are
+> harmless automatic probes — the tab icon is an inline SVG and already
+> works. To silence them, drop a `favicon.ico` and `apple-touch-icon.png`
+> in this folder.
 
 ## Deploy it
 
