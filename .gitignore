@@ -1,0 +1,11 @@
+# Wrangler / Cloudflare local cache
+.wrangler/
+
+# Dependencies & build junk
+node_modules/
+dist/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
