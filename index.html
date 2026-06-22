@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Northlight — AI agents & AI coworkers for growing businesses</title>
+  <meta name="description" content="Northlight designs and builds AI agents and AI coworkers that answer customers, take phone calls, process paperwork and keep your tools in sync — wired into the software you already use." />
+  <meta name="theme-color" content="#16130D" />
+  <meta property="og:title" content="Northlight — AI coworkers that do the work" />
+  <meta property="og:description" content="We build AI agents and voice/chat coworkers for growing businesses. Plain-English, fixed-fee pilots, your data stays yours." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0L13.6 9.2 24 12 13.6 14.8 12 24 10.4 14.8 0 12 10.4 9.2Z' fill='%23E5862F'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..520&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <noscript>
+    <style>
+      .reveal{opacity:1!important;transform:none!important}
+      .bubble,.task-row{opacity:1!important;transform:none!important}
+      .faq-a{height:auto!important}
+    </style>
+  </noscript>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="index.html" aria-label="Northlight — home">
+        <svg class="mark" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0L13.6 9.2 24 12 13.6 14.8 12 24 10.4 14.8 0 12 10.4 9.2Z"/></svg>
+        Northlight
+      </a>
+      <div class="nav-links">
+        <a href="services.html">What we build</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a class="btn btn--primary nav-cta" href="contact.html">Book a call
+        <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="services.html">What we build</a>
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn btn--primary" href="contact.html">Book a discovery call</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow reveal">AI agents &amp; AI coworkers</span>
+            <h1 class="reveal" data-d="1">AI coworkers that do the work, <em class="display-accent display-accent--em">not just the talking.</em></h1>
+            <p class="lead reveal" data-d="2">Northlight builds AI agents that answer your customers, pick up the phone, process the paperwork and keep your tools in sync — wired into the software you already use, working around the clock.</p>
+            <div class="hero-actions reveal" data-d="3">
+              <a class="btn btn--primary btn--lg" href="contact.html">Book a discovery call
+                <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+              </a>
+              <a class="btn btn--ghost btn--lg" href="#what">See what we build</a>
+            </div>
+            <div class="hero-trust reveal" data-d="4">
+              <span class="micro">Quietly running busywork for teams in</span>
+              <div class="pill-row">
+                <span class="pill"><span class="em">🛍️</span> Retail</span>
+                <span class="pill"><span class="em">🩺</span> Clinics</span>
+                <span class="pill"><span class="em">📦</span> Logistics</span>
+                <span class="pill"><span class="em">💼</span> Agencies</span>
+                <span class="pill"><span class="em">🏠</span> Property</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Relay diagram: a hand-built, on-brand visual (no stock art) -->
+          <div class="relay reveal" data-d="2" aria-label="Diagram: the Relay platform routing work between AI coworkers and your business tools">
+            <div class="relay-head">
+              <span class="relay-title">Relay · orchestration</span>
+              <span class="relay-live"><span class="relay-dot"></span> live</span>
+            </div>
+            <svg viewBox="0 0 480 320" role="img" aria-hidden="true">
+              <!-- edges -->
+              <path class="relay-edge" d="M152 65 C 180 65, 176 150, 194 150" />
+              <path class="relay-edge" d="M152 170 L 194 170" />
+              <path class="relay-edge" d="M152 275 C 180 275, 176 190, 194 190" />
+              <path class="relay-edge" d="M286 152 C 306 152, 304 61, 326 61" />
+              <path class="relay-edge" d="M286 162 C 306 162, 306 125, 326 125" />
+              <path class="relay-edge" d="M286 178 C 306 178, 306 205, 326 205" />
+              <path class="relay-edge" d="M286 188 C 306 188, 304 269, 326 269" />
+              <!-- animated work flow -->
+              <path class="relay-flow"    d="M152 65 C 180 65, 176 150, 194 150" />
+              <path class="relay-flow f2" d="M286 162 C 306 162, 306 125, 326 125" />
+              <path class="relay-flow f3" d="M152 275 C 180 275, 176 190, 194 190" />
+              <path class="relay-flow f4" d="M286 188 C 306 188, 304 269, 326 269" />
+
+              <!-- left: AI coworkers -->
+              <g class="relay-node">
+                <rect class="relay-chip" x="22" y="42" width="130" height="46" rx="11" />
+                <text class="relay-label" x="42" y="62">Support</text>
+                <text class="relay-sub" x="42" y="77">chat + email</text>
+              </g>
+              <g class="relay-node">
+                <rect class="relay-chip" x="22" y="147" width="130" height="46" rx="11" />
+                <text class="relay-label" x="42" y="167">Voice</text>
+                <text class="relay-sub" x="42" y="182">calls · 24/7</text>
+              </g>
+              <g class="relay-node">
+                <rect class="relay-chip" x="22" y="252" width="130" height="46" rx="11" />
+                <text class="relay-label" x="42" y="272">Back office</text>
+                <text class="relay-sub" x="42" y="287">data + docs</text>
+              </g>
+
+              <!-- hub -->
+              <g class="relay-node">
+                <rect class="relay-hub" x="194" y="143" width="92" height="54" rx="14" />
+                <text class="relay-label--hub relay-label" x="240" y="167" text-anchor="middle" style="font-size:13px">RELAY</text>
+                <text x="240" y="183" text-anchor="middle" style="fill:#7A3D12;font-family:var(--font-mono);font-size:8px">human-in-loop</text>
+              </g>
+
+              <!-- right: your tools -->
+              <g class="relay-node"><rect class="relay-chip" x="326" y="44" width="132" height="34" rx="9" /><text class="relay-label" x="346" y="65">CRM</text></g>
+              <g class="relay-node"><rect class="relay-chip" x="326" y="108" width="132" height="34" rx="9" /><text class="relay-label" x="346" y="129">Inbox</text></g>
+              <g class="relay-node"><rect class="relay-chip" x="326" y="188" width="132" height="34" rx="9" /><text class="relay-label" x="346" y="209">Calendar</text></g>
+              <g class="relay-node"><rect class="relay-chip" x="326" y="252" width="132" height="34" rx="9" /><text class="relay-label" x="346" y="273">Knowledge</text></g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LOGO STRIP ============ -->
+    <section class="logos container">
+      <p>Teams putting Northlight to work</p>
+      <div class="logo-row reveal">
+        <span>Harbor&nbsp;&amp;&nbsp;Finch</span>
+        <span class="lg-mark">Meridian Dental</span>
+        <span>Cedar&nbsp;Logistics</span>
+        <span>Bright&nbsp;Lattice</span>
+        <span class="lg-mark">Northwind Realty</span>
+        <span>Olive&nbsp;&amp;&nbsp;Oak</span>
+        <span>Volta&nbsp;Apps</span>
+      </div>
+    </section>
+
+    <!-- ============ WHY NOW (editorial) ============ -->
+    <section class="section section--tight">
+      <div class="container split split--text-first">
+        <div class="reveal">
+          <div class="relay" style="background:var(--paper-50);color:var(--text);border-color:var(--line);box-shadow:var(--shadow-1)">
+            <div class="relay-head"><span class="relay-title" style="color:var(--text-muted)">A typical Tuesday</span></div>
+            <ul class="stack" style="--flow:.7rem; position:relative; z-index:1">
+              <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Answering the same five questions over and over</span></li>
+              <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Copy-pasting between email, spreadsheets and your CRM</span></li>
+              <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Missing calls after hours — and the bookings with them</span></li>
+              <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Typing up invoices and forms by hand</span></li>
+              <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Chasing the same follow-ups every single week</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="section-head reveal" data-d="1">
+          <span class="eyebrow">Why now</span>
+          <h2 style="margin-top:1rem">A lot of your team's day is <em class="display-accent">repeatable.</em></h2>
+          <p class="lead">For the first time, software can read, write, listen, talk and click through your tools well enough to take that work off their plate.</p>
+          <div class="callout"><p>The trick isn't a clever chatbot. It's an agent that's actually wired into your business — and knows when to ask a human.</p></div>
+          <a class="link-arrow" href="services.html">See the six things we build
+            <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHAT WE BUILD ============ -->
+    <section class="section" id="what">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">What we build</span>
+          <h2 style="margin-top:1rem">Six ways we put AI to work</h2>
+          <p class="lead">In plain terms: software that reads, writes, talks, listens and clicks the buttons — so your people don't have to.</p>
+        </div>
+
+        <div class="cap-grid" style="margin-top:3rem">
+          <article class="card feature-tall is-feature card--hover reveal">
+            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V5M9 3h6"/><circle cx="9" cy="14" r="1.2" fill="currentColor" stroke="none"/><circle cx="15" cy="14" r="1.2" fill="currentColor" stroke="none"/></svg></div>
+            <h3>AI agents &amp; coworkers</h3>
+            <p>Autonomous agents that complete whole tasks across your tools — not one reply at a time. They plan, act, and hand off to a person when something needs a human call.</p>
+            <p class="micro-eg">Example: <b>onboard a new client end-to-end</b> — collect details, create the account, send the welcome pack, book the kickoff.</p>
+          </article>
+
+          <article class="card is-wide card--hover reveal" data-d="1">
+            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.9-.9L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg></div>
+            <h3>Support that answers itself</h3>
+            <p>A chat &amp; email coworker trained on your docs, policies and past tickets. It resolves the routine, and escalates the tricky stuff to your team with full context.</p>
+            <p class="micro-eg">Example: <b>resolve 6 in 10 tickets</b> before a person ever sees them.</p>
+          </article>
+
+          <article class="card card--hover reveal" data-d="2">
+            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div>
+            <h3>AI that answers the phone</h3>
+            <p>Natural-sounding voice agents that pick up, understand callers, book and confirm — speech-to-text and text-to-speech, so no one's stuck on hold.</p>
+            <p class="micro-eg">Example: <b>never miss an after-hours call</b> again.</p>
+          </article>
+
+          <article class="card card--hover reveal" data-d="1">
+            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></div>
+            <h3>Back-office automation</h3>
+            <p>Read invoices, forms and emails, pull out what matters, update your systems and flag the exceptions for review. The data entry just… happens.</p>
+            <p class="micro-eg">Example: <b>turn a PDF inbox into clean rows</b> in your CRM.</p>
+          </article>
+
+          <article class="card card--hover reveal" data-d="2">
+            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.6 4.6L18 9l-4.4 1.4L12 15l-1.6-4.6L6 9l4.4-1.4z"/><path d="M5 16l.8 2.2L8 19l-2.2.8L5 22l-.8-2.2L2 19l2.2-.8z"/></svg></div>
+            <h3>Custom copilots</h3>
+            <p>An assistant trained on your company's own knowledge, living right inside the tools your team uses — drafting, summarising and answering in your voice.</p>
+            <p class="micro-eg">Example: <b>draft the quote</b> in your style, in seconds.</p>
+          </article>
+
+          <article class="card is-wide card--hover reveal" data-d="3">
+            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10.6 13.4a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1.7 1.7"/><path d="M13.4 10.6a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1.7-1.7"/></svg></div>
+            <h3>Connect your stack</h3>
+            <p>Agents are only useful if they can actually <em>act</em>. We connect them safely to the tools you already run — helpdesk, CRM, calendar, docs and more.</p>
+            <p class="micro-eg">Example: <b>from Gmail to your CRM</b> with no copy-paste.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AI WORKERS (dark band) ============ -->
+    <section class="section band--ink" id="ai-workers">
+      <div class="container">
+        <div class="section-head reveal" style="max-width:62ch">
+          <span class="eyebrow">Meet the crew</span>
+          <h2 style="margin-top:1rem">Think of them as your <em class="display-accent">first AI hires.</em></h2>
+          <p class="lead">Each one has a job, a set of tools it's allowed to use, and a supervisor on your team. They work inside your software — every action logged, every decision reviewable.</p>
+        </div>
+
+        <div class="crew-grid" style="margin-top:3rem">
+          <article class="crew reveal">
+            <div class="crew-top"><div class="crew-avatar a1">R</div><div><div class="crew-name">Robin</div><div class="crew-role">support coworker</div></div></div>
+            <p>Answers chats &amp; emails, looks up orders, issues refunds within your policy, and tags the rest for a human.</p>
+            <div class="crew-foot"><div class="crew-tools"><span class="tool-chip">Helpdesk</span><span class="tool-chip">Orders</span></div><span class="crew-status">on</span></div>
+          </article>
+          <article class="crew reveal" data-d="1">
+            <div class="crew-top"><div class="crew-avatar a2">T</div><div><div class="crew-name">Theo</div><div class="crew-role">voice coworker</div></div></div>
+            <p>Picks up and places calls, books and confirms appointments, and texts a follow-up — in a natural voice.</p>
+            <div class="crew-foot"><div class="crew-tools"><span class="tool-chip">Phone</span><span class="tool-chip">Calendar</span></div><span class="crew-status">on</span></div>
+          </article>
+          <article class="crew reveal" data-d="2">
+            <div class="crew-top"><div class="crew-avatar a3">M</div><div><div class="crew-name">Mara</div><div class="crew-role">back-office coworker</div></div></div>
+            <p>Reads documents, enters the data, reconciles the numbers and flags anything that doesn't add up.</p>
+            <div class="crew-foot"><div class="crew-tools"><span class="tool-chip">Inbox</span><span class="tool-chip">Sheets</span></div><span class="crew-status">on</span></div>
+          </article>
+          <article class="crew reveal" data-d="3">
+            <div class="crew-top"><div class="crew-avatar a4">S</div><div><div class="crew-name">Sol</div><div class="crew-role">sales coworker</div></div></div>
+            <p>Qualifies new leads, drafts personalised follow-ups, and keeps your pipeline tidy so nothing slips.</p>
+            <div class="crew-foot"><div class="crew-tools"><span class="tool-chip">CRM</span><span class="tool-chip">Email</span></div><span class="crew-status">on</span></div>
+          </article>
+        </div>
+
+        <div class="grid reveal" style="--gap:1rem; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); margin-top:2rem">
+          <div class="card" style="background:var(--surface);border-color:var(--line)"><h4 style="font-family:var(--font-sans);font-weight:700;font-size:1rem">👀 Supervised</h4><p style="margin-top:.4rem;font-size:.92rem">A person on your team approves the actions that matter. Nothing risky happens on its own.</p></div>
+          <div class="card" style="background:var(--surface);border-color:var(--line)"><h4 style="font-family:var(--font-sans);font-weight:700;font-size:1rem">🧾 Auditable</h4><p style="margin-top:.4rem;font-size:.92rem">Every message, lookup and change is logged — so you can always see exactly what happened.</p></div>
+          <div class="card" style="background:var(--surface);border-color:var(--line)"><h4 style="font-family:var(--font-sans);font-weight:700;font-size:1rem">🔒 Yours</h4><p style="margin-top:.4rem;font-size:.92rem">Your data stays your data. We don't train public models on it, and you can switch it off any time.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INTERACTIVE DEMO ============ -->
+    <section class="section" id="demo">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow eyebrow--plain">See it in action</span>
+          <h2 style="margin-top:1rem">What it looks like day to day</h2>
+          <p class="lead">No slides. Here are three of your AI coworkers, mid-shift.</p>
+        </div>
+
+        <div class="demo reveal" style="margin-top:2.5rem" role="region" aria-label="Interactive examples of AI coworkers at work">
+          <div class="demo-tabs" role="tablist" aria-label="Choose an example">
+            <button class="demo-tab" id="tab-chat" role="tab" aria-selected="true" aria-controls="panel-chat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-12.4 7.4L3 21l2.1-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>
+              Support chat
+            </button>
+            <button class="demo-tab" id="tab-voice" role="tab" aria-selected="false" aria-controls="panel-voice" tabindex="-1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.1 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+              Phone call
+            </button>
+            <button class="demo-tab" id="tab-office" role="tab" aria-selected="false" aria-controls="panel-office" tabindex="-1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+              Back office
+            </button>
+          </div>
+
+          <!-- chat -->
+          <div class="demo-panel" id="panel-chat" role="tabpanel" aria-labelledby="tab-chat">
+            <div class="demo-meta"><span class="dot"></span> Robin · support coworker · live chat</div>
+            <div class="chat">
+              <div class="bubble user" data-seq><span class="who">Customer</span>Hey, where's my order #4821? It's been a few days.</div>
+              <div class="bubble bot" data-seq><span class="who">Robin</span>Hi! Let me check that for you.<span class="act">↳ looked up order #4821</span></div>
+              <div class="bubble bot" data-seq>It shipped Monday and it's out for delivery today — should arrive by 6pm. Want me to text you the tracking link?</div>
+              <div class="bubble user" data-seq>Yes please. Also, can I change the delivery address?</div>
+              <div class="bubble bot" data-seq>Done — tracking sent. Since it hasn't been delivered yet, I can still update the address.<span class="act">↳ updated shipping address · logged for review</span></div>
+              <div class="bubble bot" data-seq>All set to the new address. Anything else? 😊</div>
+            </div>
+          </div>
+
+          <!-- voice -->
+          <div class="demo-panel" id="panel-voice" role="tabpanel" aria-labelledby="tab-voice" hidden>
+            <div class="demo-meta"><span class="dot"></span> Theo · voice coworker · inbound call · 7:42pm</div>
+            <div class="chat">
+              <div class="bubble bot" data-seq><span class="who">Theo</span>Thanks for calling Meridian Dental, this is Theo. How can I help?</div>
+              <div class="bubble user" data-seq><span class="who">Caller</span>Hi, I'd like to book a cleaning sometime next week.</div>
+              <div class="bubble bot" data-seq>Happy to help. I've got Tuesday at 2:30, or Thursday morning at 9:15.<span class="act">↳ checked the calendar</span></div>
+              <div class="bubble user" data-seq>Tuesday at 2:30 works.</div>
+              <div class="bubble bot" data-seq>Booked you in for Tuesday at 2:30. I'll text a confirmation now and a reminder the day before.<span class="act">↳ booked · SMS confirmation sent</span></div>
+            </div>
+          </div>
+
+          <!-- back office -->
+          <div class="demo-panel" id="panel-office" role="tabpanel" aria-labelledby="tab-office" hidden>
+            <div class="demo-meta"><span class="dot"></span> Mara · back-office coworker · invoice run · this morning</div>
+            <div>
+              <div class="task-row" data-seq><span class="task-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Read <b>12 supplier invoices</b> from the shared inbox</span><span class="when">9:02</span></div>
+              <div class="task-row" data-seq><span class="task-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Matched each to its <b>purchase order</b></span><span class="when">9:03</span></div>
+              <div class="task-row" data-seq><span class="task-check" style="background:var(--amber-100)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></span><span>Flagged <b>1 mismatch</b> ($240 over PO) for review</span><span class="when">9:03</span></div>
+              <div class="task-row" data-seq><span class="task-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Posted <b>11 invoices</b> to the accounting system</span><span class="when">9:04</span></div>
+              <div class="task-row" data-seq><span class="task-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Emailed the team a <b>2-line summary</b></span><span class="when">9:04</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">How we work</span>
+          <h2 style="margin-top:1rem">From idea to working agent in <em class="display-accent">weeks, not quarters.</em></h2>
+        </div>
+        <div class="steps reveal" style="margin-top:2.5rem">
+          <div class="step"><div class="step-num">01</div><h4>Discovery</h4><p>We sit with your team, map the busywork, and pick the one job with the best payoff to start.</p><div class="when">~ 1 week</div></div>
+          <div class="step"><div class="step-num">02</div><h4>Prototype</h4><p>A working agent on your real data that you can actually try — not a slide deck.</p><div class="when">~ 2 weeks</div></div>
+          <div class="step"><div class="step-num">03</div><h4>Build &amp; integrate</h4><p>Wired into your tools, tested against edge cases, with guardrails and a human-approval step.</p><div class="when">3–5 weeks</div></div>
+          <div class="step"><div class="step-num">04</div><h4>Launch &amp; improve</h4><p>We watch it in the wild, measure the time saved, and tune. Fixed scope — no surprise bills.</p><div class="when">ongoing</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CASE STUDIES ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:1.5rem;max-width:none">
+          <div style="max-width:46ch">
+            <span class="eyebrow">Selected work</span>
+            <h2 style="margin-top:1rem">A few things we've shipped</h2>
+          </div>
+          <a class="link-arrow" href="work.html">See all work
+            <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <div class="cases cases--3" style="margin-top:2.5rem">
+          <a class="case case--hover reveal" href="work.html">
+            <div class="case-cover">
+              <div class="cover-art cv2"></div>
+              <svg viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.5"><circle cx="200" cy="112" r="34"/><circle cx="200" cy="112" r="64"/><circle cx="200" cy="112" r="94"/><path d="M200 50v124M138 112h124" stroke="rgba(255,255,255,.3)"/></g><circle cx="200" cy="112" r="6" fill="#fff"/></svg>
+              <span class="badge-industry">Healthcare · clinic</span>
+            </div>
+            <div class="case-body">
+              <h3>The phone that never rings out</h3>
+              <p>A dental group was losing evening bookings to voicemail. We gave them a voice coworker that answers, books and confirms — and hands urgent calls to staff.</p>
+              <div class="case-metrics">
+                <div class="metric"><div class="n">38%</div><div class="l">fewer missed calls</div></div>
+                <div class="metric"><div class="n">1,900</div><div class="l">staff hours saved / yr</div></div>
+              </div>
+            </div>
+          </a>
+
+          <a class="case case--hover reveal" data-d="1" href="work.html">
+            <div class="case-cover">
+              <div class="cover-art cv1"></div>
+              <svg viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g stroke="rgba(255,255,255,.45)" stroke-width="1.5" fill="none"><path d="M60 170 Q140 60 200 120 T340 90"/><path d="M60 190 Q150 110 220 150 T340 130"/></g><g fill="#fff"><circle cx="60" cy="170" r="4"/><circle cx="200" cy="120" r="4"/><circle cx="340" cy="90" r="4"/></g></svg>
+              <span class="badge-industry">E-commerce · retail</span>
+            </div>
+            <div class="case-body">
+              <h3>Support that keeps up with sales</h3>
+              <p>A growing homeware brand was drowning in "where's my order?" emails. A support coworker now handles the routine and routes the rest with full context.</p>
+              <div class="case-metrics">
+                <div class="metric"><div class="n">62%</div><div class="l">tickets auto-resolved</div></div>
+                <div class="metric"><div class="n">&lt;2m</div><div class="l">first response</div></div>
+              </div>
+            </div>
+          </a>
+
+          <a class="case case--hover reveal" data-d="2" href="work.html">
+            <div class="case-cover">
+              <div class="cover-art cv3"></div>
+              <svg viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g stroke="rgba(255,255,255,.4)" stroke-width="1.5" fill="none"><rect x="120" y="60" width="160" height="34" rx="6"/><rect x="120" y="104" width="160" height="34" rx="6"/><rect x="120" y="148" width="160" height="34" rx="6"/></g><g fill="rgba(240,161,85,.9)"><rect x="134" y="71" width="40" height="12" rx="3"/><rect x="134" y="115" width="64" height="12" rx="3"/><rect x="134" y="159" width="30" height="12" rx="3"/></g></svg>
+              <span class="badge-industry">Logistics · SMB</span>
+            </div>
+            <div class="case-body">
+              <h3>Invoices that file themselves</h3>
+              <p>A regional freight company spent days a week typing invoices into their system. A back-office coworker reads, matches and posts them — flagging only the odd ones.</p>
+              <div class="case-metrics">
+                <div class="metric"><div class="n">9×</div><div class="l">faster intake</div></div>
+                <div class="metric"><div class="n">99.2%</div><div class="l">field accuracy</div></div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INDUSTRIES ============ -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="split">
+          <div class="section-head reveal">
+            <span class="eyebrow">Who we work with</span>
+            <h2 style="margin-top:1rem">Built for <em class="display-accent">growing businesses.</em></h2>
+            <p class="lead">We're not an enterprise-only shop. If your team does a lot of the same thing every day, there's probably an agent for it.</p>
+          </div>
+          <div class="reveal" data-d="1">
+            <div class="pill-row" style="gap:.7rem">
+              <span class="pill"><span class="em">🛍️</span> E-commerce &amp; retail</span>
+              <span class="pill"><span class="em">🩺</span> Clinics &amp; healthcare</span>
+              <span class="pill"><span class="em">💼</span> Professional services</span>
+              <span class="pill"><span class="em">🏠</span> Real estate &amp; property</span>
+              <span class="pill"><span class="em">🍽️</span> Hospitality</span>
+              <span class="pill"><span class="em">💻</span> SaaS &amp; startups</span>
+              <span class="pill"><span class="em">🔧</span> Home &amp; local services</span>
+              <span class="pill"><span class="em">🎓</span> Education</span>
+              <span class="pill"><span class="em">📊</span> Finance &amp; insurance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY NORTHLIGHT ============ -->
+    <section class="section">
+      <div class="container split split--text-first">
+        <div class="reveal">
+          <ul class="two-col-list">
+            <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Fixed-fee pilots, not open-ended retainers</span></li>
+            <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Your data stays yours — never sold, never used to train public models</span></li>
+            <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Human-in-the-loop by default</span></li>
+            <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Works with the tools you already pay for</span></li>
+            <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Plain English — no jargon, no hand-waving</span></li>
+            <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Every action logged &amp; reversible</span></li>
+            <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>A small senior team — not a reseller</span></li>
+            <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Built to be handed over, not to lock you in</span></li>
+          </ul>
+        </div>
+        <div class="section-head reveal" data-d="1">
+          <span class="eyebrow">Why Northlight</span>
+          <h2 style="margin-top:1rem">AI without the <em class="display-accent">hype.</em></h2>
+          <p class="lead">Plenty of vendors will sell you a demo. We'd rather ship one small thing that quietly saves your team hours every week — and then do it again.</p>
+          <a class="btn btn--ink" href="about.html" style="margin-top:1.6rem">How we think about this work
+            <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="section section--tight band--ink">
+      <div class="container">
+        <div class="stats reveal">
+          <div class="stat"><div class="n"><span data-count="9">0</span></div><div class="l">industries served</div></div>
+          <div class="stat"><div class="n"><span data-count="40" data-suffix="+">0</span></div><div class="l">agents shipped to production</div></div>
+          <div class="stat"><div class="n"><span data-count="70" data-suffix="%">0</span></div><div class="l">of a workflow automated, on average</div></div>
+          <div class="stat"><div class="n"><span data-count="3">0</span></div><div class="l">weeks to a working prototype</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow eyebrow--plain">Kind words</span>
+          <h2 style="margin-top:1rem">Teams that stopped doing the boring parts</h2>
+        </div>
+        <div class="quotes" style="margin-top:2.5rem">
+          <figure class="quote reveal">
+            <div class="mark">&ldquo;</div>
+            <blockquote>We were sceptical — we'd seen the gimmicky chatbots. This actually books appointments and our front desk got their evenings back.</blockquote>
+            <figcaption class="quote-by"><span class="quote-ava">P</span><span><span class="nm">Priya Menon</span><span class="ti">Practice Manager, Meridian Dental</span></span></figcaption>
+          </figure>
+          <figure class="quote reveal" data-d="1">
+            <div class="mark">&ldquo;</div>
+            <blockquote>They didn't try to boil the ocean. One use case, shipped in a month, and it paid for itself before the quarter was out.</blockquote>
+            <figcaption class="quote-by"><span class="quote-ava">D</span><span><span class="nm">Daniel Cho</span><span class="ti">Founder, Harbor &amp; Finch</span></span></figcaption>
+          </figure>
+          <figure class="quote reveal" data-d="2">
+            <div class="mark">&ldquo;</div>
+            <blockquote>What sold me was the audit log. I can see every single thing the agent did, and override it. That's the part nobody else talked about.</blockquote>
+            <figcaption class="quote-by"><span class="quote-ava">A</span><span><span class="nm">Amara Okoye</span><span class="ti">Operations Lead, Cedar Logistics</span></span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section--tight">
+      <div class="container container--narrow">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow eyebrow--plain">Questions</span>
+          <h2 style="margin-top:1rem">What people ask us</h2>
+        </div>
+        <div class="faq reveal" style="margin-top:2.5rem">
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false"><span>What's the difference between an AI agent and a chatbot?</span><span class="ic" aria-hidden="true"></span></button>
+            <div class="faq-a"><div class="faq-a-inner"><p>A chatbot talks. An agent <em>acts</em>. A chatbot can tell a customer their order shipped; an agent looks up the order, updates the address, sends the tracking link and notes it in your system — then asks a human if anything looks off. We build the second kind.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false"><span>Do we need technical people on our side?</span><span class="ic" aria-hidden="true"></span></button>
+            <div class="faq-a"><div class="faq-a-inner"><p>No. Most of our clients don't have an engineering team. We handle the building, the connecting and the maintenance. You bring the knowledge of how your business actually runs — that's the valuable part.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false"><span>Is our data safe? Do you train models on it?</span><span class="ic" aria-hidden="true"></span></button>
+            <div class="faq-a"><div class="faq-a-inner"><p>Your data stays yours. We don't sell it and we don't use it to train public models. Access is scoped to exactly what an agent needs to do its job, everything is logged, and you can revoke it at any time.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false"><span>How long until we see something working?</span><span class="ic" aria-hidden="true"></span></button>
+            <div class="faq-a"><div class="faq-a-inner"><p>Usually about three weeks to a working prototype you can try on your real data, and four to eight weeks to something live and integrated — depending on how many tools it needs to touch.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false"><span>What does it cost?</span><span class="ic" aria-hidden="true"></span></button>
+            <div class="faq-a"><div class="faq-a-inner"><p>Pilots are fixed-fee, so you know the number up front. We scope to a single high-value use case first, prove the savings, then expand. <a class="link-arrow" href="contact.html">Tell us about your workflow</a> and we'll give you a real estimate.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false"><span>What if the AI gets something wrong?</span><span class="ic" aria-hidden="true"></span></button>
+            <div class="faq-a"><div class="faq-a-inner"><p>We design for it. Agents work within clear limits, ask a human before doing anything risky, and log every action so it can be reviewed or reversed. The goal isn't a magic box — it's a reliable coworker you can supervise.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section section--flush-top">
+      <div class="container">
+        <div class="cta reveal">
+          <span class="eyebrow eyebrow--plain" style="color:var(--amber-300)">Let's talk</span>
+          <h2 style="margin-top:1rem">Let's find one job to take off your plate.</h2>
+          <p>Book a 30-minute discovery call. We'll look at your busywork together and tell you — honestly — whether an agent is worth it.</p>
+          <div class="hero-actions">
+            <a class="btn btn--primary btn--lg" href="contact.html">Book a discovery call
+              <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn--ghost btn--lg" href="mailto:hello@northlight.ai" style="color:#F4EEE2;border-color:rgba(244,238,226,.3)">hello@northlight.ai</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <svg class="mark" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0L13.6 9.2 24 12 13.6 14.8 12 24 10.4 14.8 0 12 10.4 9.2Z"/></svg>
+            Northlight
+          </a>
+          <p>We build AI agents and AI coworkers that quietly do the busywork — so your team can do the work that matters.</p>
+        </div>
+        <div class="footer-col">
+          <h5>What we build</h5>
+          <a href="services.html">AI agents &amp; coworkers</a>
+          <a href="services.html">Support automation</a>
+          <a href="services.html">Voice agents</a>
+          <a href="services.html">Back-office automation</a>
+          <a href="services.html">Custom copilots</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="about.html">About</a>
+          <a href="work.html">Work</a>
+          <a href="#ai-workers">Meet the crew</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Get in touch</h5>
+          <a href="contact.html">Book a call</a>
+          <a href="mailto:hello@northlight.ai">hello@northlight.ai</a>
+          <a href="tel:+10000000000">+1 (000) 000-0000</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Northlight Studio. Made by humans, with help from agents.</span>
+        <div class="footer-socials">
+          <a href="#" aria-label="Northlight on X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" aria-label="Northlight on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+          <a href="#" aria-label="Northlight on GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.39 1.24-3.23-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.23 0 4.62-2.81 5.64-5.49 5.94.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58A12.01 12.01 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg></a>
+        </div>
+      </div>
+      <p style="margin-top:1.6rem;font-size:.78rem;color:#6f6552;max-width:80ch">Northlight is a demonstration brand. Company and client names, logos, testimonials, metrics and case studies on this site are illustrative samples — swap in your own before going live.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
