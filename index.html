@@ -357,11 +357,11 @@
     <section class="section">
       <div class="container">
         <div class="section-head reveal" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:1.5rem;max-width:none">
-          <div style="max-width:46ch">
-            <span class="eyebrow">Selected work</span>
+          <div style="max-width:48ch">
+            <span class="eyebrow">Recent outcomes</span>
             <h2 style="margin-top:1rem">A few things we've built for clients</h2>
           </div>
-          <a class="link-arrow" href="work.html">See all work
+          <a class="link-arrow" href="work.html">Browse industry playbooks
             <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
           </a>
         </div>
@@ -418,29 +418,48 @@
       </div>
     </section>
 
-    <!-- ============ INDUSTRIES ============ -->
-    <section class="section section--tight">
+    <!-- ============ INDUSTRIES (featured → playbooks) ============ -->
+    <section class="section section--tight" id="industries">
       <div class="container">
-        <div class="split">
-          <div class="section-head reveal">
-            <span class="eyebrow">Who we work with</span>
-            <h2 style="margin-top:1rem">Built for <em class="display-accent">growing businesses.</em></h2>
-            <p class="lead">We're not an enterprise-only shop. If your team does a lot of the same thing every day, there's probably something here worth a conversation.</p>
-          </div>
-          <div class="reveal" data-d="1">
-            <div class="pill-row" style="gap:.7rem">
-              <span class="pill"><span class="em">🛍️</span> E-commerce &amp; retail</span>
-              <span class="pill"><span class="em">🩺</span> Clinics &amp; healthcare</span>
-              <span class="pill"><span class="em">💼</span> Professional services</span>
-              <span class="pill"><span class="em">🏠</span> Real estate &amp; property</span>
-              <span class="pill"><span class="em">🍽️</span> Hospitality</span>
-              <span class="pill"><span class="em">💻</span> SaaS &amp; startups</span>
-              <span class="pill"><span class="em">🔧</span> Home &amp; local services</span>
-              <span class="pill"><span class="em">🎓</span> Education</span>
-              <span class="pill"><span class="em">📊</span> Finance &amp; insurance</span>
-            </div>
-          </div>
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow eyebrow--plain">By industry</span>
+          <h2 style="margin-top:1rem">Find your business — odds are <em class="display-accent">we've built it.</em></h2>
+          <p class="lead mx-auto">We go deep where AI quietly pays for itself. Tap your world to see the exact work we'd do.</p>
         </div>
+        <div class="grid reveal" style="--gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));margin-top:2.5rem">
+          <a class="card card--hover" href="work.html#property">
+            <div class="card-icon" style="font-size:1.5rem">🏢</div>
+            <h3 style="font-size:1.15rem">Property management</h3>
+            <p style="margin-top:.4rem;font-size:.92rem">Tenant questions, maintenance triage &amp; leasing — handled 24/7.</p>
+            <span class="link-arrow" style="margin-top:1rem;font-size:.88rem">See the build <svg class="arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="card card--hover" href="work.html#real-estate">
+            <div class="card-icon" style="font-size:1.5rem">🏡</div>
+            <h3 style="font-size:1.15rem">Real estate</h3>
+            <p style="margin-top:.4rem;font-size:.92rem">Qualify and reply to every lead in seconds; book the showings.</p>
+            <span class="link-arrow" style="margin-top:1rem;font-size:.88rem">See the build <svg class="arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="card card--hover" href="work.html#law">
+            <div class="card-icon" style="font-size:1.5rem">⚖️</div>
+            <h3 style="font-size:1.15rem">Law firms</h3>
+            <p style="margin-top:.4rem;font-size:.92rem">After-hours intake, case screening &amp; document collection.</p>
+            <span class="link-arrow" style="margin-top:1rem;font-size:.88rem">See the build <svg class="arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="card card--hover" href="work.html#accounting">
+            <div class="card-icon" style="font-size:1.5rem">📊</div>
+            <h3 style="font-size:1.15rem">Accounting / CPA</h3>
+            <p style="margin-top:.4rem;font-size:.92rem">Onboarding and tax-season document chasing that runs itself.</p>
+            <span class="link-arrow" style="margin-top:1rem;font-size:.88rem">See the build <svg class="arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="card card--hover" href="work.html#home-services">
+            <div class="card-icon" style="font-size:1.5rem">🔧</div>
+            <h3 style="font-size:1.15rem">Home services &amp; trades</h3>
+            <p style="margin-top:.4rem;font-size:.92rem">A voice agent that answers every call and books the job.</p>
+            <span class="link-arrow" style="margin-top:1rem;font-size:.88rem">See the build <svg class="arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+        <p class="center reveal" style="margin-top:1.6rem;color:var(--text-muted);font-size:.95rem">Also clinics, restaurants, e-commerce, salons, auto &amp; more — <a class="link-arrow" href="work.html">browse all playbooks
+          <svg class="arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a></p>
       </div>
     </section>
 

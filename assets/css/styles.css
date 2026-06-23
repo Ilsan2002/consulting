@@ -1026,3 +1026,30 @@ strong { font-weight: 600; color: var(--text); }
 .maxw-sm { max-width: 56ch; } .mx-auto { margin-inline: auto; }
 .skip-link { position: absolute; left: -999px; top: 0; background: var(--ink-900); color: #fff; padding: .8em 1.2em; border-radius: 0 0 var(--r-sm) 0; z-index: 100; }
 .skip-link:focus { left: 0; }
+
+/* -----------------------------------------------------------------
+   22. Sector flow visual — animated "in → AI → out"
+   ----------------------------------------------------------------- */
+.flow { position: relative; z-index: 1; display: flex; flex-direction: column; gap: .5rem; }
+.flow-node { display: flex; align-items: center; gap: .8rem; background: var(--ink-700); border: 1px solid rgba(244,238,226,.1); border-radius: var(--r-md); padding: .8rem 1rem; }
+.flow-node b { display: block; color: #F4EEE2; font-weight: 600; font-size: .95rem; line-height: 1.2; }
+.flow-node small { display: block; color: #A99C86; font-size: .78rem; margin-top: 2px; }
+.flow-ic { width: 36px; height: 36px; flex: none; display: grid; place-items: center; border-radius: 10px; background: rgba(244,238,226,.06); font-size: 1.1rem; }
+.flow-node--ai { background: linear-gradient(180deg, rgba(229,134,47,.16), rgba(229,134,47,.05)); border-color: rgba(240,161,85,.4); }
+.flow-node--ai .flow-ic { background: var(--amber-500); color: var(--accent-ink); animation: aiPulse 2.8s var(--ease) infinite; }
+.flow-node--ai b { color: #FBF1E2; }
+@keyframes aiPulse { 0%,100% { box-shadow: 0 0 0 5px rgba(229,134,47,.10); } 50% { box-shadow: 0 0 0 10px rgba(229,134,47,.04); } }
+.flow-pipe { width: 2px; height: 24px; margin-left: 34px; background: rgba(244,238,226,.16); position: relative; }
+.flow-pipe .flow-pulse { position: absolute; left: 50%; top: 0; width: 7px; height: 7px; border-radius: 50%; background: var(--amber-400); box-shadow: 0 0 8px var(--amber-400); transform: translate(-50%, -9px); animation: flowDown 2.2s var(--ease) infinite; }
+.flow-pipe--b .flow-pulse { animation-delay: 1.1s; }
+@keyframes flowDown { 0% { transform: translate(-50%, -9px); opacity: 0; } 18% { opacity: 1; } 82% { opacity: 1; } 100% { transform: translate(-50%, 24px); opacity: 0; } }
+.flow-outs { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .4rem; }
+.flow-chip { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .02em; padding: .42em .7em; border-radius: var(--r-pill); background: rgba(244,238,226,.06); color: #E4DBCB; border: 1px solid rgba(244,238,226,.12); }
+.flow-chip--good { color: var(--pine-300); border-color: rgba(143,189,178,.32); }
+.flow-chip--urgent { color: var(--amber-300); border-color: rgba(240,161,85,.4); }
+.sector-out { margin-top: 1.2rem; font-size: .92rem; color: var(--text-muted); }
+.sector-out b { color: var(--accent); font-weight: 600; }
+@media (prefers-reduced-motion: reduce) {
+  .flow-pipe .flow-pulse { animation: none; opacity: .8; transform: translate(-50%, 8px); }
+  .flow-node--ai .flow-ic { animation: none; }
+}
