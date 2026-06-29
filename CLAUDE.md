@@ -1,14 +1,18 @@
 # Kenius — working notes for Claude
 
 Marketing site for **Kenius** (kenius.us), an AI consultancy. Static: hand-written
-HTML + one tokenized CSS file (`assets/css/styles.css`) + vanilla JS. **No framework,
-no build step.** Hosted on Cloudflare Pages, auto-deploys from `main`.
+HTML + one tokenized CSS file (`assets/css/lux.css`) + vanilla JS (`assets/js/lux.js`).
+**No framework, no build step.** Hosted on Cloudflare Pages, auto-deploys from `main`.
 
 ## Design
-- The visual system is **"Dark Signal"** (v2): deep zinc canvas, single **electric-citron**
-  accent, **Clash Display + General Sans + JetBrains Mono**, film-grain + glow atmosphere.
-  Full spec in [`DESIGN.md`](./DESIGN.md). The v2 re-theme is an **override layer appended
-  at the end of `styles.css`** — edit tokens there to re-skin.
+- The current visual system is **"Atelier"** (luxury-minimal, editorial): warm **bone**
+  canvas, warm near-black **ink**, a single muted **bronze** accent used for function only,
+  **Bodoni Moda (didone, true italics) + General Sans**, depth from type/space/hairlines —
+  not colour or shadow. Full spec in [`DESIGN.md`](./DESIGN.md). All pages link
+  **`assets/css/lux.css`**; tokens live in its `:root` block (OKLCH with hex fallback) and
+  in [`tokens.json`](./tokens.json) — edit there to re-skin.
+- Two earlier systems remain in `styles.css` for reference (warm-paper "v1" + dark "Dark
+  Signal" v2) but are **no longer linked by any page**.
 - Before any design work, read the **`web-aesthetics`** skill (`.claude/skills/`). When a
   page is done, run the **`design-review`** skill over it. Both encode our anti-"AI-slop"
   rules.

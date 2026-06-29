@@ -1,101 +1,125 @@
-# DESIGN.md — Kenius (v2 · "Dark Signal")
+# DESIGN.md — Kenius · "Atelier"
 
 A `DESIGN.md` for the Kenius brand, in the format popularised by
 [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md).
 The system is built to *avoid* the generic "AI-slop" look — no Inter, no
-blue→purple gradients, no pure-black flat fills, no uniform-radius card grids.
+blue→purple gradients, no pure-black flat fills, no uniform-radius card grids,
+no centered-hero-+-3-cards template.
 
-> **Implementation note.** v2 is shipped as an **override layer appended at the
-> end of `assets/css/styles.css`** (search "KENIUS v2"). The original warm
-> "v1" system is preserved above it as the base — to revert, delete the v2
-> block. Class names are stable, so the whole site re-skins from tokens.
+> **Implementation note.** "Atelier" is the **current, shipped** design system.
+> It lives in its own stylesheet, [`assets/css/lux.css`](./assets/css/lux.css),
+> with behaviour in [`assets/js/lux.js`](./assets/js/lux.js). Every page
+> (`index`, `services`, `work`, `about`, `contact`) links it. Colour tokens are
+> authored in **OKLCH** with hex fallbacks (`@supports (color: oklch(…))`); the
+> machine-readable source of truth is [`tokens.json`](./tokens.json) (DTCG
+> format). Class names are stable, so the whole site re-skins from the `:root`
+> token block. Two earlier systems (warm-paper "v1" and dark "Dark Signal" v2)
+> remain in `styles.css` for reference but are no longer linked by any page.
 
 ---
 
 ## 1. Visual Theme & Atmosphere
-Dark, technical, and quietly premium — a precision instrument, not a hype reel.
-Deep zinc canvas, a single electric-citron accent that behaves like a *signal*
-on an oscilloscope, faint film grain and a masked grid for depth. Calm,
-high-contrast, confident.
-- Mood: nocturnal, exact, engineered, alive-but-restrained.
-- Atmosphere comes from luminance + texture (grain, radial glow, grid), never
-  from decorative color.
+Quiet, editorial, expensive — a printed monograph, not a SaaS landing page.
+A warm **bone** canvas, near-black **ink**, and a single muted **bronze** accent
+used only for function. The drama comes from *typography and space*: a didone
+display face with true italics, generous margins, hairline rules, and one
+full-bleed dark interlude for contrast. Calm, confident, unhurried.
+- Mood: gallery wall, letterpress, slow luxury, considered restraint.
+- Atmosphere comes from **type scale, whitespace and rhythm** — never from
+  decorative colour, gradients, or busy ornament.
 
 ## 2. Color Palette & Roles
-Neutral zinc, one accent, one sparse support.
+Warm neutrals, one accent. Authored OKLCH, hex shown for reference.
 
-| Token | Hex | Role |
-|---|---|---|
-| `--bg` | `#0C0C0E` | page canvas (tinted near-black, never `#000`) |
-| `--surface` | `#161618` | cards / panels (elevated) |
-| `--surface-2` | `#1B1B1E` | raised surface |
-| `--ink-700` | `#232327` | nested panel rows |
-| `--text` | `#ECECEE` | primary text |
-| `--text-muted` | `#8C8C94` | muted text |
-| `--line` | `rgba(255,255,255,.09)` | hairline borders |
-| `--accent` (`--amber-500`) | `#C8F751` | **electric citron** — action/link/status only |
-| `--amber-400` | `#D7FB6E` | accent on darker bands |
-| `--accent-ink` | `#0C0C0E` | text on citron |
-| `--pine-300` | `#79D9C6` | cool-teal secondary — sparingly (status, "good") |
+| Token | Hex | OKLCH | Role |
+|---|---|---|---|
+| `--paper` | `#EFEDE7` | `94.6% .008 91.5` | page canvas (warm bone, never `#fff`) |
+| `--paper-2` | `#E6E4DC` | `91.8% .011 95.2` | subtle raised band |
+| `--ink` | `#1A1A17` | `21.7% .006 106.9` | primary text (warm near-black, never `#000`) |
+| `--ink-soft` | `#45433C` | `38.3% .012 93.8` | secondary text |
+| `--muted` | `#565248` | `43.9% .017 88.8` | captions / meta (AA: 6.65:1 on paper) |
+| `--line` | ink @ 18% | — | hairline rules |
+| `--accent` | `#6E5326` | `46.1% .071 78.2` | **bronze** — links, marks, indices only (AA: 6.13:1) |
+| `--dark` | `#131210` | `18.3% .004 84.6` | full-bleed interlude canvas |
+| `--dark-paper` | `#1B1A16` | `21.7% .008 95.4` | raised rows on dark |
+| `--dark-text` | `#ECE8DE` | `93.1% .014 88.7` | text on dark |
+| `--dark-muted` | `#9C988B` | `67.9% .019 92.8` | muted text on dark (AA: 6.04:1) |
 
-**Rules:** the accent only ever signals function (action, link, live status,
-emphasis word). Everything else is neutral. Alternate `.band--ink` sections drop
-to a deeper well (`#08080A`) with hairlines for rhythm.
+**Rules:** the bronze accent only ever signals function — a link, a highlighted
+("marked") word in a headline, a section index number. Everything else is the
+ink/muted neutral ramp. Exactly **one** dark interlude per page provides
+contrast and rhythm; it is not repeated.
 
 ## 3. Typography Rules
-Geometric display + clean grotesque + mono. Deliberately **not Inter**.
-- **Display:** `Clash Display` (Fontshare). 600 for `h1/h2`, 500 for `h3/h4`,
-  tight tracking (`-0.025em`). No italic — emphasis is **weight + citron color**,
-  never synthetic slant.
-- **Body / UI:** `General Sans` (Fontshare), 400–600.
-- **Mono / labels:** `JetBrains Mono` — eyebrows, tags, stat labels, diagram
-  text; uppercase, letter-spaced.
-- Fluid scale via `clamp()`; `text-wrap: balance` on headings.
+A didone display paired with a clean grotesque. Deliberately **not Inter**, and
+emphasis is **true italic**, never a synthetic slant.
+- **Display:** `Bodoni Moda` (Google Fonts), optical-size axis, 400–600.
+  Hero/`h1`/`h2` set large with tight leading; the emphasis word is set in its
+  **real italic** and coloured bronze (`.it`, `.mark`).
+- **Body / UI:** `General Sans` (Fontshare), 300–600.
+- **Captions / meta (`.cap`):** General Sans, uppercase, letter-spaced, small,
+  in `--muted` — used for eyebrows, labels, indices.
+- Fluid scale via `clamp()` (`--t-hero`, `--t-h2`, `--t-h3`, `--t-lead`, `--cap`);
+  `text-wrap: balance` on display headings; pull-quotes widened so they never
+  collapse to one-word-per-line.
 
 ## 4. Component Stylings
-- **Buttons:** crisp 11px radius. Primary = citron fill + near-black text + a
-  1px citron ring that blooms to a soft glow on hover. Ghost = subtle white
-  border → citron on hover. Ink = off-white fill (a light button on dark).
-- **Cards:** `--surface` + 1px hairline, 16px radius; hover lifts `-4px` and the
-  border goes citron.
-- **Eyebrow/tag:** mono, citron, with a short leading rule / citron wash.
-- **Diagrams (Relay / orbit / sector flow):** elevated dark panels, warm-radial
-  → citron glow, animated amber→citron pulses (`stroke-dashoffset`, spinning
-  rings, traveling comets).
-- **FAQ:** plus-icon accordion, single-open, height-animated.
+Editorial, not "carded". Almost nothing has a box.
+- **Indexes (`.idx`, `.list`, `.detail`):** numbered rows (`01`–`06`, `/01`…)
+  separated by hairline rules — a table of contents, not a grid of cards. A row
+  is `number · title · description · ↗`, with a draw-in underline on hover.
+- **Links (`.tlink`):** inline, with an underline that *draws in* from the left
+  on hover/focus; bronze variant for emphasis.
+- **Buttons (`.btn-lux`):** ink fill, paper text, no radius flourish; hover
+  inverts toward bronze. Used sparingly (the contact form).
+- **Forms:** underline-only fields (no boxes), serif input text, label above;
+  honeypot + in-page success state; AJAX to Web3Forms.
+- **Dark interlude (`.dark`):** one full-bleed near-black section per page with a
+  big italic statement and a short numbered list of steps.
+- **FAQ:** native `<details>` — open/close with no JS dependency.
+- **Pull-quote (`.quote`):** large didone, balanced wrapping, attributed in caps.
 
 ## 5. Layout Principles
-Centered 1180px container (760px for reading blocks); fluid `clamp()` section
-rhythm; alternating dark bands; asymmetric `1.05/0.95` splits; varied column
-spans; an intentionally varied spacing scale.
+A single readable measure, lots of air. Container `≈72rem` with a narrower
+reading width for prose; asymmetric two-column `.split` (label column + content);
+fluid `clamp()` section rhythm; left-aligned, ragged-right text; section eyebrows
+are words ("Why now"), **not** decorative numbers. No uniform card grid anywhere.
 
 ## 6. Depth & Elevation
-One shadow recipe scaled by level (deep, soft, near-black). Resting elements sit
-flat with a hairline; only interactive/floating elements lift. A global film-grain
-overlay (`soft-light`, ~4.5% opacity) and a citron-glow token (`--glow`) give the
-premium, non-flat feel. Depth = luminance steps, not heavy shadow.
+Almost flat by design. Depth is **hairlines and whitespace**, not shadow. The
+only tonal "elevation" is the one dark interlude and the subtle `--paper-2` band.
+No drop-shadows on text blocks, no glows. The richness is in the paper colour and
+the type, like good print.
 
 ## 7. Do's and Don'ts
-**Do:** one accent that means something; pair a geometric display with a clean
-grotesque; specific, opinionated copy; grain + glow + grid for atmosphere; ease
-all motion; honor `prefers-reduced-motion`.
+**Do:** one bronze accent that always means something; pair a didone display with
+a clean grotesque; use **true italics** for emphasis; lead with whitespace and
+hairlines; specific, plain-English, gently-opinionated copy; ease all motion and
+honour `prefers-reduced-motion`; hit AA (4.5:1 text / 3:1 large).
 **Don't:** ❌ Inter/Roboto · ❌ blue→purple gradients · ❌ pure black/white flat
-fills · ❌ uniform-16px card grids · ❌ centered-hero + 3-cards template · ❌
-vague hype · ❌ stock "team at laptops" photos.
+fills · ❌ synthetic-oblique italics · ❌ uniform-radius card grids · ❌
+centered-hero + 3-cards template · ❌ decorative section numbers · ❌ vague hype ·
+❌ stock "team at laptops" photos.
 
 ## 8. Responsive Behavior
-Mobile-first; nav → animated burger/drawer under 920px; grids 1→2→3/4/6; fluid
-type/spacing; touch targets ≥44px; degrades without JS; motion removed under
+Mobile-first; nav collapses to a full-screen overlay under 900px (burger button,
+`aria-expanded`); two-column `.split`/`.detail` grids fold to one column; fluid
+type/spacing via `clamp()`; touch targets ≥44px; the site **degrades without JS**
+(reveals fall back to fully visible via `<noscript>`); all motion removed under
 `prefers-reduced-motion`.
 
 ## 9. Agent Prompt Guide
-> Build a page for **Kenius**, an AI consultancy. Aesthetic: **dark, technical,
-> premium** — deep zinc canvas `#0C0C0E` (never pure black), a single **electric
-> citron** accent `#C8F751` used only for action/link/status/emphasis, one sparse
-> cool-teal `#79D9C6`. **Type:** Clash Display (display, weight+color emphasis, no
-> italic) + General Sans (body) + JetBrains Mono (labels). **Atmosphere:** film
-> grain, a citron radial glow, a faint masked grid; one deep layered shadow + a
-> citron glow on primary actions. **Avoid:** Inter, blue/purple gradients, pure
-> black/white, uniform radii, the centered-hero-+-3-cards template, hype copy,
-> stock photos. Prefer custom animated SVG diagrams and specific numbers. Respect
-> reduced-motion, keyboard nav, AA contrast.
+> Build a page for **Kenius**, an AI consultancy. Aesthetic: **quiet editorial
+> luxury** — a warm **bone** canvas `#EFEDE7` (never pure white), warm near-black
+> **ink** `#1A1A17` (never pure black), a single muted **bronze** accent `#6E5326`
+> used only for links, an emphasised italic word in a headline, and section index
+> numbers. **Type:** `Bodoni Moda` didone for display with **true italics** for
+> emphasis (never synthetic slant) + `General Sans` for body + letter-spaced caps
+> for labels/indices. **Layout:** editorial — numbered hairline-ruled indexes
+> instead of cards, asymmetric label/content splits, generous whitespace, one
+> full-bleed dark interlude per page. **Atmosphere from type and space, not
+> colour or shadow** — almost flat, hairline rules only. **Avoid:** Inter,
+> blue/purple gradients, pure black/white, synthetic italics, uniform-radius card
+> grids, the centered-hero-+-3-cards template, decorative section numbers, hype
+> copy, stock photos. Respect reduced-motion, keyboard nav, AA contrast; degrade
+> without JS.

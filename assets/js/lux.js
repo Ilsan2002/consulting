@@ -52,4 +52,25 @@
   addEventListener("resize", function () {
     if (innerWidth >= 900) { body.classList.remove("nav-open"); if (btn) btn.setAttribute("aria-expanded", "false"); }
   });
+
+  /* contact form — AJAX (Web3Forms), honeypot + in-page success */
+  var cform = $("form[data-ajax]");
+  if (cform) {
+    var ok = $("#form-success"), sb = cform.querySelector('[type="submit"]'), hp = cform.querySelector(".hp");
+    cform.addEventListener("submit", function (e) {
+      if (hp && hp.checked) { e.preventDefault(); return; }
+      e.preventDefault();
+      if (!cform.checkValidity()) { cform.reportValidity(); return; }
+      var orig = sb.innerHTML; sb.disabled = true; sb.textContent = "Sending…";
+      fetch(cform.action, { method: "POST", body: new FormData(cform), headers: { Accept: "application/json" } })
+        .then(function (r) { if (!r.ok) throw 0; cform.reset();
+          if (ok) { cform.hidden = true; ok.hidden = false; ok.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "center" }); } })
+        .catch(function () {
+          sb.disabled = false; sb.innerHTML = orig;
+          var m = $(".form-err", cform);
+          if (!m) { m = document.createElement("p"); m.className = "form-note form-err"; m.style.color = "#9C3B2E"; sb.insertAdjacentElement("afterend", m); }
+          m.textContent = "Sorry — that didn't send. Please email hello@kenius.us instead.";
+        });
+    });
+  }
 })();

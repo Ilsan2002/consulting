@@ -3,208 +3,128 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — book a discovery call | Kenius</title>
-  <meta name="description" content="Tell Kenius what eats your team's time. Book a 30-minute discovery call and we'll tell you, honestly, whether an AI agent is worth it." />
-  <meta name="theme-color" content="#0B0B0D" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0L13.6 9.2 24 12 13.6 14.8 12 24 10.4 14.8 0 12 10.4 9.2Z' fill='%23C8F751'/%3E%3C/svg%3E" />
+  <title>Contact — Kenius</title>
+  <meta name="description" content="Tell Kenius what eats your team's time. Book a 30-minute discovery call and we'll tell you, honestly, whether AI is worth it." />
+  <meta name="theme-color" content="#EFEDE7" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0L13.6 9.2 24 12 13.6 14.8 12 24 10.4 14.8 0 12 10.4 9.2Z' fill='%238A6A3C'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <noscript>
-    <style>
-      .reveal{opacity:1!important;transform:none!important}
-      .bubble,.task-row{opacity:1!important;transform:none!important}
-      .faq-a{height:auto!important}
-    </style>
-  </noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lux.css" />
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header">
-    <nav class="nav container" aria-label="Primary">
-      <a class="brand" href="index.html" aria-label="Kenius — home">
-        <svg class="mark" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0L13.6 9.2 24 12 13.6 14.8 12 24 10.4 14.8 0 12 10.4 9.2Z"/></svg>
-        Kenius
-      </a>
-      <div class="nav-links">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="hdr">
+    <div class="wrap nav">
+      <a class="brand" href="index.html">Kenius<sup>®</sup></a>
+      <nav class="nav-mid" aria-label="Primary">
         <a href="services.html">Services</a>
         <a href="work.html">Work</a>
         <a href="about.html">About</a>
         <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <a class="tlink nav-cta" href="#form">Book a call <span class="ar" aria-hidden="true">↗</span></a>
+        <button class="menu-btn" aria-expanded="false" aria-controls="overlay">Menu <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span></button>
       </div>
-      <a class="btn btn--primary nav-cta" href="#form">Book a call
-        <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-      </a>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
-    </nav>
-    <div class="mobile-menu" id="mobile-menu">
-      <a href="services.html">Services</a>
-      <a href="work.html">Work</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a class="btn btn--primary" href="#form">Book a discovery call</a>
     </div>
   </header>
+  <div class="overlay" id="overlay">
+    <a href="services.html">Services</a><a href="work.html">Work</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    <a href="#form">Book a call ↗</a><span class="cap">hello@kenius.us</span>
+  </div>
 
   <main id="main">
     <section class="page-hero">
-      <div class="container">
-        <div class="breadcrumb reveal"><a href="index.html">Home</a> / Contact</div>
-        <span class="eyebrow reveal" data-d="1" style="margin-top:1rem">Contact</span>
-        <h1 class="reveal" data-d="1">Let's find one job to take <em class="display-accent">off your plate.</em></h1>
-        <p class="lead reveal" data-d="2">Tell us what your team does all day. We'll come back within one business day with a straight answer on whether an agent makes sense — and a rough idea of cost.</p>
+      <div class="wrap">
+        <div class="breadcrumb reveal"><a href="index.html">Kenius</a> — Contact</div>
+        <h1 class="reveal" data-d="1">Start with a <span class="it mark">conversation.</span></h1>
+        <p class="lead reveal" data-d="2">Tell us what your team does all day. We'll come back within one business day with a straight answer on whether AI makes sense — and a rough idea of cost.</p>
       </div>
     </section>
 
-    <section class="section section--tight" id="form">
-      <div class="container">
-        <div class="split" style="align-items:flex-start">
-          <!-- FORM -->
-          <div class="reveal">
-            <form class="card" id="contact-form" data-ajax style="padding:clamp(1.5rem,3vw,2.4rem)" action="https://api.web3forms.com/submit" method="POST" novalidate>
-              <!-- Get a free key at web3forms.com (enter the email you want enquiries sent to) and paste it below. -->
-              <input type="hidden" name="access_key" value="c8d5b95e-3d5c-4d35-b551-6f3acacce331" />
-              <input type="hidden" name="subject" value="New enquiry from kenius.us" />
-              <input type="hidden" name="from_name" value="Kenius website" />
-              <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
-              <h2 style="font-size:var(--step-2)">Tell us about your busywork</h2>
-              <p class="text-muted" style="margin:.5rem 0 1.8rem;font-size:.95rem">No project too small. A single annoying task is a perfect place to start.</p>
-
-              <div class="field-row">
-                <div class="field">
-                  <label for="name">Your name</label>
-                  <input id="name" name="name" type="text" autocomplete="name" placeholder="Alex Rivera" required />
-                </div>
-                <div class="field">
-                  <label for="company">Company</label>
-                  <input id="company" name="company" type="text" autocomplete="organization" placeholder="Harbor &amp; Finch" />
-                </div>
-              </div>
-
-              <div class="field-row">
-                <div class="field">
-                  <label for="email">Email</label>
-                  <input id="email" name="email" type="email" autocomplete="email" placeholder="alex@company.com" required />
-                </div>
-                <div class="field">
-                  <label for="area">What's the area?</label>
-                  <select id="area" name="area">
-                    <option value="">I'm not sure yet</option>
-                    <option>Customer support</option>
-                    <option>Answering the phone / voice</option>
-                    <option>Back office &amp; documents</option>
-                    <option>Sales follow-up</option>
-                    <option>An internal copilot</option>
-                    <option>Something else</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="field">
-                <label for="message">What eats your team's time? <span class="hint">— the more specific, the better</span></label>
-                <textarea id="message" name="message" placeholder="We get ~80 'where's my order' emails a day, and our two-person team can't keep up after lunch…" required></textarea>
-              </div>
-
-              <button class="btn btn--primary btn--lg" type="submit" style="width:100%">Send it over
-                <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-              </button>
-              <p class="form-note">Prefer email? <a class="link-arrow" href="mailto:hello@kenius.us">hello@kenius.us</a></p>
-              <p class="form-note" style="margin-top:.8rem;opacity:.8">Wired for <a class="link-arrow" href="https://web3forms.com" target="_blank" rel="noopener">Web3Forms</a> — add your free access key to start receiving enquiries by email (see README).</p>
-            </form>
-            <div class="card form-success" id="form-success" hidden style="text-align:center;padding:clamp(1.8rem,4vw,2.6rem)">
-              <div class="task-check" style="width:48px;height:48px;margin:0 auto 1rem;background:var(--accent-wash)"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
-              <h3 style="font-size:var(--step-2)">Thanks — message received.</h3>
-              <p style="margin-top:.6rem">A real person will read it and get back to you within one business day. If it's urgent, email <a class="link-arrow" href="mailto:hello@kenius.us">hello@kenius.us</a>.</p>
+    <section class="section" style="padding-top:clamp(1rem,3vw,3rem)" id="form">
+      <div class="wrap split" style="grid-template-columns:1.3fr .9fr;align-items:start">
+        <div class="reveal">
+          <form class="form" id="contact-form" data-ajax action="https://api.web3forms.com/submit" method="POST" novalidate>
+            <input type="hidden" name="access_key" value="c8d5b95e-3d5c-4d35-b551-6f3acacce331" />
+            <input type="hidden" name="subject" value="New enquiry from kenius.us" />
+            <input type="hidden" name="from_name" value="Kenius website" />
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <div class="f-row">
+              <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Alex Rivera" required /></div>
+              <div class="field"><label for="company">Company</label><input id="company" name="company" type="text" autocomplete="organization" placeholder="Harbor &amp; Finch" /></div>
             </div>
+            <div class="f-row">
+              <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="alex@company.com" required /></div>
+              <div class="field"><label for="area">Area</label>
+                <select id="area" name="area">
+                  <option value="">Not sure yet</option>
+                  <option>Customer support</option>
+                  <option>Answering the phone / voice</option>
+                  <option>Back office &amp; documents</option>
+                  <option>Sales follow-up</option>
+                  <option>An internal copilot</option>
+                  <option>Something else</option>
+                </select>
+              </div>
+            </div>
+            <div class="field"><label for="message">What eats your team's time?</label><textarea id="message" name="message" placeholder="We get ~80 'where's my order' emails a day, and our two-person team can't keep up after lunch…" required></textarea></div>
+            <button class="btn-lux submit" type="submit">Send it over <span aria-hidden="true">↗</span></button>
+            <p class="form-note">Prefer email? <a class="tlink" href="mailto:hello@kenius.us" style="font-size:.9rem">hello@kenius.us</a></p>
+          </form>
+          <div class="form-success" id="form-success" hidden>
+            <h2>Thanks — message received.</h2>
+            <p style="margin-top:1rem;max-width:42ch">A real person will read it and get back to you within one business day. If it's urgent, email <a class="tlink" href="mailto:hello@kenius.us">hello@kenius.us</a>.</p>
           </div>
+        </div>
 
-          <!-- ASIDE -->
-          <div class="reveal" data-d="1">
-            <div class="contact-aside">
-              <div>
-                <h3 style="font-size:var(--step-1)">What happens next</h3>
-                <ul class="stack" style="--flow:1.1rem;margin-top:1.2rem">
-                  <li class="contact-point"><span class="ic"><b style="font-family:var(--font-mono)">1</b></span><div><h4>We read it properly</h4><p>A real person — not a bot — reads what you sent and comes back within one business day.</p></div></li>
-                  <li class="contact-point"><span class="ic"><b style="font-family:var(--font-mono)">2</b></span><div><h4>A 30-minute call</h4><p>We dig into the workflow together and sketch what an agent would actually do.</p></div></li>
-                  <li class="contact-point"><span class="ic"><b style="font-family:var(--font-mono)">3</b></span><div><h4>An honest answer</h4><p>A fixed-fee proposal — or a "this isn't worth it, here's a simpler fix" if that's the truth.</p></div></li>
-                </ul>
-              </div>
-
-              <hr class="divider" />
-
-              <div class="contact-aside">
-                <div class="contact-point">
-                  <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
-                  <div><h4>Email</h4><a href="mailto:hello@kenius.us">hello@kenius.us</a></div>
-                </div>
-                <div class="contact-point">
-                  <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.1 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
-                  <div><h4>Phone</h4><a href="tel:+10000000000">+1 (000) 000-0000</a></div>
-                </div>
-                <div class="contact-point">
-                  <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.4 8 12 8 12s8-6.6 8-12a8 8 0 0 0-8-8z"/></svg></span>
-                  <div><h4>Where</h4><p>Remote-first · working across North America &amp; Europe</p></div>
-                </div>
-                <div class="contact-point">
-                  <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-                  <div><h4>Response time</h4><p>Within one business day, every time.</p></div>
-                </div>
-              </div>
-            </div>
+        <div class="reveal" data-d="1">
+          <div class="cx">
+            <div class="row"><div class="k">Email</div><a class="v" href="mailto:hello@kenius.us">hello@kenius.us</a></div>
+            <div class="row"><div class="k">Phone</div><a class="v" href="tel:+10000000000">+1 (000) 000-0000</a></div>
+            <div class="row"><div class="k">Response</div><div class="v">Within one business day</div></div>
+            <div class="row"><div class="k">Where</div><div class="v">Remote-first</div></div>
+          </div>
+          <div style="margin-top:2.5rem">
+            <p class="cap cap--ink">What happens next</p>
+            <ol style="list-style:none;margin-top:1.2rem;display:grid;gap:1.1rem;counter-reset:s">
+              <li style="display:grid;grid-template-columns:2rem 1fr;gap:.5rem;color:var(--ink-soft)"><span class="cap" style="color:var(--accent)">01</span><span>A real person reads it and replies within a business day.</span></li>
+              <li style="display:grid;grid-template-columns:2rem 1fr;gap:.5rem;color:var(--ink-soft)"><span class="cap" style="color:var(--accent)">02</span><span>A 30-minute call to dig into the workflow together.</span></li>
+              <li style="display:grid;grid-template-columns:2rem 1fr;gap:.5rem;color:var(--ink-soft)"><span class="cap" style="color:var(--accent)">03</span><span>An honest, fixed-fee proposal — or a simpler fix.</span></li>
+            </ol>
           </div>
         </div>
       </div>
+      <p class="wrap form-note" style="margin-top:2.5rem">Wired for <a class="tlink" href="https://web3forms.com" target="_blank" rel="noopener" style="font-size:.9rem">Web3Forms</a> — submissions arrive by email.</p>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a class="brand" href="index.html">
-            <svg class="mark" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0L13.6 9.2 24 12 13.6 14.8 12 24 10.4 14.8 0 12 10.4 9.2Z"/></svg>
-            Kenius
-          </a>
-          <p>AI consulting and custom development. We find where AI fits your business — then build it, and hand it over.</p>
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <a class="brand" href="index.html">Kenius<sup>®</sup></a>
+          <p style="max-width:34ch;margin-top:1.2rem;color:var(--muted);font-size:.95rem">We find where AI belongs in your business — then build it, quietly, and hand it over.</p>
         </div>
-        <div class="footer-col">
-          <h5>Services</h5>
-          <a href="services.html#consulting">AI strategy &amp; consulting</a>
-          <a href="services.html#agents">Custom AI agents</a>
-          <a href="services.html#voice">Voice &amp; chat AI</a>
-          <a href="services.html#automation">Process automation</a>
-          <a href="services.html#copilots">Custom copilots</a>
+        <div class="foot-col">
+          <p class="foot-h">Index</p>
+          <a href="services.html">Services</a><a href="work.html">Work</a><a href="about.html">About</a><a href="index.html">Home</a>
         </div>
-        <div class="footer-col">
-          <h5>Company</h5>
-          <a href="about.html">About</a>
-          <a href="work.html">Work</a>
-          <a href="services.html">Services</a>
-          <a href="contact.html">Contact</a>
-        </div>
-        <div class="footer-col">
-          <h5>Get in touch</h5>
-          <a href="contact.html">Book a call</a>
-          <a href="mailto:hello@kenius.us">hello@kenius.us</a>
-          <a href="tel:+10000000000">+1 (000) 000-0000</a>
+        <div class="foot-col">
+          <p class="foot-h">Contact</p>
+          <a href="mailto:hello@kenius.us">hello@kenius.us</a><a href="#form">Book a call ↗</a><a href="#" aria-label="Kenius on LinkedIn">LinkedIn ↗</a>
         </div>
       </div>
-      <div class="footer-bottom">
-        <span>© <span data-year>2026</span> Kenius. Made by humans, with help from AI.</span>
-        <div class="footer-socials">
-          <a href="#" aria-label="Kenius on X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-          <a href="#" aria-label="Kenius on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
-          <a href="#" aria-label="Kenius on GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.39 1.24-3.23-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.23 0 4.62-2.81 5.64-5.49 5.94.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58A12.01 12.01 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg></a>
-        </div>
+      <div class="foot-bottom">
+        <span>© <span data-year>2026</span> Kenius. Made by humans, with help from AI.</span><span>kenius.us</span>
       </div>
-      <p style="margin-top:1.6rem;font-size:.78rem;color:#6f6552;max-width:80ch">Client names, logos, testimonials, metrics and case studies on this site are illustrative samples — swap in your own before going live.</p>
+      <p class="disclaimer">Client names, testimonials, metrics and outcomes shown here are illustrative samples — replace with your own before going live.</p>
     </div>
   </footer>
-
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/lux.js"></script>
 </body>
 </html>

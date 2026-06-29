@@ -3,196 +3,121 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About — an AI consultancy that advises, then builds | Kenius</title>
-  <meta name="description" content="Kenius is a small senior AI consultancy. We advise on where AI fits, then design and build custom solutions for growing businesses — no hype, fixed-fee pilots, your data stays yours, built to be handed over." />
-  <meta name="theme-color" content="#0B0B0D" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0L13.6 9.2 24 12 13.6 14.8 12 24 10.4 14.8 0 12 10.4 9.2Z' fill='%23C8F751'/%3E%3C/svg%3E" />
+  <title>About — Kenius</title>
+  <meta name="description" content="Kenius is a small senior AI consultancy. We advise on where AI fits, then design and build custom solutions for growing businesses — no hype, fixed-fee pilots, built to hand over." />
+  <meta name="theme-color" content="#EFEDE7" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0L13.6 9.2 24 12 13.6 14.8 12 24 10.4 14.8 0 12 10.4 9.2Z' fill='%238A6A3C'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <noscript>
-    <style>
-      .reveal{opacity:1!important;transform:none!important}
-      .bubble,.task-row{opacity:1!important;transform:none!important}
-      .faq-a{height:auto!important}
-    </style>
-  </noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lux.css" />
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header">
-    <nav class="nav container" aria-label="Primary">
-      <a class="brand" href="index.html" aria-label="Kenius — home">
-        <svg class="mark" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0L13.6 9.2 24 12 13.6 14.8 12 24 10.4 14.8 0 12 10.4 9.2Z"/></svg>
-        Kenius
-      </a>
-      <div class="nav-links">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="hdr">
+    <div class="wrap nav">
+      <a class="brand" href="index.html">Kenius<sup>®</sup></a>
+      <nav class="nav-mid" aria-label="Primary">
         <a href="services.html">Services</a>
         <a href="work.html">Work</a>
         <a href="about.html" aria-current="page">About</a>
         <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <a class="tlink nav-cta" href="contact.html">Book a call <span class="ar" aria-hidden="true">↗</span></a>
+        <button class="menu-btn" aria-expanded="false" aria-controls="overlay">Menu <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span></button>
       </div>
-      <a class="btn btn--primary nav-cta" href="contact.html">Book a call
-        <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-      </a>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
-    </nav>
-    <div class="mobile-menu" id="mobile-menu">
-      <a href="services.html">Services</a>
-      <a href="work.html">Work</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a class="btn btn--primary" href="contact.html">Book a discovery call</a>
     </div>
   </header>
+  <div class="overlay" id="overlay">
+    <a href="services.html">Services</a><a href="work.html">Work</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    <a href="contact.html">Book a call ↗</a><span class="cap">hello@kenius.us</span>
+  </div>
 
   <main id="main">
     <section class="page-hero">
-      <div class="container">
-        <div class="breadcrumb reveal"><a href="index.html">Home</a> / About</div>
-        <span class="eyebrow reveal" data-d="1" style="margin-top:1rem">About</span>
-        <h1 class="reveal" data-d="1">A small AI consultancy that advises first — <em class="display-accent">then builds.</em></h1>
-        <p class="lead reveal" data-d="2">There's a lot of noise about AI right now. We're more interested in the quiet version: one well-built agent that saves a real team real hours, every week, without anyone having to think about it.</p>
+      <div class="wrap">
+        <div class="breadcrumb reveal"><a href="index.html">Kenius</a> — About</div>
+        <h1 class="reveal" data-d="1">A small consultancy that advises first — <span class="it mark">then builds.</span></h1>
+        <p class="lead reveal" data-d="2">There's a lot of noise about AI. We're more interested in the quiet version: one well-built agent that saves a real team real hours, every week, without anyone having to think about it.</p>
       </div>
     </section>
 
-    <!-- STORY -->
-    <section class="section section--tight">
-      <div class="container split">
-        <div class="section-head reveal">
-          <span class="eyebrow">Why we exist</span>
-          <h2 style="margin-top:1rem;font-size:var(--step-3)">The tech finally caught up to the boring jobs.</h2>
-          <p style="margin-top:1rem">For years, "automation" meant brittle scripts that broke the moment something changed. Now AI can read a messy email, understand a phone call, and figure out the next step the way a capable new hire would.</p>
-          <p style="margin-top:.9rem">But most businesses don't need a moonshot. They need the phone answered, the inbox triaged, the invoices entered. So that's what we advise on and build — and we explain every bit of it in plain English, because you shouldn't need a computer science degree to run your own company.</p>
-        </div>
+    <section class="section" style="padding-top:clamp(2rem,4vw,4rem)">
+      <div class="wrap split">
+        <div class="col-head reveal"><span class="cap cap--ink">Why we exist</span></div>
         <div class="reveal" data-d="1">
-          <div class="relay">
-            <div class="relay-head"><span class="relay-title">What we optimise for</span></div>
-            <div class="stack" style="--flow:1rem;position:relative;z-index:1">
-              <div><div class="stat" style="text-align:left"><div class="n" style="font-size:2.4rem">Hours back</div><div class="l" style="margin-inline:0">not "engagement", not vanity demos</div></div></div>
-              <hr style="border:none;border-top:1px solid rgba(244,238,226,.12)" />
-              <div><div class="stat" style="text-align:left"><div class="n" style="font-size:2.4rem">Trust</div><div class="l" style="margin-inline:0">every action logged, reversible, supervised</div></div></div>
-              <hr style="border:none;border-top:1px solid rgba(244,238,226,.12)" />
-              <div><div class="stat" style="text-align:left"><div class="n" style="font-size:2.4rem">Ownership</div><div class="l" style="margin-inline:0">built so you can take the keys whenever</div></div></div>
-            </div>
-          </div>
+          <p class="big">For years, "automation" meant brittle scripts that broke the moment something changed. Now AI can read a messy email, understand a phone call, and figure out the next step the way a capable new hire would.</p>
+          <p style="margin-top:1.6rem;max-width:46ch;color:var(--ink-soft)">But most businesses don't need a moonshot. They need the phone answered, the inbox triaged, the invoices entered. So that's what we advise on and build — and we explain every bit of it in plain English.</p>
         </div>
       </div>
     </section>
 
-    <!-- VALUES -->
-    <section class="section band--ink">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow eyebrow--plain">How we work</span>
-          <h2 style="margin-top:1rem">Six things we believe</h2>
-        </div>
-        <div class="value-grid reveal" style="margin-top:2.5rem">
-          <div class="value" style="background:var(--surface);border-color:var(--line)"><div class="n">01</div><h4>Start small.</h4><p>One use case, shipped and proven, beats a grand roadmap that never ships.</p></div>
-          <div class="value" style="background:var(--surface);border-color:var(--line)"><div class="n">02</div><h4>Show, don't pitch.</h4><p>We'd rather put a working prototype in front of you than another slide.</p></div>
-          <div class="value" style="background:var(--surface);border-color:var(--line)"><div class="n">03</div><h4>Keep a human in the loop.</h4><p>Agents handle the routine and ask before anything consequential.</p></div>
-          <div class="value" style="background:var(--surface);border-color:var(--line)"><div class="n">04</div><h4>Speak plainly.</h4><p>If we can't explain it without jargon, we don't understand it well enough.</p></div>
-          <div class="value" style="background:var(--surface);border-color:var(--line)"><div class="n">05</div><h4>Your data is yours.</h4><p>Never sold, never used to train public models, scoped to the job at hand.</p></div>
-          <div class="value" style="background:var(--surface);border-color:var(--line)"><div class="n">06</div><h4>Build to hand over.</h4><p>No lock-in. You should be able to take what we build and run.</p></div>
+    <section class="section dark">
+      <div class="wrap">
+        <h2 class="cap reveal">What we believe</h2>
+        <div class="list" style="margin-top:clamp(2rem,4vw,3rem);border-color:var(--dark-line)">
+          <div class="list-row reveal" style="border-color:var(--dark-line)"><span class="ln" style="color:#C9A063">01</span><h3 style="color:var(--dark-text)">Start small.</h3><p style="color:var(--dark-muted)">One use case, shipped and proven, beats a grand roadmap that never ships.</p></div>
+          <div class="list-row reveal" style="border-color:var(--dark-line)"><span class="ln" style="color:#C9A063">02</span><h3 style="color:var(--dark-text)">Show, don't pitch.</h3><p style="color:var(--dark-muted)">We'd rather put a working prototype in front of you than another slide.</p></div>
+          <div class="list-row reveal" style="border-color:var(--dark-line)"><span class="ln" style="color:#C9A063">03</span><h3 style="color:var(--dark-text)">Keep a human in the loop.</h3><p style="color:var(--dark-muted)">Agents handle the routine and ask before anything consequential.</p></div>
+          <div class="list-row reveal" style="border-color:var(--dark-line)"><span class="ln" style="color:#C9A063">04</span><h3 style="color:var(--dark-text)">Speak plainly.</h3><p style="color:var(--dark-muted)">If we can't explain it without jargon, we don't understand it well enough.</p></div>
+          <div class="list-row reveal" style="border-color:var(--dark-line)"><span class="ln" style="color:#C9A063">05</span><h3 style="color:var(--dark-text)">Your data is yours.</h3><p style="color:var(--dark-muted)">Never sold, never used to train public models, scoped to the job at hand.</p></div>
+          <div class="list-row reveal" style="border-color:var(--dark-line)"><span class="ln" style="color:#C9A063">06</span><h3 style="color:var(--dark-text)">Build to hand over.</h3><p style="color:var(--dark-muted)">No lock-in. You should be able to take what we build and run.</p></div>
         </div>
       </div>
     </section>
 
-    <!-- TEAM -->
     <section class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Who you'll work with</span>
-          <h2 style="margin-top:1rem">A small senior team — <em class="display-accent">no handoffs to juniors.</em></h2>
-          <p class="lead">The people you meet on the first call are the people who advise you and build your solution. That's the whole point of staying small.</p>
+      <div class="wrap">
+        <div class="index-head reveal">
+          <h2 style="font-size:var(--t-h2);max-width:16ch">A small senior team.</h2>
+          <span class="cap">No handoffs to juniors</span>
         </div>
-        <div class="crew-grid" style="margin-top:2.5rem">
-          <article class="crew reveal">
-            <div class="crew-top"><div class="crew-avatar a1">EA</div><div><div class="crew-name">Elena Astor</div><div class="crew-role">founder · principal</div></div></div>
-            <p>Fifteen years building software for businesses that don't have a tech team. Allergic to jargon.</p>
-          </article>
-          <article class="crew reveal" data-d="1">
-            <div class="crew-top"><div class="crew-avatar a2">MR</div><div><div class="crew-name">Marco Reyes</div><div class="crew-role">head of delivery</div></div></div>
-            <p>Turns "we waste hours on this" into a working agent on a calendar you can hold us to.</p>
-          </article>
-          <article class="crew reveal" data-d="2">
-            <div class="crew-top"><div class="crew-avatar a3">JK</div><div><div class="crew-name">Jun Park</div><div class="crew-role">AI engineer</div></div></div>
-            <p>Lives in the guardrails — making sure agents do the right thing and ask when they shouldn't.</p>
-          </article>
-          <article class="crew reveal" data-d="3">
-            <div class="crew-top"><div class="crew-avatar a4">NS</div><div><div class="crew-name">Nadia Saleh</div><div class="crew-role">solutions &amp; care</div></div></div>
-            <p>Your point of contact after launch — watching the numbers and tuning as you grow.</p>
-          </article>
+        <p class="reveal" style="max-width:48ch;margin-bottom:clamp(2.5rem,5vw,3.5rem);color:var(--ink-soft)">The people you meet on the first call are the people who advise you and build your solution. That's the whole point of staying small.</p>
+        <div class="team">
+          <div class="m reveal"><div class="nm">Elena Astor</div><div class="ro">Founder · Principal</div><p>Fifteen years building software for businesses without a tech team. Allergic to jargon.</p></div>
+          <div class="m reveal" data-d="1"><div class="nm">Marco Reyes</div><div class="ro">Head of Delivery</div><p>Turns "we waste hours on this" into a working agent on a calendar you can hold us to.</p></div>
+          <div class="m reveal" data-d="2"><div class="nm">Jun Park</div><div class="ro">AI Engineer</div><p>Lives in the guardrails — making sure agents do the right thing and ask when they shouldn't.</p></div>
+          <div class="m reveal" data-d="3"><div class="nm">Nadia Saleh</div><div class="ro">Solutions &amp; Care</div><p>Your point of contact after launch — watching the numbers and tuning as you grow.</p></div>
         </div>
-        <p class="form-note reveal" style="margin-top:1.4rem">Team shown is illustrative — replace with your own people and photos.</p>
+        <p class="cap reveal" style="margin-top:2rem;color:var(--muted)">Team shown is illustrative — replace with your own people and photos.</p>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="section section--flush-top">
-      <div class="container">
-        <div class="cta reveal">
-          <h2>Let's talk like humans.</h2>
-          <p>Thirty minutes, no slides, no obligation. Tell us what eats your team's time and we'll tell you, honestly, whether AI can help.</p>
-          <div class="hero-actions">
-            <a class="btn btn--primary btn--lg" href="contact.html">Book a discovery call
-              <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-            </a>
-            <a class="btn btn--ghost btn--lg" href="work.html" style="color:#F4EEE2;border-color:rgba(244,238,226,.3)">See our work</a>
-          </div>
-        </div>
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <h2 class="reveal" style="font-size:var(--t-h2);max-width:14ch">Let's talk like <span class="it">humans.</span></h2>
+        <p class="reveal" data-d="1" style="margin-top:1.6rem;max-width:44ch">Thirty minutes, no slides, no obligation. Tell us what eats your team's time and we'll tell you, honestly, whether AI can help.</p>
+        <p class="reveal" data-d="1" style="margin-top:2rem"><a class="tlink" href="contact.html">Book a discovery call <span class="ar" aria-hidden="true">↗</span></a></p>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a class="brand" href="index.html">
-            <svg class="mark" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0L13.6 9.2 24 12 13.6 14.8 12 24 10.4 14.8 0 12 10.4 9.2Z"/></svg>
-            Kenius
-          </a>
-          <p>AI consulting and custom development. We find where AI fits your business — then build it, and hand it over.</p>
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <a class="brand" href="index.html">Kenius<sup>®</sup></a>
+          <p style="max-width:34ch;margin-top:1.2rem;color:var(--muted);font-size:.95rem">We find where AI belongs in your business — then build it, quietly, and hand it over.</p>
         </div>
-        <div class="footer-col">
-          <h5>Services</h5>
-          <a href="services.html#consulting">AI strategy &amp; consulting</a>
-          <a href="services.html#agents">Custom AI agents</a>
-          <a href="services.html#voice">Voice &amp; chat AI</a>
-          <a href="services.html#automation">Process automation</a>
-          <a href="services.html#copilots">Custom copilots</a>
+        <div class="foot-col">
+          <p class="foot-h">Index</p>
+          <a href="services.html">Services</a><a href="work.html">Work</a><a href="about.html">About</a><a href="index.html">Home</a>
         </div>
-        <div class="footer-col">
-          <h5>Company</h5>
-          <a href="about.html">About</a>
-          <a href="work.html">Work</a>
-          <a href="services.html">Services</a>
-          <a href="contact.html">Contact</a>
-        </div>
-        <div class="footer-col">
-          <h5>Get in touch</h5>
-          <a href="contact.html">Book a call</a>
-          <a href="mailto:hello@kenius.us">hello@kenius.us</a>
-          <a href="tel:+10000000000">+1 (000) 000-0000</a>
+        <div class="foot-col">
+          <p class="foot-h">Contact</p>
+          <a href="mailto:hello@kenius.us">hello@kenius.us</a><a href="contact.html">Book a call ↗</a><a href="#" aria-label="Kenius on LinkedIn">LinkedIn ↗</a>
         </div>
       </div>
-      <div class="footer-bottom">
-        <span>© <span data-year>2026</span> Kenius. Made by humans, with help from AI.</span>
-        <div class="footer-socials">
-          <a href="#" aria-label="Kenius on X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-          <a href="#" aria-label="Kenius on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
-          <a href="#" aria-label="Kenius on GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.39 1.24-3.23-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.23 0 4.62-2.81 5.64-5.49 5.94.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58A12.01 12.01 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg></a>
-        </div>
+      <div class="foot-bottom">
+        <span>© <span data-year>2026</span> Kenius. Made by humans, with help from AI.</span><span>kenius.us</span>
       </div>
-      <p style="margin-top:1.6rem;font-size:.78rem;color:#6f6552;max-width:80ch">Client names, logos, testimonials, metrics and case studies on this site are illustrative samples — swap in your own before going live.</p>
+      <p class="disclaimer">Client names, testimonials, metrics and outcomes shown here are illustrative samples — replace with your own before going live.</p>
     </div>
   </footer>
-
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/lux.js"></script>
 </body>
 </html>
