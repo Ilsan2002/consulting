@@ -1,0 +1,32 @@
+name: Quality (axe + Lighthouse)
+
+on:
+  push:
+    branches: [main, "claude/**"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  axe:
+    name: Accessibility (axe-core)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm init -y >/dev/null && npm install --no-save playwright axe-core
+      - run: npx playwright install --with-deps chromium
+      - run: node ci/a11y.mjs
+
+  lighthouse:
+    name: Lighthouse (perf / a11y / SEO / best-practices)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: ./ci/lighthouserc.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true
