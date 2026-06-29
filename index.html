@@ -3,717 +3,316 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kenius — AI consulting &amp; custom development for growing businesses</title>
-  <meta name="description" content="Kenius is an AI consultancy. We learn how your business works, pinpoint where AI will actually pay off, then design and build the custom solution — agents, automation, voice and copilots — wired into your tools." />
-  <meta name="theme-color" content="#0B0B0D" />
-  <meta property="og:title" content="Kenius — AI consulting &amp; custom development" />
-  <meta property="og:description" content="We assess where AI fits your business, then design and build custom solutions. Strategy first, fixed-fee pilots, your data stays yours." />
+  <title>Kenius — AI consulting, quietly built in</title>
+  <meta name="description" content="Kenius is an AI consultancy. We learn how you work, find where automation actually pays off, and build the custom solution — quietly, into the tools you already use." />
+  <meta name="theme-color" content="#EFEDE7" />
+  <meta property="og:title" content="Kenius — AI consulting, quietly built in" />
+  <meta property="og:description" content="We find where AI belongs — then build it. An AI consultancy for growing businesses." />
   <meta property="og:type" content="website" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0L13.6 9.2 24 12 13.6 14.8 12 24 10.4 14.8 0 12 10.4 9.2Z' fill='%23C8F751'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0L13.6 9.2 24 12 13.6 14.8 12 24 10.4 14.8 0 12 10.4 9.2Z' fill='%238A6A3C'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <noscript>
-    <style>
-      .reveal{opacity:1!important;transform:none!important}
-      .bubble,.task-row{opacity:1!important;transform:none!important}
-      .faq-a{height:auto!important}
-    </style>
-  </noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lux.css" />
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <!-- ============ HEADER ============ -->
-  <header class="site-header">
-    <nav class="nav container" aria-label="Primary">
-      <a class="brand" href="index.html" aria-label="Kenius — home">
-        <svg class="mark" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0L13.6 9.2 24 12 13.6 14.8 12 24 10.4 14.8 0 12 10.4 9.2Z"/></svg>
-        Kenius
-      </a>
-      <div class="nav-links">
-        <a href="services.html">Services</a>
-        <a href="work.html">Work</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+  <!-- HEADER -->
+  <header class="hdr">
+    <div class="wrap nav">
+      <a class="brand" href="index.html">Kenius<sup>®</sup></a>
+      <nav class="nav-mid" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#approach">Approach</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <a class="tlink nav-cta" href="contact.html">Book a call <span class="ar" aria-hidden="true">↗</span></a>
+        <button class="menu-btn" aria-expanded="false" aria-controls="overlay">Menu <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span></button>
       </div>
-      <a class="btn btn--primary nav-cta" href="contact.html">Book a call
-        <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-      </a>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
-    </nav>
-    <div class="mobile-menu" id="mobile-menu">
-      <a href="services.html">Services</a>
-      <a href="work.html">Work</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a class="btn btn--primary" href="contact.html">Book a discovery call</a>
     </div>
   </header>
 
+  <!-- MOBILE OVERLAY -->
+  <div class="overlay" id="overlay">
+    <a href="#services">Services</a>
+    <a href="#work">Work</a>
+    <a href="#approach">Approach</a>
+    <a href="#contact">Contact</a>
+    <a href="contact.html">Book a call ↗</a>
+    <span class="cap">hello@kenius.us</span>
+  </div>
+
   <main id="main">
-    <!-- ============ HERO ============ -->
+
+    <!-- HERO -->
     <section class="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <span class="eyebrow reveal">AI consulting &amp; custom development</span>
-            <h1 class="reveal" data-d="1">We find where AI actually fits — <em class="display-accent display-accent--em">then build it.</em></h1>
-            <p class="lead reveal" data-d="2">Kenius is an AI consultancy for growing businesses. We learn how you work, pinpoint where AI will genuinely pay off, then design and build the custom solution — wired into the tools you already use.</p>
-            <div class="hero-actions reveal" data-d="3">
-              <a class="btn btn--primary btn--lg" href="contact.html">Book a discovery call
-                <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-              </a>
-              <a class="btn btn--ghost btn--lg" href="#process">How we work</a>
-            </div>
-            <div class="hero-trust reveal" data-d="4">
-              <span class="micro">Advising &amp; building for teams in</span>
-              <div class="pill-row">
-                <span class="pill"><span class="em">🛍️</span> Retail</span>
-                <span class="pill"><span class="em">🩺</span> Clinics</span>
-                <span class="pill"><span class="em">📦</span> Logistics</span>
-                <span class="pill"><span class="em">💼</span> Agencies</span>
-                <span class="pill"><span class="em">🏠</span> Property</span>
-              </div>
+      <div class="wrap">
+        <div class="hero-top reveal">
+          <span class="cap">Kenius — AI consultancy</span>
+          <span class="cap avail"><span class="dot"></span> Taking new work · 2026</span>
+        </div>
+        <h1>We find where AI <span class="it mark">belongs.</span> Then we build it.</h1>
+        <div class="hero-foot">
+          <div class="reveal" data-d="1">
+            <p class="lead">Kenius is an AI consultancy for growing businesses. We learn how you work, find where automation actually pays off, and build the custom solution — quietly, into the tools you already use.</p>
+            <div class="hero-actions" style="margin-top:2.2rem">
+              <a class="tlink" href="contact.html">Book a discovery call <span class="ar" aria-hidden="true">↗</span></a>
+              <a class="tlink tlink--bronze" href="#work">See our work</a>
             </div>
           </div>
-
-          <!-- Illustrative architecture: a custom build mapped to a client's tools -->
-          <div class="relay reveal" data-d="2" aria-label="Diagram: an example custom AI solution connecting capabilities to a business's existing tools">
-            <div class="relay-head">
-              <span class="relay-title">Example build · mapped to your tools</span>
-              <span class="relay-live" style="color:#A99C86"><span class="relay-dot" style="background:var(--amber-400);box-shadow:none"></span> custom</span>
-            </div>
-            <svg viewBox="0 0 480 320" role="img" aria-hidden="true">
-              <path class="relay-edge" d="M152 65 C 180 65, 176 150, 194 150" />
-              <path class="relay-edge" d="M152 170 L 194 170" />
-              <path class="relay-edge" d="M152 275 C 180 275, 176 190, 194 190" />
-              <path class="relay-edge" d="M286 152 C 306 152, 304 61, 326 61" />
-              <path class="relay-edge" d="M286 162 C 306 162, 306 125, 326 125" />
-              <path class="relay-edge" d="M286 178 C 306 178, 306 205, 326 205" />
-              <path class="relay-edge" d="M286 188 C 306 188, 304 269, 326 269" />
-              <path class="relay-flow"    d="M152 65 C 180 65, 176 150, 194 150" />
-              <path class="relay-flow f2" d="M286 162 C 306 162, 306 125, 326 125" />
-              <path class="relay-flow f3" d="M152 275 C 180 275, 176 190, 194 190" />
-              <path class="relay-flow f4" d="M286 188 C 306 188, 304 269, 326 269" />
-
-              <!-- left: capabilities we might build -->
-              <g class="relay-node">
-                <rect class="relay-chip" x="22" y="42" width="130" height="46" rx="11" />
-                <text class="relay-label" x="42" y="62">Support AI</text>
-                <text class="relay-sub" x="42" y="77">chat + email</text>
-              </g>
-              <g class="relay-node">
-                <rect class="relay-chip" x="22" y="147" width="130" height="46" rx="11" />
-                <text class="relay-label" x="42" y="167">Voice AI</text>
-                <text class="relay-sub" x="42" y="182">calls · 24/7</text>
-              </g>
-              <g class="relay-node">
-                <rect class="relay-chip" x="22" y="252" width="130" height="46" rx="11" />
-                <text class="relay-label" x="42" y="272">Automation</text>
-                <text class="relay-sub" x="42" y="287">data + docs</text>
-              </g>
-
-              <!-- hub: the custom solution we build -->
-              <g class="relay-node">
-                <rect class="relay-hub" x="190" y="143" width="100" height="54" rx="14" />
-                <text class="relay-label--hub relay-label" x="240" y="167" text-anchor="middle" style="font-size:12px">YOUR AI</text>
-                <text x="240" y="183" text-anchor="middle" style="fill:#7A3D12;font-family:var(--font-mono);font-size:8px">your rules · supervised</text>
-              </g>
-
-              <!-- right: your existing tools -->
-              <g class="relay-node"><rect class="relay-chip" x="326" y="44" width="132" height="34" rx="9" /><text class="relay-label" x="346" y="65">CRM</text></g>
-              <g class="relay-node"><rect class="relay-chip" x="326" y="108" width="132" height="34" rx="9" /><text class="relay-label" x="346" y="129">Inbox</text></g>
-              <g class="relay-node"><rect class="relay-chip" x="326" y="188" width="132" height="34" rx="9" /><text class="relay-label" x="346" y="209">Calendar</text></g>
-              <g class="relay-node"><rect class="relay-chip" x="326" y="252" width="132" height="34" rx="9" /><text class="relay-label" x="346" y="273">Your data</text></g>
-            </svg>
+          <div style="justify-self:start" class="reveal" data-d="2">
+            <span class="scroll-cue"><span class="cap">Scroll</span><span class="ln"></span></span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ LOGO STRIP ============ -->
-    <section class="logos container">
-      <p>Teams we've advised &amp; built for</p>
-      <div class="logo-row reveal">
-        <span>Harbor&nbsp;&amp;&nbsp;Finch</span>
-        <span class="lg-mark">Meridian Dental</span>
-        <span>Cedar&nbsp;Logistics</span>
-        <span>Bright&nbsp;Lattice</span>
-        <span class="lg-mark">Northwind Realty</span>
-        <span>Olive&nbsp;&amp;&nbsp;Oak</span>
-        <span>Volta&nbsp;Apps</span>
-      </div>
-    </section>
+    <hr class="wrap rule reveal" />
 
-    <!-- ============ WHY NOW (editorial) ============ -->
-    <section class="section section--tight">
-      <div class="container split split--text-first">
-        <div class="reveal">
-          <div class="relay" style="background:var(--paper-50);color:var(--text);border-color:var(--line);box-shadow:var(--shadow-1)">
-            <div class="relay-head"><span class="relay-title" style="color:var(--text-muted)">A typical Tuesday</span></div>
-            <ul class="stack" style="--flow:.7rem; position:relative; z-index:1">
-              <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Answering the same five questions over and over</span></li>
-              <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Copy-pasting between email, spreadsheets and your CRM</span></li>
-              <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Missing calls after hours — and the bookings with them</span></li>
-              <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Typing up invoices and forms by hand</span></li>
-              <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Chasing the same follow-ups every single week</span></li>
-            </ul>
-          </div>
+    <!-- MANIFESTO -->
+    <section class="section">
+      <div class="wrap split">
+        <div class="col-head reveal">
+          <span class="cap cap--ink">01 — Why now</span>
         </div>
-        <div class="section-head reveal" data-d="1">
-          <span class="eyebrow">Why now</span>
-          <h2 style="margin-top:1rem">A lot of your team's day is <em class="display-accent">repeatable.</em></h2>
-          <p class="lead">For the first time, AI can read, write, listen, talk and click through software well enough to take that work on. The question is which parts — and how to do it without breaking things.</p>
-          <div class="callout"><p>The hard part isn't the AI. It's knowing what's worth automating, and building it so it actually holds up in the real world. That's the part we're good at.</p></div>
-          <a class="link-arrow" href="services.html">See how we help
-            <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ WHAT WE DO ============ -->
-    <section class="section" id="services">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">What we do</span>
-          <h2 style="margin-top:1rem">Consulting first. Then we build.</h2>
-          <p class="lead">We don't sell software off the shelf. We start by understanding your business, then design and build exactly what fits — and only if it's worth it.</p>
-        </div>
-
-        <div class="cap-grid" style="margin-top:3rem">
-          <article class="card feature-tall is-feature card--hover reveal">
-            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.6 4.6L18 9l-4.4 1.4L12 15l-1.6-4.6L6 9l4.4-1.4z"/><path d="M5 16l.8 2.2L8 19l-2.2.8L5 22l-.8-2.2L2 19l2.2-.8z"/></svg></div>
-            <h3>AI strategy &amp; consulting</h3>
-            <p>We start here. We assess how you work, map where AI will actually pay off, sanity-check feasibility, and hand you a clear, costed plan — even when the honest answer is "not yet."</p>
-            <p class="micro-eg">Deliverable: <b>a short assessment</b> that tells you what to build first, what it'll cost, and what it'll save.</p>
-          </article>
-
-          <article class="card is-wide card--hover reveal" data-d="1">
-            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V5M9 3h6"/><circle cx="9" cy="14" r="1.2" fill="currentColor" stroke="none"/><circle cx="15" cy="14" r="1.2" fill="currentColor" stroke="none"/></svg></div>
-            <h3>Custom AI agents &amp; automation</h3>
-            <p>Bespoke agents built around your actual workflow — they plan, act across your tools, and bring a human in when something needs judgement. Not a template; built for you.</p>
-            <p class="micro-eg">Example: <b>onboard a new client end-to-end</b> — account, welcome pack, kickoff booked.</p>
-          </article>
-
-          <article class="card card--hover reveal" data-d="2">
-            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.9-.9L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg></div>
-            <h3>Conversational &amp; voice AI</h3>
-            <p>Chat and phone assistants trained on your docs and policies — speech-to-text and text-to-speech — that resolve the routine and pass the rest to your team.</p>
-            <p class="micro-eg">Example: <b>answer the phone and book</b> appointments, 24/7.</p>
-          </article>
-
-          <article class="card card--hover reveal" data-d="1">
-            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></div>
-            <h3>Document &amp; process automation</h3>
-            <p>We read your invoices, forms and emails, pull out what matters, update your systems and flag the exceptions — so the data entry just happens.</p>
-            <p class="micro-eg">Example: <b>turn a PDF inbox into clean rows</b> in your CRM.</p>
-          </article>
-
-          <article class="card card--hover reveal" data-d="2">
-            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.6 4.6L18 9l-4.4 1.4L12 15l-1.6-4.6L6 9l4.4-1.4z"/></svg></div>
-            <h3>Custom copilots &amp; knowledge</h3>
-            <p>An assistant grounded in <em>your</em> company's knowledge — playbooks, history, policies — living in the tools your team already uses.</p>
-            <p class="micro-eg">Example: <b>draft the quote</b> in your style, in seconds.</p>
-          </article>
-
-          <article class="card is-wide card--hover reveal" data-d="3">
-            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10.6 13.4a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1.7 1.7"/><path d="M13.4 10.6a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1.7-1.7"/></svg></div>
-            <h3>Integration &amp; data engineering</h3>
-            <p>The unglamorous part that makes everything work: connecting your systems safely and getting your data into shape so AI can actually act on it.</p>
-            <p class="micro-eg">Example: <b>from Gmail to your CRM</b> with no copy-paste.</p>
-          </article>
-        </div>
-        <p class="center reveal" style="margin-top:2.2rem"><a class="link-arrow" href="services.html">See all services &amp; how we engage
-          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-        </a></p>
-      </div>
-    </section>
-
-    <!-- ============ EXAMPLE BUILDS (dark band) ============ -->
-    <section class="section band--ink" id="ai-workers">
-      <div class="container">
-        <div class="section-head reveal" style="max-width:62ch">
-          <span class="eyebrow">What it looks like</span>
-          <h2 style="margin-top:1rem">Custom solutions, built for how <em class="display-accent">you</em> work.</h2>
-          <p class="lead">Every engagement is different, but our work tends to take a few familiar shapes. Whatever we build is shaped to your tools, your rules and your data — and supervised by your team.</p>
-        </div>
-
-        <div class="crew-grid" style="margin-top:3rem">
-          <article class="crew reveal">
-            <div class="crew-top"><div class="crew-avatar a1">💬</div><div><div class="crew-name">Support assistant</div><div class="crew-role">chat &amp; email</div></div></div>
-            <p>Answers routine questions on your docs and policies, looks things up, and hands the tricky ones to your team with full context.</p>
-            <div class="crew-foot"><div class="crew-tools"><span class="tool-chip">Helpdesk</span><span class="tool-chip">Orders</span></div></div>
-          </article>
-          <article class="crew reveal" data-d="1">
-            <div class="crew-top"><div class="crew-avatar a2">📞</div><div><div class="crew-name">Voice assistant</div><div class="crew-role">phone, 24/7</div></div></div>
-            <p>Picks up and places calls, books and confirms appointments, and texts a follow-up — in a natural voice you approve.</p>
-            <div class="crew-foot"><div class="crew-tools"><span class="tool-chip">Phone</span><span class="tool-chip">Calendar</span></div></div>
-          </article>
-          <article class="crew reveal" data-d="2">
-            <div class="crew-top"><div class="crew-avatar a3">📄</div><div><div class="crew-name">Back-office automation</div><div class="crew-role">data &amp; docs</div></div></div>
-            <p>Reads documents, enters the data, reconciles the numbers and flags anything that doesn't add up for a human to check.</p>
-            <div class="crew-foot"><div class="crew-tools"><span class="tool-chip">Inbox</span><span class="tool-chip">Sheets</span></div></div>
-          </article>
-          <article class="crew reveal" data-d="3">
-            <div class="crew-top"><div class="crew-avatar a4">📊</div><div><div class="crew-name">Sales copilot</div><div class="crew-role">pipeline</div></div></div>
-            <p>Qualifies new leads, drafts personalised follow-ups, and keeps your pipeline tidy so nothing slips through the cracks.</p>
-            <div class="crew-foot"><div class="crew-tools"><span class="tool-chip">CRM</span><span class="tool-chip">Email</span></div></div>
-          </article>
-        </div>
-
-        <div class="grid reveal" style="--gap:1rem; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); margin-top:2rem">
-          <div class="card" style="background:var(--surface);border-color:var(--line)"><h4 style="font-family:var(--font-sans);font-weight:700;font-size:1rem">👀 Supervised</h4><p style="margin-top:.4rem;font-size:.92rem">A person on your team approves the actions that matter. Nothing risky happens on its own.</p></div>
-          <div class="card" style="background:var(--surface);border-color:var(--line)"><h4 style="font-family:var(--font-sans);font-weight:700;font-size:1rem">🧾 Auditable</h4><p style="margin-top:.4rem;font-size:.92rem">Every message, lookup and change is logged — so you can always see exactly what happened.</p></div>
-          <div class="card" style="background:var(--surface);border-color:var(--line)"><h4 style="font-family:var(--font-sans);font-weight:700;font-size:1rem">🔒 Yours to keep</h4><p style="margin-top:.4rem;font-size:.92rem">We build it to be handed over. Your data stays yours, and there's no lock-in.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ INTERACTIVE DEMO ============ -->
-    <section class="section" id="demo">
-      <div class="container">
-        <div class="section-head section-head--center reveal">
-          <span class="eyebrow eyebrow--plain">See it in action</span>
-          <h2 style="margin-top:1rem">What the finished thing feels like</h2>
-          <p class="lead">Three examples of solutions we've built. Yours would be tailored to your business.</p>
-        </div>
-
-        <div class="demo reveal" style="margin-top:2.5rem" role="region" aria-label="Interactive examples of AI solutions we've built">
-          <div class="demo-tabs" role="tablist" aria-label="Choose an example">
-            <button class="demo-tab" id="tab-chat" role="tab" aria-selected="true" aria-controls="panel-chat">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-12.4 7.4L3 21l2.1-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>
-              Support chat
-            </button>
-            <button class="demo-tab" id="tab-voice" role="tab" aria-selected="false" aria-controls="panel-voice" tabindex="-1">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.1 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
-              Phone call
-            </button>
-            <button class="demo-tab" id="tab-office" role="tab" aria-selected="false" aria-controls="panel-office" tabindex="-1">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
-              Back office
-            </button>
-          </div>
-
-          <!-- chat -->
-          <div class="demo-panel" id="panel-chat" role="tabpanel" aria-labelledby="tab-chat">
-            <div class="demo-meta"><span class="dot"></span> support assistant · built for a retail client</div>
-            <div class="chat">
-              <div class="bubble user" data-seq><span class="who">Customer</span>Hey, where's my order #4821? It's been a few days.</div>
-              <div class="bubble bot" data-seq><span class="who">Assistant</span>Hi! Let me check that for you.<span class="act">↳ looked up order #4821</span></div>
-              <div class="bubble bot" data-seq>It shipped Monday and it's out for delivery today — should arrive by 6pm. Want me to text you the tracking link?</div>
-              <div class="bubble user" data-seq>Yes please. Also, can I change the delivery address?</div>
-              <div class="bubble bot" data-seq>Done — tracking sent. Since it hasn't been delivered yet, I can still update the address.<span class="act">↳ updated shipping address · logged for review</span></div>
-              <div class="bubble bot" data-seq>All set to the new address. Anything else? 😊</div>
-            </div>
-          </div>
-
-          <!-- voice -->
-          <div class="demo-panel" id="panel-voice" role="tabpanel" aria-labelledby="tab-voice" hidden>
-            <div class="demo-meta"><span class="dot"></span> voice assistant · built for a dental clinic · 7:42pm</div>
-            <div class="chat">
-              <div class="bubble bot" data-seq><span class="who">Assistant</span>Thanks for calling Meridian Dental, this is the booking line. How can I help?</div>
-              <div class="bubble user" data-seq><span class="who">Caller</span>Hi, I'd like to book a cleaning sometime next week.</div>
-              <div class="bubble bot" data-seq>Happy to help. I've got Tuesday at 2:30, or Thursday morning at 9:15.<span class="act">↳ checked the calendar</span></div>
-              <div class="bubble user" data-seq>Tuesday at 2:30 works.</div>
-              <div class="bubble bot" data-seq>Booked you in for Tuesday at 2:30. I'll text a confirmation now and a reminder the day before.<span class="act">↳ booked · SMS confirmation sent</span></div>
-            </div>
-          </div>
-
-          <!-- back office -->
-          <div class="demo-panel" id="panel-office" role="tabpanel" aria-labelledby="tab-office" hidden>
-            <div class="demo-meta"><span class="dot"></span> back-office automation · built for a logistics client · this morning</div>
-            <div>
-              <div class="task-row" data-seq><span class="task-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Read <b>12 supplier invoices</b> from the shared inbox</span><span class="when">9:02</span></div>
-              <div class="task-row" data-seq><span class="task-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Matched each to its <b>purchase order</b></span><span class="when">9:03</span></div>
-              <div class="task-row" data-seq><span class="task-check" style="background:var(--amber-100)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></span><span>Flagged <b>1 mismatch</b> ($240 over PO) for review</span><span class="when">9:03</span></div>
-              <div class="task-row" data-seq><span class="task-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Posted <b>11 invoices</b> to the accounting system</span><span class="when">9:04</span></div>
-              <div class="task-row" data-seq><span class="task-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Emailed the team a <b>2-line summary</b></span><span class="when">9:04</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ PROCESS ============ -->
-    <section class="section section--tight" id="process">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">How we work</span>
-          <h2 style="margin-top:1rem">From a clear assessment to a working solution — in <em class="display-accent">weeks, not quarters.</em></h2>
-        </div>
-        <div class="steps reveal" style="margin-top:2.5rem">
-          <div class="step"><div class="step-num">01</div><h4>Assess &amp; advise</h4><p>We learn how you work, map the busywork, and recommend the one place to start with the best payoff — honestly.</p><div class="when">~ 1–2 weeks</div></div>
-          <div class="step"><div class="step-num">02</div><h4>Prototype</h4><p>A working version on your real data that you can actually try — not a slide deck — so we de-risk before committing.</p><div class="when">~ 2 weeks</div></div>
-          <div class="step"><div class="step-num">03</div><h4>Build &amp; integrate</h4><p>We build the real thing, wire it into your tools, test the edge cases, and add guardrails and a human-approval step.</p><div class="when">3–5 weeks</div></div>
-          <div class="step"><div class="step-num">04</div><h4>Launch &amp; support</h4><p>We watch it in the wild, measure the time saved, tune it, and hand over the keys. Fixed scope — no surprise bills.</p><div class="when">ongoing</div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ ALWAYS-ON / AUTOMATION ORBIT ============ -->
-    <section class="section section--tight">
-      <div class="container split">
-        <div class="section-head reveal">
-          <span class="eyebrow">Always-on operations</span>
-          <h2 style="margin-top:1rem">Built once — then it runs <em class="display-accent">around the clock.</em></h2>
-          <p class="lead">Once your solution is live, it just works: reading documents, answering email, updating your CRM, booking jobs and sending the reports — days, nights and weekends. A person only steps in for the calls that genuinely need one.</p>
-          <ul class="two-col-list" style="margin-top:1.4rem">
-            <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Nights, weekends &amp; holidays covered</span></li>
-            <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Runs inside the tools you already use</span></li>
-            <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Every action logged &amp; reversible</span></li>
-            <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>You approve anything that matters</span></li>
-          </ul>
-        </div>
-
         <div class="reveal" data-d="1">
-          <div class="orbit">
-            <div class="orbit-head">
-              <span class="orbit-title">Automation loop · live</span>
-              <span class="orbit-live"><span class="orbit-dot"></span> running</span>
-            </div>
-            <svg viewBox="0 0 480 360" role="img" aria-label="Diagram: an AI core at the centre with business systems — documents, email, CRM, scheduling, reports, systems and approvals — orbiting around it.">
-              <!-- dotted orbit tracks -->
-              <circle class="o-track" cx="240" cy="180" r="92" />
-              <circle class="o-track" cx="240" cy="180" r="150" />
-              <!-- amber data comets circulating -->
-              <circle class="o-comet r1"   cx="240" cy="180" r="92" />
-              <circle class="o-comet r1 b" cx="240" cy="180" r="92" />
-              <circle class="o-comet r2"   cx="240" cy="180" r="150" />
-              <circle class="o-comet r2 b" cx="240" cy="180" r="150" />
-
-              <!-- INNER RING (3 nodes) -->
-              <g class="o-ring o-ring--1">
-                <g transform="translate(240,88)"><g class="o-node">
-                  <circle class="o-badge" r="20" />
-                  <g class="o-ic"><path d="M-6 -9 H3 L7 -5 V9 H-6 Z" /><path d="M3 -9 V-5 H7" /><path d="M-3 -1 H4 M-3 3 H4" /></g>
-                  <text class="o-tag" y="32">DOCS</text>
-                </g></g>
-                <g transform="translate(320,226)"><g class="o-node">
-                  <circle class="o-badge" r="20" />
-                  <g class="o-ic"><rect x="-8" y="-6" width="16" height="12" rx="2" /><path d="M-8 -5 L0 2 L8 -5" /></g>
-                  <text class="o-tag" y="32">EMAIL</text>
-                </g></g>
-                <g transform="translate(160,226)"><g class="o-node">
-                  <circle class="o-badge" r="20" />
-                  <g class="o-ic"><ellipse cx="0" cy="-6" rx="8" ry="3" /><path d="M-8 -6 V6 C-8 7.7 -4.4 9 0 9 C4.4 9 8 7.7 8 6 V-6" /><path d="M-8 0 C-8 1.7 -4.4 3 0 3 C4.4 3 8 1.7 8 0" /></g>
-                  <text class="o-tag" y="32">CRM</text>
-                </g></g>
-              </g>
-
-              <!-- OUTER RING (4 nodes) -->
-              <g class="o-ring o-ring--2">
-                <g transform="translate(346,74)"><g class="o-node">
-                  <circle class="o-badge" r="20" />
-                  <g class="o-ic o-ic--accent"><circle cx="0" cy="0" r="4" /><path d="M0 -9 V-6 M0 6 V9 M-9 0 H-6 M6 0 H9 M-6.4 -6.4 L-4.3 -4.3 M4.3 4.3 L6.4 6.4 M6.4 -6.4 L4.3 -4.3 M-4.3 4.3 L-6.4 6.4" /></g>
-                  <text class="o-tag" y="32">SYSTEMS</text>
-                </g></g>
-                <g transform="translate(346,286)"><g class="o-node">
-                  <circle class="o-badge" r="20" />
-                  <g class="o-ic o-ic--good"><circle cx="0" cy="0" r="8.5" /><path d="M-4 0 L-1 3 L4.5 -3.5" /></g>
-                  <text class="o-tag" y="32">APPROVED</text>
-                </g></g>
-                <g transform="translate(134,286)"><g class="o-node">
-                  <circle class="o-badge" r="20" />
-                  <g class="o-ic"><path d="M-8 8 H8" /><path d="M-5 8 V1" /><path d="M0 8 V-4" /><path d="M5 8 V-2" /></g>
-                  <text class="o-tag" y="32">REPORTS</text>
-                </g></g>
-                <g transform="translate(134,74)"><g class="o-node">
-                  <circle class="o-badge" r="20" />
-                  <g class="o-ic"><rect x="-8" y="-7" width="16" height="15" rx="2" /><path d="M-8 -3 H8 M-4 -7 V-10 M4 -7 V-10" /><path d="M-4 1 H-3.5 M0 1 H0.5 M4 1 H4.5 M-4 5 H-3.5 M0 5 H0.5" /></g>
-                  <text class="o-tag" y="32">SCHEDULE</text>
-                </g></g>
-              </g>
-
-              <!-- AI CORE -->
-              <circle class="o-core-ring" cx="240" cy="180" r="36" />
-              <circle class="o-core" cx="240" cy="180" r="36" />
-              <text class="o-core-label" x="240" y="178">AI</text>
-              <text class="o-core-sub" x="240" y="193">AGENT</text>
-            </svg>
-          </div>
+          <p class="big">Most of your team's day is <span class="soft">repeatable.</span> We work out which parts AI should take — and build them so they hold up in the real world, not just in a demo.</p>
         </div>
       </div>
     </section>
 
-    <!-- ============ CASE STUDIES ============ -->
+    <!-- SERVICES INDEX -->
+    <section class="section" id="services">
+      <div class="wrap">
+        <div class="index-head reveal">
+          <span class="cap cap--ink">02 — Services</span>
+          <span class="cap">Six disciplines</span>
+        </div>
+        <h2 class="reveal" style="font-size:var(--t-h2);max-width:14ch;margin-bottom:clamp(2rem,4vw,3.5rem)">What we do.</h2>
+        <div class="idx">
+          <a class="idx-row reveal" href="services.html#consulting">
+            <span class="num">01</span>
+            <span class="ttl">AI strategy &amp; <span class="it">consulting</span></span>
+            <span class="desc">We assess where AI pays off and hand you a clear, costed plan — even if the honest answer is "not yet."</span>
+            <span class="ar" aria-hidden="true">→</span>
+          </a>
+          <a class="idx-row reveal" href="services.html#agents">
+            <span class="num">02</span>
+            <span class="ttl">Custom AI agents</span>
+            <span class="desc">Bespoke agents that complete whole tasks across your tools, and ask a human before anything risky.</span>
+            <span class="ar" aria-hidden="true">→</span>
+          </a>
+          <a class="idx-row reveal" href="services.html#voice">
+            <span class="num">03</span>
+            <span class="ttl">Conversational &amp; <span class="it">voice AI</span></span>
+            <span class="desc">Chat and phone assistants that understand people and get things booked — 24/7, in a voice you approve.</span>
+            <span class="ar" aria-hidden="true">→</span>
+          </a>
+          <a class="idx-row reveal" href="services.html#automation">
+            <span class="num">04</span>
+            <span class="ttl">Document &amp; process automation</span>
+            <span class="desc">Read, extract, enter and reconcile — the data entry that eats your afternoons just happens.</span>
+            <span class="ar" aria-hidden="true">→</span>
+          </a>
+          <a class="idx-row reveal" href="services.html#copilots">
+            <span class="num">05</span>
+            <span class="ttl">Custom copilots</span>
+            <span class="desc">An assistant grounded in your company's own knowledge, living in the tools your team already uses.</span>
+            <span class="ar" aria-hidden="true">→</span>
+          </a>
+          <a class="idx-row reveal" href="services.html#integrations">
+            <span class="num">06</span>
+            <span class="ttl">Integration &amp; data</span>
+            <span class="desc">The unglamorous part that makes it all work: connecting your systems so the AI can actually act.</span>
+            <span class="ar" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DARK INTERLUDE -->
+    <section class="section dark" id="approach">
+      <div class="wrap">
+        <span class="cap reveal">03 — Approach</span>
+        <p class="big-statement reveal" data-d="1" style="margin-top:1.5rem">We advise first. <span class="it">Then we build.</span></p>
+        <div class="steps">
+          <div class="step reveal"><span class="n">01</span><h3>Assess</h3><p>We map the busywork and recommend the one place to start with the best payoff — honestly.</p></div>
+          <div class="step reveal" data-d="1"><span class="n">02</span><h3>Prototype</h3><p>A working version on your real data you can try in about two weeks — not a slide deck.</p></div>
+          <div class="step reveal" data-d="2"><span class="n">03</span><h3>Build</h3><p>Wired into your tools, tested against the edge cases, with guardrails and a human-approval step.</p></div>
+          <div class="step reveal" data-d="3"><span class="n">04</span><h3>Hand over</h3><p>We measure the hours saved, tune it, and give you the keys. Fixed scope, no lock-in.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INDUSTRIES INDEX -->
+    <section class="section" id="industries">
+      <div class="wrap">
+        <div class="index-head reveal">
+          <span class="cap cap--ink">04 — Industries</span>
+          <span class="cap">Where we work</span>
+        </div>
+        <div class="idx">
+          <a class="idx-row reveal" href="work.html#property">
+            <span class="num">/01</span><span class="ttl">Property management</span>
+            <span class="desc">Tenant questions, maintenance triage and leasing — handled around the clock.</span>
+            <span class="ar" aria-hidden="true">→</span>
+          </a>
+          <a class="idx-row reveal" href="work.html#real-estate">
+            <span class="num">/02</span><span class="ttl">Real estate</span>
+            <span class="desc">Every new lead qualified and replied to in seconds; showings booked to the right agent.</span>
+            <span class="ar" aria-hidden="true">→</span>
+          </a>
+          <a class="idx-row reveal" href="work.html#law">
+            <span class="num">/03</span><span class="ttl">Law firms</span>
+            <span class="desc">After-hours intake, case screening and document collection — only qualified matters on the calendar.</span>
+            <span class="ar" aria-hidden="true">→</span>
+          </a>
+          <a class="idx-row reveal" href="work.html#accounting">
+            <span class="num">/04</span><span class="ttl">Accounting &amp; CPA</span>
+            <span class="desc">Onboarding and the tax-season document chase, handled without one more reminder from your team.</span>
+            <span class="ar" aria-hidden="true">→</span>
+          </a>
+          <a class="idx-row reveal" href="work.html#home-services">
+            <span class="num">/05</span><span class="ttl">Home services &amp; trades</span>
+            <span class="desc">A voice agent that answers every call, books the job, and dispatches the emergencies.</span>
+            <span class="ar" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SELECTED WORK -->
+    <section class="section" id="work">
+      <div class="wrap">
+        <div class="index-head reveal">
+          <h2 style="font-size:var(--t-h2)">Selected work.</h2>
+          <span class="cap">Recent outcomes</span>
+        </div>
+        <div class="work">
+          <article class="work-row reveal">
+            <div>
+              <div class="wmeta"><span class="cap">Healthcare · clinic</span></div>
+              <h3>The phone that never rings out.</h3>
+              <p>A dental group was losing evening bookings to voicemail. We built a voice assistant that answers, books and confirms — and patches real emergencies to staff.</p>
+            </div>
+            <div class="metrics">
+              <div class="metric"><div class="n">38%</div><div class="l">Fewer missed calls</div></div>
+              <div class="metric"><div class="n">1,900</div><div class="l">Hours saved / yr</div></div>
+            </div>
+          </article>
+          <article class="work-row reveal">
+            <div>
+              <div class="wmeta"><span class="cap">E-commerce · retail</span></div>
+              <h3>Support that keeps up with sales.</h3>
+              <p>A growing homeware brand was drowning in "where's my order?" emails. A support assistant now resolves the routine and routes the rest with full context.</p>
+            </div>
+            <div class="metrics">
+              <div class="metric"><div class="n">62%</div><div class="l">Auto-resolved</div></div>
+              <div class="metric"><div class="n">&lt;2m</div><div class="l">First response</div></div>
+            </div>
+          </article>
+          <article class="work-row reveal">
+            <div>
+              <div class="wmeta"><span class="cap">Logistics · SMB</span></div>
+              <h3>Invoices that file themselves.</h3>
+              <p>A regional freight company spent days a week typing invoices. We built an automation that reads, matches and posts them — flagging only the odd ones.</p>
+            </div>
+            <div class="metrics">
+              <div class="metric"><div class="n">9×</div><div class="l">Faster intake</div></div>
+              <div class="metric"><div class="n">99.2%</div><div class="l">Field accuracy</div></div>
+            </div>
+          </article>
+        </div>
+        <p class="reveal" style="margin-top:2.5rem"><a class="tlink" href="work.html">All industry playbooks <span class="ar" aria-hidden="true">↗</span></a></p>
+      </div>
+    </section>
+
+    <!-- PULL QUOTE -->
     <section class="section">
-      <div class="container">
-        <div class="section-head reveal" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:1.5rem;max-width:none">
-          <div style="max-width:48ch">
-            <span class="eyebrow">Recent outcomes</span>
-            <h2 style="margin-top:1rem">A few things we've built for clients</h2>
-          </div>
-          <a class="link-arrow" href="work.html">Browse industry playbooks
-            <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
+      <div class="wrap quote reveal">
+        <blockquote>"They started by telling us what <span class="it">not</span> to automate. That honesty is why we trusted them with the rest."</blockquote>
+        <div class="by"><span class="cap cap--ink">Priya Menon</span><br /><span class="cap">Practice Manager · Meridian Dental</span></div>
+      </div>
+    </section>
 
-        <div class="cases cases--3" style="margin-top:2.5rem">
-          <a class="case case--hover reveal" href="work.html">
-            <div class="case-cover">
-              <div class="cover-art cv2"></div>
-              <svg viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.5"><circle cx="200" cy="112" r="34"/><circle cx="200" cy="112" r="64"/><circle cx="200" cy="112" r="94"/><path d="M200 50v124M138 112h124" stroke="rgba(255,255,255,.3)"/></g><circle cx="200" cy="112" r="6" fill="#fff"/></svg>
-              <span class="badge-industry">Healthcare · clinic</span>
-            </div>
-            <div class="case-body">
-              <h3>The phone that never rings out</h3>
-              <p>A dental group was losing evening bookings to voicemail. We scoped the problem, then built a voice assistant that answers, books and confirms — and hands urgent calls to staff.</p>
-              <div class="case-metrics">
-                <div class="metric"><div class="n">38%</div><div class="l">fewer missed calls</div></div>
-                <div class="metric"><div class="n">1,900</div><div class="l">staff hours saved / yr</div></div>
-              </div>
-            </div>
-          </a>
-
-          <a class="case case--hover reveal" data-d="1" href="work.html">
-            <div class="case-cover">
-              <div class="cover-art cv1"></div>
-              <svg viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g stroke="rgba(255,255,255,.45)" stroke-width="1.5" fill="none"><path d="M60 170 Q140 60 200 120 T340 90"/><path d="M60 190 Q150 110 220 150 T340 130"/></g><g fill="#fff"><circle cx="60" cy="170" r="4"/><circle cx="200" cy="120" r="4"/><circle cx="340" cy="90" r="4"/></g></svg>
-              <span class="badge-industry">E-commerce · retail</span>
-            </div>
-            <div class="case-body">
-              <h3>Support that keeps up with sales</h3>
-              <p>A growing homeware brand was drowning in "where's my order?" emails. We built a support assistant that handles the routine and routes the rest with full context.</p>
-              <div class="case-metrics">
-                <div class="metric"><div class="n">62%</div><div class="l">tickets auto-resolved</div></div>
-                <div class="metric"><div class="n">&lt;2m</div><div class="l">first response</div></div>
-              </div>
-            </div>
-          </a>
-
-          <a class="case case--hover reveal" data-d="2" href="work.html">
-            <div class="case-cover">
-              <div class="cover-art cv3"></div>
-              <svg viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g stroke="rgba(255,255,255,.4)" stroke-width="1.5" fill="none"><rect x="120" y="60" width="160" height="34" rx="6"/><rect x="120" y="104" width="160" height="34" rx="6"/><rect x="120" y="148" width="160" height="34" rx="6"/></g><g fill="rgba(240,161,85,.9)"><rect x="134" y="71" width="40" height="12" rx="3"/><rect x="134" y="115" width="64" height="12" rx="3"/><rect x="134" y="159" width="30" height="12" rx="3"/></g></svg>
-              <span class="badge-industry">Logistics · SMB</span>
-            </div>
-            <div class="case-body">
-              <h3>Invoices that file themselves</h3>
-              <p>A regional freight company spent days a week typing invoices. We built an automation that reads, matches and posts them — flagging only the odd ones for a person.</p>
-              <div class="case-metrics">
-                <div class="metric"><div class="n">9×</div><div class="l">faster intake</div></div>
-                <div class="metric"><div class="n">99.2%</div><div class="l">field accuracy</div></div>
-              </div>
-            </div>
-          </a>
+    <!-- QUESTIONS -->
+    <section class="section" id="faq">
+      <div class="wrap split">
+        <div class="col-head reveal"><span class="cap cap--ink">05 — Questions</span></div>
+        <div class="faq reveal" data-d="1">
+          <details>
+            <summary>Do you sell a product, or build custom?<span class="pl" aria-hidden="true">+</span></summary>
+            <div class="ans">We're a consultancy. We don't resell a one-size tool — we assess what your business needs, build the right solution around your data, and hand it over so you own it.</div>
+          </details>
+          <details>
+            <summary>Where do we start if we're unsure?<span class="pl" aria-hidden="true">+</span></summary>
+            <div class="ans">With a short assessment. In a week or two we map your workflows, find the highest-value opportunity, and give you a costed plan — no obligation to build anything afterwards.</div>
+          </details>
+          <details>
+            <summary>Is our data safe?<span class="pl" aria-hidden="true">+</span></summary>
+            <div class="ans">Your data stays yours. We don't sell it or use it to train public models; access is scoped to the job, everything is logged, and you can revoke it any time.</div>
+          </details>
+          <details>
+            <summary>What does it cost?<span class="pl" aria-hidden="true">+</span></summary>
+            <div class="ans">The assessment and pilots are fixed-fee, so you know the number up front. We prove the value on one use case, then expand.</div>
+          </details>
         </div>
       </div>
     </section>
 
-    <!-- ============ INDUSTRIES (featured → playbooks) ============ -->
-    <section class="section section--tight" id="industries">
-      <div class="container">
-        <div class="section-head section-head--center reveal">
-          <span class="eyebrow eyebrow--plain">By industry</span>
-          <h2 style="margin-top:1rem">Find your business — odds are <em class="display-accent">we've built it.</em></h2>
-          <p class="lead mx-auto">We go deep where AI quietly pays for itself. Tap your world to see the exact work we'd do.</p>
-        </div>
-        <div class="grid reveal" style="--gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));margin-top:2.5rem">
-          <a class="card card--hover" href="work.html#property">
-            <div class="card-icon" style="font-size:1.5rem">🏢</div>
-            <h3 style="font-size:1.15rem">Property management</h3>
-            <p style="margin-top:.4rem;font-size:.92rem">Tenant questions, maintenance triage &amp; leasing — handled 24/7.</p>
-            <span class="link-arrow" style="margin-top:1rem;font-size:.88rem">See the build <svg class="arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
-          </a>
-          <a class="card card--hover" href="work.html#real-estate">
-            <div class="card-icon" style="font-size:1.5rem">🏡</div>
-            <h3 style="font-size:1.15rem">Real estate</h3>
-            <p style="margin-top:.4rem;font-size:.92rem">Qualify and reply to every lead in seconds; book the showings.</p>
-            <span class="link-arrow" style="margin-top:1rem;font-size:.88rem">See the build <svg class="arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
-          </a>
-          <a class="card card--hover" href="work.html#law">
-            <div class="card-icon" style="font-size:1.5rem">⚖️</div>
-            <h3 style="font-size:1.15rem">Law firms</h3>
-            <p style="margin-top:.4rem;font-size:.92rem">After-hours intake, case screening &amp; document collection.</p>
-            <span class="link-arrow" style="margin-top:1rem;font-size:.88rem">See the build <svg class="arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
-          </a>
-          <a class="card card--hover" href="work.html#accounting">
-            <div class="card-icon" style="font-size:1.5rem">📊</div>
-            <h3 style="font-size:1.15rem">Accounting / CPA</h3>
-            <p style="margin-top:.4rem;font-size:.92rem">Onboarding and tax-season document chasing that runs itself.</p>
-            <span class="link-arrow" style="margin-top:1rem;font-size:.88rem">See the build <svg class="arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
-          </a>
-          <a class="card card--hover" href="work.html#home-services">
-            <div class="card-icon" style="font-size:1.5rem">🔧</div>
-            <h3 style="font-size:1.15rem">Home services &amp; trades</h3>
-            <p style="margin-top:.4rem;font-size:.92rem">A voice agent that answers every call and books the job.</p>
-            <span class="link-arrow" style="margin-top:1rem;font-size:.88rem">See the build <svg class="arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
-          </a>
-        </div>
-        <p class="center reveal" style="margin-top:1.6rem;color:var(--text-muted);font-size:.95rem">Also clinics, restaurants, e-commerce, salons, auto &amp; more — <a class="link-arrow" href="work.html">browse all playbooks
-          <svg class="arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a></p>
-      </div>
-    </section>
+    <hr class="wrap rule reveal" />
 
-    <!-- ============ WHY KENIUS ============ -->
-    <section class="section">
-      <div class="container split split--text-first">
-        <div class="reveal">
-          <ul class="two-col-list">
-            <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Strategy first — we tell you what's worth doing</span></li>
-            <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Custom-built for your business — never off-the-shelf</span></li>
-            <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>We'll say "don't" when AI isn't the answer</span></li>
-            <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Fixed-fee pilots, not open-ended retainers</span></li>
-            <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Your data stays yours — never used to train public models</span></li>
-            <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Human-in-the-loop by default</span></li>
-            <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Works with the tools you already pay for</span></li>
-            <li class="check-li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Built to be handed over, not to lock you in</span></li>
-          </ul>
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="wrap">
+        <span class="cap reveal">06 — Contact</span>
+        <h2 class="reveal" data-d="1" style="margin-top:1.4rem">Start with a <span class="it">conversation.</span></h2>
+        <div class="reveal" data-d="1">
+          <a class="big-mail" href="mailto:hello@kenius.us">hello@kenius.us</a>
         </div>
-        <div class="section-head reveal" data-d="1">
-          <span class="eyebrow">Why Kenius</span>
-          <h2 style="margin-top:1rem">A consultancy, <em class="display-accent">not a vendor.</em></h2>
-          <p class="lead">Plenty of companies will sell you a tool and wish you luck. We figure out what you actually need, build it properly, prove it saves you time, and hand it over.</p>
-          <a class="btn btn--ink" href="about.html" style="margin-top:1.6rem">How we think about this work
-            <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ STATS ============ -->
-    <section class="section section--tight band--ink">
-      <div class="container">
-        <div class="stats reveal">
-          <div class="stat"><div class="n"><span data-count="9">0</span></div><div class="l">industries served</div></div>
-          <div class="stat"><div class="n"><span data-count="40" data-suffix="+">0</span></div><div class="l">solutions shipped to production</div></div>
-          <div class="stat"><div class="n"><span data-count="70" data-suffix="%">0</span></div><div class="l">of a workflow automated, on average</div></div>
-          <div class="stat"><div class="n"><span data-count="2">0</span></div><div class="l">weeks to a clear assessment</div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ TESTIMONIALS ============ -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head section-head--center reveal">
-          <span class="eyebrow eyebrow--plain">Kind words</span>
-          <h2 style="margin-top:1rem">Clients who stopped doing the boring parts</h2>
-        </div>
-        <div class="quotes" style="margin-top:2.5rem">
-          <figure class="quote reveal">
-            <div class="mark">&ldquo;</div>
-            <blockquote>They started by telling us what <em>not</em> to automate. That honesty is why we trusted them with the rest — and the booking line they built paid for itself in a quarter.</blockquote>
-            <figcaption class="quote-by"><span class="quote-ava">P</span><span><span class="nm">Priya Menon</span><span class="ti">Practice Manager, Meridian Dental</span></span></figcaption>
-          </figure>
-          <figure class="quote reveal" data-d="1">
-            <div class="mark">&ldquo;</div>
-            <blockquote>No big platform to buy, no lock-in. They scoped one use case, built it in a month, and handed it over clean. Exactly what a small team needs.</blockquote>
-            <figcaption class="quote-by"><span class="quote-ava">D</span><span><span class="nm">Daniel Cho</span><span class="ti">Founder, Harbor &amp; Finch</span></span></figcaption>
-          </figure>
-          <figure class="quote reveal" data-d="2">
-            <div class="mark">&ldquo;</div>
-            <blockquote>What sold me was the audit log. I can see every single thing it did, and override it. They thought about the boring, important stuff nobody else mentioned.</blockquote>
-            <figcaption class="quote-by"><span class="quote-ava">A</span><span><span class="nm">Amara Okoye</span><span class="ti">Operations Lead, Cedar Logistics</span></span></figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ FAQ ============ -->
-    <section class="section section--tight">
-      <div class="container container--narrow">
-        <div class="section-head section-head--center reveal">
-          <span class="eyebrow eyebrow--plain">Questions</span>
-          <h2 style="margin-top:1rem">What people ask us</h2>
-        </div>
-        <div class="faq reveal" style="margin-top:2.5rem">
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false"><span>Do you sell a product, or build custom?</span><span class="ic" aria-hidden="true"></span></button>
-            <div class="faq-a"><div class="faq-a-inner"><p>We're a consultancy. We don't resell a one-size-fits-all tool. We assess what your business actually needs, then design and build (or assemble) the right solution around your tools and data — and hand it over so you own it.</p></div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false"><span>Where do we start if we're not sure what we need?</span><span class="ic" aria-hidden="true"></span></button>
-            <div class="faq-a"><div class="faq-a-inner"><p>That's the most common starting point — and exactly what the assessment is for. In a week or two we map your workflows, find the highest-value opportunity, and give you a costed plan. No commitment to build anything afterwards.</p></div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false"><span>Do we need technical people on our side?</span><span class="ic" aria-hidden="true"></span></button>
-            <div class="faq-a"><div class="faq-a-inner"><p>No. Most of our clients don't have an engineering team. We handle the building, the connecting and the maintenance. You bring the knowledge of how your business actually runs — that's the valuable part.</p></div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false"><span>Is our data safe? Do you train models on it?</span><span class="ic" aria-hidden="true"></span></button>
-            <div class="faq-a"><div class="faq-a-inner"><p>Your data stays yours. We don't sell it and we don't use it to train public models. Access is scoped to exactly what a solution needs, everything is logged, and you can revoke it at any time.</p></div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false"><span>How long until we see something working?</span><span class="ic" aria-hidden="true"></span></button>
-            <div class="faq-a"><div class="faq-a-inner"><p>Usually a week or two for the assessment, about three weeks to a working prototype on your real data, and four to eight weeks to something live and integrated — depending on how many tools it needs to touch.</p></div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false"><span>What does it cost?</span><span class="ic" aria-hidden="true"></span></button>
-            <div class="faq-a"><div class="faq-a-inner"><p>The assessment and pilots are fixed-fee, so you know the number up front. We scope to a single high-value use case first, prove the savings, then expand. <a class="link-arrow" href="contact.html">Tell us about your workflow</a> and we'll give you a real estimate.</p></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ CTA ============ -->
-    <section class="section section--flush-top">
-      <div class="container">
-        <div class="cta reveal">
-          <span class="eyebrow eyebrow--plain" style="color:var(--amber-300)">Let's talk</span>
-          <h2 style="margin-top:1rem">Start with a conversation, not a contract.</h2>
-          <p>Book a 30-minute discovery call. We'll look at your business together and tell you — honestly — whether AI is worth it, and where to start.</p>
-          <div class="hero-actions">
-            <a class="btn btn--primary btn--lg" href="contact.html">Book a discovery call
-              <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-            </a>
-            <a class="btn btn--ghost btn--lg" href="mailto:hello@kenius.us" style="color:#F4EEE2;border-color:rgba(244,238,226,.3)">hello@kenius.us</a>
-          </div>
-        </div>
+        <p class="reveal" data-d="2" style="margin-top:2rem"><a class="tlink" href="contact.html">Or book a 30-minute discovery call <span class="ar" aria-hidden="true">↗</span></a></p>
+        <p class="cap reveal" data-d="2" style="margin-top:2.5rem">We reply within one business day · Remote-first</p>
       </div>
     </section>
   </main>
 
-  <!-- ============ FOOTER ============ -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a class="brand" href="index.html">
-            <svg class="mark" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0L13.6 9.2 24 12 13.6 14.8 12 24 10.4 14.8 0 12 10.4 9.2Z"/></svg>
-            Kenius
-          </a>
-          <p>AI consulting and custom development. We find where AI fits your business — then build it, and hand it over.</p>
+  <!-- FOOTER -->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <a class="brand" href="index.html">Kenius<sup>®</sup></a>
+          <p style="max-width:34ch;margin-top:1.2rem;color:var(--muted);font-size:.95rem">We find where AI belongs in your business — then build it, quietly, and hand it over.</p>
         </div>
-        <div class="footer-col">
-          <h5>Services</h5>
-          <a href="services.html#consulting">AI strategy &amp; consulting</a>
-          <a href="services.html#agents">Custom AI agents</a>
-          <a href="services.html#voice">Voice &amp; chat AI</a>
-          <a href="services.html#automation">Process automation</a>
-          <a href="services.html#copilots">Custom copilots</a>
+        <div class="foot-col">
+          <h4>Index</h4>
+          <a href="#services">Services</a>
+          <a href="#industries">Industries</a>
+          <a href="#work">Work</a>
+          <a href="#approach">Approach</a>
         </div>
-        <div class="footer-col">
-          <h5>Company</h5>
-          <a href="about.html">About</a>
-          <a href="work.html">Work</a>
-          <a href="services.html">Services</a>
-          <a href="contact.html">Contact</a>
-        </div>
-        <div class="footer-col">
-          <h5>Get in touch</h5>
-          <a href="contact.html">Book a call</a>
+        <div class="foot-col">
+          <h4>Contact</h4>
           <a href="mailto:hello@kenius.us">hello@kenius.us</a>
-          <a href="tel:+10000000000">+1 (000) 000-0000</a>
+          <a href="contact.html">Book a call ↗</a>
+          <a href="#" aria-label="Kenius on LinkedIn">LinkedIn ↗</a>
+          <a href="#" aria-label="Kenius on X">X / Twitter ↗</a>
         </div>
       </div>
-      <div class="footer-bottom">
+      <div class="foot-bottom">
         <span>© <span data-year>2026</span> Kenius. Made by humans, with help from AI.</span>
-        <div class="footer-socials">
-          <a href="#" aria-label="Kenius on X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-          <a href="#" aria-label="Kenius on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
-          <a href="#" aria-label="Kenius on GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.39 1.24-3.23-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.23 0 4.62-2.81 5.64-5.49 5.94.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58A12.01 12.01 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg></a>
-        </div>
+        <span>kenius.us</span>
       </div>
-      <p style="margin-top:1.6rem;font-size:.78rem;color:#6f6552;max-width:80ch">Client names, logos, testimonials, metrics and case studies on this site are illustrative samples — swap in your own before going live.</p>
+      <p class="disclaimer">Client names, testimonials, metrics and outcomes shown here are illustrative samples — replace with your own before going live.</p>
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/lux.js"></script>
 </body>
 </html>
