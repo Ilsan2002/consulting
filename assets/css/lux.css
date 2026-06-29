@@ -29,7 +29,7 @@
   --ease: cubic-bezier(.22,.7,.3,1);
 
   /* fluid type */
-  --t-hero: clamp(3.1rem, 1.2rem + 8.2vw, 8.6rem);
+  --t-hero: clamp(3.2rem, 1.1rem + 8.9vw, 9.4rem);
   --t-h2:   clamp(2.1rem, 1.2rem + 3.6vw, 4.6rem);
   --t-h3:   clamp(1.7rem, 1.2rem + 2vw, 3rem);
   --t-lead: clamp(1.05rem, 0.98rem + 0.5vw, 1.3rem);
@@ -67,8 +67,8 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 :focus-visible { outline: 1.5px solid var(--accent); outline-offset: 4px; }
 
 /* ---- type primitives ---- */
-.serif { font-family: var(--serif); font-weight: 500; letter-spacing: -.012em; line-height: 1.02; color: var(--ink); }
-h1, h2, h3 { font-family: var(--serif); font-weight: 500; color: var(--ink); letter-spacing: -.012em; line-height: 1.03; text-wrap: balance; }
+.serif { font-family: var(--serif); font-weight: 500; letter-spacing: -.012em; line-height: 1.02; color: var(--ink); font-optical-sizing: auto; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 500; color: var(--ink); letter-spacing: -.014em; line-height: 1.02; text-wrap: balance; font-optical-sizing: auto; }
 em, .it { font-style: italic; }
 .cap {
   font-family: var(--sans); font-weight: 500;
@@ -142,7 +142,7 @@ em, .it { font-style: italic; }
 .hero-top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
 .hero-top .avail { display: inline-flex; align-items: center; gap: .55em; }
 .hero-top .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
-.hero h1 { font-size: var(--t-hero); margin-top: clamp(2rem, 6vw, 4.5rem); font-weight: 500; max-width: 16ch; }
+.hero h1 { font-size: var(--t-hero); margin-top: clamp(2rem, 6vw, 4.5rem); font-weight: 400; letter-spacing: -.022em; line-height: .98; max-width: 16ch; }
 .hero h1 .it { font-weight: 500; }
 .hero-foot { margin-top: clamp(2.5rem, 6vw, 4.5rem); display: grid; gap: 2rem; align-items: end; }
 @media (min-width: 820px){ .hero-foot { grid-template-columns: 1.1fr .9fr; } }
@@ -209,7 +209,7 @@ a.idx-row { color: inherit; }
 .work-row h3 { font-size: clamp(1.7rem, 1.1rem + 2.4vw, 3rem); line-height: 1.04; margin-top: .7rem; max-width: 18ch; }
 .work-row p { color: var(--ink-soft); margin-top: 1rem; max-width: 46ch; }
 .metrics { display: flex; gap: 2.5rem; }
-.metric .n { font-family: var(--serif); font-weight: 500; color: var(--ink); font-size: clamp(2rem, 1.4rem + 2vw, 3.2rem); line-height: 1; }
+.metric .n { font-family: var(--serif); font-weight: 400; color: var(--ink); font-size: clamp(2rem, 1.4rem + 2vw, 3.2rem); line-height: 1; letter-spacing: -.01em; font-variant-numeric: lining-nums tabular-nums; }
 .metric .l { font-size: var(--cap); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-top: .6rem; }
 
 /* ---- pull quote ---- */
@@ -275,7 +275,7 @@ a.idx-row { color: inherit; }
 
 /* ============ subpage primitives (Atelier) ============ */
 .page-hero { padding-top: clamp(8rem, 18vh, 13rem); padding-bottom: clamp(2rem,5vw,4rem); }
-.page-hero h1 { font-size: clamp(2.6rem, 1.4rem + 5vw, 6rem); max-width: 17ch; margin-top: 1.4rem; }
+.page-hero h1 { font-size: clamp(2.6rem, 1.4rem + 5vw, 6rem); max-width: 17ch; margin-top: 1.4rem; font-weight: 400; letter-spacing: -.02em; line-height: .99; }
 .page-hero .lead { margin-top: 1.6rem; }
 .breadcrumb { font-size: var(--cap); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
 .breadcrumb a:hover { color: var(--ink); }
