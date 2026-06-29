@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Automation Orbit — Kenius</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..520&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper-0: #FBF8F2;
+      --ink-900: #16130D;
+      --ink-800: #201C14;
+      --amber-500: #E5862F;
+      --amber-400: #F0A155;
+      --accent-ink: #2A1404;
+      --pine-300: #8FBDB2;
+      --font-display: "Fraunces", Georgia, serif;
+      --font-sans: "Hanken Grotesk", system-ui, sans-serif;
+      --font-mono: "Space Mono", ui-monospace, Menlo, monospace;
+      --ease: cubic-bezier(.22,.61,.36,1);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 3rem 1.25rem;
+      background: var(--paper-0);
+      font-family: var(--font-sans);
+      color: var(--ink-900);
+    }
+
+    .stage {
+      width: min(680px, 100%);
+    }
+
+    .stage-kicker {
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .72rem;
+      color: var(--amber-600, #CF7327);
+      margin: 0 0 .6rem;
+    }
+    .stage-title {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(1.6rem, 4vw, 2.3rem);
+      letter-spacing: -.02em;
+      margin: 0 0 1.6rem;
+      max-width: 18ch;
+    }
+    .stage-title em { color: var(--amber-500); font-style: italic; }
+
+    /* ---- the orbit panel (dark band, like the Relay diagram) ---- */
+    .orbit {
+      position: relative;
+      border-radius: 24px;
+      background: var(--ink-900);
+      padding: 1.25rem 1.25rem .9rem;
+      overflow: hidden;
+      box-shadow: 0 1px 2px rgba(22,19,13,.18), 0 22px 48px -24px rgba(22,19,13,.5);
+    }
+    /* warm radial wash behind the core */
+    .orbit::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(420px 320px at 50% 52%, rgba(229,134,47,.16), transparent 70%);
+      pointer-events: none;
+    }
+    .orbit-head {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: .25rem;
+    }
+    .orbit-title {
+      font-family: var(--font-mono);
+      font-size: .74rem;
+      letter-spacing: .06em;
+      color: #E4DBCB;
+    }
+    .orbit-live {
+      display: inline-flex;
+      align-items: center;
+      gap: .5em;
+      font-family: var(--font-mono);
+      font-size: .68rem;
+      letter-spacing: .1em;
+      color: var(--pine-300);
+    }
+    .orbit-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--pine-300);
+      box-shadow: 0 0 0 4px rgba(143,189,178,.2);
+    }
+    .orbit svg { position: relative; z-index: 1; width: 100%; height: auto; display: block; }
+
+    /* dotted orbit rings */
+    .o-track { fill: none; stroke: rgba(244,238,226,.16); stroke-width: 1.4; stroke-dasharray: 1.5 7; }
+
+    /* amber data comets circulating along each ring */
+    .o-comet { fill: none; stroke: var(--amber-400); stroke-width: 2.4; stroke-linecap: round; }
+    .o-comet.r1 { stroke-dasharray: 60 518; animation: comet1 6.5s linear infinite; }
+    .o-comet.r1.b { animation-delay: -3.25s; opacity: .55; }
+    .o-comet.r2 { stroke-dasharray: 84 859; animation: comet2 9s linear infinite; }
+    .o-comet.r2.b { animation-delay: -4.5s; opacity: .55; }
+    @keyframes comet1 { to { stroke-dashoffset: -578; } }
+    @keyframes comet2 { to { stroke-dashoffset: 943; } } /* +ve = opposite direction */
+
+    /* spinning ring groups (rotate about the SVG centre 240,180) */
+    .o-ring { transform-box: view-box; transform-origin: 240px 180px; }
+    .o-ring--1 { animation: spinCW 30s linear infinite; }
+    .o-ring--2 { animation: spinCCW 42s linear infinite; }
+    @keyframes spinCW  { to { transform: rotate(360deg); } }
+    @keyframes spinCCW { to { transform: rotate(-360deg); } }
+
+    /* node badges */
+    .o-badge { fill: var(--ink-800); stroke: rgba(244,238,226,.22); stroke-width: 1.4; }
+    .o-ic    { fill: none; stroke: #E4DBCB; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+    .o-ic--accent { stroke: var(--amber-400); }
+    .o-ic--good   { stroke: var(--pine-300); }
+    .o-tag { fill: #A99C86; font-family: var(--font-mono); font-size: 8px; letter-spacing: .04em; text-anchor: middle; }
+
+    /* counter-rotate the contents of each node so icons + labels stay upright */
+    .o-node { transform-box: fill-box; transform-origin: center; }
+    .o-ring--1 .o-node { animation: spinCCW 30s linear infinite; }
+    .o-ring--2 .o-node { animation: spinCW 42s linear infinite; }
+
+    /* central AI core */
+    .o-core { fill: var(--amber-500); }
+    .o-core-ring { fill: none; stroke: var(--amber-400); stroke-width: 1.6; transform-box: fill-box; transform-origin: center; animation: corePulse 3s var(--ease) infinite; }
+    .o-core-label { fill: var(--accent-ink); font-family: var(--font-mono); font-weight: 700; font-size: 15px; letter-spacing: .04em; text-anchor: middle; }
+    .o-core-sub { fill: var(--accent-ink); font-family: var(--font-mono); font-size: 7px; letter-spacing: .12em; text-anchor: middle; opacity: .72; }
+    @keyframes corePulse { 0%,100% { transform: scale(1); opacity: .55; } 50% { transform: scale(1.5); opacity: 0; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .o-comet, .o-ring, .o-node, .o-core-ring { animation: none; }
+      .o-comet { stroke-dasharray: 1.5 7; opacity: .5; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <p class="stage-kicker">// always-on operations</p>
+    <h2 class="stage-title">Your <em>AI coworker</em> keeps the busywork moving — around the clock.</h2>
+
+    <div class="orbit">
+      <div class="orbit-head">
+        <span class="orbit-title">Automation loop · live</span>
+        <span class="orbit-live"><span class="orbit-dot"></span> running</span>
+      </div>
+
+      <svg viewBox="0 0 480 360" role="img" aria-label="Diagram: an AI core at the centre with business documents and systems — docs, email, CRM, reports, scheduling, systems and approvals — orbiting around it.">
+
+        <!-- dotted orbit tracks -->
+        <circle class="o-track" cx="240" cy="180" r="92" />
+        <circle class="o-track" cx="240" cy="180" r="150" />
+
+        <!-- amber data comets circulating -->
+        <circle class="o-comet r1"   cx="240" cy="180" r="92" />
+        <circle class="o-comet r1 b" cx="240" cy="180" r="92" />
+        <circle class="o-comet r2"   cx="240" cy="180" r="150" />
+        <circle class="o-comet r2 b" cx="240" cy="180" r="150" />
+
+        <!-- ============ INNER RING (3 nodes) ============ -->
+        <g class="o-ring o-ring--1">
+          <!-- Docs · top (240,88) -->
+          <g transform="translate(240,88)">
+            <g class="o-node">
+              <circle class="o-badge" r="20" />
+              <g class="o-ic">
+                <path d="M-6 -9 H3 L7 -5 V9 H-6 Z" />
+                <path d="M3 -9 V-5 H7" />
+                <path d="M-3 -1 H4 M-3 3 H4" />
+              </g>
+              <text class="o-tag" y="32">DOCS</text>
+            </g>
+          </g>
+          <!-- Email · lower-right (319.7,226) -->
+          <g transform="translate(320,226)">
+            <g class="o-node">
+              <circle class="o-badge" r="20" />
+              <g class="o-ic">
+                <rect x="-8" y="-6" width="16" height="12" rx="2" />
+                <path d="M-8 -5 L0 2 L8 -5" />
+              </g>
+              <text class="o-tag" y="32">EMAIL</text>
+            </g>
+          </g>
+          <!-- CRM / database · lower-left (160.3,226) -->
+          <g transform="translate(160,226)">
+            <g class="o-node">
+              <circle class="o-badge" r="20" />
+              <g class="o-ic">
+                <ellipse cx="0" cy="-6" rx="8" ry="3" />
+                <path d="M-8 -6 V6 C-8 7.7 -4.4 9 0 9 C4.4 9 8 7.7 8 6 V-6" />
+                <path d="M-8 0 C-8 1.7 -4.4 3 0 3 C4.4 3 8 1.7 8 0" />
+              </g>
+              <text class="o-tag" y="32">CRM</text>
+            </g>
+          </g>
+        </g>
+
+        <!-- ============ OUTER RING (4 nodes) ============ -->
+        <g class="o-ring o-ring--2">
+          <!-- Systems / gear · top-right (346,74) -->
+          <g transform="translate(346,74)">
+            <g class="o-node">
+              <circle class="o-badge" r="20" />
+              <g class="o-ic o-ic--accent">
+                <circle cx="0" cy="0" r="4" />
+                <path d="M0 -9 V-6 M0 6 V9 M-9 0 H-6 M6 0 H9 M-6.4 -6.4 L-4.3 -4.3 M4.3 4.3 L6.4 6.4 M6.4 -6.4 L4.3 -4.3 M-4.3 4.3 L-6.4 6.4" />
+              </g>
+              <text class="o-tag" y="32">SYSTEMS</text>
+            </g>
+          </g>
+          <!-- Approvals / check · bottom-right (346,286) -->
+          <g transform="translate(346,286)">
+            <g class="o-node">
+              <circle class="o-badge" r="20" />
+              <g class="o-ic o-ic--good">
+                <circle cx="0" cy="0" r="8.5" />
+                <path d="M-4 0 L-1 3 L4.5 -3.5" />
+              </g>
+              <text class="o-tag" y="32">APPROVED</text>
+            </g>
+          </g>
+          <!-- Reports / bars · bottom-left (134,286) -->
+          <g transform="translate(134,286)">
+            <g class="o-node">
+              <circle class="o-badge" r="20" />
+              <g class="o-ic">
+                <path d="M-8 8 H8" />
+                <path d="M-5 8 V1" />
+                <path d="M0 8 V-4" />
+                <path d="M5 8 V-2" />
+              </g>
+              <text class="o-tag" y="32">REPORTS</text>
+            </g>
+          </g>
+          <!-- Schedule / calendar · top-left (134,74) -->
+          <g transform="translate(134,74)">
+            <g class="o-node">
+              <circle class="o-badge" r="20" />
+              <g class="o-ic">
+                <rect x="-8" y="-7" width="16" height="15" rx="2" />
+                <path d="M-8 -3 H8 M-4 -7 V-10 M4 -7 V-10" />
+                <path d="M-4 1 H-3.5 M0 1 H0.5 M4 1 H4.5 M-4 5 H-3.5 M0 5 H0.5" />
+              </g>
+              <text class="o-tag" y="32">SCHEDULE</text>
+            </g>
+          </g>
+        </g>
+
+        <!-- ============ AI CORE ============ -->
+        <circle class="o-core-ring" cx="240" cy="180" r="36" />
+        <circle class="o-core" cx="240" cy="180" r="36" />
+        <text class="o-core-label" x="240" y="178">AI</text>
+        <text class="o-core-sub" x="240" y="193">AGENT</text>
+      </svg>
+    </div>
+  </div>
+</body>
+</html>
