@@ -1094,3 +1094,145 @@ strong { font-weight: 600; color: var(--text); }
   .o-comet, .o-ring, .o-node, .o-core-ring { animation: none; }
   .o-comet { stroke-dasharray: 1.5 7; opacity: .5; }
 }
+
+/* ================================================================
+   KENIUS v2 — "DARK SIGNAL" REDESIGN
+   A full re-theme appended over the base system (later rules win,
+   so the original light system stays intact beneath this for an
+   easy rollback). Deep zinc canvas · electric-citron accent ·
+   Clash Display + General Sans · film grain + glow.
+   ================================================================ */
+:root {
+  /* type */
+  --font-display: "Clash Display", "Space Grotesk", system-ui, sans-serif;
+  --font-sans: "General Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* neutral zinc ramp (names kept from base, values flipped dark) */
+  --paper-0: #0C0C0E; --paper-50: #161618; --paper-100: #101012; --paper-200: rgba(255,255,255,.10);
+  --ink-900: #141416; --ink-800: #1B1B1E; --ink-700: #232327; --ink-600: #6A6A72; --ink-500: #9A9AA2; --ink-400: #74747C;
+
+  /* accent ramp → electric citron (names kept = amber-*) */
+  --amber-700: #8FBE17; --amber-600: #B6E63A; --amber-500: #C8F751; --amber-400: #D7FB6E;
+  --amber-300: #E6FD9E; --amber-100: #2F3A14; --amber-50: rgba(200,247,81,.08);
+
+  /* secondary → cool teal, used sparingly */
+  --pine-600: #2E8B79; --pine-300: #79D9C6; --good: #79D9C6; --warn: #E6C24A;
+
+  /* semantic (dark) */
+  --bg: #0C0C0E; --surface: #161618; --surface-2: #1B1B1E; --sunken: #0A0A0C;
+  --text: #ECECEE; --text-soft: #C9C9CE; --text-muted: #8C8C94;
+  --line: rgba(255,255,255,.09); --line-soft: rgba(255,255,255,.055);
+  --accent: #C8F751; --accent-strong: #D7FB6E; --accent-ink: #0C0C0E; --accent-wash: rgba(200,247,81,.10);
+
+  /* sharper, technical radii */
+  --r-xs: 5px; --r-sm: 8px; --r-md: 12px; --r-lg: 16px; --r-xl: 22px; --r-pill: 999px;
+
+  /* deeper shadows + an accent-glow token + citron focus ring */
+  --shadow-1: 0 1px 2px rgba(0,0,0,.4);
+  --shadow-2: 0 8px 26px -10px rgba(0,0,0,.6);
+  --shadow-3: 0 26px 64px -26px rgba(0,0,0,.72);
+  --glow: 0 0 0 1px rgba(200,247,81,.5), 0 10px 34px -8px rgba(200,247,81,.4);
+  --ring: 0 0 0 3px rgba(200,247,81,.32);
+}
+
+/* alternate band — deeper well + hairlines for rhythm */
+.band--ink {
+  --bg: #08080A; --surface: #131315; --surface-2: #1A1A1D; --sunken: #060608;
+  --text: #ECECEE; --text-soft: #C9C9CE; --text-muted: #8C8C94;
+  --line: rgba(255,255,255,.08); --line-soft: rgba(255,255,255,.05);
+  --accent: var(--amber-400); --accent-strong: var(--amber-300);
+  --accent-ink: #0C0C0E; --accent-wash: rgba(200,247,81,.12);
+  background: var(--bg); color: var(--text);
+  border-top: 1px solid rgba(255,255,255,.06); border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+/* canvas + global film grain */
+body { background: var(--bg); color: var(--text); }
+::selection { background: var(--amber-500); color: var(--accent-ink); }
+body::after {
+  content: ""; position: fixed; inset: 0; z-index: 9998; pointer-events: none; opacity: .045;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* type feel: Clash Display has no italic — use weight + colour, not slant */
+h1, h2 { font-weight: 600; letter-spacing: -.025em; }
+h3, h4 { font-weight: 500; letter-spacing: -.015em; }
+h1 { font-variation-settings: normal; }
+.display-accent, .display-accent--em { color: var(--accent); font-style: normal; font-variation-settings: normal; }
+.callout p { font-style: normal; }
+.eyebrow { color: var(--accent); }
+.lead { color: var(--text-soft); }
+
+/* header → dark glass */
+.site-header { background: color-mix(in srgb, var(--bg) 72%, transparent); }
+.site-header.is-stuck { background: color-mix(in srgb, var(--bg) 90%, transparent); border-bottom-color: var(--line); }
+.mobile-menu { background: var(--bg); }
+
+/* buttons → crisp rect + citron glow */
+.btn { border-radius: 11px; font-weight: 600; }
+.btn--primary { box-shadow: 0 0 0 1px rgba(200,247,81,.45); }
+.btn--primary:hover { box-shadow: var(--glow); }
+.btn--ghost { border-color: rgba(255,255,255,.16); }
+.btn--ghost:hover { border-color: var(--accent); color: var(--accent); box-shadow: none; }
+.btn--ink { background: var(--text); color: #0C0C0E; }
+
+/* cards → elevated dark, citron hover edge */
+.card { background: var(--surface); border-color: var(--line); border-radius: var(--r-lg); }
+.card--hover:hover { border-color: rgba(200,247,81,.35); box-shadow: var(--shadow-2); transform: translateY(-4px); }
+.card-icon { background: var(--accent-wash); color: var(--accent); border-radius: 10px; }
+.feature-tall .card-icon { background: var(--accent-wash); color: var(--accent); }
+
+/* pills / tags */
+.pill { background: rgba(255,255,255,.03); border-color: var(--line); }
+.pill:hover { border-color: var(--accent); }
+a.pill:hover { color: var(--accent); }
+.tag { background: var(--accent-wash); color: var(--accent); }
+
+/* hero atmosphere → citron mesh glow + masked grid */
+.hero::before {
+  inset: -30% -10% auto -10%; height: 92%;
+  background:
+    radial-gradient(48% 58% at 80% 10%, rgba(200,247,81,.18), transparent 70%),
+    radial-gradient(42% 52% at 12% 2%, rgba(46,139,121,.12), transparent 72%);
+}
+.hero::after {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: .55;
+  background-image:
+    linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(72% 64% at 50% 28%, #000, transparent 78%);
+  mask-image: radial-gradient(72% 64% at 50% 28%, #000, transparent 78%);
+}
+
+/* dark display panels — neutralise warm fills, brighten edges */
+.relay, .orbit { border-color: rgba(255,255,255,.1); }
+.relay-chip { fill: #1E1E22; stroke: rgba(255,255,255,.12); }
+.o-badge { stroke: rgba(255,255,255,.18); }
+
+/* CTA → elevated panel + citron ring/glow */
+.cta { background: var(--surface); border: 1px solid rgba(200,247,81,.2); }
+.cta::before { background: radial-gradient(70% 120% at 50% -10%, rgba(200,247,81,.2), transparent 60%); }
+
+/* demo widget */
+.demo-tab[aria-selected="true"] { background: var(--accent); color: var(--accent-ink); }
+
+/* links + form focus */
+.link-arrow { color: var(--accent); }
+.field input:focus, .field textarea:focus, .field select:focus { border-color: var(--accent); box-shadow: var(--ring); }
+
+/* footer */
+.site-footer { background: #08080A; border-top: 1px solid var(--line); }
+.footer-col a:hover { color: var(--accent); }
+.footer-socials a:hover { background: var(--accent); color: var(--accent-ink); }
+
+/* v2 — case-cover art retuned to the dark-citron palette */
+.cv1 { background: linear-gradient(135deg, #0F1A13, #1E3A2C); }
+.cv2 { background: linear-gradient(135deg, #16160E, #34341A); }
+.cv3 { background: linear-gradient(135deg, #121214, #26262C); }
+.cv4 { background: linear-gradient(135deg, #0F1A18, #1E3A34); }
+.cv5 { background: linear-gradient(135deg, #141410, #33331A); }
+.cv6 { background: linear-gradient(135deg, #1A1614, #332A22); }
+.case-cover .cover-art svg g[stroke] { stroke: rgba(236,236,238,.45) !important; }
