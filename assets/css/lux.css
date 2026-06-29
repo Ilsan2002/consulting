@@ -38,7 +38,9 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 * { margin: 0; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; color-scheme: light; }
+/* anchored sections clear the fixed header instead of hiding beneath it */
+[id] { scroll-margin-top: clamp(5rem, 8vw, 6.5rem); }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 /* Lenis smooth scroll — activated by the motion layer; harmless if it never loads */
@@ -318,7 +320,14 @@ a.idx-row { color: inherit; }
   padding: .7rem 0; font-family: var(--serif); font-size: 1.25rem; color: var(--ink); border-radius: 0;
   transition: border-color .3s var(--ease);
 }
-.field select { font-family: var(--sans); font-size: 1.05rem; }
+.field select {
+  font-family: var(--sans); font-size: 1.05rem;
+  background-color: var(--paper); color: var(--ink);
+  appearance: none; -webkit-appearance: none; padding-right: 1.6rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' fill='none' stroke='%236E5326' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right .15rem center; background-size: .72rem;
+}
+.field select option { color: var(--ink); background-color: var(--paper); }
 .field input::placeholder, .field textarea::placeholder { color: var(--muted); opacity: .9; font-family: var(--sans); font-size: .98rem; }
 .field input:focus, .field textarea:focus, .field select:focus { outline: none; border-bottom-color: var(--accent); }
 .field textarea { resize: vertical; min-height: 90px; }
