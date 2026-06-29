@@ -23,6 +23,7 @@
 
   --serif: "Bodoni Moda", "Times New Roman", Georgia, serif;
   --sans:  "General Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --mono:  "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 
   --container: 1320px;
   --pad: clamp(1.25rem, 5vw, 4rem);
@@ -153,6 +154,38 @@ em, .it { font-style: italic; }
 .scroll-cue .ln { width: 1px; height: 34px; background: var(--line); position: relative; overflow: hidden; }
 .scroll-cue .ln::after { content:""; position:absolute; left:0; top:-34px; width:1px; height:34px; background: var(--ink); animation: cue 2.4s var(--ease) infinite; }
 @keyframes cue { 0%{ transform: translateY(0);} 60%,100%{ transform: translateY(68px);} }
+
+/* ---- ops ledger (hero signature: the "system" voice under the didone thesis) ---- */
+.ledger { margin-top: clamp(2.4rem, 6vw, 4.5rem); border-top: 1px solid var(--line); }
+.ledger-head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1rem 0 .9rem; }
+.ledger-head .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-right: .55em; }
+.ledger-meta { color: var(--muted); }
+.ledger-rows { display: grid; }
+.ledger-rows li {
+  display: grid; grid-template-columns: 2.8rem minmax(0,1fr) auto; gap: .9rem;
+  align-items: baseline; padding: .68rem 0; border-top: 1px solid var(--line-soft);
+  font-family: var(--mono); font-size: .8rem; line-height: 1.4;
+}
+.ledger-rows li time { color: var(--muted); font-variant-numeric: tabular-nums; }
+.ledger-rows .dom { display: none; color: var(--muted); text-transform: uppercase; letter-spacing: .07em; font-size: .68rem; }
+.ledger-rows .msg { color: var(--ink-soft); min-width: 0; }
+.ledger-rows .st { color: var(--accent); white-space: nowrap; }
+.ledger-rows .st::before { content: "→ "; color: var(--muted); }
+@media (min-width: 720px) {
+  .ledger-rows li { grid-template-columns: 3.4rem 7.5rem minmax(0,1fr) auto; gap: 1.4rem; font-size: .82rem; }
+  .ledger-rows .dom { display: inline; }
+}
+/* the queue "fills" on load — pure CSS, skipped entirely under reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  .ledger { opacity: 0; animation: led-in .7s var(--ease) .2s both; }
+  .ledger-rows li { opacity: 0; animation: led-in .55s var(--ease) both; }
+  .ledger-rows li:nth-child(1) { animation-delay: .42s; }
+  .ledger-rows li:nth-child(2) { animation-delay: .54s; }
+  .ledger-rows li:nth-child(3) { animation-delay: .66s; }
+  .ledger-rows li:nth-child(4) { animation-delay: .78s; }
+  .ledger-rows li:nth-child(5) { animation-delay: .90s; }
+}
+@keyframes led-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 
 /* ---- manifesto ---- */
 .manifesto { max-width: 24ch; }
