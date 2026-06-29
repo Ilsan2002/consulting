@@ -37,16 +37,8 @@
     els.forEach(function (e) { io.observe(e); });
   }
 
-  /* very subtle hero settle on load */
-  if (!reduced) {
-    var h1 = $(".hero h1");
-    if (h1) { h1.style.opacity = 0; h1.style.transform = "translateY(14px)";
-      requestAnimationFrame(function () {
-        h1.style.transition = "opacity 1.1s cubic-bezier(.22,.7,.3,1) .1s, transform 1.2s cubic-bezier(.22,.7,.3,1) .1s";
-        requestAnimationFrame(function(){ h1.style.opacity = 1; h1.style.transform = "none"; });
-      });
-    }
-  }
+  /* hero entrance is owned by the motion layer (assets/js/motion.js) when GSAP
+     is present; without it the headline simply renders in place. */
 
   /* close overlay on resize to desktop */
   addEventListener("resize", function () {
