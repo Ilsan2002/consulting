@@ -1,0 +1,17 @@
+---
+import Layout from '../components/Layout.astro';
+---
+<Layout title="Not found — Kenius" description="This page isn’t in the index. Head back to the homepage." path="/404">
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="breadcrumb reveal"><a href="/">Kenius</a> — 404</div>
+      <h1 class="reveal" data-d="1">Log line <span class="it mark">not found.</span></h1>
+      <div class="ledger reveal" data-d="2" style="max-width:42rem">
+        <ol class="ledger-rows" style="border-top:1px solid var(--line)">
+          <li><time>--:--</time><span class="dom">404</span><span class="msg">this page</span><span class="st">not in the index</span></li>
+        </ol>
+      </div>
+      <p class="reveal" data-d="2" style="margin-top:2.2rem"><a class="tlink" href="/">Back to the homepage <span class="ar" aria-hidden="true">↗</span></a></p>
+    </div>
+  </section>
+</Layout>

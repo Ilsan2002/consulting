@@ -1,0 +1,68 @@
+---
+import Layout from '../components/Layout.astro';
+---
+<Layout title="Contact — Kenius" description="Tell Kenius what eats your team's time. Book a 30-minute discovery call and we'll tell you, honestly, whether AI is worth it." path="/contact">
+    <section class="page-hero">
+      <div class="wrap">
+        <div class="breadcrumb reveal"><a href="/">Kenius</a> — Contact</div>
+        <h1 class="reveal" data-d="1">Start with a <span class="it mark">conversation.</span></h1>
+        <p class="lead reveal" data-d="2">Tell us what your team does all day. We’ll come back within one business day with a straight answer on whether AI makes sense — and a rough idea of cost.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:clamp(1rem,3vw,3rem)" id="form">
+      <div class="wrap split" style="grid-template-columns:1.3fr .9fr;align-items:start">
+        <div class="reveal">
+          <form class="form" id="contact-form" data-ajax action="https://api.web3forms.com/submit" method="POST" novalidate>
+            <input type="hidden" name="access_key" value="c8d5b95e-3d5c-4d35-b551-6f3acacce331" />
+            <input type="hidden" name="subject" value="New enquiry from kenius.us" />
+            <input type="hidden" name="from_name" value="Kenius website" />
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <div class="f-row">
+              <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Alex Rivera" required /></div>
+              <div class="field"><label for="company">Company</label><input id="company" name="company" type="text" autocomplete="organization" placeholder="Harbor &amp; Finch" /></div>
+            </div>
+            <div class="f-row">
+              <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="alex@company.com" required /></div>
+              <div class="field"><label for="area">Area</label>
+                <select id="area" name="area">
+                  <option value="">Not sure yet</option>
+                  <option>Customer support</option>
+                  <option>Answering the phone / voice</option>
+                  <option>Back office &amp; documents</option>
+                  <option>Sales follow-up</option>
+                  <option>An internal copilot</option>
+                  <option>Something else</option>
+                </select>
+              </div>
+            </div>
+            <div class="field"><label for="message">What eats your team’s time?</label><textarea id="message" name="message" placeholder="We get ~80 “where’s my order” emails a day, and our two-person team can’t keep up after lunch…" required></textarea></div>
+            <button class="btn-lux submit" type="submit">Send it over <span aria-hidden="true">↗</span></button>
+            <p class="form-note">Prefer email? <a class="tlink" href="mailto:hello@kenius.us" style="font-size:.9rem">hello@kenius.us</a></p>
+          </form>
+          <div class="form-success" id="form-success" hidden>
+            <h2>Thanks — message received.</h2>
+            <p style="margin-top:1rem;max-width:42ch">A real person will read it and get back to you within one business day. If it’s urgent, email <a class="tlink" href="mailto:hello@kenius.us">hello@kenius.us</a>.</p>
+          </div>
+        </div>
+
+        <div class="reveal" data-d="1">
+          <div class="cx">
+            <div class="row"><div class="k">Email</div><a class="v" href="mailto:hello@kenius.us">hello@kenius.us</a></div>
+            <div class="row"><div class="k">Phone</div><a class="v" href="tel:+10000000000">+1 (000) 000-0000</a></div>
+            <div class="row"><div class="k">Response</div><div class="v">Within one business day</div></div>
+            <div class="row"><div class="k">Where</div><div class="v">Remote-first</div></div>
+          </div>
+          <div style="margin-top:2.5rem">
+            <p class="cap cap--ink">What happens next</p>
+            <ol style="list-style:none;margin-top:1.2rem;display:grid;gap:1.1rem;counter-reset:s">
+              <li style="display:grid;grid-template-columns:2rem 1fr;gap:.5rem;color:var(--ink-soft)"><span class="cap" style="color:var(--accent)">01</span><span>A real person reads it and replies within a business day.</span></li>
+              <li style="display:grid;grid-template-columns:2rem 1fr;gap:.5rem;color:var(--ink-soft)"><span class="cap" style="color:var(--accent)">02</span><span>A 30-minute call to dig into the workflow together.</span></li>
+              <li style="display:grid;grid-template-columns:2rem 1fr;gap:.5rem;color:var(--ink-soft)"><span class="cap" style="color:var(--accent)">03</span><span>An honest, fixed-fee proposal — or a simpler fix.</span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <p class="wrap form-note" style="margin-top:2.5rem">Wired for <a class="tlink" href="https://web3forms.com" target="_blank" rel="noopener" style="font-size:.9rem">Web3Forms</a> — submissions arrive by email.</p>
+    </section>
+</Layout>
