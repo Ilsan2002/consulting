@@ -41,8 +41,12 @@ import Layout from '../components/Layout.astro';
             <p class="form-note">Prefer email? <a class="tlink" href="mailto:hello@kenius.us" style="font-size:.9rem">hello@kenius.us</a></p>
           </form>
           <div class="form-success" id="form-success" hidden>
-            <h2>Thanks — message received.</h2>
-            <p style="margin-top:1rem;max-width:42ch">A real person will read it and get back to you within one business day. If it’s urgent, email <a class="tlink" href="mailto:hello@kenius.us">hello@kenius.us</a>.</p>
+            <h2>Thanks — enquiry logged.</h2>
+            <ol class="ledger-rows" style="margin-top:1.4rem;border-top:1px solid var(--line);max-width:36rem">
+              <li><time>00:00</time><span class="dom">enquiry</span><span class="msg">your message</span><span class="st">received</span></li>
+              <li><time>next</time><span class="dom">reply</span><span class="msg">a real person reads it</span><span class="st">within one business day</span></li>
+            </ol>
+            <p style="margin-top:1.4rem;max-width:42ch">If it’s urgent, email <a class="tlink" href="mailto:hello@kenius.us">hello@kenius.us</a>.</p>
           </div>
         </div>
 
@@ -55,10 +59,10 @@ import Layout from '../components/Layout.astro';
           </div>
           <div style="margin-top:2.5rem">
             <p class="cap cap--ink">What happens next</p>
-            <ol style="list-style:none;margin-top:1.2rem;display:grid;gap:1.1rem;counter-reset:s">
-              <li style="display:grid;grid-template-columns:2rem 1fr;gap:.5rem;color:var(--ink-soft)"><span class="cap" style="color:var(--accent)">01</span><span>A real person reads it and replies within a business day.</span></li>
-              <li style="display:grid;grid-template-columns:2rem 1fr;gap:.5rem;color:var(--ink-soft)"><span class="cap" style="color:var(--accent)">02</span><span>A 30-minute call to dig into the workflow together.</span></li>
-              <li style="display:grid;grid-template-columns:2rem 1fr;gap:.5rem;color:var(--ink-soft)"><span class="cap" style="color:var(--accent)">03</span><span>An honest, fixed-fee proposal — or a simpler fix.</span></li>
+            <ol style="list-style:none;margin-top:1.2rem;display:grid;gap:1.1rem">
+              <li style="display:grid;grid-template-columns:3.4rem 1fr;gap:.6rem;color:var(--ink-soft)"><span class="cap" style="color:var(--accent);font-family:var(--mono);letter-spacing:.04em">+0 h</span><span>A real person reads it and replies within a business day.</span></li>
+              <li style="display:grid;grid-template-columns:3.4rem 1fr;gap:.6rem;color:var(--ink-soft)"><span class="cap" style="color:var(--accent);font-family:var(--mono);letter-spacing:.04em">+1 day</span><span>A 30-minute call to dig into the workflow together.</span></li>
+              <li style="display:grid;grid-template-columns:3.4rem 1fr;gap:.6rem;color:var(--ink-soft)"><span class="cap" style="color:var(--accent);font-family:var(--mono);letter-spacing:.04em">+1 wk</span><span>An honest, fixed-fee proposal — or a simpler fix.</span></li>
             </ol>
           </div>
         </div>

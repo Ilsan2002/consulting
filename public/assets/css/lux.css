@@ -382,3 +382,19 @@ a.idx-row { color: inherit; }
 .cx .row .k { font-size: var(--cap); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 .cx .row .v { font-family: var(--serif); font-size: 1.35rem; color: var(--ink); margin-top: .3rem; display: inline-block; }
 .cx .row a.v:hover { color: var(--accent); }
+
+/* ============ Phase 2 — the ledger language, sitewide ============ */
+/* one static log line atop each playbook (work page) */
+.ledger-line { display:flex; flex-wrap:wrap; gap:.4rem 1rem; align-items:baseline; font-family:var(--mono); font-size:.78rem; color:var(--muted); border-bottom:1px solid var(--line-soft); padding-bottom:.85rem; margin-bottom:1.3rem; }
+.ledger-line time { font-variant-numeric:tabular-nums; }
+.ledger-line .msg { color:var(--ink-soft); min-width:0; }
+.ledger-line .st { color:var(--accent); margin-left:auto; white-space:nowrap; }
+.ledger-line .st::before { content:"→ "; color:var(--muted); }
+/* homepage playbook index rows speak ledger */
+.idx-row .desc.log { font-family:var(--mono); font-size:.76rem; line-height:1.6; letter-spacing:0; color:var(--muted); }
+.idx-row .desc.log .st { color:var(--accent); white-space:nowrap; }
+/* machine-voice tags: engagement steps + dark-list markers */
+.step .n, .list-row .ln { font-family:var(--mono); }
+/* footer status line */
+.status-line { display:flex; align-items:center; gap:.6em; margin-top:2.4rem; font-family:var(--mono); font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
+.status-line .dot { width:6px; height:6px; border-radius:50%; background:var(--accent); flex:none; }

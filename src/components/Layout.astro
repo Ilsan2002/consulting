@@ -10,6 +10,15 @@ const nav = [
   { href: '/contact', label: 'Contact' },
 ];
 const canonical = `https://kenius.us${path === '/' ? '' : path}`;
+const ld = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Kenius',
+  url: 'https://kenius.us',
+  email: 'hello@kenius.us',
+  description: 'Boutique AI consultancy — strategy first, then implementation. We find where AI pays off, then design and build it.',
+  knowsAbout: ['AI strategy', 'Custom AI agents', 'Conversational and voice AI', 'Document and process automation', 'Property management', 'Real estate', 'Law firms', 'Accounting and CPA', 'Home services and trades', 'Freight and logistics'],
+};
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -33,6 +42,7 @@ const canonical = `https://kenius.us${path === '/' ? '' : path}`;
   <link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/lux.css" />
   <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+  <script type="application/ld+json" set:html={JSON.stringify(ld)} />
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -75,6 +85,7 @@ const canonical = `https://kenius.us${path === '/' ? '' : path}`;
           <a href="mailto:hello@kenius.us">hello@kenius.us</a><a href="/contact#form">Book a call ↗</a><a href="#" aria-label="Kenius on LinkedIn">LinkedIn ↗</a>
         </div>
       </div>
+      <p class="status-line"><span class="dot"></span> agents on duty · 24/7 · advised by humans</p>
       <div class="foot-bottom">
         <span>© <span data-year>2026</span> Kenius. Made by humans, with help from AI.</span><span>kenius.us</span>
       </div>
