@@ -1,8 +1,10 @@
 # Cloudflare Pages headers — https://developers.cloudflare.com/pages/configuration/headers/
 
-# Long-cache fingerprint-free assets are fine to revalidate; cache for a day.
+# Assets aren't fingerprinted, so revalidate every load (fast 304s via ETag) —
+# this means CSS/JS changes show up immediately instead of being cached for a day.
+# Bump to a long max-age once the site stabilises for maximum repeat-visit speed.
 /assets/*
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, no-cache
 
 # Sensible security defaults for a static marketing site.
 /*
