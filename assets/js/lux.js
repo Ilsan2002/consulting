@@ -65,4 +65,45 @@
         });
     });
   }
+
+  /* live ops ledger (homepage hero) — a continuously updating status feed.
+     Paused entirely under reduced-motion and while the tab is hidden. */
+  var lrows = $(".ledger-rows");
+  if (lrows && !reduced) {
+    var POOL = [
+      ["property-mgmt", "“leak under the sink, 2C”", "plumber booked"],
+      ["real-estate", "“is 214 Oak still available?”", "tour booked"],
+      ["hvac", "“AC out, two kids home”", "tech en route"],
+      ["e-commerce", "wrong size · needs exchange", "return started"],
+      ["law", "fees and process question", "answered"],
+      ["accounting", "“can you file my extension?”", "scheduled"],
+      ["roofing", "storm-damage photos", "quote sent"],
+      ["property-mgmt", "lease-renewal question", "answered"],
+      ["real-estate", "portal lead · 3BR, pre-approved", "qualified"],
+      ["hvac", "missed call · 11:58pm", "called back"],
+      ["e-commerce", "“where’s my order #7710?”", "tracking sent"],
+      ["law", "conflict check · new matter", "cleared"],
+      ["accounting", "1099 chase · reminder 2", "docs in"],
+      ["property-mgmt", "“no hot water, unit 9”", "dispatched"]
+    ];
+    var vmin = 6 * 60 + 39, pi = 0;
+    var pad = function (n) { return (n < 10 ? "0" : "") + n; };
+    var fmt = function (m) { m = ((m % 1440) + 1440) % 1440; return pad(Math.floor(m / 60)) + ":" + pad(m % 60); };
+    var makeRow = function () {
+      vmin += 1 + Math.floor(Math.random() * 6);
+      var e = POOL[pi % POOL.length]; pi++;
+      var li = document.createElement("li");
+      li.className = "enter fresh";
+      li.innerHTML = "<time>" + fmt(vmin) + "</time><span class='dom'>" + e[0] +
+        "</span><span class='msg'>" + e[1] + "</span><span class='st'>" + e[2] + "</span>";
+      return li;
+    };
+    var step = function () {
+      if (document.hidden) return;
+      var prev = lrows.querySelector("li.fresh"); if (prev) prev.classList.remove("fresh");
+      lrows.insertBefore(makeRow(), lrows.firstChild);
+      while (lrows.children.length > 5) lrows.removeChild(lrows.lastChild);
+    };
+    setTimeout(function () { setInterval(step, 3400); }, 3200);
+  }
 })();
