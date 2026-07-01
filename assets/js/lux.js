@@ -78,6 +78,8 @@
       ["law", "fees and process question", "answered"],
       ["accounting", "“can you file my extension?”", "scheduled"],
       ["roofing", "storm-damage photos", "quote sent"],
+      ["freight", "“where’s my load #LT-4471?”", "ETA sent"],
+      ["freight", "carrier check-in · dock 7", "scheduled"],
       ["property-mgmt", "lease-renewal question", "answered"],
       ["real-estate", "portal lead · 3BR, pre-approved", "qualified"],
       ["hvac", "missed call · 11:58pm", "called back"],
