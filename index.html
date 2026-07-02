@@ -3,316 +3,226 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kenius — AI consulting, quietly built in</title>
-  <meta name="description" content="Kenius is an AI consultancy. We learn how you work, find where automation actually pays off, and build the custom solution — quietly, into the tools you already use." />
-  <meta name="theme-color" content="#EFEDE7" />
-  <meta property="og:title" content="Kenius — AI consulting, quietly built in" />
-  <meta property="og:description" content="We find where AI belongs — then build it. An AI consultancy for growing businesses." />
-  <meta property="og:type" content="website" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0L13.6 9.2 24 12 13.6 14.8 12 24 10.4 14.8 0 12 10.4 9.2Z' fill='%238A6A3C'/%3E%3C/svg%3E" />
-  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&display=swap" rel="stylesheet" />
-  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/lux.css" />
-  <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+  <title>Kenius — AI consultancy · Skyline exploration</title>
+  <meta name="description" content="Kenius maps where AI actually pays off in your business — costed, honest — then builds exactly to the plan. Design exploration: pixel skyline, live agent log." />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#fafafa" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='1' y='1' width='6' height='6' fill='%23171717'/%3E%3Crect x='9' y='1' width='6' height='6' fill='%2316a34a'/%3E%3Crect x='1' y='9' width='6' height='6' fill='%23a3a3a3'/%3E%3Crect x='9' y='9' width='6' height='6' fill='%23171717'/%3E%3C/svg%3E" />
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/dotgothic16-latin.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/geist-latin.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/geistmono-latin.woff2" crossorigin />
+  <link rel="preload" as="image" href="assets/img/sky-day.webp" />
+  <link rel="preload" as="image" href="assets/img/sky-night.webp" />
+  <link rel="preload" as="image" href="assets/img/sky-dawn.webp" />
+  <link rel="preload" as="image" href="assets/img/sky-sunset.webp" />
+  <link rel="stylesheet" href="assets/skyline.css" />
+  <noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <!-- HEADER -->
-  <header class="hdr">
-    <div class="wrap nav">
-      <a class="brand" href="index.html">Kenius<sup>®</sup></a>
-      <nav class="nav-mid" aria-label="Primary">
-        <a href="#services">Services</a>
-        <a href="#work">Work</a>
-        <a href="#approach">Approach</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="nav-right">
-        <a class="tlink nav-cta" href="contact.html">Book a call <span class="ar" aria-hidden="true">↗</span></a>
-        <button class="menu-btn" aria-expanded="false" aria-controls="overlay">Menu <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span></button>
-      </div>
+  <!-- ============ HERO — pixel skyline, 24h in 24s ============ -->
+  <header class="hero" id="top">
+    <div class="sky" aria-hidden="true">
+      <img class="sky-img" id="sky-night"  src="assets/img/sky-night.webp"  alt="" />
+      <img class="sky-img" id="sky-dawn"   src="assets/img/sky-dawn.webp"   alt="" />
+      <img class="sky-img is-on" id="sky-day" src="assets/img/sky-day.webp" alt="" />
+      <img class="sky-img" id="sky-sunset" src="assets/img/sky-sunset.webp" alt="" />
+      <div class="sky-scrim"></div>
     </div>
-  </header>
 
-  <!-- MOBILE OVERLAY -->
-  <div class="overlay" id="overlay">
-    <a href="#services">Services</a>
-    <a href="#work">Work</a>
-    <a href="#approach">Approach</a>
-    <a href="#contact">Contact</a>
-    <a href="contact.html">Book a call ↗</a>
-    <span class="cap">hello@kenius.us</span>
-  </div>
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="#top">Kenius<sup>&reg;</sup></a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#rfi">FAQ</a>
+        <a class="pill" href="#contact">Book a survey</a>
+      </div>
+    </nav>
+
+    <div class="hero-title">
+      <p class="kicker">Boutique AI consultancy &middot; strategy &amp; implementation</p>
+      <h1>First we draw the plan.<br />Then we build to it.</h1>
+    </div>
+
+    <!-- live agent log — synced to the sky's clock -->
+    <aside class="agent" aria-label="Agent activity log (illustrative)">
+      <div class="agent-head">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="agent-live">Live &middot; agent log</span>
+        <span class="agent-clock" id="agent-clock">--:--</span>
+      </div>
+      <div class="agent-body">
+        <p class="evt" id="agent-evt"><span class="evt-t">23:58</span> <span class="evt-x">Missed call: furnace out <b>&rarr; tech en route</b></span></p>
+      </div>
+      <div class="agent-foot">Illustrative &mdash; patterns from real builds</div>
+    </aside>
+
+    <p class="hero-lead">AI where it actually pays off &mdash; mapped, costed, and built into the tools you already run. Nothing speculative, nothing you don&rsquo;t need.</p>
+  </header>
 
   <main id="main">
 
-    <!-- HERO -->
-    <section class="hero">
+    <!-- ============ ENGAGEMENT ============ -->
+    <section class="sec" id="process">
       <div class="wrap">
-        <div class="hero-top reveal">
-          <span class="cap">Kenius — AI consultancy</span>
-          <span class="cap avail"><span class="dot"></span> Taking new work · 2026</span>
-        </div>
-        <h1>We find where AI <span class="it mark">belongs.</span> Then we build it.</h1>
-        <div class="hero-foot">
-          <div class="reveal" data-d="1">
-            <p class="lead">Kenius is an AI consultancy for growing businesses. We learn how you work, find where automation actually pays off, and build the custom solution — quietly, into the tools you already use.</p>
-            <div class="hero-actions" style="margin-top:2.2rem">
-              <a class="tlink" href="contact.html">Book a discovery call <span class="ar" aria-hidden="true">↗</span></a>
-              <a class="tlink tlink--bronze" href="#work">See our work</a>
-            </div>
+        <p class="cap rv">The engagement, dimensioned</p>
+        <div class="steps rv">
+          <div class="step">
+            <span class="step-t">WK 0</span>
+            <h3>Site survey</h3>
+            <p>A 30-minute call. We measure where the hours actually go.</p>
           </div>
-          <div style="justify-self:start" class="reveal" data-d="2">
-            <span class="scroll-cue"><span class="cap">Scroll</span><span class="ln"></span></span>
+          <div class="step">
+            <span class="step-t">WK 1&ndash;2</span>
+            <h3>Schematic</h3>
+            <p>A costed plan &mdash; where AI pays off, and where it honestly doesn&rsquo;t.</p>
+          </div>
+          <div class="step">
+            <span class="step-t">WK 4&ndash;8</span>
+            <h3>Working drawings</h3>
+            <p>The pilot, built to the plan. Fixed fee, on a calendar you can hold us to.</p>
+          </div>
+          <div class="step">
+            <span class="step-t">AS-BUILT</span>
+            <h3>Handover</h3>
+            <p>We tune it, document it, and hand you the keys. No lock-in.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <hr class="wrap rule reveal" />
-
-    <!-- MANIFESTO -->
-    <section class="section">
-      <div class="wrap split">
-        <div class="col-head reveal">
-          <span class="cap cap--ink">01 — Why now</span>
-        </div>
-        <div class="reveal" data-d="1">
-          <p class="big">Most of your team's day is <span class="soft">repeatable.</span> We work out which parts AI should take — and build them so they hold up in the real world, not just in a demo.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES INDEX -->
-    <section class="section" id="services">
+    <!-- ============ SERVICES ============ -->
+    <section class="sec" id="services">
       <div class="wrap">
-        <div class="index-head reveal">
-          <span class="cap cap--ink">02 — Services</span>
-          <span class="cap">Six disciplines</span>
+        <div class="sec-head rv">
+          <h2>The drawing set.</h2>
+          <p class="cap">Six disciplines</p>
         </div>
-        <h2 class="reveal" style="font-size:var(--t-h2);max-width:14ch;margin-bottom:clamp(2rem,4vw,3.5rem)">What we do.</h2>
-        <div class="idx">
-          <a class="idx-row reveal" href="services.html#consulting">
-            <span class="num">01</span>
-            <span class="ttl">AI strategy &amp; <span class="it">consulting</span></span>
-            <span class="desc">We assess where AI pays off and hand you a clear, costed plan — even if the honest answer is "not yet."</span>
-            <span class="ar" aria-hidden="true">→</span>
+        <div class="index rv">
+          <a class="row" href="#contact">
+            <span class="no">01</span><span class="ttl">AI strategy &amp; consulting</span>
+            <span class="note">the survey &mdash; where AI pays off, <b>costed</b></span><span class="ar" aria-hidden="true">&rarr;</span>
           </a>
-          <a class="idx-row reveal" href="services.html#agents">
-            <span class="num">02</span>
-            <span class="ttl">Custom AI agents</span>
-            <span class="desc">Bespoke agents that complete whole tasks across your tools, and ask a human before anything risky.</span>
-            <span class="ar" aria-hidden="true">→</span>
+          <a class="row" href="#contact">
+            <span class="no">02</span><span class="ttl">Custom AI agents</span>
+            <span class="note">whole tasks, across your tools <b>&middot; human-approved</b></span><span class="ar" aria-hidden="true">&rarr;</span>
           </a>
-          <a class="idx-row reveal" href="services.html#voice">
-            <span class="num">03</span>
-            <span class="ttl">Conversational &amp; <span class="it">voice AI</span></span>
-            <span class="desc">Chat and phone assistants that understand people and get things booked — 24/7, in a voice you approve.</span>
-            <span class="ar" aria-hidden="true">→</span>
+          <a class="row" href="#contact">
+            <span class="no">03</span><span class="ttl">Conversational &amp; voice AI</span>
+            <span class="note">answers, books, routes <b>&middot; 24/7</b></span><span class="ar" aria-hidden="true">&rarr;</span>
           </a>
-          <a class="idx-row reveal" href="services.html#automation">
-            <span class="num">04</span>
-            <span class="ttl">Document &amp; process automation</span>
-            <span class="desc">Read, extract, enter and reconcile — the data entry that eats your afternoons just happens.</span>
-            <span class="ar" aria-hidden="true">→</span>
+          <a class="row" href="#contact">
+            <span class="no">04</span><span class="ttl">Document &amp; process automation</span>
+            <span class="note">read &rarr; extract &rarr; reconcile <b>&middot; exceptions flagged</b></span><span class="ar" aria-hidden="true">&rarr;</span>
           </a>
-          <a class="idx-row reveal" href="services.html#copilots">
-            <span class="num">05</span>
-            <span class="ttl">Custom copilots</span>
-            <span class="desc">An assistant grounded in your company's own knowledge, living in the tools your team already uses.</span>
-            <span class="ar" aria-hidden="true">→</span>
+          <a class="row" href="#contact">
+            <span class="no">05</span><span class="ttl">Custom copilots</span>
+            <span class="note">your knowledge, in your tools <b>&middot; grounded</b></span><span class="ar" aria-hidden="true">&rarr;</span>
           </a>
-          <a class="idx-row reveal" href="services.html#integrations">
-            <span class="num">06</span>
-            <span class="ttl">Integration &amp; data</span>
-            <span class="desc">The unglamorous part that makes it all work: connecting your systems so the AI can actually act.</span>
-            <span class="ar" aria-hidden="true">→</span>
+          <a class="row" href="#contact">
+            <span class="no">06</span><span class="ttl">Integration &amp; data</span>
+            <span class="note">the unglamorous part that makes it work <b>&middot; scoped access</b></span><span class="ar" aria-hidden="true">&rarr;</span>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- DARK INTERLUDE -->
-    <section class="section dark" id="approach">
+    <!-- ============ IN PRACTICE ============ -->
+    <section class="sec">
       <div class="wrap">
-        <span class="cap reveal">03 — Approach</span>
-        <p class="big-statement reveal" data-d="1" style="margin-top:1.5rem">We advise first. <span class="it">Then we build.</span></p>
-        <div class="steps">
-          <div class="step reveal"><span class="n">01</span><h3>Assess</h3><p>We map the busywork and recommend the one place to start with the best payoff — honestly.</p></div>
-          <div class="step reveal" data-d="1"><span class="n">02</span><h3>Prototype</h3><p>A working version on your real data you can try in about two weeks — not a slide deck.</p></div>
-          <div class="step reveal" data-d="2"><span class="n">03</span><h3>Build</h3><p>Wired into your tools, tested against the edge cases, with guardrails and a human-approval step.</p></div>
-          <div class="step reveal" data-d="3"><span class="n">04</span><h3>Hand over</h3><p>We measure the hours saved, tune it, and give you the keys. Fixed scope, no lock-in.</p></div>
+        <div class="sec-head rv">
+          <h2>What we build, in practice.</h2>
+          <p class="cap">Recurring patterns &middot; no two alike</p>
         </div>
-      </div>
-    </section>
-
-    <!-- INDUSTRIES INDEX -->
-    <section class="section" id="industries">
-      <div class="wrap">
-        <div class="index-head reveal">
-          <span class="cap cap--ink">04 — Industries</span>
-          <span class="cap">Where we work</span>
-        </div>
-        <div class="idx">
-          <a class="idx-row reveal" href="work.html#property">
-            <span class="num">/01</span><span class="ttl">Property management</span>
-            <span class="desc">Tenant questions, maintenance triage and leasing — handled around the clock.</span>
-            <span class="ar" aria-hidden="true">→</span>
-          </a>
-          <a class="idx-row reveal" href="work.html#real-estate">
-            <span class="num">/02</span><span class="ttl">Real estate</span>
-            <span class="desc">Every new lead qualified and replied to in seconds; showings booked to the right agent.</span>
-            <span class="ar" aria-hidden="true">→</span>
-          </a>
-          <a class="idx-row reveal" href="work.html#law">
-            <span class="num">/03</span><span class="ttl">Law firms</span>
-            <span class="desc">After-hours intake, case screening and document collection — only qualified matters on the calendar.</span>
-            <span class="ar" aria-hidden="true">→</span>
-          </a>
-          <a class="idx-row reveal" href="work.html#accounting">
-            <span class="num">/04</span><span class="ttl">Accounting &amp; CPA</span>
-            <span class="desc">Onboarding and the tax-season document chase, handled without one more reminder from your team.</span>
-            <span class="ar" aria-hidden="true">→</span>
-          </a>
-          <a class="idx-row reveal" href="work.html#home-services">
-            <span class="num">/05</span><span class="ttl">Home services &amp; trades</span>
-            <span class="desc">A voice agent that answers every call, books the job, and dispatches the emergencies.</span>
-            <span class="ar" aria-hidden="true">→</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SELECTED WORK -->
-    <section class="section" id="work">
-      <div class="wrap">
-        <div class="index-head reveal">
-          <h2 style="font-size:var(--t-h2)">Selected work.</h2>
-          <span class="cap">Recent outcomes</span>
-        </div>
-        <div class="work">
-          <article class="work-row reveal">
-            <div>
-              <div class="wmeta"><span class="cap">Healthcare · clinic</span></div>
-              <h3>The phone that never rings out.</h3>
-              <p>A dental group was losing evening bookings to voicemail. We built a voice assistant that answers, books and confirms — and patches real emergencies to staff.</p>
-            </div>
-            <div class="metrics">
-              <div class="metric"><div class="n">38%</div><div class="l">Fewer missed calls</div></div>
-              <div class="metric"><div class="n">1,900</div><div class="l">Hours saved / yr</div></div>
-            </div>
+        <div class="cards">
+          <article class="card rv">
+            <p class="card-k">Voice &middot; front desk</p>
+            <h3>The phone that answers itself.</h3>
+            <p>A voice agent that picks up 24/7 in a voice you approve &mdash; books the routine, takes messages, and patches real emergencies straight through to a person.</p>
+            <p class="card-a">As-built &mdash; <b>after-hours calls booked, not lost</b></p>
           </article>
-          <article class="work-row reveal">
-            <div>
-              <div class="wmeta"><span class="cap">E-commerce · retail</span></div>
-              <h3>Support that keeps up with sales.</h3>
-              <p>A growing homeware brand was drowning in "where's my order?" emails. A support assistant now resolves the routine and routes the rest with full context.</p>
-            </div>
-            <div class="metrics">
-              <div class="metric"><div class="n">62%</div><div class="l">Auto-resolved</div></div>
-              <div class="metric"><div class="n">&lt;2m</div><div class="l">First response</div></div>
-            </div>
+          <article class="card rv">
+            <p class="card-k">Inbox &middot; support</p>
+            <h3>Support that keeps up with sales.</h3>
+            <p>An assistant trained on your policies that resolves the repetitive tickets &mdash; order status, returns, the same five questions &mdash; and hands the tricky ones to your team with full context.</p>
+            <p class="card-a">As-built &mdash; <b>the routine resolved; people on the exceptions</b></p>
           </article>
-          <article class="work-row reveal">
-            <div>
-              <div class="wmeta"><span class="cap">Logistics · SMB</span></div>
-              <h3>Invoices that file themselves.</h3>
-              <p>A regional freight company spent days a week typing invoices. We built an automation that reads, matches and posts them — flagging only the odd ones.</p>
-            </div>
-            <div class="metrics">
-              <div class="metric"><div class="n">9×</div><div class="l">Faster intake</div></div>
-              <div class="metric"><div class="n">99.2%</div><div class="l">Field accuracy</div></div>
-            </div>
+          <article class="card rv">
+            <p class="card-k">Documents &middot; back office</p>
+            <h3>Paperwork that files itself.</h3>
+            <p>Automation that reads invoices, forms and receipts, enters them into the systems you already run, and flags only the odd ones for a human eye.</p>
+            <p class="card-a">As-built &mdash; <b>afternoons back; only exceptions reviewed</b></p>
           </article>
         </div>
-        <p class="reveal" style="margin-top:2.5rem"><a class="tlink" href="work.html">All industry playbooks <span class="ar" aria-hidden="true">↗</span></a></p>
       </div>
     </section>
 
-    <!-- PULL QUOTE -->
-    <section class="section">
-      <div class="wrap quote reveal">
-        <blockquote>"They started by telling us what <span class="it">not</span> to automate. That honesty is why we trusted them with the rest."</blockquote>
-        <div class="by"><span class="cap cap--ink">Priya Menon</span><br /><span class="cap">Practice Manager · Meridian Dental</span></div>
+    <!-- ============ PRINCIPLE ============ -->
+    <section class="sec sec-quote">
+      <div class="wrap rv">
+        <p class="cap">The advising-first principle</p>
+        <blockquote>&ldquo;We&rsquo;d rather tell you <em>not yet</em> than build something that doesn&rsquo;t pay for itself.&rdquo;</blockquote>
       </div>
     </section>
 
-    <!-- QUESTIONS -->
-    <section class="section" id="faq">
-      <div class="wrap split">
-        <div class="col-head reveal"><span class="cap cap--ink">05 — Questions</span></div>
-        <div class="faq reveal" data-d="1">
-          <details>
-            <summary>Do you sell a product, or build custom?<span class="pl" aria-hidden="true">+</span></summary>
-            <div class="ans">We're a consultancy. We don't resell a one-size tool — we assess what your business needs, build the right solution around your data, and hand it over so you own it.</div>
-          </details>
-          <details>
-            <summary>Where do we start if we're unsure?<span class="pl" aria-hidden="true">+</span></summary>
-            <div class="ans">With a short assessment. In a week or two we map your workflows, find the highest-value opportunity, and give you a costed plan — no obligation to build anything afterwards.</div>
-          </details>
-          <details>
-            <summary>Is our data safe?<span class="pl" aria-hidden="true">+</span></summary>
-            <div class="ans">Your data stays yours. We don't sell it or use it to train public models; access is scoped to the job, everything is logged, and you can revoke it any time.</div>
-          </details>
-          <details>
-            <summary>What does it cost?<span class="pl" aria-hidden="true">+</span></summary>
-            <div class="ans">The assessment and pilots are fixed-fee, so you know the number up front. We prove the value on one use case, then expand.</div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <hr class="wrap rule reveal" />
-
-    <!-- CONTACT -->
-    <section class="section contact" id="contact">
+    <!-- ============ RFI / FAQ ============ -->
+    <section class="sec" id="rfi">
       <div class="wrap">
-        <span class="cap reveal">06 — Contact</span>
-        <h2 class="reveal" data-d="1" style="margin-top:1.4rem">Start with a <span class="it">conversation.</span></h2>
-        <div class="reveal" data-d="1">
-          <a class="big-mail" href="mailto:hello@kenius.us">hello@kenius.us</a>
+        <div class="sec-head rv">
+          <h2>Requests for information.</h2>
+          <p class="cap">RFI log</p>
         </div>
-        <p class="reveal" data-d="2" style="margin-top:2rem"><a class="tlink" href="contact.html">Or book a 30-minute discovery call <span class="ar" aria-hidden="true">↗</span></a></p>
-        <p class="cap reveal" data-d="2" style="margin-top:2.5rem">We reply within one business day · Remote-first</p>
+        <div class="rfi rv">
+          <details>
+            <summary><span class="no">RFI-01</span><span class="q">Do you sell a product, or build custom?</span><span class="pl" aria-hidden="true">+</span></summary>
+            <p class="ans">Custom, always. We&rsquo;re a consultancy: we survey your workflow, draw the plan, and build to it &mdash; into the tools you already use. No licenses to a platform of ours, no rip-and-replace.</p>
+          </details>
+          <details>
+            <summary><span class="no">RFI-02</span><span class="q">Where do we start if we&rsquo;re not sure AI fits?</span><span class="pl" aria-hidden="true">+</span></summary>
+            <p class="ans">The survey. One to two weeks, fixed fee: we map where the hours go and hand you a costed plan &mdash; even if the honest recommendation is &ldquo;not yet.&rdquo; The plan is yours either way.</p>
+          </details>
+          <details>
+            <summary><span class="no">RFI-03</span><span class="q">Is our data safe?</span><span class="pl" aria-hidden="true">+</span></summary>
+            <p class="ans">Yours stays yours: never sold, never used to train public models, and agents get scoped access to only the systems the job needs &mdash; with a human approval step before anything consequential.</p>
+          </details>
+          <details>
+            <summary><span class="no">RFI-04</span><span class="q">What does it cost?</span><span class="pl" aria-hidden="true">+</span></summary>
+            <p class="ans">Fixed fee per phase, quoted on the plan &mdash; the survey first, then the pilot (typically four to eight weeks). You always know the number before we draw a line.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="sec sec-cta" id="contact">
+      <div class="wrap rv">
+        <p class="cap">Open a drawing</p>
+        <h2>Tell us what eats the day.</h2>
+        <p class="cta-lead">Thirty minutes, no slides. We&rsquo;ll tell you honestly whether AI can help &mdash; and what the drawing would cost.</p>
+        <div class="cta-actions">
+          <a class="btn" href="mailto:hello@kenius.us?subject=Site%20survey">Book a survey <span aria-hidden="true">&rarr;</span></a>
+          <a class="ghost" href="mailto:hello@kenius.us">hello@kenius.us</a>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
+  <!-- ============ FOOTER — night, always ============ -->
   <footer class="foot">
-    <div class="wrap">
-      <div class="foot-grid">
-        <div>
-          <a class="brand" href="index.html">Kenius<sup>®</sup></a>
-          <p style="max-width:34ch;margin-top:1.2rem;color:var(--muted);font-size:.95rem">We find where AI belongs in your business — then build it, quietly, and hand it over.</p>
-        </div>
-        <div class="foot-col">
-          <h4>Index</h4>
-          <a href="#services">Services</a>
-          <a href="#industries">Industries</a>
-          <a href="#work">Work</a>
-          <a href="#approach">Approach</a>
-        </div>
-        <div class="foot-col">
-          <h4>Contact</h4>
-          <a href="mailto:hello@kenius.us">hello@kenius.us</a>
-          <a href="contact.html">Book a call ↗</a>
-          <a href="#" aria-label="Kenius on LinkedIn">LinkedIn ↗</a>
-          <a href="#" aria-label="Kenius on X">X / Twitter ↗</a>
-        </div>
+    <img class="foot-img" src="assets/img/sky-night.webp" alt="" aria-hidden="true" />
+    <div class="foot-scrim" aria-hidden="true"></div>
+    <div class="foot-in">
+      <p class="foot-brand">Kenius<sup>&reg;</sup></p>
+      <div class="foot-meta">
+        <span>Drawn by humans &middot; checked by humans &middot; <b>built with AI</b></span>
+        <span>&copy; <span data-year>2026</span> Kenius &middot; kenius.us &middot; <b>design exploration &mdash; not the live site</b></span>
       </div>
-      <div class="foot-bottom">
-        <span>© <span data-year>2026</span> Kenius. Made by humans, with help from AI.</span>
-        <span>kenius.us</span>
-      </div>
-      <p class="disclaimer">Client names, testimonials, metrics and outcomes shown here are illustrative samples — replace with your own before going live.</p>
+      <p class="foot-note">Scenarios and log entries on this page illustrate typical builds and patterns &mdash; they are not client case studies.</p>
     </div>
   </footer>
 
-  <script src="assets/js/lux.js"></script>
+  <script src="assets/skyline.js" defer></script>
 </body>
 </html>
