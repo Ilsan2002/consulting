@@ -53,6 +53,21 @@ body{
 .dawn{position:fixed; inset:0; z-index:-1; opacity:0; pointer-events:none;
   background:linear-gradient(to top, rgba(240,166,63,.32), rgba(240,166,63,.06) 42%, transparent 70%)}
 .no-anim .dawn{opacity:0}
+/* the living skyline — silhouetted against the dawn, windows working the night shift */
+.skyline{position:fixed; left:0; right:0; bottom:0; z-index:-1; pointer-events:none; line-height:0}
+.skyline svg{width:100%; height:clamp(120px,18vh,220px); display:block}
+.skyline .bld rect{fill:#0D0F14}
+.skyline .ant{stroke:#0D0F14; stroke-width:2}
+.skyline .beacon{fill:var(--amber); animation:beacon 2.6s ease-in-out infinite}
+@keyframes beacon{0%,100%{opacity:.9}50%{opacity:.15}}
+.skyline .w{fill:var(--amber); opacity:0; animation:wink var(--p,10s) linear var(--d,0s) infinite}
+.skyline .w.on{opacity:.55; animation:none}
+@keyframes wink{0%,86%{opacity:0}90%,98%{opacity:.7}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){
+  .skyline .w{animation:none; opacity:0}
+  .skyline .w.on{opacity:.55}
+  .skyline .beacon{animation:none; opacity:.9}
+}
 a{color:inherit; text-decoration:none}
 ul,ol{list-style:none; padding:0}
 ::selection{background:var(--amber); color:var(--night)}
@@ -182,7 +197,7 @@ h2{font-size:clamp(1.9rem,1.2rem + 2.8vw,3.4rem); font-variation-settings:"SOFT"
 .faq .ans{padding:0 0 1.1rem; max-width:62ch; font-size:.95rem}
 
 /* ---- footer ---- */
-.foot{border-top:1px solid var(--line); padding-block:2rem 2.4rem}
+.foot{border-top:1px solid var(--line); padding-block:2rem 2.4rem; background:var(--night); position:relative; z-index:1}
 .foot .wrap{display:grid; gap:1.6rem}
 @media (min-width:820px){ .foot .wrap{grid-template-columns:1.6fr 1fr 1fr} }
 .foot .brand{font-family:var(--disp); font-weight:640; font-size:1.4rem; color:var(--moon)}
