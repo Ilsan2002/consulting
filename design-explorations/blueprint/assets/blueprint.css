@@ -66,11 +66,11 @@ button{font:inherit; color:inherit; background:none; border:none; cursor:pointer
 .kicker::before{content:""; width:2.4rem; height:1px; background:var(--blue); flex:none}
 h1,h2,h3{font-family:var(--disp); color:var(--ink); letter-spacing:-.02em; line-height:1; text-wrap:balance}
 h1{font-weight:800}
-h2{font-weight:800; font-size:clamp(1.8rem,1.2rem+2.4vw,3rem)}
+h2{font-weight:800; font-size:clamp(1.8rem,1.2rem + 2.4vw,3rem)}
 h3{font-weight:700}
 .blue{color:var(--blue)}
 .outline{color:transparent; -webkit-text-stroke:2px var(--blue)}
-.lead{max-width:44ch; font-size:clamp(1rem,.95rem+.4vw,1.15rem); color:var(--ink-soft); text-wrap:pretty}
+.lead{max-width:44ch; font-size:clamp(1rem,.95rem + .4vw,1.15rem); color:var(--ink-soft); text-wrap:pretty}
 .btn{font-family:var(--mono); font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:var(--paper); background:var(--blue); padding:.9em 1.5em; border:1px solid var(--blue-deep); display:inline-flex; gap:.7em; align-items:center; transition:background .25s var(--ease)}
 .btn:hover{background:var(--blue-deep)}
 .ghost{font-family:var(--mono); font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:var(--blue); border-bottom:1px solid var(--blue-line); padding-bottom:3px}
@@ -97,11 +97,11 @@ h3{font-weight:700}
 
 /* ---- page hero ---- */
 .hero{padding-block:clamp(2.6rem,6.5vw,5.5rem) clamp(2.2rem,4.5vw,3.5rem)}
-.hero h1{font-size:clamp(2.5rem,1.3rem+5vw,5.2rem); margin-top:1.1rem}
+.hero h1{font-size:clamp(2.5rem,1.3rem + 5vw,5.2rem); margin-top:1.1rem}
 .hero .lead{margin-top:1.5rem}
 .hero-actions{margin-top:2rem; display:flex; gap:1.6rem; align-items:center; flex-wrap:wrap}
 .hero-grid{display:grid; gap:clamp(2rem,4vw,4rem); align-items:center}
-@media (min-width:1000px){ .hero-grid{grid-template-columns:.95fr 1.05fr} .hero-grid h1{font-size:clamp(2.6rem,1.3rem+4.4vw,5.4rem)} }
+@media (min-width:1000px){ .hero-grid{grid-template-columns:.95fr 1.05fr} .hero-grid h1{font-size:clamp(2.6rem,1.3rem + 4.4vw,5.4rem)} }
 
 /* ---- drawing sheet (schematic panel) ---- */
 .sheet{border:1.5px solid var(--blue); background:var(--paper); box-shadow:6px 6px 0 var(--blue-faint); position:relative}
@@ -160,7 +160,7 @@ h3{font-weight:700}
   transition:padding-left .35s var(--ease);
 }
 .row .no{font-family:var(--mono); font-size:.68rem; letter-spacing:.1em; color:var(--blue); grid-row:1}
-.row .ttl{font-family:var(--disp); font-weight:700; font-size:clamp(1.15rem,1rem+1vw,1.6rem); color:var(--ink); grid-column:2; grid-row:1}
+.row .ttl{font-family:var(--disp); font-weight:700; font-size:clamp(1.15rem,1rem + 1vw,1.6rem); color:var(--ink); grid-column:2; grid-row:1}
 .row .note{grid-column:2; font-family:var(--mono); font-size:.72rem; color:var(--muted)}
 .row .note b{color:var(--blue); font-weight:500}
 .row .ar{position:absolute; right:.2rem; top:50%; transform:translate(-6px,-50%); opacity:0; color:var(--blue); transition:.3s var(--ease)}
@@ -181,7 +181,7 @@ a.row:hover .ttl{color:var(--blue)}
 .pb .callout{font-family:var(--mono); font-size:.76rem; color:var(--muted); border-bottom:1px solid var(--blue-line); padding-bottom:.8rem; margin-bottom:1.1rem; display:flex; flex-wrap:wrap; gap:.4rem 1rem}
 .pb .callout .st2{color:var(--blue); margin-left:auto; white-space:nowrap}
 .pb .callout .st2::before{content:"→ "; color:var(--muted)}
-.pb h2{font-size:clamp(1.5rem,1.1rem+1.6vw,2.3rem)}
+.pb h2{font-size:clamp(1.5rem,1.1rem + 1.6vw,2.3rem)}
 .pb .pain{margin-top:.9rem; max-width:56ch}
 .spec{margin-top:1.2rem; border-top:1px solid var(--blue-line)}
 .spec li{display:grid; grid-template-columns:4.4rem 1fr; gap:1rem; padding:.5rem 0; border-bottom:1px solid var(--blue-faint); font-size:.92rem; color:var(--ink-soft)}
@@ -199,7 +199,7 @@ a.row:hover .ttl{color:var(--blue)}
 .notes h3{font-size:1.05rem; font-weight:700}
 .notes p{font-size:.88rem; color:var(--muted); margin-top:.2rem}
 .bignote{max-width:52rem; margin-inline:auto; text-align:center; padding-block:clamp(1rem,2vw,2rem)}
-.bignote blockquote{font-family:var(--disp); font-weight:700; font-size:clamp(1.5rem,1.1rem+2vw,2.6rem); color:var(--ink); line-height:1.15; letter-spacing:-.015em; text-wrap:balance}
+.bignote blockquote{font-family:var(--disp); font-weight:700; font-size:clamp(1.5rem,1.1rem + 2vw,2.6rem); color:var(--ink); line-height:1.15; letter-spacing:-.015em; text-wrap:balance}
 .bignote blockquote .blue{color:var(--blue)}
 .bignote .by{margin-top:1.2rem}
 
@@ -209,7 +209,7 @@ a.row:hover .ttl{color:var(--blue)}
 .rfi summary{list-style:none; cursor:pointer; padding:1.1rem 0; display:grid; grid-template-columns:4.6rem 1fr 1.4rem; gap:1rem; align-items:baseline}
 .rfi summary::-webkit-details-marker{display:none}
 .rfi .no{font-family:var(--mono); font-size:.68rem; color:var(--blue); letter-spacing:.1em}
-.rfi .q{font-family:var(--disp); font-weight:700; font-size:clamp(1.05rem,1rem+.6vw,1.35rem); color:var(--ink)}
+.rfi .q{font-family:var(--disp); font-weight:700; font-size:clamp(1.05rem,1rem + .6vw,1.35rem); color:var(--ink)}
 .rfi .pl{font-family:var(--mono); color:var(--blue); transition:transform .3s var(--ease); text-align:center}
 .rfi details[open] .pl{transform:rotate(45deg)}
 .rfi .ans{padding:0 0 1.2rem 5.6rem; max-width:60ch; color:var(--ink-soft); font-size:.95rem}
