@@ -168,15 +168,24 @@ a{ color:inherit; }
 }
 
 /* --- live agent log --- */
+/* glass recipe lifted from the reference site's hero notification card:
+   bg-white/60 · backdrop-blur(20px) · border white/60 · soft shadow */
 .agent{
   position:absolute; z-index:4;
   right:28px; bottom:96px;
   width:min(360px, calc(100vw - 48px));
-  background:var(--card);
-  border-radius:14px;
-  box-shadow:var(--shadow-card);
+  background:rgba(255,255,255,.6);
+  -webkit-backdrop-filter:blur(20px);
+  backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,.6);
+  border-radius:16px;
+  box-shadow:0 1px 8px rgba(0,0,0,.05);
   padding:14px 16px 12px;
   font-size:14px;
+  font-family:var(--f-pixel);
+}
+@supports not (backdrop-filter:blur(20px)){
+  .agent{ background:rgba(255,255,255,.88); }
 }
 .agent-head{
   display:flex; align-items:center; gap:8px;
@@ -196,8 +205,8 @@ a{ color:inherit; }
   }
 }
 .agent-live{
-  font-family:var(--f-mono); font-size:10.5px;
-  letter-spacing:.12em; text-transform:uppercase;
+  font-family:var(--f-pixel); font-size:12px;
+  letter-spacing:.1em; text-transform:uppercase;
   color:var(--soft);
 }
 .agent-clock{
@@ -219,17 +228,19 @@ a{ color:inherit; }
   .evt.is-out{ opacity:1; transform:none; }
 }
 .evt-t{
-  font-family:var(--f-mono); font-size:12px;
+  font-family:var(--f-pixel); font-size:13px;
   color:var(--faint);
   font-variant-numeric:tabular-nums;
   flex-shrink:0;
 }
-.evt-x b{ font-weight:600; }
+/* DotGothic16 has no bold — differentiate the outcome by ink, not weight */
+.evt-x{ color:var(--soft); }
+.evt-x b{ font-weight:400; color:var(--ink); }
 .agent-foot{
   margin-top:10px; padding-top:8px;
-  border-top:1px solid var(--line);
-  font-family:var(--f-mono); font-size:10px;
-  letter-spacing:.06em; text-transform:uppercase;
+  border-top:1px solid rgba(23,23,23,.14);
+  font-family:var(--f-pixel); font-size:11px;
+  letter-spacing:.05em; text-transform:uppercase;
   color:var(--faint);
 }
 

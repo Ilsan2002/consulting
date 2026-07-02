@@ -96,18 +96,18 @@
     }
   }
 
-  /* --- main loop --- */
+  /* --- clock: real local time, ticking at real speed --- */
   var now = new Date();
   var startHour = now.getHours() + now.getMinutes() / 60; // seed: visitor's sky
   var lastClock = '';
 
-  function frame(elapsedMs) {
-    var hour = (startHour + (elapsedMs / CYCLE_MS) * 24) % 24;
-    paintSky(hour);
-    var c = fmt(hour);
+  function updateClock() {
+    var d = new Date();
+    var c = fmt(d.getHours() + d.getMinutes() / 60);
     if (c !== lastClock && clockEl) { clockEl.textContent = c; lastClock = c; }
-    setEvent(eventIndexFor(hour), true);
   }
+  updateClock();
+  setInterval(updateClock, 15000);
 
   // remove the CSS fallback flag; JS owns opacity from here
   var dayImg = document.getElementById('sky-day');
@@ -116,17 +116,23 @@
   if (reduceMotion) {
     // static: honour the visitor's actual time of day, no animation
     paintSky(startHour);
-    if (clockEl) clockEl.textContent = fmt(startHour);
     setEvent(eventIndexFor(startHour), false);
   } else {
+    /* sky: ambient loop, one full day per CYCLE_MS */
     var t0 = null;
     var tick = function (ts) {
       if (t0 === null) t0 = ts;
-      frame(ts - t0);
+      paintSky((startHour + ((ts - t0) / CYCLE_MS) * 24) % 24);
       requestAnimationFrame(tick);
     };
-    frame(0);
+    paintSky(startHour);
     requestAnimationFrame(tick);
+
+    /* log: rotate calmly through the entries, most recent first */
+    setEvent(eventIndexFor(startHour), false);
+    setInterval(function () {
+      setEvent((currentEvt + 1) % EVENTS.length, true);
+    }, 7000);
   }
 
   /* --- scroll reveals --- */
