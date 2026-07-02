@@ -26,11 +26,14 @@
   like": four images stacked in a box, opacity driven by a continuous function of the clock
   instead of a hard bucket check.
 - The first version of that function had a real, findable bug: a **fixed 6-hour blend
-  radius** applied to keyframes that aren't evenly spaced. That silently produced a
-  5.5-hour "stuck" plateau across the widest gap (night → day) and a muddy 3-way overlap
-  across the narrowest one (sunset → twilight). Fixed by switching to **sequential
-  neighbor interpolation with smoothstep easing**, which scales the transition to each
-  gap's own width instead of a fixed radius.
+  radius** applied to keyframes that aren't evenly spaced, which — combined with one image
+  originally mislabeled as an evening "twilight" shot when it's actually pre-dawn — put two
+  peaks only 90 minutes apart and left an 11.5-hour gap on the other side of the clock. That
+  silently produced a multi-hour "stuck" plateau across the wide gap and a muddy overlap
+  across the narrow one. Fixed by switching to **sequential neighbor interpolation with
+  smoothstep easing**, which scales the transition to each gap's own width instead of a
+  fixed radius — and by correcting the mislabeled frame, which on its own made the four
+  real gaps far more even (4.5–7 hours).
 
 ---
 
@@ -111,15 +114,20 @@ function weightsAt(hour) {
 ```
 
 This looks reasonable and mostly works — but it silently breaks once the keyframes
-aren't evenly spaced, which they weren't (day 12:30, sunset 18:00, twilight 19:30, night
-1:00 — gaps of 5.5h, 1.5h, 5.5h, 11.5h). A fixed 6-hour radius against an 11.5-hour gap
-means each end's influence runs out well before it reaches the other: from roughly 7am to
-12:30pm, **only night or only day ever has nonzero raw weight**, so normalizing pins that
-one image at 100% opacity for 5+ hours of nothing happening, then the entire "transition"
-gets crammed into the last half-hour before day's radius kicks in — a snap disguised as a
-fade. Meanwhile the 1.5-hour sunset→twilight gap is *narrower* than the 12-hour window,
-so up to three images overlap there at once, reading as muddy rather than a clean
-two-image dissolve.
+aren't evenly spaced. The first pass had them at day 12:30, sunset 18:00, night 1:00, and
+a fourth image mislabeled "twilight" at 19:30 (it's actually a pre-dawn shot — moon still
+up, first light on the horizon, not an evening scene). Under that mislabeling the gaps
+were 5.5h, 1.5h, 5.5h, 11.5h — wildly uneven. A fixed 6-hour radius against an 11.5-hour
+gap means each end's influence runs out well before it reaches the other: from roughly
+7am to 12:30pm, **only night or only day ever had nonzero raw weight**, so normalizing
+pinned one image at 100% opacity for 5+ hours of nothing happening, then the entire
+"transition" got crammed into the last half-hour before day's radius kicked in — a snap
+disguised as a fade. Meanwhile the 1.5-hour sunset→twilight gap was *narrower* than the
+12-hour window, so up to three images overlapped there at once, reading as muddy rather
+than a clean two-image dissolve. (Correcting the label to dawn at 5:30 — night 1:00, dawn
+5:30, day 12:30, sunset 18:00 — brought the real gaps to a much saner 4.5–7 hours on its
+own, but the fixed-radius approach was still the wrong tool: it only looks fine here
+because these particular gaps happen to fit inside its 6-hour reach.)
 
 ### 3.2 The fix — sequential neighbor blend, smoothstep-eased
 
@@ -148,19 +156,23 @@ function weightsAt(hour) {
 ```
 
 This guarantees exactly two images are ever blending (never zero, never three-plus), and
-every transition is full-width and identically shaped — eased in, eased out — whether its
-gap is 90 minutes or 11.5 hours. Verified numerically before shipping it (weights always
-sum to 1; the old dead zone at the night→day midpoint now sits at a clean 50/50 instead
-of pinned at 100%):
+every transition is full-width and identically shaped — eased in, eased out — regardless
+of gap width. Verified numerically before shipping it (weights always sum to 1; the old
+dead zone at the night→day midpoint, back when that gap was still 11.5 hours, sat at a
+clean 50/50 instead of pinned at 100%). With the corrected peak hours (night 1:00, dawn
+5:30, day 12:30, sunset 18:00) the four transitions now look like:
 
 ```
 hour   weights
- 0     night:0.91 twilight:0.09
+ 0     night:0.94 sunset:0.06
  1     night:1.00
- 6.75  night:0.50 day:0.50      ← previously stuck at night:1.00
+ 3     night:0.58 dawn:0.42
+ 5.5   dawn:1.00
+ 9     dawn:0.50 day:0.50
 12.5   day:1.00
 18     sunset:1.00
-19.5   twilight:1.00
+20     night:0.20 sunset:0.80
+23.9   night:0.93 sunset:0.07
 ```
 
 ## 4. Demos
@@ -171,8 +183,8 @@ default-private to this account:
 
 - **Central Park reconstruction** — GIC's actual four hero images, same technique:
   https://claude.ai/code/artifact/1a9a67a5-04e1-43fc-b8f3-577c11e26aed
-- **Skyline reconstruction** — rebuilt with a different four-image set (day / sunset /
-  twilight / night), same underlying code:
+- **Skyline reconstruction** — rebuilt with a different four-image set (night / dawn /
+  day / sunset), same underlying code:
   https://claude.ai/code/artifact/ffba2b3a-13c6-4a0f-a288-b61a8c8ae8bb
 
 ## 5. If this ever comes up for kenius.us
