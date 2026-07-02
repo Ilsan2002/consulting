@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kenius — Blueprint (design exploration)</title>
+<meta name="description" content="Design exploration: the Blueprint direction for Kenius — first we draw the plan, then we build to it." />
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#F2EFE6" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='3' y='3' width='18' height='18' fill='none' stroke='%232A4A69' stroke-width='2'/%3E%3Cpath d='M3 9h18M9 3v18' stroke='%232A4A69' stroke-width='1'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800&f[]=general-sans@400,500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+/* ============ Kenius v4 exploration — "THE BLUEPRINT" ============
+   Warm drafting paper · graphite · one pigment: Prussian blue.
+   Personality from drafting vernacular: title blocks, dimension
+   lines, annotations, sheets. One motion moment: the plan draws. */
+:root{
+  --paper:   #F2EFE6;
+  --paper-2: #ECE8DB;
+  --ink:     #26282C;   /* graphite */
+  --ink-soft:#4A4D53;
+  --muted:   #6B6E74;
+  --blue:    #2A4A69;   /* Prussian / cyanotype — the one pigment (AA on paper) */
+  --blue-deep:#16324F;
+  --blue-line:rgba(42,74,105,.34);
+  --grid:    rgba(42,74,105,.075);
+  --grid-major:rgba(42,74,105,.14);
+  --line:    rgba(38,40,44,.2);
+  --disp: "Cabinet Grotesk", "Arial Black", sans-serif;
+  --sans: "General Sans", -apple-system, "Segoe UI", Helvetica, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  --ease: cubic-bezier(.22,.7,.3,1);
+}
+@supports (color: oklch(1 0 0)){
+  :root{
+    --paper: oklch(95% .014 92); --paper-2: oklch(92.6% .016 95);
+    --ink: oklch(24.8% .008 262); --ink-soft: oklch(40% .008 262); --muted: oklch(51% .008 258);
+    --blue: oklch(38.5% .066 249); --blue-deep: oklch(29.5% .07 250);
+  }
+}
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--sans); font-size:1rem; line-height:1.6; color:var(--ink-soft);
+  background:
+    repeating-linear-gradient(0deg, var(--grid) 0 1px, transparent 1px 8px),
+    repeating-linear-gradient(90deg, var(--grid) 0 1px, transparent 1px 8px),
+    repeating-linear-gradient(0deg, var(--grid-major) 0 1px, transparent 1px 96px),
+    repeating-linear-gradient(90deg, var(--grid-major) 0 1px, transparent 1px 96px),
+    var(--paper);
+  -webkit-font-smoothing:antialiased;
+}
+/* paper grain */
+body::after{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:60; opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode:multiply;
+}
+a{color:inherit; text-decoration:none}
+.mono{font-family:var(--mono)}
+.wrap{max-width:78rem; margin-inline:auto; padding-inline:clamp(1.1rem,4vw,3rem)}
+
+/* ---- title-block header (a drawing's title strip) ---- */
+.tb{
+  border-bottom:1.5px solid var(--blue);
+  background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:blur(6px);
+  position:sticky; top:0; z-index:50;
+}
+.tb-in{display:flex; align-items:stretch; max-width:78rem; margin-inline:auto; padding-inline:clamp(1.1rem,4vw,3rem)}
+.tb-cell{padding:.7rem 1.1rem; border-left:1px solid var(--blue-line); display:flex; flex-direction:column; justify-content:center; gap:.1rem}
+.tb-cell:first-child{border-left:0; padding-left:0}
+.tb-k{font-family:var(--mono); font-size:.58rem; letter-spacing:.14em; color:var(--muted); text-transform:uppercase}
+.tb-v{font-family:var(--mono); font-size:.78rem; color:var(--ink); white-space:nowrap}
+.tb-brand{font-family:var(--disp); font-weight:800; font-size:1.35rem; letter-spacing:-.01em; color:var(--ink)}
+.tb-brand sup{color:var(--blue); font-size:.55em}
+.tb-cta{margin-left:auto; border-left:1px solid var(--blue-line); display:flex; align-items:center; padding-left:1.1rem}
+.tb-cta a{font-family:var(--mono); font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--paper); background:var(--blue); padding:.55em 1em; border:1px solid var(--blue-deep)}
+.tb-cta a:hover{background:var(--blue-deep)}
+@media (max-width:760px){ .tb-cell.opt{display:none} }
+
+/* ---- hero ---- */
+.hero{padding-block:clamp(3rem,7vw,6rem) clamp(2.5rem,5vw,4rem)}
+.hero-grid{display:grid; gap:clamp(2rem,4vw,4rem); align-items:center}
+@media (min-width:980px){ .hero-grid{grid-template-columns:.94fr 1.06fr} }
+.kicker{font-family:var(--mono); font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--blue); display:flex; align-items:center; gap:.9em}
+.kicker::before{content:""; width:2.4rem; height:1px; background:var(--blue)}
+h1{
+  font-family:var(--disp); font-weight:800; color:var(--ink);
+  font-size:clamp(2.7rem, 1.4rem + 5.4vw, 5.6rem);
+  line-height:.96; letter-spacing:-.025em; margin-top:1.1rem; text-wrap:balance;
+}
+h1 .blue{color:var(--blue)}
+h1 .outline{color:transparent; -webkit-text-stroke:2px var(--blue); text-stroke:2px var(--blue)}
+.lead{margin-top:1.5rem; max-width:42ch; font-size:clamp(1rem,.95rem+.4vw,1.15rem); color:var(--ink-soft)}
+.hero-actions{margin-top:2rem; display:flex; gap:1.6rem; align-items:center; flex-wrap:wrap}
+.btn{font-family:var(--mono); font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:var(--paper); background:var(--blue); padding:.9em 1.5em; border:1px solid var(--blue-deep); display:inline-flex; gap:.7em; align-items:center}
+.btn:hover{background:var(--blue-deep)}
+.ghost{font-family:var(--mono); font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:var(--blue); border-bottom:1px solid var(--blue-line); padding-bottom:3px}
+.ghost:hover{border-color:var(--blue)}
+
+/* ---- the drawing sheet (schematic panel) ---- */
+.sheet{
+  border:1.5px solid var(--blue); background:var(--paper);
+  box-shadow:6px 6px 0 rgba(42,74,105,.12);
+  position:relative;
+}
+.sheet-head{display:flex; justify-content:space-between; border-bottom:1px solid var(--blue-line); padding:.55rem .9rem}
+.sheet-head span{font-family:var(--mono); font-size:.62rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+.sheet-head b{color:var(--blue); font-weight:500}
+.sheet-scroll{overflow-x:auto}
+.sheet svg{display:block; width:100%; height:auto; min-width:560px}
+/* schematic strokes + draw-in */
+.sch *{vector-effect:non-scaling-stroke}
+.sch .st{stroke:var(--blue); fill:none; stroke-width:1.5}
+.sch .dash{stroke:var(--blue); fill:none; stroke-width:1; stroke-dasharray:4 4; opacity:.6}
+.sch text{font-family:var(--mono); fill:var(--ink)}
+.sch .lbl{font-size:12px; font-weight:500; letter-spacing:.06em}
+.sch .sub{font-size:10.5px; fill:var(--muted)}
+.sch .dim{font-size:10px; fill:var(--blue); letter-spacing:.1em}
+.sch .anno{opacity:0; animation:anno .5s var(--ease) forwards}
+.sch .draw{stroke-dasharray:520; stroke-dashoffset:520; animation:draw 1.1s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes anno{to{opacity:1}}
+/* stagger the build */
+.sch .d1{animation-delay:.15s}.sch .a1{animation-delay:.75s}
+.sch .d2{animation-delay:.9s}.sch .a2{animation-delay:1.5s}
+.sch .d3{animation-delay:1.65s}.sch .a3{animation-delay:2.25s}
+.sch .d4{animation-delay:2.1s}.sch .a4{animation-delay:2.7s}
+.sch .d5{animation-delay:2.55s}.sch .a5{animation-delay:3.15s}
+/* the stamp */
+.stamp{
+  position:absolute; right:1rem; bottom:.9rem; transform:rotate(-7deg);
+  border:2px solid var(--blue); color:var(--blue); padding:.45em .8em;
+  font-family:var(--mono); font-size:.66rem; letter-spacing:.18em; text-transform:uppercase; line-height:1.35;
+  opacity:0; animation:stamp .35s cubic-bezier(.2,1.6,.4,1) 3.5s forwards;
+  background:color-mix(in srgb, var(--paper) 55%, transparent);
+}
+.stamp b{display:block; font-weight:500}
+@keyframes stamp{0%{opacity:0; transform:rotate(-7deg) scale(1.5)}100%{opacity:1; transform:rotate(-7deg) scale(1)}}
+
+/* ---- dimension-line timeline ---- */
+.dims{padding-block:clamp(2rem,4vw,3rem); border-top:1.5px solid var(--blue)}
+.dims .cap{font-family:var(--mono); font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-bottom:1.6rem}
+.dimline{display:grid; grid-template-columns:repeat(4,1fr); }
+.seg{position:relative; padding-top:1.4rem}
+.seg::before{content:""; position:absolute; top:0; left:0; right:0; height:1px; background:var(--blue)}
+.seg::after{content:""; position:absolute; top:-5px; left:0; width:1px; height:11px; background:var(--blue)}
+.seg:last-child{border-right:1px solid transparent}
+.seg .t{font-family:var(--mono); font-size:.7rem; color:var(--blue); letter-spacing:.1em}
+.seg h3{font-family:var(--disp); font-weight:700; color:var(--ink); font-size:1.15rem; margin-top:.3rem}
+.seg p{font-size:.86rem; color:var(--muted); margin-top:.35rem; max-width:24ch; padding-right:1rem}
+@media (max-width:760px){ .dimline{grid-template-columns:1fr 1fr; row-gap:2rem} }
+
+/* ---- the drawing set ---- */
+.set{padding-block:clamp(2.5rem,5vw,4.5rem)}
+.set .cap{font-family:var(--mono); font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted)}
+.set h2{font-family:var(--disp); font-weight:800; font-size:clamp(1.8rem,1.2rem+2.4vw,3rem); color:var(--ink); letter-spacing:-.02em; margin-top:.5rem; margin-bottom:2rem}
+.sheets{display:grid; gap:1px; background:var(--blue-line); border:1.5px solid var(--blue)}
+@media (min-width:860px){ .sheets{grid-template-columns:repeat(4,1fr)} }
+.sh{background:var(--paper); padding:1.2rem 1.2rem 1.5rem; position:relative}
+.sh .no{font-family:var(--mono); font-size:.62rem; letter-spacing:.14em; color:var(--blue); text-transform:uppercase}
+.sh h3{font-family:var(--disp); font-weight:700; font-size:1.2rem; color:var(--ink); margin-top:.55rem}
+.sh p{font-size:.86rem; color:var(--ink-soft); margin-top:.5rem}
+.sh .corner{position:absolute; top:6px; right:6px; width:10px; height:10px; border-top:1px solid var(--blue-line); border-right:1px solid var(--blue-line)}
+
+/* ---- footer strip ---- */
+.foot{border-top:1.5px solid var(--blue); padding-block:1.4rem 2rem}
+.foot .wrap{display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; align-items:center}
+.foot span{font-family:var(--mono); font-size:.64rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+.foot b{color:var(--blue); font-weight:500}
+
+@media (prefers-reduced-motion: reduce){
+  .sch .draw{animation:none; stroke-dashoffset:0}
+  .sch .anno{animation:none; opacity:1}
+  .stamp{animation:none; opacity:1}
+}
+</style>
+</head>
+<body>
+
+<header class="tb" aria-label="Title block">
+  <div class="tb-in">
+    <div class="tb-cell"><span class="tb-brand">Kenius<sup>®</sup></span></div>
+    <div class="tb-cell opt"><span class="tb-k">Project</span><span class="tb-v">AI, where it pays off</span></div>
+    <div class="tb-cell opt"><span class="tb-k">Sheet</span><span class="tb-v">00 — COVER</span></div>
+    <div class="tb-cell opt"><span class="tb-k">Rev</span><span class="tb-v">A · 2026</span></div>
+    <div class="tb-cta"><a href="#">Open a drawing ↗</a></div>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="kicker">Boutique AI consultancy — strategy &amp; implementation</p>
+        <h1>First we draw <span class="blue">the plan.</span><br />Then we <span class="outline">build to it.</span></h1>
+        <p class="lead">Kenius maps where AI actually pays off in your business — like a working drawing, with costs and tolerances — then builds exactly what the plan says. Nothing speculative, nothing you don’t need.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#">Book a survey <span aria-hidden="true">↗</span></a>
+          <a class="ghost" href="#">See the drawing set</a>
+        </div>
+      </div>
+
+      <figure class="sheet" role="img" aria-label="Schematic: an inbound call is triaged by an AI agent in under sixty seconds — routine work booked, emergencies escalated to a person. Illustrative drawing.">
+        <div class="sheet-head"><span>DWG <b>K-101</b> · AFTER-HOURS CALL, HANDLED</span><span>SCALE <b>1:1</b> · ILLUSTRATIVE</span></div>
+        <div class="sheet-scroll">
+        <svg class="sch" viewBox="0 0 640 330" aria-hidden="true">
+          <!-- node 1: inbound -->
+          <rect class="st draw d1" x="36" y="130" width="128" height="58"/>
+          <g class="anno a1">
+            <text class="lbl" x="52" y="155">INBOUND CALL</text>
+            <text class="sub" x="52" y="172">23:58 · after hours</text>
+          </g>
+          <!-- flow to node 2 -->
+          <path class="st draw d2" d="M164 159 H 250"/>
+          <path class="st draw d2" d="M243 153 L 253 159 L 243 165"/>
+          <!-- node 2: agent -->
+          <rect class="st draw d2" x="253" y="130" width="128" height="58"/>
+          <g class="anno a2">
+            <text class="lbl" x="269" y="155">AGENT · TRIAGE</text>
+            <text class="sub" x="269" y="172">intent: “no heat”</text>
+          </g>
+          <!-- branch up: booked -->
+          <path class="st draw d3" d="M381 148 C 418 148 418 84 451 84"/>
+          <path class="st draw d3" d="M444 78 L 454 84 L 444 90"/>
+          <rect class="st draw d3" x="454" y="55" width="156" height="58"/>
+          <g class="anno a3">
+            <text class="lbl" x="468" y="80">ROUTINE → BOOKED</text>
+            <text class="sub" x="468" y="98">tech visit · 07:30</text>
+          </g>
+          <!-- branch down: escalate -->
+          <path class="st draw d4" d="M381 170 C 418 170 418 240 451 240"/>
+          <path class="st draw d4" d="M444 234 L 454 240 L 444 246"/>
+          <rect class="st draw d4" x="454" y="211" width="156" height="58"/>
+          <g class="anno a4">
+            <text class="lbl" x="468" y="236">EMERGENCY → HUMAN</text>
+            <text class="sub" x="468" y="254">on-call · patched now</text>
+          </g>
+          <!-- dimension line -->
+          <path class="dash draw d5" d="M36 300 H 605"/>
+          <path class="st draw d5" d="M36 294 V 306 M605 294 V 306"/>
+          <g class="anno a5">
+            <rect x="255" y="288" width="130" height="24" fill="var(--paper)"/>
+            <text class="dim" x="272" y="304">◄ 60 SECONDS ►</text>
+          </g>
+        </svg>
+        </div>
+        <div class="stamp"><b>Approved · Kenius</b>drawn by humans</div>
+      </figure>
+    </div>
+  </section>
+
+  <section class="dims">
+    <div class="wrap">
+      <p class="cap">The engagement, dimensioned</p>
+      <div class="dimline">
+        <div class="seg"><span class="t">WK 0</span><h3>Site survey</h3><p>A 30-minute call. We measure where the hours actually go.</p></div>
+        <div class="seg"><span class="t">WK 1–2</span><h3>Schematic</h3><p>A costed plan — where AI pays off, and where it honestly doesn’t.</p></div>
+        <div class="seg"><span class="t">WK 4–8</span><h3>Working drawings</h3><p>The pilot, built to the plan. Fixed fee, on a calendar you can hold us to.</p></div>
+        <div class="seg"><span class="t">AS-BUILT</span><h3>Handover</h3><p>We tune it, document it, and hand you the keys. No lock-in.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="set">
+    <div class="wrap">
+      <p class="cap">Sheet index</p>
+      <h2>The drawing set.</h2>
+      <div class="sheets">
+        <div class="sh"><span class="corner"></span><span class="no">Sheet 01 · Survey</span><h3>AI strategy</h3><p>Workflow mapping, feasibility, a prioritised roadmap — with us or without us.</p></div>
+        <div class="sh"><span class="corner"></span><span class="no">Sheet 02 · Schematic</span><h3>Custom agents</h3><p>Bespoke agents that complete whole tasks and ask a human before anything risky.</p></div>
+        <div class="sh"><span class="corner"></span><span class="no">Sheet 03 · Services</span><h3>Voice &amp; documents</h3><p>Phone assistants that book jobs; paperwork that reads, files and reconciles itself.</p></div>
+        <div class="sh"><span class="corner"></span><span class="no">Sheet 04 · As-built</span><h3>Run &amp; hand over</h3><p>Guardrails, measurement, tuning — then the keys. Built to be yours.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>DRAWN BY HUMANS · CHECKED BY HUMANS · <b>BUILT WITH AI</b></span>
+    <span>KENIUS.US · REV A · <b>DESIGN EXPLORATION — NOT THE LIVE SITE</b></span>
+  </div>
+</footer>
+
+</body>
+</html>
