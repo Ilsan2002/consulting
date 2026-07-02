@@ -32,19 +32,19 @@ Never start coding from "make a landing page." Produce (or elicit) a brief with 
 
 1. **Subject + audience + the page's single job.** One sentence each. If the user's request doesn't pin these down, pin them yourself and state your choice.
 2. **A named aesthetic direction** — e.g. brutalist, editorial, luxury-minimal, retro-futuristic, warm analog, technical/blueprint, playful maximalist. Naming it forces commitment; "clean and modern" is not a direction.
-3. **2–3 concrete references** when available. Ask the user for screenshots, or name reference sites and describe *why* they work (hierarchy, spacing, motion) — analysis transfers better than imitation. Match references to sections, not whole pages: clone a header approach, a pricing layout, a footer treatment separately.
+3. **2–3 concrete references** when available. Ask the user for screenshots, or name reference sites and describe *why* they work (hierarchy, spacing, motion) — analysis transfers better than imitation. Anthropic's cookbook strategy worth applying verbatim: reference inspirations **by name** (an IDE theme, a magazine tradition, a cultural aesthetic) "without being prescriptive enough to clone them" — name it, don't clone it. Match references to sections, not whole pages: clone a header approach, a pricing layout, a footer treatment separately.
 4. **Palette seed** — one brand color everything derives from (Phase 2).
 5. **Type direction** — the personality the display face must carry.
 6. **Motion intent** — where the one orchestrated moment lives, and what stays still.
 
-**The ban list (state it explicitly in the brief):** Inter/Roboto as display faces; default Tailwind indigo/blue/purple palette values; flat `shadow-md` cards on white; numbered 01/02/03 feature markers unless content is genuinely sequential; purple-to-blue gradients on dark; scattered micro-animations everywhere. Naming anti-patterns measurably improves output — "avoid Inter and Roboto" and "use atmospheric backgrounds instead of solid colors" are documented immediate levers.
+**The ban list (state it explicitly in the brief):** Inter/Roboto as display faces; default Tailwind indigo/blue/purple palette values; flat `shadow-md` cards on white; numbered 01/02/03 feature markers unless content is genuinely sequential; purple-to-blue gradients on dark; scattered micro-animations everywhere; **second-order defaults** — Geist, Space Grotesk, Instrument Serif as the whole voice (they've become AI reflexes too); one font family doing the entire page; vague hype headlines ("Build the future of work"); motion tells (bounce/elastic easing on UI, animating width/height, image scale-on-hover). Naming anti-patterns measurably improves output — "avoid Inter and Roboto" and "use atmospheric backgrounds instead of solid colors" are documented immediate levers.
 
 ## Phase 2 — Build the design system before the pages
 
 Small token system first; pages consume tokens only. This is what makes the design cohere and makes client rebrands an edit-once operation.
 
 - **Color:** derive a full ramp from the brand seed in **OKLCH** (perceptually uniform, P3-ready). Two tiers: reference ramps (e.g. `blue-1..12`) → semantic tokens (`bg-surface`, `text-primary`, `accent`). Components touch only the semantic tier. Tools and pre-designed scales: see *Color, tokens & theming* in `references/resources.md`.
-- **Typography:** a characterful display face + complementary body face, never the ban-list defaults. Sources and pairing tools: see *Typography* in `references/assets-and-licensing.md`. Set a deliberate type scale with intentional weights — for minimal directions, precision in type and spacing IS the design.
+- **Typography:** a characterful display face + complementary body face, never the ban-list defaults. Pairing principle (from Anthropic's cookbook): **high contrast is interesting** — display + monospace, serif + geometric sans; use weight extremes (100/200 against 800/900) and size jumps of 3×+. Mood→font shortlists and sources: see *Typography* in `references/assets-and-licensing.md`. Set a deliberate type scale — for minimal directions, precision in type and spacing IS the design.
 - **Spacing:** one modular scale, applied consistently. Inconsistent section padding is a top "AI-built" tell.
 - **Texture & atmosphere:** decide now whether the direction calls for mesh gradients, noise/grain, patterns, or flat color. Generators that export straight to CSS/SVG: see *Backgrounds & texture* in `references/assets-and-licensing.md`.
 - **Motion budget:** one signature orchestrated moment (hero load sequence, scroll narrative) + quiet functional transitions. Everything else static. Extra animation reads as AI-generated.
@@ -72,6 +72,7 @@ Claude designs dramatically better when it can see its own output. Never hand ba
    It captures desktop (1440px), tablet (768px), and mobile (390px) full-page screenshots and dumps console errors. **Look at the images.** A picture is worth a thousand tokens of guessing.
 3. Self-critique against the brief: does the hero state a thesis? Does the type carry personality? Is spacing consistent? Is the signature element the *one* memorable thing? Would this design appear for any similar prompt? If yes — revise that part and say what changed.
 4. Fix console errors and visual bugs before moving on. Broken sections compound.
+5. **Loop discipline:** iterate ONE design dimension at a time (typography, then color, then motion). "Silence equals defaults" — when output regresses to a generic pattern, treat it as a **missing spec entry** and harden the tokens/brief (pill buttons appeared → add `border-radius: 0` to the system; Inter appeared → make the font `<link>`/`@font-face` explicit), don't just re-prompt. Corrected the same issue twice → restart the section with a sharper brief instead of patching a third time. Spend disproportionate time on the hero, pricing, and empty states; move fast elsewhere.
 
 ## Phase 5 — QA and ship
 
@@ -79,6 +80,8 @@ Run before calling anything done:
 
 - **Performance:** Lighthouse (CLI or PageSpeed Insights). Mobile score below ~90 → cut heavy 3D/animation or move to zero-JS-by-default rendering (Astro) for that project.
 - **Accessibility:** axe or WAVE pass; visible keyboard focus; color contrast on the actual palette; `prefers-reduced-motion` respected on every animation.
+- **Fonts actually loaded:** naming a font without loading the file/weights silently falls back to a system font — the most common way a "distinctive" build ships looking default. Verify with `document.fonts.check('16px "Face"')` or by reading the letterforms in the screenshot.
+- **Automated slop scan:** `npx impeccable detect` — ~41 deterministic rules for AI-generated tells (plus an opt-in LLM critique pass). Run it; fix what it flags or justify why not.
 - **Responsive:** re-run the screenshot loop at all three viewports on final pages.
 - **Licensing:** verify every font, icon set, illustration, and photo license for commercial use (rules of thumb in `references/assets-and-licensing.md` — e.g. Storyset needs attribution, stock photos don't guarantee model releases, GSAP is free-to-use but not open-source).
 - **Plumbing:** forms, analytics, and deployment options are cataloged in *Supporting tools* in `references/resources.md`.
@@ -95,6 +98,10 @@ Scan the finished product for these tells; any hit means revise:
 - Emoji as section bullets; centered-everything layouts; animation on every element
 - A hero that is "big number + small label + gradient accent" without justification
 - Identical section padding rhythm with no compositional variation
+- A vague hype headline ("Build the future of work") where a specific claim should be
+- One font family doing the whole page (no display/body contrast) — or Geist/Space Grotesk/Instrument Serif carrying it alone (second-order defaults)
+- Motion tells: bounce/elastic easing on UI elements, width/height animation (jank), image scale-on-hover as the only idea
+- Testimonial carousel + three-column footer link wall as the default page ending
 
 ## Reference files
 

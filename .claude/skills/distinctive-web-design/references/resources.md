@@ -26,7 +26,10 @@ The full resource catalog. Prices, tiers, star counts, and version notes are poi
 - **21st.dev Magic MCP** (freemium, API key; `npx @21st-dev/magic@latest`). "/ui …" generates a component into the project. Fast first drafts of a section.
 - **Figma MCP** (subscription; token-based open-source alternatives exist). Pulls design specs into context. The high-end loop: Figma MCP (specs) → Claude Code (interpretation) → Playwright MCP (validation).
 - **Chrome DevTools MCP** (free). Live Chrome control for inspection/perf debugging.
+- **Context7 MCP** — injects up-to-date, version-specific library docs into context; prevents stale API patterns.
 - **CLAUDE.md patterns that consistently work:** a `brand_assets/` rule (assets in the folder get used; defined palettes are law); explicit bans ("default Tailwind palette is off the table; build from a brand color", "flat shadow-md is not an option"); a Screenshot Workflow section; hooks for deterministic actions (lint/format after edits). Treat it as a living document. Reference-cloning works better on sections than full pages.
+- **design-reviewer subagent:** define one in `.claude/agents/` (project-scoped, version-controlled) that screenshots via Playwright and checks output against the design brief/tokens; runs in its own context and returns only a summary. Parallel review agents measurably beat a single pass (~75% actionable suggestions vs <50% in one practitioner's testing).
+- **Community anti-slop packages:** `impeccable` (impeccable.style — `npx impeccable detect`, ~41 deterministic AI-tell rules + opt-in LLM critique); UI/UX Pro Max (67 styles / 50 pairings / trend data); calm-design (50+ blocked patterns, Linear/Vercel-class references); bencium UX skills; rohitg00/awesome-claude-design (DESIGN.md prompts by aesthetic family).
 - Many practitioners now prefer **skills** (`.claude/skills/`, readable text) over MCP servers (black boxes) for reusable design knowledge.
 
 ## 2. Component libraries by stack
@@ -56,7 +59,8 @@ The full resource catalog. Prices, tiers, star counts, and version notes are poi
 
 ### Plain HTML/CSS
 
-- **Tailwind CSS v4** — free. The styling layer AI handles most naturally; ~5x faster builds in v4.
+- **Modern CSS baseline (2025+):** nesting, `:has()`, container queries, subgrid, `light-dark()`, OKLCH, same-document View Transitions, and **scroll-driven animations** (`animation-timeline: scroll()`/`view()`) are all Baseline — for simple scroll effects reach for native CSS before adding GSAP; it's GPU-accelerated and zero-JS.
+- **Tailwind CSS v4** — free; stable since Jan 2025. Ground-up rewrite: CSS-first config via `@theme` (no tailwind.config.js), **OKLCH default palette**, native container queries, `@starting-style`; ~5x faster builds (vendor benchmark). The styling layer AI handles most naturally.
 - **Pico CSS** — free, ~10KB, classless (styles semantic HTML automatically, auto dark mode). Docs, prototypes, content sites.
 - **Open Props** — free. Design tokens as CSS custom properties (color, spacing, type, gradients, shadows, easings). Token-based theming without a framework.
 - **Bulma** — free. Flexbox, no JS; v1.0 added CSS variables + dark mode.
@@ -94,6 +98,7 @@ Reserve 3D for premium projects with a performance budget; it's the first thing 
 - **Style Dictionary** — free. Build-time token transformer: one source → CSS variables, SCSS, iOS/Android; OKLCH→HEX at export.
 - **Radix Colors** — free. 25 accents + grays; designed 12-step scales where each step maps to a UI role; automatic light/dark + high-contrast. Don't pick colors blind.
 - **Realtime Colors** — free. Live-preview a palette on a real page layout before committing.
+- **tweakcn** (tweakcn.com) — open-source visual theme editor for shadcn/ui: sliders + live preview, OKLCH/HSL export for Tailwind v3/v4, built-in contrast checks, 50+ presets, AI theme-from-image (Pro). The fastest escape from default shadcn grays.
 - **Other tooling:** oklch.com (picker), Coolors (fast generation), Huemint (AI palettes), ColorUI (DTCG/OKLCH token export), Open Props (token system), shadcn theming (CSS custom properties + Visual Builder, OKLCH support).
 
 Typography, icons, illustrations, photos, and background generators: see `assets-and-licensing.md`.
@@ -130,9 +135,9 @@ Typography, icons, illustrations, photos, and background generators: see `assets
 
 ## 8. Supporting tools
 
-- **Deployment:** Vercel (free hobby; best Next.js DX), Netlify (free tier; Forms built in), Cloudflare Pages (free, generous bandwidth). All deploy from GitHub in minutes.
-- **Forms (static/marketing):** Web3Forms (free, near-unlimited, no account, hCaptcha included), Formspree (free 50/mo; React lib), Basin (~100/mo free), Formspark (250 lifetime free), Netlify Forms (~100/mo free, Netlify-only lock-in), Tally (free no-code). Code-first: **React Hook Form + Zod** (free, MIT) — the natural React/Next.js fit.
-- **Analytics:** Plausible (from ~$9/mo or self-host free; cookieless, <1KB, GDPR-friendly — good for SMB client trust), Fathom (~$15/mo), Vercel Web Analytics (free on Vercel), PostHog (free to 1M events; replay + flags), GA4 (free; needs consent banner).
+- **Deployment:** Cloudflare Pages (free: **unlimited bandwidth**, ~500 builds/mo — the static-site default), Netlify (free tier permits commercial use; built-in Forms; moved to credit-based billing late 2025), Vercel (best Next.js DX, but **Hobby is non-commercial — client work requires Pro ~$20/user/mo**). All deploy from GitHub in minutes.
+- **Forms (static/marketing):** Web3Forms (free ~**250 submissions/mo**, no account, hCaptcha; Pro ~$12/mo for 10k + files/webhooks), Formspree (free 50/mo; React lib; confirm current paid tiers on their pricing page), Basin (~100/mo free), Formspark (250 lifetime free), Netlify Forms (~100/mo free, Netlify-only lock-in), Tally (free no-code). Code-first: **React Hook Form + Zod** (free, MIT) — the natural React/Next.js fit.
+- **Analytics:** Plausible (no free cloud tier — trial then ~$9/mo, or self-host free under AGPL; cookieless, EU-hosted, no consent banner — good for SMB client trust), Fathom (~$15/mo), Vercel Web Analytics (free ~50k events/mo on Hobby), PostHog (free to 1M events; replay + flags), GA4 (free; needs consent banner), Cloudflare Web Analytics (free, cookieless, one dashboard toggle on CF-hosted sites).
 - **Image optimization:** Squoosh web app (the `@squoosh/lib` Node package is deprecated), sharp (Node pipelines; powers next/image), SVGO CLI + SVGOMG GUI, next/image.
 - **Quality gates:** Lighthouse (CLI/CI-friendly), PageSpeed Insights (real CrUX data), axe DevTools (industry-standard a11y engine), WAVE (visual a11y). Wire Lighthouse into CI and script the audits.
 
@@ -141,6 +146,7 @@ Typography, icons, illustrations, photos, and background generators: see `assets
 - **v0** (Vercel) — best React/Next UI generation, Design Mode, Figma import; free tier. Use for individual components/section variants.
 - **Lovable** — full-stack scaffolds (Supabase, auth, deploy), GitHub sync; from ~$25/mo. Use for whole-app starts.
 - **Bolt.new** — fastest WebContainer prototyping, multi-framework. Quick PoCs.
+- **Claude Design** (claude.ai/design) — Anthropic's visual prototyping canvas; hands off cleanly to Claude Code for production. Caveats: defaults to the same slop without a DESIGN.md brief, has its own fast-burning usage meter, and can't host/auth/take payments — treat as a concepting surface, not a delivery pipeline.
 - The agency-tested pipeline: **v0 for components → Lovable for the app scaffold → Claude Code for production finish** (security, performance, code ownership). Claude Code has the highest ceiling — full filesystem/Git/MCP access is where distinctive, owned code gets finished.
 
 ## 10. GitHub repos & awesome lists

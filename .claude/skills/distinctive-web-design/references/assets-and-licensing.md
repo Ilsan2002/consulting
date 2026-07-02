@@ -4,12 +4,23 @@ Fonts, icons, illustrations, images, and texture generators — with the license
 
 ## Typography
 
-The single biggest anti-slop lever. Avoid Inter/Roboto as display faces — they are the statistical center of AI output.
+The single biggest anti-slop lever. Avoid Inter/Roboto as display faces — they are the statistical center of AI output. **Second-order warning (2026):** Geist, Space Grotesk, and Instrument Serif have themselves become AI reflexes — fine as one voice in a deliberate pairing, a tell when carrying a page alone. Reach further.
 
-- **Fontshare** (Indian Type Foundry) — free for commercial use; variable fonts; 59 curated pairs. Distinctive picks: Satoshi, General Sans, Clash Display, Cabinet Grotesk.
-- **Geist / Geist Mono** (Vercel) — free, OFL, on Google Fonts. Built for developer products; clean modern SaaS voice.
-- **Google Fonts non-defaults** — Bricolage Grotesque, Instrument Serif/Sans, Space Grotesk, Syne, DM Sans. Reliable hosting, but the popular ones are becoming the *new* defaults; pair unexpectedly.
+**Mood → font shortlists** (from Anthropic's Frontend Aesthetics Cookbook — embed in briefs verbatim):
+- *Code aesthetic:* JetBrains Mono, Fira Code, Space Grotesk
+- *Editorial:* Playfair Display, Crimson Pro, Fraunces
+- *Startup:* Clash Display, Satoshi, Cabinet Grotesk
+- *Technical:* IBM Plex family, Source Sans 3
+- *Distinctive:* Bricolage Grotesque, Obviously, Newsreader
+
+Pairing principle: **high contrast is interesting** — display + monospace, serif + geometric sans; weight extremes (100/200 vs 800/900); size jumps of 3×+.
+
+- **Fontshare** (Indian Type Foundry) — free for commercial use; variable fonts; 59 curated pairs. Distinctive picks: Satoshi, General Sans, Clash Display, Cabinet Grotesk, Switzer, Zodiak, Supreme.
+- **Pangram Pangram** — free tier includes Editorial New and Neue Montreal; a step off the beaten path.
+- **Geist / Geist Mono** (Vercel), **Mona Sans** (GitHub, variable, 3 axes) — solid, free, but now common; use inside a pairing, not alone.
+- **Google Fonts non-defaults** — Fraunces, Bricolage Grotesque, Instrument Serif/Sans, Plus Jakarta Sans, Syne, Hanken Grotesk. Reliable hosting, but the popular ones are becoming the *new* defaults; pair unexpectedly.
 - **Pairing tools:** Fontpair, Typewolf, Figma's pairing library. Prefer variable fonts + a deliberate type scale (weights/widths chosen, not defaulted).
+- **Loading gotcha:** naming a font without actually loading the file/weights silently falls back to system — always ship the `@font-face`/`<link>` and verify in the rendered screenshot.
 
 ## Icons
 
