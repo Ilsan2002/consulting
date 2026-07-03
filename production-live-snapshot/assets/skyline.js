@@ -152,3 +152,32 @@
   var y = String(new Date().getFullYear());
   document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = y; });
 })();
+
+/* --- contact form (Web3Forms) — only runs where the form exists --- */
+(function () {
+  'use strict';
+  var f = document.querySelector('form[data-ajax]');
+  if (!f) return;
+  var ok = document.getElementById('form-success');
+  var sb = f.querySelector('[type="submit"]');
+  var hp = f.querySelector('.hp');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  f.addEventListener('submit', function (e) {
+    if (hp && hp.checked) { e.preventDefault(); return; }
+    e.preventDefault();
+    if (!f.checkValidity()) { f.reportValidity(); return; }
+    var orig = sb.innerHTML; sb.disabled = true; sb.textContent = 'Sending…';
+    fetch(f.action, { method: 'POST', body: new FormData(f), headers: { Accept: 'application/json' } })
+      .then(function (r) {
+        if (!r.ok) throw 0;
+        f.reset();
+        if (ok) { f.hidden = true; ok.hidden = false; ok.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' }); }
+      })
+      .catch(function () {
+        sb.disabled = false; sb.innerHTML = orig;
+        var m = f.querySelector('.form-err');
+        if (!m) { m = document.createElement('p'); m.className = 'form-note form-err'; m.style.color = '#b91c1c'; sb.insertAdjacentElement('afterend', m); }
+        m.textContent = 'That didn’t send — please email hello@kenius.us instead.';
+      });
+  });
+})();
