@@ -1,5 +1,5 @@
 /* Kenius — "Skyline" exploration.
-   Sky engine: five stills cross-faded by a virtual clock (24h per 24s),
+   Sky engine: four stills cross-faded by a virtual clock (24h per 24s),
    seeded from the visitor's real local time. The agent log fires its
    entries when the virtual clock passes their hour. */
 
@@ -12,8 +12,7 @@
     { id: 'night',  at: 1 },
     { id: 'dawn',   at: 5.5 },
     { id: 'day',    at: 12.5 },
-    { id: 'sunset', at: 18 },
-    { id: 'dusk',   at: 20.5 }
+    { id: 'sunset', at: 18 }
   ];
 
   // Log entries carry the Blueprint copy; times are spread across the day

@@ -89,22 +89,11 @@ a{ color:inherit; }
 .sky-img{
   position:absolute; inset:0;
   width:100%; height:100%;
-  object-fit:cover; object-position:50% 60%;
+  object-fit:cover; object-position:50% 62%;
   opacity:0;
   image-rendering:auto;
-  transform-origin:center center;
 }
 .sky-img.is-on{ opacity:1; }  /* no-JS / first-paint fallback: day */
-
-/* Per-frame crop: the five paintings sit at slightly different camera
-   distances, so a single crop makes the skyline jump on cross-fade.
-   Day is the reference (tightest); zoom the wider frames in so the
-   central palace + plaza stay a consistent size and position. */
-#sky-day    { object-position:50% 60%; transform:scale(1);    }
-#sky-dawn   { object-position:50% 60%; transform:scale(1.02); }
-#sky-sunset { object-position:50% 60%; transform:scale(1.02); }
-#sky-night  { object-position:50% 58%; transform:scale(1.12); }
-#sky-dusk   { object-position:50% 54%; transform:scale(1.30); }
 
 /* readability scrim: stronger at top (nav+title), gentle at bottom */
 .sky-scrim{
