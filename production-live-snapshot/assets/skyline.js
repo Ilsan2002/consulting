@@ -177,7 +177,7 @@
         sb.disabled = false; sb.innerHTML = orig;
         var m = f.querySelector('.form-err');
         if (!m) { m = document.createElement('p'); m.className = 'form-note form-err'; m.style.color = '#b91c1c'; sb.insertAdjacentElement('afterend', m); }
-        m.textContent = 'That didn’t send — please email ilsan@kenius.us instead.';
+        m.textContent = 'That didn’t send — please email hello@kenius.co instead.';
       });
   });
 })();
