@@ -17,7 +17,9 @@
 
   // Log entries carry the Blueprint copy; times are spread across the day
   // so each fires under the matching sky. Illustrative, not case studies.
-  var EVENTS = [
+  // Language follows the page's <html lang>: ru on kenius.us, en on kenius.co.
+  var LANG = (document.documentElement.lang || 'en').toLowerCase().slice(0, 2);
+  var EVENTS_EN = [
     { at: 2 + 14 / 60,  t: '02:14', html: '&ldquo;No heat &mdash; unit 4B.&rdquo; <b>&rarr; tech dispatched</b>' },
     { at: 6 + 39 / 60,  t: '06:39', html: '&ldquo;Still need my W-2?&rdquo; <b>&rarr; docs collected</b>' },
     { at: 10 + 5 / 60,  t: '10:05', html: '&ldquo;Where&rsquo;s my order?&rdquo; <b>&rarr; resolved, no queue</b>' },
@@ -25,6 +27,15 @@
     { at: 18 + 22 / 60, t: '18:22', html: 'Portal lead, pre-approved <b>&rarr; tour booked</b>' },
     { at: 23 + 58 / 60, t: '23:58', html: 'Missed call: furnace out <b>&rarr; tech en route</b>' }
   ];
+  var EVENTS_RU = [
+    { at: 2 + 14 / 60,  t: '02:14', html: '&laquo;Нет тепла &mdash; кв. 4Б.&raquo; <b>&rarr; мастер выехал</b>' },
+    { at: 6 + 39 / 60,  t: '06:39', html: '&laquo;Нужна справка о доходах?&raquo; <b>&rarr; документы собраны</b>' },
+    { at: 10 + 5 / 60,  t: '10:05', html: '&laquo;Где мой заказ?&raquo; <b>&rarr; решено, без очереди</b>' },
+    { at: 13 + 27 / 60, t: '13:27', html: '41 счёт прочитан и сверен <b>&rarr; 2 на проверку</b>' },
+    { at: 18 + 22 / 60, t: '18:22', html: 'Заявка с портала, одобрена <b>&rarr; показ назначен</b>' },
+    { at: 23 + 58 / 60, t: '23:58', html: 'Пропущенный: не работает котёл <b>&rarr; мастер в пути</b>' }
+  ];
+  var EVENTS = LANG === 'ru' ? EVENTS_RU : EVENTS_EN;
 
   var layers = {};
   FRAMES.forEach(function (f) { layers[f.id] = document.getElementById('sky-' + f.id); });
@@ -177,7 +188,9 @@
         sb.disabled = false; sb.innerHTML = orig;
         var m = f.querySelector('.form-err');
         if (!m) { m = document.createElement('p'); m.className = 'form-note form-err'; m.style.color = '#b91c1c'; sb.insertAdjacentElement('afterend', m); }
-        m.textContent = 'That didn’t send — please email hello@kenius.co instead.';
+        m.textContent = (document.documentElement.lang || 'en').toLowerCase().slice(0, 2) === 'ru'
+          ? 'Не отправилось — напишите, пожалуйста, на hello@kenius.co.'
+          : 'That didn’t send — please email hello@kenius.co instead.';
       });
   });
 })();

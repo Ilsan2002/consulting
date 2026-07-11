@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://kenius.us/contact" />
+  <link rel="alternate" hreflang="ru" href="https://kenius.us/contact" />
+  <link rel="alternate" hreflang="en" href="https://kenius.co/contact" />
+  <link rel="alternate" hreflang="x-default" href="https://kenius.co/contact" />
+  <title>Контакты — Kenius · Расскажите, что съедает ваш день.</title>
+  <meta name="description" content="Расскажите Kenius, что съедает время вашей команды. Запишитесь на 30-минутный ознакомительный звонок, и мы честно скажем, стоит ли внедрять ИИ — и во сколько это обойдётся." />
+  <meta name="theme-color" content="#fafafa" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='1' y='1' width='6' height='6' fill='%23171717'/%3E%3Crect x='9' y='1' width='6' height='6' fill='%2316a34a'/%3E%3Crect x='1' y='9' width='6' height='6' fill='%23a3a3a3'/%3E%3Crect x='9' y='9' width='6' height='6' fill='%23171717'/%3E%3C/svg%3E" />
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/pixelifysans-cyrillic.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/geist-cyrillic.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/geistmono-cyrillic.woff2" crossorigin />
+  <link rel="preload" as="image" href="/assets/img/sky-day-4.webp" />
+  <link rel="preload" as="image" href="/assets/img/sky-night-4.webp" />
+  <link rel="preload" as="image" href="/assets/img/sky-dawn-4.webp" />
+  <link rel="preload" as="image" href="/assets/img/sky-sunset-3.webp" />
+  <link rel="stylesheet" href="/assets/skyline.css?v=4" />
+  <noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+  <a class="skip" href="#main">Перейти к содержимому</a>
+
+  <!-- ============ HERO — same sky, shorter band ============ -->
+  <header class="hero hero--page" id="top">
+    <div class="sky" aria-hidden="true">
+      <img class="sky-img" id="sky-night"  src="/assets/img/sky-night-4.webp"  alt="" />
+      <img class="sky-img" id="sky-dawn"   src="/assets/img/sky-dawn-4.webp"   alt="" />
+      <img class="sky-img is-on" id="sky-day" src="/assets/img/sky-day-4.webp" alt="" />
+      <img class="sky-img" id="sky-sunset" src="/assets/img/sky-sunset-3.webp" alt="" />
+      <div class="sky-scrim"></div>
+    </div>
+
+    <nav class="nav" aria-label="Главное меню">
+      <a class="brand" href="/">Kenius<sup>&reg;</sup></a>
+      <div class="nav-links">
+        <a href="/services">Услуги</a>
+        <a href="/work">Сценарии</a>
+        <a href="/about">О нас</a>
+        <a class="pill" href="/contact" aria-current="page">Записаться на звонок</a>
+      </div>
+    </nav>
+
+    <div class="hero-title">
+      <p class="kicker">Kenius &middot; контакты</p>
+      <h1>Расскажите, что съедает ваш день.</h1>
+    </div>
+
+    <p class="hero-lead">Расскажите, чем ваша команда занимается целыми днями. Мы вернёмся в течение одного рабочего дня с прямым ответом, есть ли смысл в ИИ &mdash; и с примерной оценкой стоимости.</p>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ FORM + ASIDE ============ -->
+    <section class="sec" id="form">
+      <div class="wrap">
+        <div class="contact-grid rv">
+          <div>
+            <form class="form-card" id="contact-form" data-ajax action="https://api.web3forms.com/submit" method="POST" novalidate>
+              <h2>Начнём с разговора.</h2>
+              <input type="hidden" name="access_key" value="c8d5b95e-3d5c-4d35-b551-6f3acacce331" />
+              <input type="hidden" name="subject" value="Новая заявка с kenius.us" />
+              <input type="hidden" name="from_name" value="Сайт Kenius" />
+              <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+              <div class="f-row">
+                <div class="field">
+                  <label for="name">Ваше имя</label>
+                  <input id="name" name="name" type="text" autocomplete="name" placeholder="Алексей Иванов" required />
+                </div>
+                <div class="field">
+                  <label for="company">Компания</label>
+                  <input id="company" name="company" type="text" autocomplete="organization" placeholder="Гавань и Финч" />
+                </div>
+              </div>
+              <div class="f-row">
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" autocomplete="email" placeholder="alex@company.com" required />
+                </div>
+                <div class="field">
+                  <label for="area">Направление</label>
+                  <select id="area" name="area">
+                    <option value="">Пока не знаю</option>
+                    <option>Поддержка клиентов</option>
+                    <option>Приём звонков / голос</option>
+                    <option>Бэк-офис и документы</option>
+                    <option>Дожим продаж</option>
+                    <option>Внутренний копайлот</option>
+                    <option>Что-то другое</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label for="message">Что съедает время вашей команды?</label>
+                <textarea id="message" name="message" placeholder="Нам приходит ~80 писем в день в духе «где мой заказ», и наша команда из двух человек уже не справляется после обеда&hellip;" required></textarea>
+              </div>
+              <button class="btn" type="submit">Отправить <span aria-hidden="true">&rarr;</span></button>
+              <p class="form-note">Предпочитаете почту? <a href="mailto:hello@kenius.co">hello@kenius.co</a> &mdash; и то, и другое читает живой человек.</p>
+            </form>
+            <div class="form-ok" id="form-success" hidden>
+              <h2>Спасибо &mdash; заявка зафиксирована.</h2>
+              <ul class="ticks">
+                <li><b>Получено</b> &mdash; ваше сообщение уже во входящих.</li>
+                <li><b>Дальше</b> &mdash; живой человек прочитает его и ответит в течение одного рабочего дня.</li>
+              </ul>
+              <p class="form-note">Если срочно, пишите на <a href="mailto:hello@kenius.co">hello@kenius.co</a>.</p>
+            </div>
+          </div>
+
+          <aside class="cx" aria-label="Контактные данные">
+            <div class="r">
+              <span class="k">Email</span>
+              <a class="v" href="mailto:hello@kenius.co">hello@kenius.co</a>
+            </div>
+            <div class="r">
+              <span class="k">Ответ</span>
+              <span class="v">В течение одного рабочего дня</span>
+            </div>
+            <div class="r">
+              <span class="k">Где</span>
+              <span class="v">Прежде всего удалённо</span>
+            </div>
+            <div class="r">
+              <span class="k">Что будет дальше</span>
+              <ul class="ticks" style="margin-top:10px">
+                <li><b>+0&nbsp;ч</b> &mdash; живой человек читает и отвечает.</li>
+                <li><b>+1&nbsp;день</b> &mdash; 30-минутный звонок, чтобы разобраться в процессе.</li>
+                <li><b>+1&nbsp;нед.</b> &mdash; честное предложение с фиксированной ценой &mdash; или более простое решение.</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER — night, always ============ -->
+  <footer class="foot">
+    <img class="foot-img" src="/assets/img/sky-night-4.webp" alt="" aria-hidden="true" />
+    <div class="foot-scrim" aria-hidden="true"></div>
+    <div class="foot-in">
+      <p class="foot-brand">Kenius<sup>&reg;</sup></p>
+      <nav class="foot-links" aria-label="Меню в подвале">
+        <a href="/">Главная</a>
+        <a href="/services">Услуги</a>
+        <a href="/work">Сценарии</a>
+        <a href="/about">О нас</a>
+        <a href="/contact">Контакты</a>
+      </nav>
+      <div class="foot-meta">
+        <span>Создано людьми &middot; проверено людьми &middot; <b>работает на ИИ</b></span>
+        <span>&copy; <span data-year>2026</span> Kenius &middot; kenius.us &middot; <a href="mailto:hello@kenius.co"><b>hello@kenius.co</b></a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/skyline.js?v=5" defer></script>
+</body>
+</html>
