@@ -86,6 +86,32 @@ Gallagher (Allentown) and Compass Point (Bethlehem), a coffee is the real move �
 
 ---
 
+## 6. ERP Go-Live — John Hannan (email) — *new Round-2 top hit*
+
+> Subject: The build after the ERP selection
+>
+> John — you run vendor-neutral ERP selection for manufacturers, then hand off to implementation. I'm the
+> back-office automation piece that sits *around* the new ERP: RFQ/PO data extraction, auto-quoting,
+> mill-cert/compliance packages, and the ERP↔accounting↔CRM↔WMS connections that never come out of the box.
+>
+> Your clients pick the system with you and then immediately hit "…but it still doesn't read our RFQs or
+> build our cert packages." That's not your lane and it's exactly mine. Since you've got no software to
+> sell and no referral fees to chase, I'd like to be the specialist you point them to — clean referral,
+> and I stay entirely out of selection. Worth a short call?
+
+## 7. Warm-local cluster (Lehigh Valley — coffee, not email)
+
+You now have a real cluster within ~30 min of Allentown. These are relationship plays — a coffee, framed as
+"two local shops serving the same manufacturers from different angles," beats any pitch:
+- **Prosit / EJ Lydon** (Quakertown, lean) · **Compass Point / Tom Garrity** (Bethlehem, family-biz advisory)
+- **Gallagher Search / Hugh Gallagher** (Allentown, recruiting) · **Molinari Oswald** (Center Valley, CPA)
+- **Lester Bahr CPA** (Allentown, QuickBooks-mfg) · **Industrial Graphics Innovations** (Lehigh Valley, plant layout)
+- **CFO 4Hire** (Lehigh Valley — verify mfg focus first) · **Kissinger Associates** (Emmaus — verify; Sage-mfg ERP)
+
+Same message shape as #5 (Gallagher): *"We're both local, serving the same Lehigh Valley manufacturers from
+different angles — worth a coffee?"* Six coffees in your own metro is a month of warm channel-building that
+doesn't require anyone to have heard of you first.
+
 ## After you send
 
 Track replies in `manufacturing-referral-partners.md` (add a status column when it's real). But the point

@@ -10,6 +10,11 @@ Builds back-office workflow automation for 20–150-employee manufacturers: RFQ/
 extraction, auto-quoting, compliance & mill-cert package assembly, service reports/invoices,
 ERP↔accounting↔CRM↔WMS glue.
 
+> **Round 2 ran a deeper, evolved search** — 41 more verified firms (directories, geographic
+> gap-fill, ERP-product hunting, adjacent niches) are in
+> [`manufacturing-referral-partners-round2.md`](./manufacturing-referral-partners-round2.md). Top
+> new hit: **ERP Go-Live / John Hannan** (vendor-neutral ERP selection, "no software to sell").
+
 **Method:** Six parallel research passes (one per partner category), every firm verified against
 a live web page. Firms that already sell AI/automation, run a real bench, or sit outside the
 region are listed under *Disqualified* so they aren't re-chased. Ranked strongest-fit first, per
