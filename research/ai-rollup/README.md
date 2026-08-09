@@ -5,6 +5,7 @@
 > **Part I** (below) — the verticals: the screen, the scoreboard, deep dives, traps.
 > **[Part II](#part-ii--where-to-do-it-us-vs-europe-and-what-i-would-actually-do)** — US vs Europe, both financing paths.
 > **[Part III](#part-iii--the-us-market-with-capital-white-space-capital-structure-and-the-five-open-plays)** — US market with capital: the white-space census, the capital-structure problem, and the five open plays.
+> **[Part IV](#part-iv--iteration-the-mandateautomation-tradeoff)** — the iteration: a correction, the central tradeoff of the whole space, and 14 more verticals scored.
 
 ---
 
@@ -747,6 +748,177 @@ Given >90% of investors require ≥2x EBITDA uplift and 79% name integration as 
 ---
 ---
 
+# Part IV — Iteration: the Mandate/Automation Tradeoff
+
+*Broader sweep (14 new verticals), deeper on the three open plays, and one correction that changes the ranking.*
+
+---
+
+## 24. Correction: the fire & life safety "edge" isn't an edge
+
+Part III named deficiency-to-quote conversion as "the highest-ROI single AI application" in fire & life safety. Deeper research says that is already a shipped SaaS feature, not a proprietary opportunity:
+
+- **ServiceTrade** markets fire inspection software that lets contractors "create deficiency reports and send more deficiency repair quotes to earn high-margin repair revenue" — verbatim the thesis.
+- **Inspect Point** combines "the industry's largest expert-maintained fire code base with AI designed specifically for fire protection," and partnered with **BuildOps** in 2026 to connect field and office across inspection, service and installation.
+- **BuildOps** ships AI reporting that "automatically builds visit summaries and highlights recurring issues across portfolios."
+
+**What this changes.** The technology is a $200/tech/month purchase, available to every one of the 19,845 US fire-protection contractors. It is not a moat. What remains real:
+
+1. **Adoption is the constraint, not capability.** Most sub-$5M contractors haven't bought or properly deployed these tools, and won't. Owning the P&L is what forces adoption — which is exactly the roll-up's actual mechanism, and consistent with MIT's finding that externally-bought tools succeed ~2x as often as internal builds (67% vs 22% when blending external expertise).
+2. **The edge is operational and commercial, not technological.** Buy the tools, don't build them. Anyone pitching "our proprietary fire-inspection AI" is competing with two funded vendors and an expert-maintained code database.
+
+This is a downgrade, not a disqualification. But it means fire & life safety is a *good PE deal with software discipline*, not an AI-native play — and it should be underwritten and priced that way.
+
+---
+
+## 25. The central finding: mandated fieldwork vs mandated paperwork
+
+Running the broader sweep surfaced the structural tension that organises this entire space. Stating it plainly:
+
+> **The verticals that best pass Filter 5 (customer can't shop, demand is legally mandated) are the ones where AI can automate the least. The verticals where AI can automate the most are the ones that fail Filter 5.**
+
+Why: mandated demand in the physical economy means a *licensed human must show up*. Fire sprinkler ITM, backflow testing, calibration, NDT, water plant O&M, elevator inspection — a person climbs the ladder, opens the panel, takes the sample. AI touches the **admin wrapper** (scheduling, routing, report generation, quote conversion, deadline tracking), which is roughly **25–40% of the cost base**. Field labour is the other 60–75% and is untouchable.
+
+That caps realistic EBITDA uplift at maybe **+300–600bps of margin.** Against a bar where **>90% of AI roll-up investors require a 2x EBITDA improvement**, mandated-fieldwork verticals structurally cannot clear it. They are fine PE assets. They are not AI roll-ups, and pitching them as such fails on arithmetic.
+
+Meanwhile the high-automation verticals — marketing, translation, transcription, generalist BPO — are pure information work with no mandate, so the savings get competed straight through to the customer. Translation went from ~$0.20/word to ~$0.002/word. That's not margin expansion, that's profit-pool destruction.
+
+### The resolution
+
+The intersection worth hunting is narrow and specific:
+
+> **Work that a law or contract requires someone to *file*, not work that a law requires someone to *visit*.**
+
+Mandated **paperwork**. Statutory or contractual deadlines, document-and-phone delivery, no truck, no licence to climb anything. That combination is rare, and it is where the two curves cross.
+
+Candidates that actually satisfy it:
+
+| | Mandate source | Delivery | AI-addressable cost |
+|---|---|---|---|
+| **Healthcare provider credentialing / CVO** | NCQA, Joint Commission, payer contracts, state law | 100% document + phone | ~80%+ |
+| **Prior authorization** | Payer contracts, CMS rules | 100% document + phone | ~70% (⚠️ see risk) |
+| **Unclaimed property & property tax compliance** | State statute, annual filing deadlines | 100% document | ~70% |
+| **Insurance premium audit / subrogation** | Policy terms, carrier contracts | Document + phone | ~60% |
+| **Collections (ARM)** | Not mandated, but heavily *regulated* — which is a barrier to entry, not a demand driver | 100% phone + digital | ~70% |
+
+This is a materially better answer than Part III's, and it is the product of going broader rather than deeper. Fire safety and environmental scored well on mandate but fail on automatability once you decompose the cost base properly.
+
+---
+
+## 26. The broadened map — 14 verticals not previously covered
+
+### Mandated fieldwork (high mandate, low automatability)
+
+| Vertical | Entry | Structure | AI-native competitors | Read |
+|---|---|---|---|---|
+| **Calibration labs (ISO/IEC 17025)** | — | $6.5–6.9B global → $11.6–12.2B by 2035. **72% of industrial enterprises now require 17025-accredited providers.** Accreditation cost is a real moat that small labs can't sustain — a consolidation forcing function. Incline put **$300M** into Accredited Labs; Trescal and Intertek are the strategics. | 0 | 🟢 Strong PE asset. Mandated, recurring, accreditation-moated. AI reaches ~25% of cost. |
+| **Water/wastewater contract O&M** | 6x sub-$10M → 12x $50M+ | **30+ active PE platforms.** IIJA put ~$50B into water infrastructure incl. $15B for lead service lines and PFAS, pulling demand through at least 2028. Five-year contracts with CPI escalators are the top value lever. | 0 | 🟢 Excellent business, government-adjacent, well-banked. Late — 30 platforms already there. |
+| **Facility compliance bundle** (NFPA 96 hood cleaning + UL 300 suppression + backflow + FLS) | 4–7x | **The most interesting structural idea in this sweep — see §27.** NFPA 96 mandates hood cleaning monthly to annually by cooking volume; backflow testing is annually mandated by water authorities. **NFPA 96's 2025 update requires digital documentation for all cleaning and inspection activity.** | 0 | 🟢🟢 See below. |
+| **Utility locating / vegetation management** | home-services logic | 811 is statutory. UVM is regulated clearance work for electric utilities. 24 active tree-service PE platforms. | 0 | 🟡 Mandated, but low margin and USIC-dominated in locating. |
+| **NDT / occupational health / DOT testing** | — | DOT random testing rates are federally set. Examinetics was itself formed by consolidating small occ-health providers; WorkCare acquired by APM. | 0 | 🟡 Consolidation already ran once here. |
+
+### Mandated paperwork (the intersection)
+
+| Vertical | Market | Fragmentation | AI-native competitors | Read |
+|---|---|---|---|---|
+| **Provider credentialing / CVO** | CVO services ~$2B in 2026; credentialing software+services ~$1.09B, growing ~10.2% CAGR | "Concentrated among a select group of large players and **numerous smaller, regional providers**" — 20+ named vendors, no dominant share | **0 roll-ups.** symplr, VerityStream, Verisys, Medallion, Andros are software/incumbents | 🟢🟢 **Best score in this memo.** See §27. |
+| **Prior authorization outsourcing** | ~22% of healthcare BPO revenue; **66% of providers outsource all/part of RCM in 2026** | Highly fragmented | 0 roll-ups | 🟠 Huge pain (13 hrs/week of practice staff time; $2,161–3,430/yr per PCP) — but ⚠️ CMS interoperability rules are pushing payers toward automated PA, which could delete the category rather than let you own it. Filter 7 risk. |
+| **Medical records retrieval / ROI / IME** | Records retrieval $1.9B (2025) → $5.4B (2035), **11.1% CAGR**, driven by litigation intensity and payer-audit complexity | "Moderate consolidation" | 0 roll-ups | 🟢 Underrated. Pure document work, growing double-digit, litigation-driven demand that doesn't shop on price. |
+| **Specialty tax compliance** (property tax appeal, cost seg, unclaimed property) | — | Ryan LLC is the only true national; long tail of regional shops | 0 roll-ups | 🟢 Statutory deadlines, contingency pricing aligned to outcomes, pure document work. |
+| **Spend audit** (freight bill audit, telecom expense, utility bill) | — | Providers already bundling FAP + TEM + UBM | 0 roll-ups | 🟡 Contingency on savings found (1–5% freight recovery; ~30% telecom billing error rate). Aligned pricing, but no mandate — the customer can stop buying. |
+
+### Re-examined
+
+| Vertical | Update |
+|---|---|
+| **Marketing agencies** | ⚠️ Partial steelman to Part I. **21 disclosed agency deals in Q1+Q2 2026, +162% YoY**, with 120–180 forecast through mid-2027 — on the argument that buying traditional shops at **0.7–1.1x revenue** is the highest-IRR move in the category for an agentic-native acquirer. That is a *distressed asset grab for client relationships*, not a roll-up of healthy businesses at 6–9x EBITDA. Part I's warning stands for the latter; the former is a different and defensible trade. |
+| **ARM / collections** | Deeper look confirms structure: contingency 10–50% by debt age (25–35% under 90 days, 40–50% over a year); flat fee ~$15/account. The operative KPI everyone already tracks is **cost per dollar collected** — a metric that improves directly with automation, which is exactly the alignment you want. Still zero AI-native roll-ups. |
+
+---
+
+## 27. The two theses that survive iteration
+
+### Thesis A — Provider credentialing / CVO *(new #1)*
+
+Scores highest on every axis in the rubric simultaneously, which nothing else does.
+
+- **Mandate:** hospitals, health plans and health systems *cannot legally let a provider bill* without completed credentialing and payer enrollment. NCQA/Joint Commission standards, state law, and payer contracts all require it. Re-credentialing runs on a 2–3 year cycle → structurally recurring.
+- **Automatability:** primary-source verification is licence lookups, database queries, form completion, fax/portal submission, and follow-up phone calls. There is no truck, no licence to climb anything, and no clinical judgement. Realistically **~80% of the task volume** is model-addressable today.
+- **Quantified customer pain:** delayed payer enrollment costs practices **$7,000–12,000 per provider per month**. That's not a soft ROI story — it's a number a practice administrator already knows and already loses sleep over.
+- **Filter 5:** the buyer is a hospital or group practice for whom the *cost* of credentialing is trivial against the *cost of delay*. They will not shop a 15% fee reduction; they will pay for speed. **Speed is the product and AI produces speed.** This is the rare case where the AI gain converts to customer value without converting to price competition.
+- **White space:** zero AI-native roll-ups. The incumbents (symplr, VerityStream, Verisys, HealthStream) are enterprise software; Medallion, Andros and Verifiable are venture software. **Nobody is buying the long tail of regional credentialing service bureaus and re-platforming them.**
+- **Risks:** the software vendors could roll up services themselves; hospital in-housing; payer-side automation compressing the value of speed; and market-size estimates for this category vary wildly by definition (from ~$1B to absurd) so the TAM must be built bottom-up, not from a research report.
+
+### Thesis B — The facility compliance bundle *(revised from single-trade fire safety)*
+
+The insight that came out of going broad: **NFPA 96 hood cleaning, UL 300 suppression, backflow testing, sprinkler/alarm ITM, and elevator testing are all the same business.** A technician visits a site on a legally mandated schedule, performs a test, produces a document a regulator will accept, and finds deficiencies that generate repair revenue.
+
+They are sold to the *same buyer* — a facility or plant manager — by *different single-trade vendors*, each of whom shows up separately and bills separately.
+
+- **The play:** consolidate across compliance categories within one metro, not within one trade across metros. Sell **one schedule for every inspection that keeps the doors open**. That is route density across mandates, which nobody is building, versus route density within a mandate, which five PE platforms already are.
+- **Why now:** NFPA 96's 2025 update **requires digital documentation** for all cleaning and inspection activity. The regulation is forcing software adoption on operators who would otherwise never adopt. You don't have to create that tailwind.
+- **Honest ceiling:** per §24 and §25, the AI here is bought, not built, and it reaches ~25–40% of the cost base. Underwrite +300–600bps of margin, cross-sell revenue from the bundle, and 2 turns of multiple arbitrage — **not** a 2x EBITDA transformation.
+- **Why it still works:** the *bundle* is the differentiation, not the AI. Multi-mandate density is a genuine structural advantage a single-trade platform cannot copy without doing the same acquisitions.
+
+### Demoted
+
+- **Environmental / TIC** — still an excellent asset class (5–10x sub-$10M, 8–13x platforms, PFAS/RCRA premium, ~50 largest firms are only ~30% of revenue). But it is licensed-professional fieldwork with a report attached, and target utilisation is already ~80%. AI improves report generation, not the sampling. Good PE, weak AI story.
+- **Fire & life safety, standalone** — see §24. Fine deal, no edge.
+- **Title & escrow** — Doma's $3B → $85M stands as the category's warning. Unchanged.
+
+---
+
+## 28. The rubric
+
+Scored 1–5 per axis; this is structured judgement from the research above, not measured data. **Mandate** = is demand legally or contractually compelled. **Auto** = share of the cost base current models can address. **Frag** = supply of buyable sub-$5M targets. **Recur** = contractual/statutory repeat. **Space** = absence of AI-native competitors. **Price** = attractiveness of entry multiples.
+
+| Vertical | Mandate | Auto | Frag | Recur | Space | Price | **/30** |
+|---|---|---|---|---|---|---|---|
+| **Provider credentialing / CVO** | 5 | 5 | 4 | 5 | 5 | 4 | **28** |
+| **Facility compliance bundle** | 5 | 2 | 5 | 5 | 5 | 4 | **26** |
+| **Medical records retrieval / ROI / IME** | 4 | 5 | 4 | 4 | 5 | 4 | **26** |
+| **Specialty tax compliance** | 5 | 4 | 4 | 5 | 5 | 3 | **26** |
+| **ARM / collections** | 2 | 5 | 5 | 4 | 5 | 5 | **26** |
+| Calibration labs (17025) | 5 | 2 | 4 | 5 | 5 | 3 | 24 |
+| Fire & life safety (standalone) | 5 | 2 | 5 | 5 | 4 | 3 | 24 |
+| Environmental / TIC | 4 | 3 | 4 | 4 | 5 | 3 | 23 |
+| MSP / IT services | 2 | 5 | 5 | 5 | 3 | 3 | 23 |
+| Water/wastewater O&M | 5 | 2 | 4 | 5 | 4 | 3 | 23 |
+| Medical billing / RCM | 3 | 5 | 5 | 4 | 2 | 4 | 23 |
+| Prior authorization | 4 | 4 | 4 | 4 | 5 | 3 | 24 ⚠️ |
+| Insurance agency (P&C) | 3 | 3 | 5 | 5 | 2 | 1 | 19 |
+| Spend audit (FAP/TEM/UBM) | 1 | 5 | 4 | 4 | 5 | 3 | 22 |
+| Utility locating / UVM | 5 | 2 | 4 | 5 | 5 | 2 | 23 |
+| Property management / HOA | 2 | 4 | 5 | 5 | 1 | 3 | 20 |
+| Accounting / tax | 3 | 5 | 5 | 5 | 1 | 1 | 20 |
+| Title & escrow | 3 | 5 | 5 | 2 | 4 | 3 | 22 ⚠️ |
+| Contact centre / BPO | 1 | 5 | 4 | 3 | 1 | 4 | 18 |
+| Staffing (generalist) | 1 | 4 | 5 | 2 | 4 | 4 | 20 |
+| Marketing agencies | 1 | 5 | 5 | 2 | 3 | 5 | 21 ⚠️ |
+| Vet / dental / ABA | 3 | 2 | 4 | 4 | 4 | 1 | 18 |
+| Translation / transcription | 1 | 5 | 5 | 2 | 5 | 5 | 23 ☠️ |
+
+⚠️ = score overstates the opportunity for a reason named in the text. ☠️ = scores well mechanically and is still a value trap — translation's "great" scores on automation, fragmentation, white space and price are precisely *because* the profit pool already collapsed. **A rubric cannot detect a dead industry; it will happily rank a corpse highly on price.** Read §25 before reading the table.
+
+---
+
+## 29. What the iteration changed, and what remains unresolved
+
+**Changed**
+1. Fire & life safety's AI edge was overstated — the tooling ships off the shelf (§24). The play survives as a *bundle* thesis, not a technology thesis.
+2. The organising principle moved from "find mandated demand" to **"find mandated paperwork"** (§25). Mandate and automatability are negatively correlated, and that correlation is the whole game.
+3. **Provider credentialing / CVO replaces fire & life safety as the top-ranked opportunity** — it is the only vertical found that scores 4+ on every axis.
+4. Marketing agencies earned a partial steelman as a distressed asset grab at 0.7–1.1x revenue (+162% YoY deal volume), while remaining a bad buy at healthy-business multiples.
+
+**Unresolved**
+- **No AI roll-up has exited.** The oldest are ~2–3 years old. Every return figure in this space is a mark, not a realisation. Broader context is not encouraging: ~40% of AI startups founded in the 2024 cohort had shut down within 24 months, and Deutsche Bank is forecasting 2026 as a year of AI disappointment.
+- **Credentialing TAM is not established.** Published estimates range from ~$1B to figures that are obviously definitional errors. This needs a bottom-up build — providers × credentialing events × price — before any capital is committed.
+- **The 2x EBITDA bar is unmet by anyone outside pure information work.** If >90% of investors require it, and mandated verticals structurally cap at +300–600bps, then either the bar moves or the capital concentrates into a very small number of categories. Worth watching which happens.
+- **The commodity problem is unsolved everywhere.** Off-the-shelf tooling is the right answer operationally (2x success rate vs internal builds) and the wrong answer competitively (no moat). Nobody in this research has resolved that tension — including the funded platforms.
+
+---
+---
+
 ## Sources
 
 **Thesis & landscape:** [aimultiple — AI rollups](https://aimultiple.com/ai-rollups) · [L40 — AI Rollups in 2026](https://www.l40.com/insights/ai-rollups) · [Capital Founders — Founder's Guide to AI-Enabled Roll-Ups](https://www.capitalfounders.io/playbooks/ai-enabled-roll-ups/) · [Sourcery — Inside General Catalyst's Creation Strategy](https://www.sourcery.vc/p/breaking-inside-general-catalysts) · [General Catalyst — Europe's AI Transformation in Services](https://www.generalcatalyst.com/stories/europes-ai-transformation-in-services) · [PitchBook — GC's $6.3B Amex deal](https://pitchbook.com/news/articles/general-catalysts-6-3b-amex-deal-puts-its-ai-roll-up-strategy-on-display) · [PitchBook — "the math doesn't make sense"](https://pitchbook.com/news/articles/the-math-doesnt-make-sense-ai-rollup-hype-tests-the-limits-of-vc-economics)
@@ -774,5 +946,7 @@ Given >90% of investors require ≥2x EBITDA uplift and 79% name integration as 
 **Part II — geography, immigration, European market:** [NNU — E-2 treaty countries 2026](https://www.nnuimmigration.com/e-2-treaty-countries/) · [USCIS — L-1A intracompany transferee](https://www.uscis.gov/working-in-the-united-states/temporary-workers/l-1a-intracompany-transferee-executive-or-manager) · [Nat Law Review — L-1 new offices 2026](https://natlawreview.com/article/l-1-visa-new-offices-2026-practical-guide-companies-expanding-united-states) · [Grape Law — buying a US business as a foreign national](https://www.grapelaw.com/blog/us-immigration/how-to-buy-a-business-in-the-us-as-a-foreign-national) · [IncorpUK — non-UK-resident directors](https://incorpuk.com/blog/non-uk-resident-director/) · [CT Acquisitions — European SME succession wave 2026–2030](https://ctacquisitions.com/guides/european-sme-succession-wave-2026-2030/) · [KfW — Nachfolge-Monitoring Mittelstand 2025](https://www.kfw.de/PDF/Download-Center/Konzernthemen/Research/PDF-Dokumente-Fokus-Volkswirtschaft/Fokus-2026/Fokus-Nr.-526-Januar-2026-Nachfolge-Monitoring.pdf) · [Zumera — Germany's Mittelstand succession crisis](https://zumera.com/en/blog/the-ticking-time-bomb-germanys-mittelstand-succession-crisis/) · [Dealorigination — DACH EBITDA multiples 2026](https://dealorigination.de/en/ebitda-multiples-dach) · [Dealsuite — European Monitor March 2026](https://www.dealsuite.com/en/blogs/european-monitor-march-2026) · [ExitRadar — UK ETA ecosystem 2026](https://www.exitradar.co.uk/blog/uk-eta-ecosystem) · [Shawbrook — search fund financing](https://www.shawbrook.co.uk/business/business-lending/search-funds/) · [Buyout Diary — the model every European searcher ends up in](https://www.buyoutdiary.com/p/the-model-every-european-searcher) · [Moore Kingston Smith — UK IT services M&A Q1 2026](https://mooreks.co.uk/insights/ma-in-the-uk-it-services-sector-q1-2026/) · [Comms Business — the MSP era](https://www.commsbusiness.co.uk/content/market-report/the-msp-era) · [Bains Watts — UK accountancy GRF multiples 2026](https://bainswatts.co.uk/accounting-firm-grf-multiples-in-2026-secrets-revealed-on-whats-actually-being-paid/) · [MarshBerry — UK insurance distribution M&A](https://www.marshberry.com/eu/blog/uk-insurance-distribution-ma-has-a-quiet-end-to-2025/) · [Bisnow — consolidation in UK block management](https://www.bisnow.com/london/news/build-to-rent/in-block-management-the-benefits-of-consolidation-can-only-be-felt-if-the-systems-are-right-113866) · [Deloitte — BADR rate increase](https://www.uktaxpolicymap.com/taxing-work-and-wealth/business-asset-disposal-relief-and-investors--relief-rate-increase.aspx) · [KPMG — Autumn Statement 2024 (employer NIC)](https://kpmg.com/dp/en/home/insights/2024/10/uk-autumn-statement-2024.html) · [Profitability Partners — home services PE acquirers by trade](https://profitabilitypartners.io/home-services-private-equity-acquirers/)
 
 **Part III — US white space, capital structure, competitive census:** [AI Roll-up Nexus — company directory](https://www.ai-rollup.fyi/companies) · [AI Roll-up Nexus — 2026 investor sentiment survey](https://www.ai-rollup.fyi/investorsurvey) · [Newcomer — inside the VC roll-up craze](https://www.newcomer.co/p/inside-the-vc-roll-up-craze-that) · [PitchBook — AI rollup hype tests the limits of VC economics](https://pitchbook.com/news/articles/the-math-doesnt-make-sense-ai-rollup-hype-tests-the-limits-of-vc-economics) · [Euclid Ventures — Verticals #2: AI roll-ups](https://insights.euclid.vc/p/verticals-2-ai-roll-ups) · [Euclid Ventures — the AI-first roll-up](https://insights.euclid.vc/p/the-ai-first-roll-up) · [CNBC — Silicon Valley's new buyout playbook hits Wall Street](https://www.cnbc.com/2026/06/08/silicon-valleys-new-buyout-playbook-is-hitting-wall-street.html) · [General Catalyst — our investment in Titan](https://www.generalcatalyst.com/stories/our-investment-in-titan) · [Omdia — Shield Technology Partners' expanding strategy](https://omdia.tech.informa.com/blogs/2025/dec/ai-capital-meets-msp-rollups-inside-shield-technology-partners-expanding-strategy) · [CT Acquisitions — independent sponsor economics 2026](https://ctacquisitions.com/independent-sponsor-economics-explained/) · [Acquisition Stars — independent sponsor deal economics](https://acquisitionstars.com/blog/independent-sponsor-deal-economics) · [CT Acquisitions — environmental services valuation 2026](https://ctacquisitions.com/guides/environmental-services-business-valuation/) · [Capstone Partners — industrial & environmental services update](https://www.capstonepartners.com/insights/article-industrial-environmental-services-market-update/) · [IBISWorld — debt collection agencies in the US](https://www.ibisworld.com/united-states/industry/debt-collection-agencies/1474/) · [Inman — Propy's $100M title bet](https://www.inman.com/2026/05/14/propy-ai-title-companies/) · [HousingWire — Doma agrees to sell to Title Resources Group](https://www.housingwire.com/articles/doma-agrees-to-sell-to-title-resources-group/) · [BusinessWire — Radian sells title business to PLACE](https://www.businesswire.com/news/home/20260803046478/en/Radian-Advances-Strategic-Transformation-to-Global-Multi-Line-Specialty-Insurer-with-Sale-of-Real-Estate-Services-Business-and-Agreement-to-Sell-Title-Business) · [Anthropic Economic Index — June 2026 report](https://www.anthropic.com/research/economic-index-june-2026-report)
+
+**Part IV — broadened sweep:** [QRFS — skilled labour shortage in fire protection ITM](https://blog.qrfs.com/304-a-skilled-labor-shortage-is-looming-in-fire-protection-itm/) · [Inspect Point — 2026 fire & life safety industry report](https://www.inspectpoint.com/2026-fire-life-safety-industry-report-key-trends-shaping-fire-protection/) · [Inspect Point + BuildOps partnership](https://www.inspectpoint.com/inspect-point-and-buildops-partner-to-transform-fire-protection-operations/) · [ServiceTrade — fire inspection software](https://servicetrade.com/products/fire-inspection-software/) · [Service-Tech — NFPA 96 compliance guide 2026](https://www.service-techcorp.com/blog/hood-cleaning) · [Facilitec — NFPA 96 section-by-section](https://facilitec-sw.com/compliance/nfpa-96-codes/) · [PE Professional — Incline's Accredited Labs gets $300M](https://peprofessional.com/2025/10/inclines-accredited-labs-gets-300-million-to-continue-growth/) · [Calledger — calibration lab industry statistics 2026](https://calledger.com/blog/calibration-laboratory-industry-statistics/) · [CT Acquisitions — water & wastewater PE roll-up tracker 2026](https://ctacquisitions.com/guides/water-wastewater-pe-rollup-tracker-2026/) · [CT Acquisitions — water & wastewater valuation 2026](https://ctacquisitions.com/guides/water-wastewater-business-valuation/) · [Business Research Insights — CVO credentialing services market](https://www.businessresearchinsights.com/market-reports/cvo-credentialing-services-market-113366/) · [Grand View — credentialing software & services](https://www.grandviewresearch.com/press-release/global-credentialing-software-services-healthcare-market) · [Verimedix — prior authorization outsourcing costs 2026](https://www.verimedix.com/prior-authorization-outsourcing-costs-staffing-2026/) · [Stealth Agents — healthcare outsourcing statistics 2026](https://stealthagents.com/research/healthcare-outsourcing-statistics-2026) · [Vantage — medical records retrieval market](https://www.vantagemarketresearch.com/medical-records-retrieval-market) · [Coherent — US IME services market](https://www.coherentmarketinsights.com/industry-reports/us-independent-medical-evaluation-service-market) · [IBISWorld — environmental consulting in the US](https://www.ibisworld.com/united-states/industry/environmental-consulting/1427/) · [SW Recovery — collection agency fees 2026](https://www.swrecovery.com/resources/blog/average-collection-agency-fees-2026-costs-commission-rates-explained/) · [vCA — P&C trends for carriers, TPAs and adjusting firms 2026](https://vcasoftware.com/property-and-casualty-insurance-industry-trends/) · [Digital Applied — AI agency roll-up wave M&A predictions 2026](https://www.digitalapplied.com/blog/ai-agency-rollup-wave-m-and-a-predictions-2026) · [Pertama Partners — AI project failure statistics 2026](https://www.pertamapartners.com/insights/ai-project-failure-statistics-2026)
 
 **Financing & market:** [SBA policy notice 5000-865754](https://www.sba.gov/document/policy-notice-5000-865754-policy-updates-comply-executive-order-14159-regarding-citizenship-requirements-obtaining-7a-504) · [BRG — SBA citizenship eligibility changes](https://www.thinkbrg.com/insights/publications/sba-citizenship-eligibility-changes-implications-for-lenders-and-operational-considerations/) · [Malescu Law — green card holders barred](https://malesculaw.com/green-card-holders-barred-from-sba-loans-starting-march-1-2026/) · [Pioneer Capital — seller financing with SBA 7(a)](https://www.pioneercapitaladvisory.com/post/using-seller-financing-with-an-sba-7-a-loan) · [CT Acquisitions — business acquisition financing 2026](https://ctacquisitions.com/business-acquisition-financing-guide-2026/) · [Forbes — $5T of boomer businesses transferring](https://www.forbes.com/sites/martinadilicosa/2026/02/26/millions-of-small-businesses-soon-changing-hands-as-baby-boomers-retire-in-great-ownership-transfer-report-says/) · [Acquisition Stars — acquisition timeline](https://acquisitionstars.com/acquisition-timeline)
