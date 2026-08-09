@@ -2,6 +2,9 @@
 
 *Research memo. August 2026. Written to be argued with, not agreed with.*
 
+> **Part I** (below) — the verticals: the screen, the scoreboard, deep dives, traps.
+> **[Part II](#part-ii--where-to-do-it-us-vs-europe-and-what-i-would-actually-do)** — the decision: US vs Europe, both financing paths, and my actual call.
+
 ---
 
 ## 0. Read this part even if you read nothing else
@@ -333,6 +336,197 @@ Tell me which two or three verticals you want next and I'll go a level deeper: n
 
 ---
 
+---
+---
+
+# Part II — Where to do it, US vs Europe, and what I would actually do
+
+*You said: both geographies, both financing routes, and you'll operate it yourself. Here's the call.*
+
+---
+
+## 9. "Why does citizenship matter?" — because people solve the wrong half of the problem
+
+There are two separate locks on the door, and almost everyone confuses them.
+
+**Lock 1 — the right to be there and run it.** That's a visa problem. It's solvable.
+**Lock 2 — the right to cheap leverage.** That's the SBA. It is *not* solvable, and a visa does nothing for it.
+
+### Why the SBA is not a "nice to have"
+
+SBA 7(a) is the largest subsidy in small-business M&A anywhere on earth. **90% financing, 10-year amortisation, ~Prime + 2.75% (7.75–11.5%), and a 10% equity injection of which half can be a seller note on full standby.** No commercial lender on the planet offers a first-time buyer 90% LTV against goodwill with no hard asset security. The entire US self-funded searcher ecosystem — every podcast, every "I bought a $2M EBITDA business with $150k" story — is *built on that one government guarantee.*
+
+Since **1 March 2026**, it's restricted to US citizens and US nationals whose principal residence is in the US. Reporting indicates **any** non-citizen ownership, even 1%, disqualifies the business — green-card holders included.
+
+### The trap: a visa doesn't restore it
+
+This is the part that costs people a year of their life.
+
+- **E-2 treaty investor** — if you hold a treaty-country passport (Kazakhstan appears on published 2026 treaty lists; Russia does not — verify on travel.state.gov, that list moves), you can invest in and run a US business. **You still cannot get an SBA loan.**
+- **L-1A intracompany transferee** — genuinely interesting for you specifically, because you already own an operating foreign consultancy. You transfer yourself as an executive to a US affiliate of Kenius. Unlike E-2, **it requires no personal capital investment**, it's faster and cheaper than EB-5, and it has a clean path to a green card via **EB-1C with no PERM**. Note USCIS may not treat a *purchased* business as a "new office," which changes the initial approval period — get that structured by counsel before you sign anything.
+- **Green card via EB-1C** — and you *still* can't get an SBA loan, because the rule is citizenship, not residency.
+
+So the honest arithmetic: **even on the fastest immigration path, SBA eligibility is naturalisation-distance away — call it 6–8 years.** Plan as if it does not exist. It doesn't, for you, for this decade.
+
+### What that actually does to the maths
+
+Same business, $5M enterprise value, 5x on $1M EBITDA:
+
+| | US citizen | You (non-citizen) |
+|---|---|---|
+| Senior debt | 90% SBA | 50–60% (conventional / private credit, 2–4x EBITDA) |
+| Seller note | ~5% (standby, counts as equity) | 10–25% |
+| **Your cash** | **~$250–500k** | **$1.25–2.0M** |
+| Rate | ~Prime + 2.75% | SOFR + 500–700bps |
+| Leverage cap | ~6x+ effective | 4–6x total, and lenders are strict on EBITDA quality |
+
+**That's a 4x difference in cash required for the identical asset.** That is the entire reason I asked, and it is the single most important number in this memo.
+
+---
+
+## 10. US vs Europe — head to head
+
+| | 🇺🇸 United States | 🇬🇧🇪🇺 UK / Europe |
+|---|---|---|
+| **Deal supply** | ~6M SMB transitions by 2035; >1M viable for sale, up to $5T | Germany alone: **569,000 owners plan to CLOSE vs 545,000 to hand over by 2029.** Italy ~1M PMI in 10 yrs (only 15% planned). France 370k by 2030. Switzerland 168k by 2030. |
+| **Entry multiple, micro-cap** | Hot. HVAC 5–7x bolt-on, insurance 7–13x, accounting 5–8x above $3M rev | **Cold.** European average 5.3x; **DACH trades 2.4–5.5x**; sub-€500k EBITDA compresses another **1–2 turns**. UK accountancy 0.9–1.3x GRF. |
+| **Mid-market trend** | Firm | **Falling.** Argos Index Q4 2025 at **8.3x — weakest since H1 2014** (down from 9.5x in Q1 2025) |
+| **Buy-side competition** | Brutal. €/$ trillions of dry powder, 58% of PE deal flow is add-ons, every vertical has 15–30 named consolidators | Real but thinner. €414B European dry powder, but **home-services platforms remain underpenetrated — no Apex Service Partners equivalent exists.** 76% of critical home-services firms are true independents. |
+| **Leverage for you** | ❌ No SBA. 25–40% equity. | ⚖️ No SBA-equivalent for *anyone* — which **levels the field instead of tilting it against you.** Shawbrook (now owns ThinCats), OakNorth active £2–20M EBITDA. |
+| **Your legal ability to operate** | Needs E-2 or L-1A. Months, lawyers, real cost. | 🟢 **A non-resident can own and direct a UK Ltd with no visa at all.** ID verification works from abroad. A visa is only needed to physically work in the UK. |
+| **Exit market** | 🟢 Deepest on earth. Every vertical has strategic and PE buyers at 8–14x. | 🟡 Thinner but real. Consolidators exist in every vertical I checked (Ardonagh/PIB/Howden in broking, PE-backed block managers, IT services groups doing 164 deals in Q1 2026 alone). |
+| **AI adoption gap** | Closing fast. Current, Long Lake, Crescendo already at scale. | 🟢 **Wide open.** 86% of UK mid-tier accountancy firms have AI *in the strategy* — which is a polite way of saying almost none have shipped it. |
+| **Structural seller pressure** | Demographics only | Demographics **+ tax.** UK BADR went 10% → 14% → **18% from April 2026**; employer NIC went 13.8% → **15%** with the threshold cut from £9,100 to **£5,000**. UK owner-managers are being squeezed on exit *and* on payroll. |
+
+### The single most important fact on this page
+
+> **For the first time in KfW's monitoring history, more German Mittelstand owners plan to close their business than to hand it over.** ~114,000 closures a year through 2029, against ~109,000 transfers. 57% of owners are 55+.
+
+A business that is going to be **shut down** has, by definition, no competing bidder and near-zero goodwill value. That is the cheapest entry price available anywhere in the developed world, and it exists because there is nobody to buy. Meanwhile the US market has ten funded buyers for every retiring HVAC owner in Phoenix.
+
+**And note the counter-intuitive shape of it:** the European succession wave is arriving into a *buyer's* market, not a seller's. Supply is surging and multiples are still compressing. The "wave of sellers will bid prices up" story is wrong — demand-side factors dominate. That is exactly the market you want to be a buyer in.
+
+---
+
+## 11. My call
+
+**Europe first — specifically the UK — and don't wait on the US.**
+
+Not because the US is a worse market. It's a better market *for an American*. For you it costs 4x the equity, requires an immigration process before you can legally run anything, and puts you in a bidding war against Apollo-backed platforms. Europe costs you a company formation and an ID check.
+
+Reasons, ranked:
+
+1. **You can start on Monday.** No visa gate. Own and direct a UK Ltd from anywhere. Every day spent on E-2/L-1A paperwork is a day not spent talking to sellers.
+2. **Entry multiples are 2–4 turns cheaper** at the small end, and *falling*, while US multiples hold. You make your money on the buy.
+3. **You're not bidding against the SBA.** In the US, every $2M-EBITDA business has a searcher who can pay 6x because the government funds 90% of it. In the UK, that buyer doesn't exist. The competitive field is other operators using their own money — which is you.
+4. **English.** You already operate bilingually. UK/Ireland removes the single biggest execution risk in DACH or Southern Europe.
+5. **The tax squeeze is manufacturing motivated sellers right now,** independent of demographics.
+6. **Consolidator fatigue.** 2026 shows UK accountancy platforms shifting from buying to *integrating* — and UK insurance distribution had its lowest deal count since 2017 (99 transactions). The big buyers are digesting. That's a window and it will close.
+
+**Then the US later, via L-1A, as expansion** — not as the starting point. Once you own a UK operating group, an L-1A transfer to a US affiliate is a far stronger petition than a cold new-office filing, and by then you'll have proof the playbook works.
+
+### Vertical: **UK IT managed services (MSP)**
+
+| Why | |
+|---|---|
+| Market | **£15B+, growing 9.7%/yr**, SME adoption growing faster than enterprise |
+| Fragmentation | Larger firms are **4% (512 MSPs)** of the market and take most of the revenue — the long tail is thousands of sub-£3M shops |
+| Activity | **164 UK IT services deals in Q1 2026** (+6% QoQ) — liquid, with visible exits |
+| Multiple spread | Basic-support shops "increasingly unable to command high multiples"; strategic/security-led firms get premiums. In the US the same spread is **~4x → 10–14x.** That gap is the trade. |
+| Your edge | **This is the only vertical where an AI consultancy has a real, non-fake advantage.** You can diligence the stack yourself, you speak the customer's language, and you can sell your own services into every acquired client book. |
+| Revenue synergy | Cybersecurity attach at **55–70% gross margin** — cross-sell into every acquired base. Filter 6, satisfied. |
+| Filter 5 | Passes. Nobody rips out their MSP to save 8%. |
+
+**Runner-up: UK block management (leasehold/service-charge managing agents).** Same shape as the HOA model that Long Lake proved at $100M EBITDA, and the Building Safety Act compliance burden is actively *forcing* small agents to sell because they can't carry the regulatory load. Recurring, contracted, sticky, boring. Do the trust-account forensics on day one of diligence — that's where the bodies are.
+
+**Wildcard I'd take seriously if you speak German: DACH home services.** 67,000 plumbing companies in Germany, €43B sector, no Apex-equivalent platform exists, and the Meisterbrief licensing requirement is a genuine regulatory moat rather than a nuisance. That is the biggest unclaimed roll-up in Europe. It's also the hardest — trades, language, and physical presence. If you don't speak German, don't.
+
+---
+
+## 12. Both financing routes, priced honestly
+
+You said both. Here's what each actually looks like, and when to use which.
+
+### Route A — Self-funded (deal 1)
+
+Target: UK MSP, **£400k–£1.0M EBITDA, £2–4M EV at 4–5x.**
+
+| Layer | Share | Source |
+|---|---|---|
+| Senior debt | 50–60% | Shawbrook (acquired ThinCats Oct 2025), OakNorth (£2–20M EBITDA band). Expect personal guarantees and cash-flow underwriting. |
+| Deferred / seller note | 20–30% | The load-bearing element. UK sellers accept deferred consideration far more readily than US sellers, partly *because* there's no SBA buyer to outbid you with cash. |
+| Your equity | 20–25% | **£400–800k** |
+
+If you don't have £400k: the realistic variants are (a) **buy-in with earn-out** — take a minority + management contract, buy the rest out of cash flow over 3 years; (b) **vendor-financed MBI** where the seller stays on as chairman; (c) one angel/family-office cheque for the equity strip in exchange for 30–40%. All three are common and none require you to be rich.
+
+### Route B — Raised
+
+- **Traditional search fund.** This is a real, measured asset class, not a story: Stanford's 2026 data shows **33.9% aggregate pre-tax IRR, 4.75x aggregate ROI, 39.3% IRR for exited funds.** Europe has **85 completed search-fund acquisitions**; **Spain is the #2 market globally** with 67 first-time launches, UK 35. DACH targets typically €2–5M EBITDA.
+- **Independent sponsor / deal-by-deal.** Growing fast in DACH. You raise per deal from family offices, give away promote, keep control. Best fit if you want to move faster than a fund raise allows.
+- **AI-roll-up VC** (General Catalyst, Thrive, Bessemer, 8VC — >$3B deployed). GC has published an explicit European thesis: >$4T of European professional/administrative services, and they argue AI abstracts away the language barrier.
+
+**Blunt advice on Route B: raise *after* deal 1, not before.** Nobody writes a first-time operator a cheque for an AI roll-up thesis on a deck in 2026 — there are a thousand of those decks. They write cheques for someone who owns two MSPs, has AI in production, and can show the ticket-deflection number. Deal 1 is the fundraise. Treat your own £400k as the entry fee to a much larger round.
+
+Note also the counter-fact that keeps European searchers honest: **do not import the American playbook wholesale.** No SBA, lower bank leverage, more conservative underwriting, more relationship-driven sellers. The structures that work here are seller-heavy and slower.
+
+---
+
+## 13. What I'd actually do — the next 90 days
+
+You have an AI consultancy. That is not a side fact; it's your entire unfair advantage, and it solves the two hardest problems in this business (deal flow and diligence) for free.
+
+**Days 1–30 — pick the lane and build the list**
+- Incorporate a UK Ltd (no visa needed). Get the ID verification done — it works from abroad.
+- Build a target list of **150 UK MSPs, £1–5M revenue**, outside London (London is picked over; go Midlands, North West, Yorkshire, Scotland, Ireland). Companies House filings give you revenue, employee count, director ages, and retained earnings for free. **Filter for directors aged 55+.** That single filter is your whole thesis in a spreadsheet column.
+- Build **one** productised AI offer, not a consultancy pitch: *L1 ticket deflection + auto-documentation, priced per ticket deflected.* Their pain is margin compression while clients demand more for the same money. You're selling margin back to them.
+
+**Days 31–60 — sell it**
+- Target 20 conversations, 5 paid pilots. Charge properly — free pilots get no attention and teach you nothing.
+- In every engagement you are running unpaid diligence: their PSA/RMM stack, contract quality, client concentration, tech dependency, and whether the owner is tired. Log all of it.
+
+**Days 61–90 — convert**
+- Of 20 owners aged 55+ with no succession plan, in a market being told by every trade publication that basic support shops can't command a multiple any more, **at least three will tell you they'd sell to the right person.** That's not optimism, that's the base rate.
+- Pick the best one. Offer 4–4.5x with 30% deferred over 3 years and a chairman role for the seller. You will be the only bidder they trust, because you'll have spent three months making them money.
+
+**Then don't buy #2 until #1 is fully integrated and the AI workflow is measurably working in production.** Buying #2 and #3 before #1 is digested is how roll-ups die, and it's how they die every single time.
+
+---
+
+## 14. Steelmanning against my own recommendation
+
+I'd be a bad advisor if I only argued one side. Here's where I could be wrong:
+
+1. **Europe's exit market is genuinely thinner.** You might build a lovely £3M EBITDA group and find the only buyers are two consolidators who both know they're the only buyers. Mitigation: underwrite to cash flow you'd happily own forever; treat the exit as an option.
+2. **UK bank debt comes with personal guarantees.** SBA loans do too, but UK lenders are more conservative and will want a charge over your assets. You are putting your own neck in the noose. Know that going in.
+3. **£15B UK MSP market growing 9.7% will attract capital.** The window I'm describing — consolidator fatigue, compressed multiples — is a *timing* argument, and timing arguments have a shelf life. If you're not moving within 12 months, the thesis weakens.
+4. **The US really is the better business.** Deeper exits, bigger multiples, richer customers, one language and one legal system across 340M people. If you can get to a green card and eventually citizenship, the SBA-powered US path is strictly better economics. It's just 6–8 years away. My recommendation is to start earning in Europe *while* that clock runs, not instead of it.
+5. **You might just not want to run an MSP.** It's a helpdesk business with cyber liability. It's not glamorous. If the honest answer is "I want to be an AI founder," this whole strategy is wrong for you and you should build software instead.
+
+---
+
+## 15. The five questions Cuban would end on
+
+1. **What do you own that the next bidder doesn't?** Right now: a consultancy that can walk into any MSP and make them money. That's a real answer. If you buy before you build that, you have no answer.
+2. **Can you write the equity cheque without borrowing it?** £400–800k. If not, say so now and we design an earn-in structure instead of pretending.
+3. **Will you actually move, or at least fly there monthly?** You said you'll run it. Running an MSP in Leeds from Almaty is not running it. That's a real, physical commitment and it's the difference between this working and this being a hobby.
+4. **What's your kill number?** Mine: if you haven't got 3 owners saying "I'd sell to you" by day 90, the wedge isn't working and we change vertical, not strategy.
+5. **Are you doing this for the returns, or because AI roll-ups are the trade everyone's tweeting about in 2026?** Roll-ups are 40 years old. "AI" in front doesn't change the arithmetic, it changes who's watching. The people who make money here will be the ones still doing it in 2032.
+
+---
+
+## 16. Next
+
+Say the word and I'll build any of these out properly:
+
+- **The 150-target UK MSP list**, filtered by Companies House data — revenue band, director age, retained earnings, filing behaviour. This is buildable and it's the actual first artefact you need.
+- **The AI offer**, spec'd: what ticket deflection looks like technically, what to price it at, and the pilot contract.
+- **The MSP diligence checklist** — contract liability caps, RMM security posture, client concentration, tech dependency, the specific things that kill these deals.
+- **DACH home services deep dive** if you want the biggest unclaimed opportunity in Europe and can handle German.
+- **The L-1A structure** — how to set up the Kenius US affiliate now so the petition is strong in 2–3 years, running in parallel with the European build.
+
+---
+---
+
 ## Sources
 
 **Thesis & landscape:** [aimultiple — AI rollups](https://aimultiple.com/ai-rollups) · [L40 — AI Rollups in 2026](https://www.l40.com/insights/ai-rollups) · [Capital Founders — Founder's Guide to AI-Enabled Roll-Ups](https://www.capitalfounders.io/playbooks/ai-enabled-roll-ups/) · [Sourcery — Inside General Catalyst's Creation Strategy](https://www.sourcery.vc/p/breaking-inside-general-catalysts) · [General Catalyst — Europe's AI Transformation in Services](https://www.generalcatalyst.com/stories/europes-ai-transformation-in-services) · [PitchBook — GC's $6.3B Amex deal](https://pitchbook.com/news/articles/general-catalysts-6-3b-amex-deal-puts-its-ai-roll-up-strategy-on-display) · [PitchBook — "the math doesn't make sense"](https://pitchbook.com/news/articles/the-math-doesnt-make-sense-ai-rollup-hype-tests-the-limits-of-vc-economics)
@@ -356,5 +550,7 @@ Tell me which two or three verticals you want next and I'll go a level deeper: n
 **Disrupted verticals:** [Piscari — the agency reset 2026](https://piscari.com/marketing-agency-reset-2026/) · [FE International — agency M&A 2026](https://www.feinternational.com/blog/agency-marketing-ma-consolidation-ai-exit-opportunities) · [TranscribeLegal — legal transcription pricing 2026](https://transcribelegal.ai/blog/posts/legal-transcription-pricing-guide-2026) · [Lokalise — human vs AI translation cost](https://lokalise.com/blog/translation-cost-human-vs-ai-orchestration/)
 
 **Legal-sector structures:** [DLA Piper — MSOs vs ABS](https://www.dlapiper.com/en-us/insights/publications/2026/01/msos-vs-abs-two-models-investment-in-law-firms) · [Holland & Knight — starting an Arizona ABS](https://www.hklaw.com/en/insights/publications/2025/12/so-you-want-to-start-an-arizona-alternative-business-structure) · [LawFuel — PE and law firm MSOs](https://www.lawfuel.com/private-equity-law-firm-mso-structure-2026/)
+
+**Part II — geography, immigration, European market:** [NNU — E-2 treaty countries 2026](https://www.nnuimmigration.com/e-2-treaty-countries/) · [USCIS — L-1A intracompany transferee](https://www.uscis.gov/working-in-the-united-states/temporary-workers/l-1a-intracompany-transferee-executive-or-manager) · [Nat Law Review — L-1 new offices 2026](https://natlawreview.com/article/l-1-visa-new-offices-2026-practical-guide-companies-expanding-united-states) · [Grape Law — buying a US business as a foreign national](https://www.grapelaw.com/blog/us-immigration/how-to-buy-a-business-in-the-us-as-a-foreign-national) · [IncorpUK — non-UK-resident directors](https://incorpuk.com/blog/non-uk-resident-director/) · [CT Acquisitions — European SME succession wave 2026–2030](https://ctacquisitions.com/guides/european-sme-succession-wave-2026-2030/) · [KfW — Nachfolge-Monitoring Mittelstand 2025](https://www.kfw.de/PDF/Download-Center/Konzernthemen/Research/PDF-Dokumente-Fokus-Volkswirtschaft/Fokus-2026/Fokus-Nr.-526-Januar-2026-Nachfolge-Monitoring.pdf) · [Zumera — Germany's Mittelstand succession crisis](https://zumera.com/en/blog/the-ticking-time-bomb-germanys-mittelstand-succession-crisis/) · [Dealorigination — DACH EBITDA multiples 2026](https://dealorigination.de/en/ebitda-multiples-dach) · [Dealsuite — European Monitor March 2026](https://www.dealsuite.com/en/blogs/european-monitor-march-2026) · [ExitRadar — UK ETA ecosystem 2026](https://www.exitradar.co.uk/blog/uk-eta-ecosystem) · [Shawbrook — search fund financing](https://www.shawbrook.co.uk/business/business-lending/search-funds/) · [Buyout Diary — the model every European searcher ends up in](https://www.buyoutdiary.com/p/the-model-every-european-searcher) · [Moore Kingston Smith — UK IT services M&A Q1 2026](https://mooreks.co.uk/insights/ma-in-the-uk-it-services-sector-q1-2026/) · [Comms Business — the MSP era](https://www.commsbusiness.co.uk/content/market-report/the-msp-era) · [Bains Watts — UK accountancy GRF multiples 2026](https://bainswatts.co.uk/accounting-firm-grf-multiples-in-2026-secrets-revealed-on-whats-actually-being-paid/) · [MarshBerry — UK insurance distribution M&A](https://www.marshberry.com/eu/blog/uk-insurance-distribution-ma-has-a-quiet-end-to-2025/) · [Bisnow — consolidation in UK block management](https://www.bisnow.com/london/news/build-to-rent/in-block-management-the-benefits-of-consolidation-can-only-be-felt-if-the-systems-are-right-113866) · [Deloitte — BADR rate increase](https://www.uktaxpolicymap.com/taxing-work-and-wealth/business-asset-disposal-relief-and-investors--relief-rate-increase.aspx) · [KPMG — Autumn Statement 2024 (employer NIC)](https://kpmg.com/dp/en/home/insights/2024/10/uk-autumn-statement-2024.html) · [Profitability Partners — home services PE acquirers by trade](https://profitabilitypartners.io/home-services-private-equity-acquirers/)
 
 **Financing & market:** [SBA policy notice 5000-865754](https://www.sba.gov/document/policy-notice-5000-865754-policy-updates-comply-executive-order-14159-regarding-citizenship-requirements-obtaining-7a-504) · [BRG — SBA citizenship eligibility changes](https://www.thinkbrg.com/insights/publications/sba-citizenship-eligibility-changes-implications-for-lenders-and-operational-considerations/) · [Malescu Law — green card holders barred](https://malesculaw.com/green-card-holders-barred-from-sba-loans-starting-march-1-2026/) · [Pioneer Capital — seller financing with SBA 7(a)](https://www.pioneercapitaladvisory.com/post/using-seller-financing-with-an-sba-7-a-loan) · [CT Acquisitions — business acquisition financing 2026](https://ctacquisitions.com/business-acquisition-financing-guide-2026/) · [Forbes — $5T of boomer businesses transferring](https://www.forbes.com/sites/martinadilicosa/2026/02/26/millions-of-small-businesses-soon-changing-hands-as-baby-boomers-retire-in-great-ownership-transfer-report-says/) · [Acquisition Stars — acquisition timeline](https://acquisitionstars.com/acquisition-timeline)
