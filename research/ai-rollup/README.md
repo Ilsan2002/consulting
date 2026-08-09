@@ -6,6 +6,8 @@
 > **[Part II](#part-ii--where-to-do-it-us-vs-europe-and-what-i-would-actually-do)** — US vs Europe, both financing paths.
 > **[Part III](#part-iii--the-us-market-with-capital-white-space-capital-structure-and-the-five-open-plays)** — US market with capital: the white-space census, the capital-structure problem, and the five open plays.
 > **[Part IV](#part-iv--iteration-the-mandateautomation-tradeoff)** — the iteration: a correction, the central tradeoff of the whole space, and 14 more verticals scored.
+> **[Part V](#part-v--first-principles-eight-non-obvious-findings)** — first principles: eight non-obvious findings, three of which invert the earlier conclusions.
+> **[Part VI](#part-vi--how-to-choose-a-niche-the-disintermediation-test)** — the decision framework: how to pick a niche, and why "intelligence-heavy vs physical" is the wrong axis.
 
 ---
 
@@ -919,6 +921,348 @@ Scored 1–5 per axis; this is structured judgement from the research above, not
 ---
 ---
 
+# Part V — First principles: eight non-obvious findings
+
+*Parts I–IV asked "which vertical is best for an AI roll-up." That question already assumes the answer's shape. This part starts from the return equation and derives what to look for, then tests it. Three findings invert earlier conclusions.*
+
+---
+
+## 30. The method
+
+Return in this trade = **(exit multiple × exit EBITDA) − entry cost**. Only four levers exist:
+
+1. Buy below intrinsic value
+2. Grow EBITDA (volume, price, or cost)
+3. Re-rate the multiple
+4. Use less of your own capital
+
+Essentially all public discussion of AI roll-ups concerns **one sub-branch of lever 2**: cutting labour cost with models. That lever is available to every buyer at identical price, so competition erodes it — which is exactly what the bear case says and it's correct.
+
+The interesting question is therefore: *what do the other levers look like when AI is in the world?* Below is what falls out, with confidence labelled.
+
+---
+
+## 31. The eight findings
+
+### Finding 1 — The offshore test: AI's arbitrage is only large where offshoring was already blocked
+**Confidence: high. This is the single most useful filter in this memo.**
+
+Everyone models AI replacing a $95k US professional. In most document-heavy verticals **that replacement already happened — to Manila and Hyderabad, fifteen years ago.** Medical coding, billing, claims processing, bookkeeping, paralegal work: the incumbent marginal cost is $6–12/hour, not $45. Against that baseline, inference plus orchestration plus QA saves little. This is precisely the bears' strongest argument and it is right for those categories.
+
+So invert it. **The prize is work that is (a) pure document/phone, and (b) legally prevented from going offshore.**
+
+The blocking mechanisms are real and specific. Chart-review referral sources require reviewers who are board-certified, licensed, in active clinical practice, of clean disciplinary record, **and physically present in the United States**. Utilization review must be conducted under a written plan supervised by a physician, with appeals reviewed by a licensed physician. And US medical licensure requires a **separate licence per state, with almost no reciprocity between boards — explicitly including telemedicine**. Similar walls exist around state-licensed appraisers, state-licensed adjusters, bar admission, PE stamps, and cleared/ITAR work.
+
+In those categories the cost floor never fell to $8/hour, because it couldn't. **AI is the first thing that can touch it.** The saving is therefore both large and, for once, not already captured.
+
+**Where it points:** independent review organisations (IRO), utilization review, IME, medical-legal record review, appraisal, insurance adjusting, teleradiology, PE-stamped engineering review.
+
+---
+
+### Finding 2 — Sell the signature, automate the work
+**Confidence: high (logic), medium (pricing durability).**
+
+If a model does 90% of a task, what is the remaining human actually paid for? **Accepting liability for the output.**
+
+In a large class of businesses the deliverable *is* an attestation: an appraisal, an audit opinion, a certification, a seal, a medical necessity determination, a calibration certificate traceable to NIST. The customer isn't buying labour hours — they're buying a defensible document with a licensed professional and an E&O policy behind it. That price is set by the value of the risk transfer, not by the cost of production.
+
+Which means: **as production cost falls, the margin expands and does not compete away**, because the competitor's cost fell too but neither of you can lower the price of the liability. This is the cleanest available answer to Filter 5.
+
+The infrastructure already exists to enforce it — IROs are URAC-accredited, federally recognised, and appear on state-published rotation lists. Accreditation plus rotation assignment is a moat you cannot undercut on price, because you don't get chosen on price.
+
+**Test before believing it:** find one attestation category where AI has already collapsed production cost and check whether the price held. If prices fell in lockstep, this finding is wrong.
+
+---
+
+### Finding 3 — Buy permissions, not payrolls
+**Confidence: high.**
+
+Simple consequence of Finding 1. If AI drives the labour component of a regulated service toward zero, then **whatever fraction of enterprise value sat in the labour disappears, and the fraction sitting in the licence becomes the entire value.** Businesses currently priced on labour-derived earnings, but holding a scarce transferable permission, are therefore structurally mispriced *by their own sellers*.
+
+Evidence that permissions carry real, separable value:
+
+- **Certificate of Need.** Active in **35 states + DC.** In CON states for the covered categories, you cannot start a new agency — approval must precede licensure. Supply is *legally capped*. That is not a moat you build; it is a moat the legislature built and then sold tickets to.
+- **Money transmitter licences.** $250k–$1M+ and 3–24 months *per state* for nationwide coverage — and acquirers buy the *entity* specifically to inherit the change-of-control path on state licences.
+- **RCRA Part B permits.** Holders with PFAS capability "routinely transact at 10–13x" versus 5–10x for ordinary sub-$10M environmental operators. That spread is the permit, priced.
+- **ISO/IEC 17025 accreditation.** Perpetual cost of interlaboratory comparisons, proficiency testing and auditor training "that smaller regional providers cannot sustain," while **72% of industrial buyers now require accredited providers.** The accreditation is both moat and forcing function.
+
+**The screen:** find businesses where the licence/permit/accreditation/appointment takes years to obtain, transfers with the entity, and is currently priced as a multiple of labour-based earnings. Then ask what it's worth when the labour is gone.
+
+---
+
+### Finding 4 — Countercyclical is mispriced right now
+**Confidence: high on the data, medium on the timing.**
+
+Every vertical in Parts I–IV is bid on growth. Almost nothing is bid on *inverse correlation*. Meanwhile the consumer credit data is at generational extremes:
+
+- **Subprime auto 60+ day delinquency hit 6.9% in January 2026 — a 32-year record, the worst since 1994** (Fitch).
+- **Overall auto delinquency 3.88% in Q3 2025 — a 15-year high, above the Great Recession peak.**
+- **2.2M vehicles repossessed by Q4 2025, with full-year 2025 projected above 3M — a level not seen since the aftermath of the GFC.**
+
+Now stack that against Part III: **ARM/collections has 5,623 firms, 70% under ten employees, zero AI-native roll-ups, and the highest automatability of any vertical examined.** Demand at a generational high, supply maximally fragmented, technology inflection live, and no competing capital.
+
+And the hedge is structural: if the AI capex cycle disappoints — Deutsche Bank is forecasting 2026 as a year of AI disappointment, and ~40% of the 2024 AI startup cohort had already shut down within 24 months — a countercyclical cash-flow business re-rates while every growth-priced roll-up compresses.
+
+**The catch, stated honestly:** during a genuine downturn, servicing costs can rise without a matching revenue increase, and collections is the most regulation-exposed vertical in this memo (Reg F, FDCPA, TCPA, CFPB). This is not a free lunch. It is a mispricing with real risk attached.
+
+---
+
+### Finding 5 — Jevons: in some verticals, buy distribution, not supply
+**Confidence: medium-high. This one inverts the entire memo's premise where it applies.**
+
+The whole roll-up thesis assumes you profit by owning delivery capacity and making it cheaper. That is correct only if the market's size is fixed. **Where price was the binding constraint on demand, cutting price 10x doesn't transfer margin — it multiplies volume, and the scarce asset becomes access to the customer, not capacity to serve them.**
+
+The magnitude of latent demand in professional services is not marginal: **92% of civil legal problems faced by low-income Americans currently receive inadequate or no legal help.** That is not a market being disrupted; it's a market that has never been served at any price. Observed 2026 behaviour is consistent — law firms have not cut associates at scale, they've taken on more matters per partner and moved into segments that were previously unaffordable.
+
+**Where price is the constraint, buying supply to cut its cost is the wrong move.** You'd be buying capacity in a market about to be defined by demand capture. The right asset is the customer relationship, the referral channel, the brand, or the regulatory permission to serve.
+
+**Where it applies:** consumer and small-business legal, wills/estates, immigration, small-business compliance, residential property tax appeal (contingency fees run 25–50% of first-year savings — the fee structure exists precisely because the market can't bear a flat fee), unclaimed property recovery (**states hold >$50B**), consumer medical bill review, benefits enrolment.
+
+**Where it does not apply:** anything where demand is mandated and therefore already fully served — fire inspections, credentialing, calibration. Nobody buys *more* sprinkler inspections because they got cheaper. **Mandated demand is inelastic in both directions**, which is its virtue and its ceiling.
+
+---
+
+### Finding 6 — Own the franchisor layer, not the operators
+**Confidence: medium-high. This dissolves the capital-structure problem in §19 entirely.**
+
+The multiple gap that everyone chases is 5x → 10x by aggregating operators. But there's a bigger one sitting in plain sight:
+
+> **Franchisor entities exit at 12–18x EBITDA. Independent home-services operators exit at 5–8x.**
+
+And the capital requirement is inverted. A franchisor collects a **6–10% royalty** (Mr. Rooter ~6–7% plus 2% brand fund; ServPro ~10%) on revenue it does not have to buy. No acquisition debt, no integration risk, no dilution from equity-funded EBITDA purchases — the §19 dilution trap simply doesn't arise, because you never buy the EBITDA.
+
+The AI angle is the part that makes this newly interesting: **the AI stack is the franchise value proposition.** Historically a franchisor sold brand, purchasing power and playbooks. In 2026 it can sell an operating system that measurably lifts a small operator's margin — which is a far more compelling reason for an independent to convert than a logo, and it's the "Biz-in-a-Box" archetype wearing the legal wrapper that has already been proven to work at scale.
+
+**Where it points:** a fragmented compliance-services vertical with **no national household-name brand** — which is exactly the profile of hood cleaning, backflow testing, calibration, and most single-trade compliance categories.
+
+**The caution:** 70% of the largest home-services franchisors are already PE-owned, up from ~30% in 2015. The franchisor layer is not undiscovered — it's just undiscovered in *compliance services*. Also: franchising is heavily regulated (FDD, registration states), it takes years to reach royalty scale, and franchisee recruitment is a sales business, not an M&A business. Different company, different skills.
+
+---
+
+### Finding 7 — Vertically integrate the actual bottleneck: licensed labour
+**Confidence: medium.**
+
+Part IV established that in mandated-fieldwork verticals AI cannot touch the 60–75% of cost that is field labour. First-principles response: **if the constraint is licensed technicians rather than capital, then the scarce asset is the technician pipeline, and that is the thing to own.**
+
+The shortage is structural, not cyclical: ~**500,000** unfilled construction roles in 2026, ~**530,000** open skilled-trade jobs now, and a projected **~1.4M unfilled skilled-trades jobs by 2030**. In fire protection specifically the NICET-certified technician shortage is described as structural, with a projected ~14% shortfall.
+
+Meanwhile the subsidy is arriving: the **Department of Labor committed $145M to apprenticeship programmes in January 2026**, targeting one million active apprentices, on a **pay-for-performance model tied to completion and placement.**
+
+A roll-up that owns a training/apprenticeship pipeline can grow capacity when competitors physically cannot, and can acquire operators whose valuations are constrained by an inability to staff. Competitors can copy your software next quarter; they cannot copy four years of apprenticeship throughput.
+
+**The caution:** trade schools are a different, tightly-regulated business (accreditation, Title IV if federal aid is involved, gainful-employment rules) with a poor reputational history. This is a strategic asset, not a profit centre, and should be underwritten as such.
+
+---
+
+### Finding 8 — Small-business prices are set by the buyer's financing, not the business's quality
+**Confidence: high. Pure arbitrage, requires no AI at all.**
+
+Why do sub-$500k-EBITDA businesses trade at 2–4x SDE while $3M-EBITDA businesses in the identical industry trade at 6–9x? The conventional answer is risk and owner-dependence. The actual mechanism is stated plainly in the lending data:
+
+> **"An SBA buyer at $500K SDE can't pay 6x because their debt service alone would consume the cash flow — the math forces them into the 3–4x range."**
+
+The price is set by **the financing capacity of the marginal buyer**, who is an individual with an SBA loan. It is not a judgement about the asset.
+
+A platform acquirer has a completely different constraint set: shared back office, no owner salary to replace, existing credit facility, and portfolio-level debt service. **The same cash flow that a marginal buyer can only afford at 3x is comfortably worth 5–6x inside a platform.** Nothing about the business changed; the buyer's balance sheet did.
+
+**Implication:** the cheapest assets in America are cheap for a reason that does not apply to a capitalised acquirer. A deliberate **micro-add-on programme** — a high volume of $200–600k EBITDA tuck-ins at 2–4x SDE, bought off-market where no broker will run a process — is a lower-risk, lower-competition source of the same multiple arbitrage everyone is fighting for at the $2–5M EBITDA level. It is unglamorous and operationally demanding, which is precisely why it stays cheap.
+
+---
+
+## 32. Where the findings stack
+
+The interesting opportunities are intersections, not single findings.
+
+### Intersection A — Insurance & medical-legal review (IRO / UR / IME / medical-legal record review)
+**Findings 1 + 2 + 5(partially), plus insurer-paid demand**
+
+- **Offshore-blocked** by state-by-state physician licensure and explicit US-presence requirements (Finding 1)
+- **The product is a signature** — a defensible medical-necessity determination with accreditation and liability behind it (Finding 2)
+- **The payer is not the chooser.** Carriers, TPAs and state insurance departments pay; the claimant receives. Price sensitivity is structurally low and volume is driven by claims, not budgets
+- **URAC accreditation and state rotation lists** are a permission (Finding 3) — you are assigned work, not chosen on price
+- **Zero AI-native roll-ups.** 100+ IROs exist and the market is visibly fragmented
+- **Adjacent and confirmed growing:** medical records retrieval is $1.9B → $5.4B at **11.1% CAGR**, driven by litigation intensity and payer-audit complexity
+
+This is the strongest intersection found in the entire research programme. It sits in the narrow band where mandate, offshore-blocking, liability pricing and automatability all coincide.
+
+### Intersection B — Collections / repossession / default servicing
+**Findings 4 + 8, plus the highest automatability in the memo**
+
+Generational demand (32-year-record subprime delinquency), maximal fragmentation (5,623 firms, 70% sub-ten-employee), zero AI-native competition, cost-per-dollar-collected as the industry's own KPI so the value creation is measurable in the metric buyers already use, and micro-add-on pricing on the way in. The offsetting risk — regulatory exposure — is severe and should be treated as the primary underwriting question rather than a footnote.
+
+### Intersection C — Franchisor over a compliance-services vertical
+**Findings 6 + 7, with 3 as the entry ticket**
+
+Build or buy the franchisor layer in a licence-gated compliance trade with no national brand; sell the AI operating system as the franchise proposition; own the apprenticeship pipeline as the durable moat. 12–18x exit economics, minimal acquisition capital, and no dilution problem. Slowest to build and the most different from everything else here.
+
+---
+
+## 33. What would falsify these
+
+| Finding | Falsifier |
+|---|---|
+| 1 — Offshore test | Evidence that offshore vendors already dominate IRO/UR/IME through US-licensed contractor networks. If the wall is porous in practice, the arbitrage is gone. |
+| 2 — Sell the signature | Any attestation category where AI cut production cost and price fell in lockstep. |
+| 3 — Buy permissions | Deregulation. Maine already raised its CON capital threshold from $3M to $7.5M in 2026 and states are actively overhauling CON. A permission moat that a legislature can delete is a rented moat. |
+| 4 — Countercyclical | Delinquency normalising fast, or a CFPB action that changes collections unit economics. |
+| 5 — Jevons | Latent demand failing to convert because the barrier was trust/awareness rather than price — in which case cheap capacity meets no new customers. |
+| 6 — Franchisor | Franchisee recruitment proving slower than acquisition; or independents refusing to give up 6–10% of revenue for a software stack they could buy directly for 2%. **This is the most likely of the eight to fail.** |
+| 7 — Labour pipeline | Apprenticeship throughput being too slow to matter within a hold period. |
+| 8 — Financing arbitrage | Micro-add-on integration cost exceeding the multiple spread — very plausible at high deal volume. Ten $400k acquisitions is ten integrations. |
+
+---
+
+## 34. Revised ranking after Part V
+
+| # | Opportunity | Drivers | Change |
+|---|---|---|---|
+| **1** | **IRO / UR / IME / medical-legal review** | Findings 1, 2, 3; insurer-paid; zero roll-ups | ⬆️ **New #1** |
+| **2** | **Provider credentialing / CVO** | Part IV #1; mandated paperwork; quantified pain | ⬇️ from #1 |
+| **3** | **Collections / repossession / default servicing** | Findings 4, 8; generational demand; highest automatability | ⬆️ from #3 in Part III |
+| **4** | Medical records retrieval / ROI | Finding 1; 11.1% CAGR; litigation-driven | = |
+| **5** | Facility compliance bundle | Part IV; multi-mandate density | ⬇️ |
+| **6** | Franchisor layer over compliance services | Findings 6, 7 | 🆕 highest variance, lowest capital |
+| **7** | Specialty tax compliance | Mandated paperwork; contingency-aligned | = |
+
+**The one-line synthesis of the whole programme:**
+
+> Don't buy labour that AI can replace — that saving is already competed away, and in most document verticals it was already offshored a decade ago. Buy the **permissions**, the **liability**, and the **customer access** that AI cannot manufacture, in categories where the law prevented the cost from falling until now.
+
+---
+---
+
+# Part VI — How to choose a niche: the disintermediation test
+
+*The question: intelligence-heavy work gives the best AI ROI, but risks customers self-serving once models get good enough. Physical work is safe from that but offers little AI upside. How do you choose?*
+
+---
+
+## 35. The framing is right, and the axis is wrong
+
+The tension is real and correctly identified. But "intelligence-heavy vs physical" treats it as a one-dimensional tradeoff, and it isn't — because **difficulty is only one of several reasons a customer can't do something themselves, and it's the only one AI erodes.**
+
+List every barrier to self-service:
+
+| Barrier | Does AI erode it? |
+|---|---|
+| **It's hard** | ✅ Yes — completely. This is the one everybody is pricing. |
+| **It's tedious** | ✅ Yes. |
+| **It needs physical presence** | ❌ No. (Your manufacturing intuition — correct.) |
+| **You need a credential to access the data** | ❌ No. Payer portals, credit bureaus, medical records, state databases. |
+| **Someone must accept liability if it's wrong** | ❌ No. Arguably strengthens — more automated output, more need for a name on it. |
+| **The counterparty won't accept your own work** | ❌ No. A lender, court, regulator or insurer must accept it, not you. |
+| **A third party is *legally required* to be independent** | ❌❌ **Never.** Self-service is not merely hard — it is *prohibited*. |
+
+That last row is the whole answer. It is not a soft moat, it is written into federal regulation:
+
+- **Audit:** "An auditor cannot audit his or her own work." Prohibited services for an audit client explicitly include bookkeeping, financial systems design, **appraisal or valuation services, fairness opinions, and contribution-in-kind reports.**
+- **IRO:** HHS OIG requires independent review organisations to meet GAO standards, with two overarching principles — the organisation must not perform management functions, and must not audit its own work.
+- **Appraisal:** Fannie Mae maintains formal Appraiser Independence Requirements; the lender cannot value its own collateral.
+- **EPA:** 40 CFR 68.80 requires third-party audits where **every person involved signs a conflict-of-interest statement** documenting independence.
+
+**A model getting smarter does nothing to any of these.** GPT-9 does not make it legal for a company to audit itself.
+
+---
+
+## 36. The 2×2
+
+**Y = AI ROI** (share of the cost base models can absorb) · **X = disintermediation resistance** (can the customer, or a $40/month app, replace you)
+
+```
+                    HIGH AI ROI
+                         │
+   ☠️  THE TRAP          │        🎯  THE PRIZE
+   Bookkeeping           │        IRO / UR / IME
+   Simple 1040 prep      │        Audit & attest
+   Translation           │        Appraisal (lending)
+   Transcription         │        Insurance adjusting
+   Content marketing     │        Credentialing / CVO
+   Generic BPO           │        Collections
+                         │        Records retrieval
+   ← LOW RESISTANCE ─────┼───────── HIGH RESISTANCE →
+                         │
+   🚫  AVOID             │        🟡  SAFE BUT FLAT
+   Commodity staffing    │        Fire & life safety
+   Commodity distribution│        Calibration labs
+   Undifferentiated      │        Water/wastewater O&M
+   project services      │        HVAC, manufacturing
+                         │
+                    LOW AI ROI
+```
+
+**The trap quadrant is where most funded AI roll-ups are sitting.** 31 in accounting. That is not a coincidence — high AI ROI is *visible*, and low resistance is *invisible until it isn't*. You find out three years in, when your client's bookkeeper is a $40/month app.
+
+**"Safe but flat" is your manufacturing intuition, and it's correct.** These are good businesses. They are PE deals, not AI roll-ups, and the failure mode is a financing mismatch: buying a 5%-margin-improvement asset with capital priced for a 2x EBITDA transformation. The business does fine; the return disappoints and the investors are unhappy about something that was never promised honestly.
+
+---
+
+## 37. The five questions
+
+Run any candidate niche through these. The first is the one that matters.
+
+**1. Why can't the customer do this themselves with an app in 2029?**
+If the only honest answer is *"because it's hard"* — you are in the trap quadrant. Difficulty is a depreciating asset now.
+Good answers: *it's illegal for them to*; *the counterparty won't accept their own work*; *they can't access the data*; *someone has to be liable*; *a human has to physically be there.*
+
+**2. Who is holding the bag if the output is wrong?**
+If it's you, with E&O behind it, the customer is buying risk transfer rather than labour — and risk transfer doesn't get cheaper when production does.
+
+**3. Was this work already offshored to $8/hour?**
+If yes, your AI saving is the delta over $8/hour, which is small — the bears are right about you. If no, ask *why not*. **The reason it couldn't be offshored is usually the same reason it can't be disintermediated.** That reason is the asset.
+
+**4. Does the customer choose you, or are you assigned?**
+IROs get work from state rotation lists. Assigned work has no price competition, by construction.
+
+**5. Is demand mandated or discretionary?**
+Mandated demand is inelastic in both directions. It won't grow when you get cheaper — but it won't vanish when budgets tighten.
+
+---
+
+## 38. Choose at the sub-segment level, not the industry level
+
+The most common analytical error in this space, and the direct answer to the accounting question.
+
+**"Accounting" is not a niche.** It contains sub-segments with opposite answers to Question 1:
+
+| Sub-segment | Barrier to self-service | Verdict |
+|---|---|---|
+| Micro-business bookkeeping | Difficulty only | ☠️ Already going. H&R Block ships AI Tax Assist to DIY filers; DIY/AI bookkeeping is explicitly positioned for early-stage low-complexity businesses. |
+| Simple 1040 prep | Difficulty only | ☠️ Same. |
+| Complex multi-state / SALT / transfer pricing | Difficulty + liability | 🟡 Decades of runway, but the moat is still eroding. |
+| IRS representation | **Credential required** — you cannot represent yourself through an unlicensed agent | 🟢 Protected. |
+| **Attest / audit** | **Legally required to be independent** | 🟢🟢 Structurally protected. An audit client is *forbidden* from having the auditor do the bookkeeping. |
+
+Buying "an accounting firm" therefore tells you nothing. A bookkeeping-heavy practice and an attest-heavy practice have opposite risk profiles, and — see Part I — attest-dominant firms actually traded **0.5–1.5 turns *below*** tax-and-advisory firms on adjusted EBITDA. **The market is currently paying a premium for the sub-segment with the weaker moat.** That is either an opportunity or a signal the market knows something about audit's growth. Worth resolving before acting on it.
+
+---
+
+## 39. The time dimension
+
+Disintermediation isn't binary — it's a rate. The operative question is whether the erosion curve is slower than your hold period plus the exit buyer's hold period.
+
+| Erosion horizon | Examples | Implication |
+|---|---|---|
+| **Happening now** | Micro-bookkeeping, simple tax prep, translation, transcription, basic content | Don't buy. You'd be selling into a market that knows. |
+| **3–7 years** | Mid-complexity advisory, generic MSP L1, standard marketing | Buyable *only* if you can exit before the curve bites — which means you're betting on a greater fool, so underwrite it that way, explicitly. |
+| **10+ years / structural** | Independence-mandated work, credentialed access, liability-bearing attestation, physical presence | Buyable and holdable. |
+
+Your hold is ~5–7 years and your buyer needs another 5. **You need the 10+ bucket**, or you need to be honestly running a time-limited arbitrage rather than building a company.
+
+---
+
+## 40. The answer, compressed
+
+> **Maximise AI ROI subject to a hard constraint: the customer must be legally or structurally unable to self-serve. Then take the highest-intelligence work that clears the constraint.**
+
+Don't trade off intelligence-intensity against safety along a line. **Use safety as a filter, then maximise intensity inside it.** The band is narrow — that's why it's still open.
+
+Practically, the search is for: **credentialed, liability-bearing, independence-mandated work that is delivered entirely as documents and phone calls, and that was never offshored because a US licence blocked it.**
+
+Which is, non-coincidentally, exactly where Part V's findings converged: independent review organisations, utilization review, IME, medical-legal review, appraisal, adjusting, credentialing, and collections.
+
+---
+---
+
 ## Sources
 
 **Thesis & landscape:** [aimultiple — AI rollups](https://aimultiple.com/ai-rollups) · [L40 — AI Rollups in 2026](https://www.l40.com/insights/ai-rollups) · [Capital Founders — Founder's Guide to AI-Enabled Roll-Ups](https://www.capitalfounders.io/playbooks/ai-enabled-roll-ups/) · [Sourcery — Inside General Catalyst's Creation Strategy](https://www.sourcery.vc/p/breaking-inside-general-catalysts) · [General Catalyst — Europe's AI Transformation in Services](https://www.generalcatalyst.com/stories/europes-ai-transformation-in-services) · [PitchBook — GC's $6.3B Amex deal](https://pitchbook.com/news/articles/general-catalysts-6-3b-amex-deal-puts-its-ai-roll-up-strategy-on-display) · [PitchBook — "the math doesn't make sense"](https://pitchbook.com/news/articles/the-math-doesnt-make-sense-ai-rollup-hype-tests-the-limits-of-vc-economics)
@@ -948,5 +1292,7 @@ Scored 1–5 per axis; this is structured judgement from the research above, not
 **Part III — US white space, capital structure, competitive census:** [AI Roll-up Nexus — company directory](https://www.ai-rollup.fyi/companies) · [AI Roll-up Nexus — 2026 investor sentiment survey](https://www.ai-rollup.fyi/investorsurvey) · [Newcomer — inside the VC roll-up craze](https://www.newcomer.co/p/inside-the-vc-roll-up-craze-that) · [PitchBook — AI rollup hype tests the limits of VC economics](https://pitchbook.com/news/articles/the-math-doesnt-make-sense-ai-rollup-hype-tests-the-limits-of-vc-economics) · [Euclid Ventures — Verticals #2: AI roll-ups](https://insights.euclid.vc/p/verticals-2-ai-roll-ups) · [Euclid Ventures — the AI-first roll-up](https://insights.euclid.vc/p/the-ai-first-roll-up) · [CNBC — Silicon Valley's new buyout playbook hits Wall Street](https://www.cnbc.com/2026/06/08/silicon-valleys-new-buyout-playbook-is-hitting-wall-street.html) · [General Catalyst — our investment in Titan](https://www.generalcatalyst.com/stories/our-investment-in-titan) · [Omdia — Shield Technology Partners' expanding strategy](https://omdia.tech.informa.com/blogs/2025/dec/ai-capital-meets-msp-rollups-inside-shield-technology-partners-expanding-strategy) · [CT Acquisitions — independent sponsor economics 2026](https://ctacquisitions.com/independent-sponsor-economics-explained/) · [Acquisition Stars — independent sponsor deal economics](https://acquisitionstars.com/blog/independent-sponsor-deal-economics) · [CT Acquisitions — environmental services valuation 2026](https://ctacquisitions.com/guides/environmental-services-business-valuation/) · [Capstone Partners — industrial & environmental services update](https://www.capstonepartners.com/insights/article-industrial-environmental-services-market-update/) · [IBISWorld — debt collection agencies in the US](https://www.ibisworld.com/united-states/industry/debt-collection-agencies/1474/) · [Inman — Propy's $100M title bet](https://www.inman.com/2026/05/14/propy-ai-title-companies/) · [HousingWire — Doma agrees to sell to Title Resources Group](https://www.housingwire.com/articles/doma-agrees-to-sell-to-title-resources-group/) · [BusinessWire — Radian sells title business to PLACE](https://www.businesswire.com/news/home/20260803046478/en/Radian-Advances-Strategic-Transformation-to-Global-Multi-Line-Specialty-Insurer-with-Sale-of-Real-Estate-Services-Business-and-Agreement-to-Sell-Title-Business) · [Anthropic Economic Index — June 2026 report](https://www.anthropic.com/research/economic-index-june-2026-report)
 
 **Part IV — broadened sweep:** [QRFS — skilled labour shortage in fire protection ITM](https://blog.qrfs.com/304-a-skilled-labor-shortage-is-looming-in-fire-protection-itm/) · [Inspect Point — 2026 fire & life safety industry report](https://www.inspectpoint.com/2026-fire-life-safety-industry-report-key-trends-shaping-fire-protection/) · [Inspect Point + BuildOps partnership](https://www.inspectpoint.com/inspect-point-and-buildops-partner-to-transform-fire-protection-operations/) · [ServiceTrade — fire inspection software](https://servicetrade.com/products/fire-inspection-software/) · [Service-Tech — NFPA 96 compliance guide 2026](https://www.service-techcorp.com/blog/hood-cleaning) · [Facilitec — NFPA 96 section-by-section](https://facilitec-sw.com/compliance/nfpa-96-codes/) · [PE Professional — Incline's Accredited Labs gets $300M](https://peprofessional.com/2025/10/inclines-accredited-labs-gets-300-million-to-continue-growth/) · [Calledger — calibration lab industry statistics 2026](https://calledger.com/blog/calibration-laboratory-industry-statistics/) · [CT Acquisitions — water & wastewater PE roll-up tracker 2026](https://ctacquisitions.com/guides/water-wastewater-pe-rollup-tracker-2026/) · [CT Acquisitions — water & wastewater valuation 2026](https://ctacquisitions.com/guides/water-wastewater-business-valuation/) · [Business Research Insights — CVO credentialing services market](https://www.businessresearchinsights.com/market-reports/cvo-credentialing-services-market-113366/) · [Grand View — credentialing software & services](https://www.grandviewresearch.com/press-release/global-credentialing-software-services-healthcare-market) · [Verimedix — prior authorization outsourcing costs 2026](https://www.verimedix.com/prior-authorization-outsourcing-costs-staffing-2026/) · [Stealth Agents — healthcare outsourcing statistics 2026](https://stealthagents.com/research/healthcare-outsourcing-statistics-2026) · [Vantage — medical records retrieval market](https://www.vantagemarketresearch.com/medical-records-retrieval-market) · [Coherent — US IME services market](https://www.coherentmarketinsights.com/industry-reports/us-independent-medical-evaluation-service-market) · [IBISWorld — environmental consulting in the US](https://www.ibisworld.com/united-states/industry/environmental-consulting/1427/) · [SW Recovery — collection agency fees 2026](https://www.swrecovery.com/resources/blog/average-collection-agency-fees-2026-costs-commission-rates-explained/) · [vCA — P&C trends for carriers, TPAs and adjusting firms 2026](https://vcasoftware.com/property-and-casualty-insurance-industry-trends/) · [Digital Applied — AI agency roll-up wave M&A predictions 2026](https://www.digitalapplied.com/blog/ai-agency-rollup-wave-m-and-a-predictions-2026) · [Pertama Partners — AI project failure statistics 2026](https://www.pertamapartners.com/insights/ai-project-failure-statistics-2026)
+
+**Parts V–VI — first principles, permissions, disintermediation:** [SEAK — list of 100+ independent review organizations](https://seak.com/blog/uncategorized/list-of-100-independent-review-organizations/) · [HHS OIG — guidance on IRO independence and objectivity](https://oig.hhs.gov/documents/faqs/1051/iro-guidance-2016.pdf) · [URAC — IRO accreditation](https://www.urac.org/accreditation-cert/independent-review-organization-accreditation/) · [Harbor Compliance — utilization review certification/licensing](https://www.harborcompliance.com/utilization-review-certification-license) · [AMA — medical licensing requirements](https://www.ama-assn.org/medical-residents/transition-resident-attending/medical-licensing-requirements-what-physicians) · [SEC — auditor independence requirements](https://www.sec.gov/rules/2000/11/revision-commissions-auditor-independence-requirements) · [Federal Register — strengthening auditor independence](https://www.federalregister.gov/documents/2003/02/05/03-2364/strengthening-the-commissions-requirements-regarding-auditor-independence) · [Fannie Mae — appraiser independence requirements](https://singlefamily.fanniemae.com/property-valuation/appraiser-independence-requirements) · [eCFR 40 CFR 68.80 — third-party audits](https://www.ecfr.gov/current/title-40/chapter-I/subchapter-C/part-68/subpart-D/section-68.80) · [NASHP — 50-state scan of certificate-of-need programs](https://nashp.org/state-tracker/50-state-scan-of-state-certificate-of-need-programs/) · [HFMA — states overhaul certificate-of-need laws](https://www.hfma.org/fast-finance/certificate-of-need-legislation-2026-states/) · [Stoneridge Partners — is a CON required for home health & hospice](https://www.stoneridgepartners.com/wp-content/uploads/2025/02/25_02_28-con-blog-update-v3.pdf) · [InnReg — money transmitter licence steps & requirements](https://www.innreg.com/blog/money-transmitter-license-steps-and-requirements) · [Brico — MTL costs](https://www.brico.ai/post/how-much-do-mtls-cost) · [Fitch/industry — auto loan default and repossession data](https://defisolutions.com/defi-insight/auto-loan-default-rates/) · [Symend — the auto loan crisis and 2026 collections](https://www.symend.com/blog/the-auto-loan-crisis-why-traditional-collections-wont-work-in-2026) · [Fortune — Jevons paradox and professional services](https://fortune.com/2026/04/28/will-ai-kill-jobs-why-not-jevons-paradox-torsten-slok/) · [SSRN — AI, legal labor and the Jevons paradox](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6303419) · [CT Acquisitions — franchise business valuation 2026](https://ctacquisitions.com/franchise-business-valuation/) · [CT Acquisitions — home services franchise opportunities 2026](https://ctacquisitions.com/home-services-franchise-opportunities/) · [Trade Colleges — skilled trades shortage 2026](https://tradecolleges.org/blog/skilled-trades-outlook/skilled-trades-shortage-opportunity) · [CT Acquisitions — selling a business under $1 million](https://ctacquisitions.com/selling-a-business-under-1-million/) · [H&R Block — AI Tax Assist for DIY filers](https://www.hrblock.com/tax-center/newsroom/company-news/new-ai-tax-assist-diy/) · [apexanalytix — unclaimed property asset recovery](https://www.apexanalytix.com/solutions/audit-recovery/unclaimed-property-asset-recovery/)
 
 **Financing & market:** [SBA policy notice 5000-865754](https://www.sba.gov/document/policy-notice-5000-865754-policy-updates-comply-executive-order-14159-regarding-citizenship-requirements-obtaining-7a-504) · [BRG — SBA citizenship eligibility changes](https://www.thinkbrg.com/insights/publications/sba-citizenship-eligibility-changes-implications-for-lenders-and-operational-considerations/) · [Malescu Law — green card holders barred](https://malesculaw.com/green-card-holders-barred-from-sba-loans-starting-march-1-2026/) · [Pioneer Capital — seller financing with SBA 7(a)](https://www.pioneercapitaladvisory.com/post/using-seller-financing-with-an-sba-7-a-loan) · [CT Acquisitions — business acquisition financing 2026](https://ctacquisitions.com/business-acquisition-financing-guide-2026/) · [Forbes — $5T of boomer businesses transferring](https://www.forbes.com/sites/martinadilicosa/2026/02/26/millions-of-small-businesses-soon-changing-hands-as-baby-boomers-retire-in-great-ownership-transfer-report-says/) · [Acquisition Stars — acquisition timeline](https://acquisitionstars.com/acquisition-timeline)
