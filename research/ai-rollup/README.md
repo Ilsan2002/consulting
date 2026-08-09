@@ -3,7 +3,8 @@
 *Research memo. August 2026. Written to be argued with, not agreed with.*
 
 > **Part I** (below) — the verticals: the screen, the scoreboard, deep dives, traps.
-> **[Part II](#part-ii--where-to-do-it-us-vs-europe-and-what-i-would-actually-do)** — the decision: US vs Europe, both financing paths, and my actual call.
+> **[Part II](#part-ii--where-to-do-it-us-vs-europe-and-what-i-would-actually-do)** — US vs Europe, both financing paths.
+> **[Part III](#part-iii--the-us-market-with-capital-white-space-capital-structure-and-the-five-open-plays)** — US market with capital: the white-space census, the capital-structure problem, and the five open plays.
 
 ---
 
@@ -527,6 +528,225 @@ Say the word and I'll build any of these out properly:
 ---
 ---
 
+# Part III — The US market with capital: white space, capital structure, and the five open plays
+
+*Scope: United States. Assumes institutional or raised capital is available. This section is market research, not advice — it maps what is claimed, what is open, and what the money actually requires.*
+
+---
+
+## 17. The census: what is already claimed
+
+The AI Roll-up Nexus directory tracks self-identified AI roll-up companies globally. The distribution is the most useful single artefact in this space, because it shows where a hundred well-funded teams have already decided to go.
+
+| Vertical | # of AI roll-ups | Notable | Read |
+|---|---|---|---|
+| **Accounting** | **31** | Crete/Current, Accrual, Cynch, Multiplier Holdings, Aqqrue, Gain, Numica, Mandrel | 🔴 **Saturated.** Thrive's $1B is here, plus ~10 US seed-stage clones and 20 European ones. |
+| **Property management** | **16** | Long Lake, Buena (Series B), Dwelly, Ralph, Reltix, Hallo Theo | 🔴 Crowded, and Long Lake already won the US HOA lane at $100M EBITDA. |
+| **Insurance (agency/TPA)** | **15+** | Covu, Equal Parts, Vivere, Corgi, Gyde, American Growth; TPAs: Ravin, Strala, Inca | 🟠 Crowded at seed, no clear winner yet. |
+| **IT services / MSP** | **14** | Titan (GC, $74M), Shield Technology Partners (Thrive/ZBS, $100M+), Rollout, Treeline, Turgon, e4n | 🟠 Two very well-funded platforms, still fragmented enough to matter. |
+| **Medical / RCM / primary care** | **13** | Candid Health, Agent AI, Overdrive Health, Meroka, Avi Medical | 🟠 Splitting into RCM vs clinic ownership. |
+| **Freight / logistics** | **11** | Nuvocargo, Sennder, Fura, Loop, Pando, TerraFreight | 🟠 Investor-stated "underpenetrated," but 11 entrants say otherwise. |
+| **Wealth management** | 8 | Savvy Wealth, Aqua, Clove | 🟠 Plus the entire traditional RIA roll-up industry on top. |
+| **Tax advisory** | 7 | Mostly German (Integral, LimeTax, Skalar, Taxforce) | 🟡 US side thinner than accounting. |
+| **Customs / trade** | 7 | DocUnlock, Veloclear, Border Logic, Bruges | 🟡 |
+| **Contact centre** | 6 | **Crescendo (Series C)**, Onepilot, OpenCall | 🔴 Effectively decided. |
+| **Real estate lettings** | 5 | Dwelly, Halyard Collective, Home Made | 🟡 |
+| **Legal** | 4–5 | Eudia (GC), Lawhive, Ellis, ImmCore, Alecto | 🟡 Regulatory structure limits entrants more than competition does. |
+| **Construction** | 4 | Margot, Attentive | 🟢 Thin. |
+| **Staffing** | 3 | Pioneers, Mojo Talent, Starshunt | 🟢 Thin — but see Part I on why the vertical itself is impaired. |
+| **Manufacturing** | 2 | Antares Labs | 🟢 |
+| **Environmental / TIC** | **0** | — | 🟢 **Empty.** |
+| **Fire & life safety / mandated ITM** | **0** | — | 🟢 **Empty.** |
+| **ARM / debt collection** | **0** | — | 🟢 **Empty.** |
+| **Title & escrow** | ~1 | Propy ($100M facility) | 🟢 **Nearly empty — and there's a reason. See §21.** |
+
+**The pattern is unmistakable.** Venture-backed AI roll-ups have clustered almost entirely in *white-collar back-office document work* — accounting, tax, insurance ops, RCM, property admin. That's where the models are obviously good, so that's where a hundred founders pointed. Meanwhile the categories with mandated, non-discretionary, regulation-backed revenue have **zero** AI-native entrants, despite being heavily worked by traditional PE.
+
+That gap is the actual finding of this section. There are two separate buy-sides and they are looking at different maps:
+
+- **VC-backed AI roll-ups** are in document-heavy professional services (and paying up for them).
+- **Traditional PE** is in compliance-driven field services (fire safety, environmental, pest, home services) and has largely ignored AI as a value-creation lever.
+
+The white space is where those two maps don't overlap.
+
+---
+
+## 18. What the money actually requires
+
+From the 2026 AI Roll-up investor sentiment survey (102 investors):
+
+| Metric | Finding | Implication |
+|---|---|---|
+| **EBITDA uplift bar** | **>90% require a minimum 2x EBITDA improvement (100%+)** | A pitch showing "+30% margin from AI" does not clear the bar. Ten-to-fifteen-point margin expansion is table stakes, not the thesis. |
+| Top concern #1 | **Integration & change management (79%)** | The diligence question you will actually be asked is not "does the model work" but "have you ever integrated two businesses." |
+| Top concern #2 | **Overhyped AI value creation (68%)** | Assume the AI claims in your deck are discounted by default. Measured production numbers beat capability demos. |
+| Return expectation | 60%+ expect better IRRs than PE (~15%); only **~15% expect true VC-scale returns** | The capital knows this is a PE-shaped return with a venture wrapper. |
+| Appetite | ≥40% actively seeking AI roll-up investments; 45%+ think it's a larger opportunity than crypto's $120B | The window is open now. |
+| Typical seed cheque | **$1–3M — explicitly flagged as insufficient for a first acquisition** | ⚠️ Structural problem. See below. |
+| Favoured verticals | Professional services, financial services | Where everyone already is. |
+| Investor-stated *underpenetrated* | **IT services, trade & logistics, real estate services** | Note these are the verticals with 14, 11 and 5 entrants respectively. "Underpenetrated" is relative to accounting's 31. |
+
+---
+
+## 19. The capital structure problem — the most important section here
+
+If capital is available, the binding question stops being *can you fund it* and becomes *what kind of capital, in what layer*. Get this wrong and the strategy is dead on arrival regardless of vertical.
+
+### The dilution trap
+
+The critique, stated plainly: a VC invests **$20M for 20% at a $100M valuation.** If that $20M is spent buying businesses, the investor has supplied **100% of the cash** but owns **20% of the assets** — effectively paying **5x book value** for the acquired EBITDA. Even if the acquired businesses grew 5x, the investor's return would be roughly **1x**.
+
+This asymmetry does not exist in private equity, where the capital provider owns a controlling stake and captures the uplift proportionally. It is the single structural reason "the math doesn't make sense" for pure-equity-funded roll-ups.
+
+**Conclusion: venture equity is the most expensive possible way to buy EBITDA.** Its only correct use in this strategy is funding the *non-acquisition* parts — the software, the engineering team, the holdco overhead, the M&A function.
+
+### The layered structure that actually works
+
+| Layer | Funded by | Buys |
+|---|---|---|
+| **Software / AI platform** | Venture equity | Engineers, models, product. Genuinely venture-shaped, genuinely 10x-capable **if sold beyond the owned estate.** |
+| **Holdco / M&A function** | Venture equity | The deal team, integration team, 12–18 months of runway |
+| **The EBITDA itself** | **Senior debt + seller paper + recycled portfolio cash flow** | The operating businesses |
+
+Early platforms lean on equity because lenders have no integration track record to underwrite. The transition — from equity-funded acquisitions to a revolver plus term debt — is the moment the model starts working. Getting there fast is the whole game.
+
+Reference point on capital efficiency: **Cabana** (pool services) reportedly turned ~**$10M of capital raised into $12–15M of revenue and >$4M of acquired EBITDA**, buying at **3–4x** with a stated path toward a ~20x re-rate, and its founder argues IPO scale is reachable on **$20–30M of total equity**. That ratio — roughly 2.5x of acquired EBITDA per $10M of equity — is the benchmark to beat. If a plan needs $50M of equity to assemble $10M of EBITDA, it is a fund, not a company.
+
+### Independent sponsor economics, for reference
+
+If the structure is deal-by-deal rather than a committed fund:
+
+- **Closing fee:** 2–5% of transaction value at close
+- **Management fee:** ~5% of TTM EBITDA is now the default (72% of EBITDA-based structures sit in the 5–5.99% band); alternatively 1.5–2% of committed equity
+- **Promote:** 20–25% over an 8% pref with full catch-up. First-timers typically take **15–20%**; established sponsors get 25–30% or a 6–7% hurdle
+- **GP commit:** 2–5% personal capital — family offices expect it
+- ~340 independent-sponsor platform deals closed in the US in 2025, sourcing equity from ~46 active family-office LPs
+
+### The three archetypes
+
+Euclid's taxonomy is the cleanest available, and archetype choice determines everything downstream:
+
+1. **Crown Jewel** — buy one large asset, AI-enable it deeply (Metropolis acquiring SP+). Lowest integration risk, highest single-asset risk, needs the most capital up front.
+2. **Venture Roll-Up** — acquire dozens of mid-sized assets and improve in parallel. Classic. Integration risk is the whole risk.
+3. **Biz-in-a-Box** — equip independent operators with the full stack and take a share of revenue rather than selling seats. **This is the only one of the three with a genuinely venture-shaped return**, because the software escapes the owned estate.
+
+The honest synthesis: **own enough to force adoption and prove the numbers, then sell the stack outside the estate.** Roll-up as the wedge, software as the outcome. A roll-up that never escapes its own estate is a PE fund with venture-priced equity, and the return will be 2–5x, not 10x. That is not a failure — it is just not what venture equity is priced for.
+
+---
+
+## 20. The five open plays
+
+Ranked by (white space) × (regulation-backed revenue) × (AI-addressable cost share). Each is empty or near-empty of AI-native competitors while being actively worked by traditional PE — which means proven exit demand with no AI-native rival bidding up entry prices.
+
+### Play 1 — Environmental services & TIC (testing, inspection, certification)
+
+| | |
+|---|---|
+| **Entry** | 5–10x EBITDA for sub-$10M operators; 8–13x for $20M+ platforms with MSA bases |
+| **Premium tiers** | 40%+ MSA revenue → 8–11x. RCRA Part B permit holders with PFAS capability → **10–13x** |
+| **AI-native competitors** | **Zero** |
+| **PE competitors** | Heavy and growing — described as one of the most consistent PE deployment themes in industrial services |
+| **Exit proof** | Acuren acquired NV5 Global for **$1.8B** to expand into TICC |
+| **Why it qualifies** | Regulation-backed, non-discretionary, recurring MSA revenue. Described as "no longer a cyclical compliance niche — a structurally growing, regulation-backed cash flow asset class." |
+| **AI thesis** | Field data capture → automated report generation is the single largest labour line in environmental consulting. Sampling event → lab data reconciliation → regulator-ready report is a document pipeline, not a judgement task. Also: permit deadline tracking, proposal/bid generation against RFPs, and scheduling/routing. |
+| **What kills it** | Licensed professional bench is the constraint and it can't be automated. Permits (RCRA Part B) are the real asset and take years. Project revenue is lumpy unless you buy MSA-heavy books. |
+
+### Play 2 — Fire & life safety / mandated ITM
+
+| | |
+|---|---|
+| **Entry** | 5–8x for sub-$1.5M EBITDA operators |
+| **AI-native competitors** | **Zero** |
+| **PE competitors** | Very heavy: Pye-Barker (Altas + Leonard Green), Summit (BDT & MSD), AI Fire/Impact (Blackstone), Marmic (KKR), Sciens (Carlyle) |
+| **Why it qualifies** | **NFPA 25 and NFPA 72 legally mandate periodic inspection and testing of every installed sprinkler and alarm system.** Filter 5 isn't passed, it's legislated. Every install is an annuity. |
+| **AI thesis — the specific one** | **Deficiency-to-quote conversion.** Every inspection generates deficiencies; small operators leave an estimated 30–50% of repair revenue uncollected because nobody follows up. Auto-generating a priced repair quote within 24 hours of every inspection is *revenue-side* synergy from a visit already paid for — which is the rare thing that satisfies filter 6. Secondary: routing/scheduling, compliance-deadline chasing, AHJ report formatting. |
+| **What kills it** | Licensed technicians are scarce and AI can't climb a ladder. AI leverage is 15–25% of SG&A, not a margin transformation. Entry competition from five mega-platforms means anything above ~$2M EBITDA is a competitive process. |
+
+### Play 3 — ARM / debt collection
+
+| | |
+|---|---|
+| **Market** | **$16.1B in 2026, growing 6.1%** on rising delinquency placements |
+| **Fragmentation** | **5,623 firms; 70% have fewer than 10 employees**; top 50 hold 52% |
+| **AI-native competitors** | **Zero roll-ups.** Tooling vendors exist and are mature (TrueAccord, Skit.ai, InDebted, Prodigal, Equabli, Floatbot) — which is an advantage, not a threat: MIT found external-vendor AI succeeds ~2x as often as internal builds. |
+| **AI leverage** | **The highest on this page.** The cost base is a phone room. Voice AI crossed the ~200ms human-latency threshold in 2026. AI is *structurally more compliant* than humans — it calls only within legal hours, reads required disclosures every time, and logs every word. |
+| **Pricing alignment** | Contingency (10–25% of recovered balances). Vendors already price on outcomes — right-party contacts, promises to pay, payments — not seats. Revenue rises with performance. |
+| **What kills it** | Regulation F, FDCPA, TCPA, and the CFPB. 7-in-7 frequency rules, consent tracking, mandatory disclosures, dispute escalation. One systematic compliance failure is an enforcement action across the entire book, not one account. This is the highest-liability play here and needs a compliance officer before it needs an engineer. |
+| **Read** | Highest AI leverage, highest regulatory risk, zero AI-native competition. That combination is rarely an accident — but the tooling maturity in 2026 suggests the risk is now manageable in a way it wasn't in 2023. |
+
+### Play 4 — IT services / MSP (crowded, but the math still works)
+
+| | |
+|---|---|
+| **Entry** | ~4x for sub-$5M revenue shops; **median 8.9x** across 120 transactions; 10–14x for scaled, security-heavy or AI-enabled platforms |
+| **Volume** | 466 North American deals in 2025 (+20% YoY), PE involved in 72% |
+| **Quality dispersion** | Of an estimated 150,000–200,000 MSPs globally, **only 5,000–10,000 meet recognised maturity standards** |
+| **AI-native competitors** | **Titan** (General Catalyst, $74M, reports automating **38% of typical MSP tasks**) and **Shield Technology Partners** (Thrive/ZBS, $100M+, 9 firms as of Feb 2026, plans to double in 2026; OpenAI took an equity stake in Thrive in Dec 2025) |
+| **Why it's still open** | Two funded platforms against a 200,000-shop long tail is not saturation. And 38% task automation is a *published, third-party-validated* number — the highest-confidence AI evidence in any vertical here. |
+| **Revenue synergy** | Cybersecurity attach at **55–70% gross margin** into every acquired book |
+| **What kills it** | Unlimited cyber liability — ransomware was in 44% of confirmed 2025 breaches, and one incident through a shared RMM hits every client at once. Margin compression is the sector's defining 2026 complaint. Microsoft CSP margins under pressure. |
+
+### Play 5 — Title & escrow (the highest-variance option)
+
+| | |
+|---|---|
+| **Market** | ~$26B, **~7,000 firms**, described as "one of the last analog strongholds in the US" |
+| **AI-native competitors** | **Propy** — $100M credit facility, buying agencies and layering automation on the back office while retaining local teams and relationships |
+| **Other consolidators** | Title Resources Group (Lennar-backed), PLACE (acquiring Radian's title business, Q4 2026) |
+| **AI leverage** | High and proven: order-entry/intake automation reportedly cuts data-entry time **70–85%**; commitment preparation; wire-fraud prevention |
+| **⚠️ The cautionary tale** | **Doma** (formerly States Title) — the venture-backed, ML-driven "instant closing" title company. SPAC'd in 2021 at a **$3B enterprise value**, stock fell **~97%**, sold to Title Resources Group for **$85M** in 2024. |
+| **Read** | The AI-in-title thesis has already been run at scale and it destroyed ~97% of its equity value. The instructive detail: Doma's failure was not that the technology didn't work — it was that title volume is a **derivative of mortgage rates**, and no amount of automation saves you when transaction volume halves. **Automating a cyclical business does not decyclicalise it.** Propy's structure (buy profitable agencies, keep the teams, layer automation) is explicitly the correction to Doma's error. Anyone entering here needs an answer to "what happens at 3M existing-home sales?" |
+
+---
+
+## 21. The verticals to avoid, given capital
+
+Not because they're bad businesses — because the entry price already reflects the thesis.
+
+| Vertical | Why not |
+|---|---|
+| **Accounting / tax** | 31 tracked AI roll-ups plus Thrive's $1B plus ~900 traditional roll-up transactions in 2025 plus half the top-30 firms already PE-owned. Every seller has three bidders. The arbitrage has been arbitraged. |
+| **Contact centre / BPO** | Crescendo is at Series C with reportedly ~4x traditional margins. This lane is decided, and the underlying business is simultaneously being deflated by the same technology. |
+| **HOA / property management** | Long Lake reached $100M EBITDA in under two years and 16 entrants are chasing. You would be late to a race someone already won. |
+| **Veterinary, dental, ABA** | Someone else's ZIRP hangover. ~$45B into vet 2017–2022, Thrive Pet did a distressed debt exchange, CARD went bankrupt under Blackstone. Wait for the workout. |
+| **Marketing, translation, transcription, court reporting** | Failing filter 5 by construction. See Part I §3.7. |
+
+---
+
+## 22. Base-case underwriting
+
+Illustrative, not a forecast. Environmental/TIC or fire & life safety shape, venture-roll-up archetype.
+
+**Platform**
+- $3.0M EBITDA at 6.5x = **$19.5M EV**
+- Senior debt 3.5x = $10.5M · seller note 0.5x = $1.5M · **equity $7.5M**
+
+**Add-on programme** — 8–10 tuck-ins over 30 months, $0.5–1.5M EBITDA each at 4.5–5.5x, funded from a revolver plus recycled cash flow, not equity
+
+**Value creation**
+- Multiple arbitrage: ~2 turns on entry (buy 5x, own inside a platform worth 10x+)
+- AI margin lift: +300–500bps on SG&A over 24 months (scheduling, dispatch, report generation, AR, quote conversion)
+- Revenue synergy: deficiency-to-quote conversion — the highest-ROI single application identified in this research
+
+**Exit** — $12–15M EBITDA at 10–12x = $120–180M EV, less ~$60M net debt = **$60–120M equity value**
+
+**Against $25–30M of total equity, that's roughly 3–4x** over 5–6 years. A good PE outcome. **Not a venture outcome** — which is precisely why the survey found only ~15% of AI roll-up investors expect venture-scale returns, and precisely why the software has to escape the estate if venture equity is in the stack.
+
+---
+
+## 23. What separates the fundable pitch from the other 400
+
+Given >90% of investors require ≥2x EBITDA uplift and 79% name integration as their top concern, the discriminating evidence is:
+
+1. **A production number, not a capability claim.** Titan's "38% of typical MSP tasks automated" and Crete's "7,000 returns, 97% draft accuracy, 50% throughput lift" are the format. A demo is not.
+2. **An integration track record**, or a hired operator who has one. This is the top-cited concern by a 11-point margin and it is the thing least often addressed.
+3. **A capital structure where equity does not buy EBITDA.** Debt and seller paper buy the businesses; equity buys the engineers. Anyone presenting an equity-funded acquisition plan is failing the dilution test in §19 and sophisticated investors will spot it immediately.
+4. **A filter-5 answer.** Specifically: when AI makes this 60% cheaper to deliver, why does the customer keep paying? Regulation-mandated demand is the strongest available answer, which is why the empty verticals in §17 are interesting.
+5. **A path for the software to leave the estate.** Without it, the honest label is "PE fund," and it should be raised as one — with PE economics, PE hold periods, and PE-shaped LPs.
+
+---
+---
+
 ## Sources
 
 **Thesis & landscape:** [aimultiple — AI rollups](https://aimultiple.com/ai-rollups) · [L40 — AI Rollups in 2026](https://www.l40.com/insights/ai-rollups) · [Capital Founders — Founder's Guide to AI-Enabled Roll-Ups](https://www.capitalfounders.io/playbooks/ai-enabled-roll-ups/) · [Sourcery — Inside General Catalyst's Creation Strategy](https://www.sourcery.vc/p/breaking-inside-general-catalysts) · [General Catalyst — Europe's AI Transformation in Services](https://www.generalcatalyst.com/stories/europes-ai-transformation-in-services) · [PitchBook — GC's $6.3B Amex deal](https://pitchbook.com/news/articles/general-catalysts-6-3b-amex-deal-puts-its-ai-roll-up-strategy-on-display) · [PitchBook — "the math doesn't make sense"](https://pitchbook.com/news/articles/the-math-doesnt-make-sense-ai-rollup-hype-tests-the-limits-of-vc-economics)
@@ -552,5 +772,7 @@ Say the word and I'll build any of these out properly:
 **Legal-sector structures:** [DLA Piper — MSOs vs ABS](https://www.dlapiper.com/en-us/insights/publications/2026/01/msos-vs-abs-two-models-investment-in-law-firms) · [Holland & Knight — starting an Arizona ABS](https://www.hklaw.com/en/insights/publications/2025/12/so-you-want-to-start-an-arizona-alternative-business-structure) · [LawFuel — PE and law firm MSOs](https://www.lawfuel.com/private-equity-law-firm-mso-structure-2026/)
 
 **Part II — geography, immigration, European market:** [NNU — E-2 treaty countries 2026](https://www.nnuimmigration.com/e-2-treaty-countries/) · [USCIS — L-1A intracompany transferee](https://www.uscis.gov/working-in-the-united-states/temporary-workers/l-1a-intracompany-transferee-executive-or-manager) · [Nat Law Review — L-1 new offices 2026](https://natlawreview.com/article/l-1-visa-new-offices-2026-practical-guide-companies-expanding-united-states) · [Grape Law — buying a US business as a foreign national](https://www.grapelaw.com/blog/us-immigration/how-to-buy-a-business-in-the-us-as-a-foreign-national) · [IncorpUK — non-UK-resident directors](https://incorpuk.com/blog/non-uk-resident-director/) · [CT Acquisitions — European SME succession wave 2026–2030](https://ctacquisitions.com/guides/european-sme-succession-wave-2026-2030/) · [KfW — Nachfolge-Monitoring Mittelstand 2025](https://www.kfw.de/PDF/Download-Center/Konzernthemen/Research/PDF-Dokumente-Fokus-Volkswirtschaft/Fokus-2026/Fokus-Nr.-526-Januar-2026-Nachfolge-Monitoring.pdf) · [Zumera — Germany's Mittelstand succession crisis](https://zumera.com/en/blog/the-ticking-time-bomb-germanys-mittelstand-succession-crisis/) · [Dealorigination — DACH EBITDA multiples 2026](https://dealorigination.de/en/ebitda-multiples-dach) · [Dealsuite — European Monitor March 2026](https://www.dealsuite.com/en/blogs/european-monitor-march-2026) · [ExitRadar — UK ETA ecosystem 2026](https://www.exitradar.co.uk/blog/uk-eta-ecosystem) · [Shawbrook — search fund financing](https://www.shawbrook.co.uk/business/business-lending/search-funds/) · [Buyout Diary — the model every European searcher ends up in](https://www.buyoutdiary.com/p/the-model-every-european-searcher) · [Moore Kingston Smith — UK IT services M&A Q1 2026](https://mooreks.co.uk/insights/ma-in-the-uk-it-services-sector-q1-2026/) · [Comms Business — the MSP era](https://www.commsbusiness.co.uk/content/market-report/the-msp-era) · [Bains Watts — UK accountancy GRF multiples 2026](https://bainswatts.co.uk/accounting-firm-grf-multiples-in-2026-secrets-revealed-on-whats-actually-being-paid/) · [MarshBerry — UK insurance distribution M&A](https://www.marshberry.com/eu/blog/uk-insurance-distribution-ma-has-a-quiet-end-to-2025/) · [Bisnow — consolidation in UK block management](https://www.bisnow.com/london/news/build-to-rent/in-block-management-the-benefits-of-consolidation-can-only-be-felt-if-the-systems-are-right-113866) · [Deloitte — BADR rate increase](https://www.uktaxpolicymap.com/taxing-work-and-wealth/business-asset-disposal-relief-and-investors--relief-rate-increase.aspx) · [KPMG — Autumn Statement 2024 (employer NIC)](https://kpmg.com/dp/en/home/insights/2024/10/uk-autumn-statement-2024.html) · [Profitability Partners — home services PE acquirers by trade](https://profitabilitypartners.io/home-services-private-equity-acquirers/)
+
+**Part III — US white space, capital structure, competitive census:** [AI Roll-up Nexus — company directory](https://www.ai-rollup.fyi/companies) · [AI Roll-up Nexus — 2026 investor sentiment survey](https://www.ai-rollup.fyi/investorsurvey) · [Newcomer — inside the VC roll-up craze](https://www.newcomer.co/p/inside-the-vc-roll-up-craze-that) · [PitchBook — AI rollup hype tests the limits of VC economics](https://pitchbook.com/news/articles/the-math-doesnt-make-sense-ai-rollup-hype-tests-the-limits-of-vc-economics) · [Euclid Ventures — Verticals #2: AI roll-ups](https://insights.euclid.vc/p/verticals-2-ai-roll-ups) · [Euclid Ventures — the AI-first roll-up](https://insights.euclid.vc/p/the-ai-first-roll-up) · [CNBC — Silicon Valley's new buyout playbook hits Wall Street](https://www.cnbc.com/2026/06/08/silicon-valleys-new-buyout-playbook-is-hitting-wall-street.html) · [General Catalyst — our investment in Titan](https://www.generalcatalyst.com/stories/our-investment-in-titan) · [Omdia — Shield Technology Partners' expanding strategy](https://omdia.tech.informa.com/blogs/2025/dec/ai-capital-meets-msp-rollups-inside-shield-technology-partners-expanding-strategy) · [CT Acquisitions — independent sponsor economics 2026](https://ctacquisitions.com/independent-sponsor-economics-explained/) · [Acquisition Stars — independent sponsor deal economics](https://acquisitionstars.com/blog/independent-sponsor-deal-economics) · [CT Acquisitions — environmental services valuation 2026](https://ctacquisitions.com/guides/environmental-services-business-valuation/) · [Capstone Partners — industrial & environmental services update](https://www.capstonepartners.com/insights/article-industrial-environmental-services-market-update/) · [IBISWorld — debt collection agencies in the US](https://www.ibisworld.com/united-states/industry/debt-collection-agencies/1474/) · [Inman — Propy's $100M title bet](https://www.inman.com/2026/05/14/propy-ai-title-companies/) · [HousingWire — Doma agrees to sell to Title Resources Group](https://www.housingwire.com/articles/doma-agrees-to-sell-to-title-resources-group/) · [BusinessWire — Radian sells title business to PLACE](https://www.businesswire.com/news/home/20260803046478/en/Radian-Advances-Strategic-Transformation-to-Global-Multi-Line-Specialty-Insurer-with-Sale-of-Real-Estate-Services-Business-and-Agreement-to-Sell-Title-Business) · [Anthropic Economic Index — June 2026 report](https://www.anthropic.com/research/economic-index-june-2026-report)
 
 **Financing & market:** [SBA policy notice 5000-865754](https://www.sba.gov/document/policy-notice-5000-865754-policy-updates-comply-executive-order-14159-regarding-citizenship-requirements-obtaining-7a-504) · [BRG — SBA citizenship eligibility changes](https://www.thinkbrg.com/insights/publications/sba-citizenship-eligibility-changes-implications-for-lenders-and-operational-considerations/) · [Malescu Law — green card holders barred](https://malesculaw.com/green-card-holders-barred-from-sba-loans-starting-march-1-2026/) · [Pioneer Capital — seller financing with SBA 7(a)](https://www.pioneercapitaladvisory.com/post/using-seller-financing-with-an-sba-7-a-loan) · [CT Acquisitions — business acquisition financing 2026](https://ctacquisitions.com/business-acquisition-financing-guide-2026/) · [Forbes — $5T of boomer businesses transferring](https://www.forbes.com/sites/martinadilicosa/2026/02/26/millions-of-small-businesses-soon-changing-hands-as-baby-boomers-retire-in-great-ownership-transfer-report-says/) · [Acquisition Stars — acquisition timeline](https://acquisitionstars.com/acquisition-timeline)
