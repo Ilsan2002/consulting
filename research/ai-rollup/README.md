@@ -8,6 +8,7 @@
 > **[Part IV](#part-iv--iteration-the-mandateautomation-tradeoff)** — the iteration: a correction, the central tradeoff of the whole space, and 14 more verticals scored.
 > **[Part V](#part-v--first-principles-eight-non-obvious-findings)** — first principles: eight non-obvious findings, three of which invert the earlier conclusions.
 > **[Part VI](#part-vi--how-to-choose-a-niche-the-disintermediation-test)** — the decision framework: how to pick a niche, and why "intelligence-heavy vs physical" is the wrong axis.
+> **[Part VII](#part-vii--what-is-actually-durable-buy-the-scarce-complement)** — the correction: regulatory moats are rented. What survives when intelligence is free.
 
 ---
 
@@ -1259,6 +1260,128 @@ Don't trade off intelligence-intensity against safety along a line. **Use safety
 Practically, the search is for: **credentialed, liability-bearing, independence-mandated work that is delivered entirely as documents and phone calls, and that was never offshored because a US licence blocked it.**
 
 Which is, non-coincidentally, exactly where Part V's findings converged: independent review organisations, utilization review, IME, medical-legal review, appraisal, adjusting, credentialing, and collections.
+
+---
+---
+
+# Part VII — What is actually durable: buy the scarce complement
+
+*Correction to Part VI. A licence is a moat you rent from a legislature, and the rent can be cancelled. This part rebuilds from something nobody can vote away.*
+
+---
+
+## 41. Conceding the point
+
+Part VI's answer — "target work where the customer is legally forbidden from self-serving" — has a defect I flagged in a footnote and should have put at the top: **a regulatory moat is granted, and what is granted can be withdrawn.**
+
+The evidence that it moves is already in this memo:
+
+- **Maine** raised its CON capital-expenditure threshold from **$3M to $7.5M** and exempted most ASCs from review, in 2026. States are actively overhauling CON laws right now.
+- **Medical licensure** — the exact wall protecting IRO/UR/IME work from offshoring — is being deliberately lowered. Multiple states have created new pathways in 2025–26 for foreign-trained physicians to practise without US residency, explicitly to relieve shortages.
+- Every regulatory barrier here has a lobby on the other side of it whose entire purpose is removal, and a cost-pressure argument that gets stronger as AI makes the alternative cheaper.
+
+So: **regulatory permission is a timing trade, not a foundation.** It can be worth owning — a 10-year rent on a legal monopoly is a real asset — but it must be underwritten as a lease with an unknown termination date, priced accordingly, and never treated as the reason the business is safe. Part V's Finding 3 stands as an arbitrage. It does not stand as a moat.
+
+Rebuilding properly.
+
+---
+
+## 42. The fundamental question
+
+Not *"what can AI not do?"* — that list shrinks every year and betting on it is betting against the trend.
+
+The right question:
+
+> **When intelligence becomes abundant and nearly free, what stays scarce — and does the value flow to it?**
+
+This is standard factor economics, not futurism. When one input to a production process becomes cheap, output expands and **value concentrates in whichever complementary input stays constrained.** The cheap factor stops being where the profit is. The constrained factor captures it.
+
+**This is already observable in wage data.** As AI compresses white-collar work: construction wages grew **4.2% YoY** as of mid-2025, above the all-occupation average, and high-demand trades — linemen, welders, elevator techs — are running **5–7% annual wage growth**. Electricians, HVAC techs, welders and advanced manufacturing specialists now earn at or above HR, marketing, finance and operations roles. **530,000 skilled-trade jobs sit empty; ~1.4M projected unfilled by 2030.**
+
+Value is not disappearing from these systems. It is relocating — out of the intelligence layer and into the constrained physical layer. **Own the layer it's moving to.**
+
+---
+
+## 43. What is durable vs what is rented
+
+| Asset | Durable? | Buyable at $2–20M EV? |
+|---|---|---|
+| **Constrained physical execution capacity** (licensed/skilled crews, technician bench) | 🟢 Structural — supply is set by a 4–8 year training pipeline that no model shortens | ✅ Yes |
+| **Physical position** (routes, density, proximity, land, plant) | 🟢 Absolute — AI makes no new land, and drive time is drive time | ✅ Yes |
+| **Installed base wired into customer operations** | 🟢 Strong while the wiring is real (equipment you maintain, systems you run) | ✅ Yes |
+| **Proprietary data your own operations generate** | 🟢 Strong if it regenerates continuously and isn't on the internet | ✅ Yes — a by-product of owning operations |
+| **Accountability with a solvent balance sheet behind it** | 🟢 Structural — this is contract and tort, not statute. Nobody legislates away the need for a party who can be sued. | ✅ Yes |
+| **De facto private standards** (the accepted format an ecosystem settled on) | 🟢 Very strong — no legislature can repeal it; it dies only if the ecosystem migrates | ⚠️ Rarely buyable; occasionally creatable in a small vertical |
+| **Network effects / liquidity** | 🟢 Strongest of all | ❌ Not at this scale |
+| **Brand as default choice** | 🟢 Durable, slow to build | ❌ Not at this scale |
+| **Regulatory permission** (licence, CON, accreditation, independence mandate) | 🔴 **Rented.** Termination date unknown. | ✅ Yes — as a timing trade |
+| **Current AI cost advantage** | 🔴 Rented from your competitors' inattention. 18–36 months. | — |
+| **Difficulty / expertise asymmetry** | 🔴 Depreciating fast | — |
+
+Note the honest constraint: **the four best moats — network effects, brand, standards, scale — are mostly not purchasable at small-cap prices.** What *is* purchasable at $2–20M EV is the top block: **skilled labour capacity, geographic density, installed base, and operating data.** That's the realistic menu, and it's short.
+
+---
+
+## 44. The test
+
+Replaces every screen in Parts I–VI:
+
+> ### Imagine AI is free and perfect tomorrow. What in this business is still scarce — and do I own it?
+
+- **If the honest answer is "nothing"** — a pure advisory, processing, or information-brokerage business — do not buy it. There is no residual. You'd be buying a payroll that is about to become unnecessary and a customer list that will be contested by whoever automates first.
+- **If the answer is "the crews, the routes, the installed base, the plant, the data"** — that's a business. The intelligence layer sitting on top of it is a *cost you get to delete*, not the asset you're buying.
+
+And the second-order move, which is where the money is:
+
+> **Buy the scarce thing while it is still priced as though it's bundled with the abundant thing.**
+
+Today a field-service business is valued on blended earnings that include a large, expensive administrative layer — quoting, scheduling, dispatch, reporting, compliance documentation, collections. The seller prices the whole bundle. **After AI, that layer approaches zero and the crews plus the density are the entire remaining value.** You are buying an appreciating asset at a price that assumes it's still carrying a depreciating one.
+
+That is the inverse of the crowded trade. The consensus play buys the intelligence work and hopes to automate it. This buys the physical constraint and treats the automation as a rebate.
+
+---
+
+## 45. Where this points — and why your manufacturing instinct was right
+
+Your original intuition was correct, but for a sharper reason than "AI can't touch it." The right formulation is:
+
+> **The target is a business whose scarce input is not intelligence, but which is currently carrying a heavy, expensive intelligence burden.**
+
+That combination gives you both sides: a durable asset *and* a real AI margin lever — without depending on the AI for the moat.
+
+**Custom / job-shop manufacturing fits this precisely.** The durable assets are plant, machines, certified processes, skilled operators and supply relationships — none of which AI creates. The burden is enormous and entirely separable: estimating, quoting, engineering, job costing, scheduling, quality documentation. Job shops quote constantly, quote slowly, and quote badly — "historical job cost data enables confident quoting because you know actual production expenses rather than guessing," which is a polite way of saying most shops are guessing. Faster and more accurate quoting converts directly into win rate and margin, on a fixed asset base you already own. **The AI improves the return on the machines; the machines are the moat.**
+
+Same structure, other candidates:
+
+| Business | Scarce thing you own | Intelligence burden AI deletes |
+|---|---|---|
+| Custom manufacturing / job shops | Plant, certified processes, skilled operators | Estimating, quoting, job costing, scheduling, quality docs |
+| Specialty trade contracting | Licensed crews, permits, local density | Takeoff, bidding, scheduling, compliance reporting, AR |
+| Mandated inspection & compliance services | Technician bench, route density, installed base | Report generation, deficiency quoting, deadline tracking |
+| Route-based services | Density, physical position | Routing, dispatch, billing, customer comms |
+| Industrial / environmental field services | Permits, equipment, licensed staff | Report writing, proposal generation, data reconciliation |
+
+**And what this frame rules out** — including things I ranked highly two sections ago: if you delete the intelligence work from an IRO, a credentialing bureau, or a collections agency, what remains? A licence, a customer list, and some accreditation. The licence is rented. The customer list is contestable. **Those are timing trades — potentially very good ones, at 2–4x entry, held 5 years — but they are not durable businesses, and they should be bought and sold as trades, not built as companies.**
+
+That is a real change of position from Parts V and VI, and it follows directly from taking your objection seriously.
+
+---
+
+## 46. Reconciling the whole memo
+
+Three different questions, three different answers. They don't conflict once separated:
+
+| Question | Answer | Where |
+|---|---|---|
+| Where is the **fastest** return? | Intelligence-heavy, mandate-protected document work — IRO/UR/IME, credentialing, collections | Parts IV–VI |
+| Where is the **most durable** business? | Constrained physical capacity carrying a heavy intelligence burden — job shops, specialty trades, mandated field services | Part VII |
+| Where is the **least competition**? | Both, currently — 31 AI roll-ups are in accounting and essentially none are in either of the above | Part III |
+
+**If the goal is a trade** — buy at 2–4x, automate hard, sell in five years into the current appetite — the intelligence-heavy protected niches are correct, and the rented moat is fine because you intend to be gone before the lease expires. Say that out loud in the underwriting.
+
+**If the goal is to own something in fifteen years**, buy the constrained physical asset and treat AI as a margin rebate rather than the thesis. Lower headline ROI on the AI, but the asset is still there afterwards.
+
+**These require different capital.** The first is a fund. The second is a holdco. Choosing the wrong wrapper for the right asset is its own failure mode — and given >90% of AI roll-up investors demand a 2x EBITDA uplift, venture-style capital will systematically push you toward the trade and away from the durable business. That pressure is worth naming before taking the money.
 
 ---
 ---
