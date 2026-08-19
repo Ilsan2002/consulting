@@ -65,6 +65,12 @@
       choices: ["A hunter raises and works with the same eagle for years", "Eagles are wild-caught and released after a single hunt", "Only government-licensed handlers may train them", "The eagles are bred and raised entirely in captivity"],
       correct: 0,
       fact: "That close, years-long bond is why the tradition is now recognized by UNESCO as intangible cultural heritage — shared across Central Asia, not unique to Kyrgyzstan, but still practiced there today."
+    },
+    {
+      q: "The mockumentary comedy Borat, starring a fictional Kazakh journalist, is often mistaken for a real window into Central Asian culture. How accurate is it, really?",
+      choices: ["0% — pure satire, invented for comedy", "30% — a few real details buried in exaggeration", "50% — about half true, half invented", "100% — a faithful documentary"],
+      correct: 0,
+      fact: "Borat is fiction from top to bottom — its \"Kazakh\" customs were invented by its writers, and most of the film was shot in a village in Romania. Kazakhstan's government objected loudly at the time; it says nothing accurate about Kazakh, Kyrgyz, or any other Central Asian culture."
     }
   ];
 
