@@ -71,6 +71,30 @@
       choices: ["0% — pure satire, invented for comedy", "30% — a few real details buried in exaggeration", "50% — about half true, half invented", "100% — a faithful documentary"],
       correct: 0,
       fact: "Borat is fiction from top to bottom — its \"Kazakh\" customs were invented by its writers, and most of the film was shot in a village in Romania. Kazakhstan's government objected loudly at the time; it says nothing accurate about Kazakh, Kyrgyz, or any other Central Asian culture."
+    },
+    {
+      q: "Kyrgyzstan's tallest mountain, Jengish Chokusu (also called Peak Pobeda), holds which distinction worldwide?",
+      choices: ["It's the northernmost peak above 7,000m on Earth", "It's the tallest mountain in the world", "It's the only mountain never successfully climbed", "It sits exactly on the equator"],
+      correct: 0,
+      fact: "At 7,439m, Jengish Chokusu sits in the Tian Shan range on the Kyrgyzstan–China border. It's nowhere near the world's tallest overall, but it's recognized as the northernmost 7,000m+ summit anywhere on the planet."
+    },
+    {
+      q: "In which year did Kyrgyzstan gain independence, as the Soviet Union dissolved?",
+      choices: ["1985", "1991", "1995", "2001"],
+      correct: 1,
+      fact: "Kyrgyzstan declared independence on August 31, 1991 — one of several Soviet republics to do so that year as the USSR came apart."
+    },
+    {
+      q: "Roughly how many people live in Kyrgyzstan today?",
+      choices: ["About 2 million", "About 4 million", "About 7 million", "About 12 million"],
+      correct: 2,
+      fact: "Kyrgyzstan's population is around 7 million — small by global standards, and still growing, with roughly a fifth of the country living in or around the capital, Bishkek."
+    },
+    {
+      q: "In 2010, Roza Otunbayeva became President of Kyrgyzstan after a revolution. What distinction did that give the country?",
+      choices: ["The first country in Central Asia to have a woman as head of state", "The first country in Central Asia to hold any election", "The first Central Asian country to join the United Nations", "The first Central Asian country to abolish its military"],
+      correct: 0,
+      fact: "Otunbayeva served as interim, then elected, president from 2010 to 2011 — making Kyrgyzstan the first of the five Central Asian republics (alongside Kazakhstan, Tajikistan, Turkmenistan, and Uzbekistan) to have a woman lead the country."
     }
   ];
 
