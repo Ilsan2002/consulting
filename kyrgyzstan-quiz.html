@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fun Facts Quiz: Kyrgyzstan — Kenius</title>
+  <meta name="description" content="A quick, Kahoot-style trivia round on interesting facts about Kyrgyzstan — mountains, nomadic culture, Issyk-Kul, and more." />
+  <meta name="theme-color" content="#131210" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0L13.6 9.2 24 12 13.6 14.8 12 24 10.4 14.8 0 12 10.4 9.2Z' fill='%238A6A3C'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lux.css" />
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+  <style>
+    /* ---- Quiz stage: lives in the site's one dark interlude, styled as a game host screen ---- */
+    .quiz-stage { background: var(--dark); color: var(--dark-text); padding: clamp(7rem,14vh,10rem) 0 clamp(6rem,14vw,9rem); }
+    .quiz-stage h1, .quiz-stage h2, .quiz-stage h3 { color: var(--dark-text); }
+    .quiz-shell { max-width: 780px; margin: 0 auto; }
+
+    .quiz-top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: clamp(2rem,5vw,3rem); }
+    .quiz-top .cap { color: var(--dark-muted); }
+    .quiz-score { font-family: var(--serif); font-style: italic; color: var(--accent-dark); font-size: 1.1rem; }
+
+    .quiz-track { height: 1px; background: var(--dark-line); margin-bottom: clamp(2.5rem,6vw,4rem); position: relative; overflow: hidden; }
+    .quiz-track i { display: block; height: 100%; width: 0%; background: var(--accent-dark); transition: width .4s var(--ease); }
+
+    .quiz-panel { display: none; }
+    .quiz-panel.active { display: block; }
+
+    /* --- start / results panels --- */
+    .quiz-hero h1 { font-size: clamp(2.4rem,1.4rem + 4.6vw,4.6rem); font-weight: 400; letter-spacing: -.02em; line-height: 1.02; max-width: 16ch; }
+    .quiz-hero h1 .it { color: var(--accent-dark); }
+    .quiz-hero p.lead { margin-top: 1.4rem; max-width: 46ch; color: var(--dark-muted); }
+    .quiz-meta { margin-top: clamp(2rem,4vw,2.8rem); display: flex; gap: clamp(1.5rem,4vw,3rem); flex-wrap: wrap; }
+    .quiz-meta div { font-size: var(--cap); letter-spacing: .12em; text-transform: uppercase; color: var(--dark-muted); }
+    .quiz-meta strong { display: block; font-family: var(--serif); font-style: italic; font-size: 1.4rem; color: var(--dark-text); letter-spacing: 0; text-transform: none; margin-top: .3em; }
+    .quiz-start-btn { margin-top: clamp(2.5rem,5vw,3.5rem); }
+
+    /* --- question panel --- */
+    .q-num { font-size: var(--cap); letter-spacing: .14em; text-transform: uppercase; color: var(--dark-muted); }
+    .q-timer { font-variant-numeric: tabular-nums; color: var(--accent-dark); }
+    .q-text { font-family: var(--serif); font-weight: 500; font-style: italic; font-size: clamp(1.6rem,1.1rem + 2.4vw,2.6rem); line-height: 1.15; margin-top: .8rem; max-width: 26ch; }
+
+    .q-answers { list-style: none; margin-top: clamp(2rem,5vw,3rem); display: grid; gap: .9rem; }
+    .q-answers button {
+      width: 100%; display: flex; align-items: center; gap: 1em; text-align: left;
+      padding: 1.1em 1.3em; border: 1px solid var(--dark-line); border-radius: 3px;
+      background: transparent; color: var(--dark-text); font-size: 1.02rem; font-weight: 400;
+      transition: border-color .25s var(--ease), background .25s var(--ease), transform .2s var(--ease);
+    }
+    .q-answers button:hover { border-color: var(--accent-dark); transform: translateX(2px); }
+    .q-answers .glyph { font-size: .85em; color: var(--dark-muted); flex-shrink: 0; width: 1.4em; text-align: center; }
+    .q-answers button:hover .glyph, .q-answers button:focus-visible .glyph { color: var(--accent-dark); }
+
+    .q-answers button.correct { border-color: var(--accent-dark); background: rgba(201,160,99,.12); }
+    .q-answers button.correct .glyph { color: var(--accent-dark); }
+    .q-answers button.wrong { border-color: rgba(236,232,222,.3); opacity: .55; }
+    .q-answers button[disabled] { cursor: default; }
+    .q-answers button[disabled]:hover { transform: none; }
+
+    .q-feedback { margin-top: clamp(1.6rem,4vw,2.2rem); min-height: 1.6em; }
+    .q-feedback .verdict { font-family: var(--serif); font-style: italic; font-size: 1.2rem; }
+    .q-feedback .verdict.yes { color: var(--accent-dark); }
+    .q-feedback .verdict.no { color: var(--dark-muted); }
+    .q-feedback p { margin-top: .5rem; color: var(--dark-muted); max-width: 50ch; }
+
+    .q-next { margin-top: clamp(1.8rem,4vw,2.4rem); display: none; }
+    .q-next.show { display: inline-flex; }
+
+    /* dark-stage buttons */
+    .btn-lux--dark { background: var(--accent-dark); color: var(--dark); }
+    .btn-lux--dark:hover { background: var(--dark-text); color: var(--dark); }
+    .btn-ghost { display: inline-flex; align-items: center; gap: .6em; padding: 1em 1.8em; border: 1px solid var(--dark-line); border-radius: 3px; color: var(--dark-text); transition: border-color .3s var(--ease), color .3s var(--ease); }
+    .btn-ghost:hover { border-color: var(--accent-dark); color: var(--accent-dark); }
+
+    .quiz-stage :focus-visible { outline-color: var(--accent-dark); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .quiz-track i, .q-answers button { transition: none; }
+    }
+
+    /* this page's stage is dark from the very top (no light hero above it),
+       so the header needs light text until it picks up the "stuck" paper backing */
+    body.on-dark .hdr:not(.stuck) .brand,
+    body.on-dark .hdr:not(.stuck) .nav-mid a,
+    body.on-dark .hdr:not(.stuck) .menu-btn { color: var(--dark-text); }
+    body.on-dark .hdr:not(.stuck) .brand sup { color: var(--accent-dark); }
+    body.on-dark .hdr:not(.stuck) .nav-mid a::after { background: var(--dark-text); }
+    body.on-dark .hdr:not(.stuck) .menu-btn .bars span { background: var(--dark-text); }
+    body.on-dark .hdr:not(.stuck) .nav-cta { color: var(--dark-text); }
+    body.on-dark .hdr:not(.stuck) .nav-cta::after { background: var(--dark-text); }
+  </style>
+</head>
+<body class="on-dark">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="hdr">
+    <div class="wrap nav">
+      <a class="brand" href="index.html">Kenius<sup>®</sup></a>
+      <nav class="nav-mid" aria-label="Primary">
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <a class="tlink nav-cta" href="contact.html">Book a call <span class="ar" aria-hidden="true">↗</span></a>
+        <button class="menu-btn" aria-expanded="false" aria-controls="overlay">Menu <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="overlay" id="overlay">
+    <a href="services.html">Services</a><a href="work.html">Work</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    <a href="contact.html">Book a call ↗</a><span class="cap">hello@kenius.us</span>
+  </div>
+
+  <main id="main">
+    <section class="quiz-stage">
+      <div class="wrap quiz-shell">
+
+        <!-- START -->
+        <div class="quiz-panel active" id="panel-start">
+          <div class="breadcrumb reveal" style="color:var(--dark-muted)"><a href="index.html" style="color:var(--dark-muted)">Kenius</a> — Just for fun</div>
+          <div class="quiz-hero">
+            <h1 class="reveal" data-d="1">Ten fun facts about <span class="it">Kyrgyzstan.</span></h1>
+            <p class="lead reveal" data-d="2">A quick Kahoot-style round — no sign-up, no leaderboard, just you against ten questions and a fifteen-second clock.</p>
+          </div>
+          <div class="quiz-meta reveal" data-d="2">
+            <div>Questions<strong>10</strong></div>
+            <div>Time per question<strong>15s</strong></div>
+            <div>Takes about<strong>3 min</strong></div>
+          </div>
+          <button class="btn-lux btn-lux--dark quiz-start-btn reveal" data-d="3" id="btn-start">Start the quiz</button>
+        </div>
+
+        <!-- QUESTION -->
+        <div class="quiz-panel" id="panel-question">
+          <div class="quiz-top">
+            <span class="q-num" id="q-num">Question 1 / 10</span>
+            <span class="q-timer" id="q-timer">15</span>
+          </div>
+          <div class="quiz-track"><i id="q-progress"></i></div>
+
+          <h2 class="q-text" id="q-text">—</h2>
+          <ul class="q-answers" id="q-answers"></ul>
+
+          <div class="q-feedback" id="q-feedback" aria-live="polite"></div>
+          <button class="btn-lux btn-lux--dark q-next" id="btn-next">Next question <span aria-hidden="true">→</span></button>
+        </div>
+
+        <!-- RESULTS -->
+        <div class="quiz-panel" id="panel-results">
+          <span class="breadcrumb" style="color:var(--dark-muted)">Round complete</span>
+          <h1 class="quiz-hero" style="margin-top:.8rem" id="r-title">—</h1>
+          <p class="lead" id="r-sub" style="margin-top:1.2rem;max-width:46ch;color:var(--dark-muted)">—</p>
+          <div class="quiz-meta">
+            <div>Score<strong id="r-score">0 / 10</strong></div>
+            <div>Best streak<strong id="r-streak">0</strong></div>
+          </div>
+          <div style="margin-top:clamp(2.5rem,5vw,3.5rem);display:flex;gap:1rem;flex-wrap:wrap">
+            <button class="btn-lux btn-lux--dark" id="btn-replay">Play again</button>
+            <a class="btn-ghost" href="index.html">Back to Kenius</a>
+          </div>
+        </div>
+
+        <noscript>
+          <p style="margin-top:2rem;color:var(--dark-muted)">This quiz needs JavaScript to keep score. Here are the ten facts it covers, no game required:</p>
+          <ol style="margin-top:1rem;color:var(--dark-text);line-height:1.9">
+            <li>About 94–95% of Kyrgyzstan sits above 1,000m — the Tian Shan and Pamir-Alay ranges cover almost everything except a few lowland valleys.</li>
+            <li>Issyk-Kul is the world's second-largest alpine lake by volume, and despite the cold around it, the lake itself almost never freezes (its name means "warm lake").</li>
+            <li>The boz üy (yurt) is still used by herding families in summer pastures — its frame can be raised or packed away in under an hour.</li>
+            <li>The Epic of Manas runs to roughly half a million lines — about 20 times longer than the Odyssey and Iliad combined.</li>
+            <li>Kok-boru ("grey wolf") is the national sport: teams on horseback compete to carry a goat or calf carcass into a scoring goal.</li>
+            <li>Bishkek, the capital, sits at the foot of the Ala-Too range — the snow-capped peaks are visible from the city on a clear day.</li>
+            <li>The Arslanbob walnut forest in the south is thought to be the largest wild walnut forest on Earth.</li>
+            <li>Kymyz (kumis) is fermented mare's milk, mildly alcoholic and tangy — a nomadic staple across Central Asia for centuries.</li>
+            <li>The Kyrgyzstani som has been the national currency since 1993, replacing the ruble after independence.</li>
+            <li>Berkutchi (eagle hunters) train golden eagles to hunt from horseback — a tradition recognized by UNESCO as intangible cultural heritage.</li>
+          </ol>
+        </noscript>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <a class="brand" href="index.html">Kenius<sup>®</sup></a>
+          <p style="max-width:34ch;margin-top:1.2rem;color:var(--muted);font-size:.95rem">We find where AI belongs in your business — then build it, quietly, and hand it over.</p>
+        </div>
+        <div class="foot-col">
+          <p class="foot-h">Index</p>
+          <a href="services.html">Services</a><a href="work.html">Work</a><a href="about.html">About</a><a href="index.html">Home</a>
+        </div>
+        <div class="foot-col">
+          <p class="foot-h">Contact</p>
+          <a href="mailto:hello@kenius.us">hello@kenius.us</a><a href="contact.html">Book a call ↗</a><a href="#" aria-label="Kenius on LinkedIn">LinkedIn ↗</a>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© <span data-year>2026</span> Kenius. Made by humans, with help from AI.</span><span>kenius.us</span>
+      </div>
+      <p class="disclaimer">Client names, testimonials, metrics and outcomes shown elsewhere on this site are illustrative samples. This quiz page is a standalone diversion — facts are sourced for general accuracy but simplified for trivia.</p>
+    </div>
+  </footer>
+  <script defer src="assets/js/lux.js"></script>
+  <script defer src="assets/js/kyrgyzstan-quiz.js"></script>
+</body>
+</html>
