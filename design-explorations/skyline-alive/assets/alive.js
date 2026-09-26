@@ -115,28 +115,7 @@
     'void main() { gl_Position = vec4(aPos, 0.0, 1.0); }'
   ].join('\n');
 
-  var FRAG = [
-    '#version 300 es',
-    'precision highp float;',
-    'uniform sampler2D tNight, tDawn, tDay, tSunset, tLights, tMeta;',
-    'uniform vec2 uRes;       // canvas px',
-    'uniform vec2 uImg;       // painting px',
-    'uniform vec2 uPos;       // object-position',
-    'uniform float uFrameH;   // px of the canvas that belong to the hero frame (the rest is the dissolve band)',
-    'uniform float uBandTop;  // px of dissolve band above the frame (footer)',
-    'uniform float uBand;     // dissolve band height, px',
-    'uniform float uPx;       // device pixels per css pixel',
-    'uniform float uZoom;',
-    'uniform float uShift;    // parallax, px',
-    'uniform int uA, uB;      // paintings either side of now',
-    'uniform float uP;        // sweep progress between them',
-    'uniform float uHour;',
-    'uniform float uTime;',
-    'uniform float uStill;    // reduced motion: soft blend, no flicker',
-    'uniform vec3 uPage;      // page background the edge dissolves into',
-    'uniform vec4 uBandTint;  // the scrim colour + strength at that edge, so the band continues it',
-    'out vec4 o;',
-    '',
+  var COMMON = [
     'float bayer2(vec2 a) { a = floor(a); return fract(dot(a, vec2(0.5, a.y * 0.75))); }',
     'float bayer4(vec2 a) { return bayer2(0.5 * a) * 0.25 + bayer2(a); }',
     'float bayer8(vec2 a) { return bayer4(0.5 * a) * 0.25 + bayer2(a); }',
@@ -144,98 +123,145 @@
     'vec4 h44(vec4 p) { p = fract(p * vec4(0.1031, 0.1030, 0.0973, 0.1099)); p += dot(p, p.wzxy + 33.33); return fract((p.xxyz + p.yzzw) * p.zywx); }',
     'float vnoise(vec2 p) { vec2 i = floor(p), f = fract(p); f = f * f * (3.0 - 2.0 * f);',
     '  return mix(mix(h12(i), h12(i + vec2(1, 0)), f.x), mix(h12(i + vec2(0, 1)), h12(i + vec2(1, 1)), f.x), f.y); }',
-    '',
-    // how many of the city\'s lights are on at this hour; a light is on if its id is below this
-    'float windowsOn(float h) {',
-    '  if (h >= 12.0) return smoothstep(17.3, 20.2, h) * mix(0.92, 0.6, smoothstep(22.0, 24.0, h));',
-    '  float p = mix(0.6, 0.28, smoothstep(0.0, 3.5, h)) + 0.3 * smoothstep(4.6, 6.4, h);',
-    '  return clamp(p * (1.0 - smoothstep(6.6, 8.2, h)), 0.0, 1.0);',
+    'float fbm(vec2 p) { float s = 0.0, a = 0.5; for (int i = 0; i < 4; i++) { s += a * vnoise(p); p = p * 2.03 + 17.1; a *= 0.5; } return s / 0.9375; }',
+    'float fbm3(vec2 p) { float s = 0.0, a = 0.55; for (int i = 0; i < 3; i++) { s += a * vnoise(p); p = p * 2.07 + 11.3; a *= 0.45; } return s / 0.8339; }',
+    // the dither sweep between two paintings: the sky turns first, a ragged front works down through the city
+    'float sweepPick(vec2 ip, float imgH, int a, float p, float still) {',
+    '  if (still > 0.5) return p;',
+    '  vec2 c3 = floor(ip / 3.0);',
+    '  float thr = clamp(0.68 * (ip.y / imgH) + 0.18 * vnoise(c3 / 14.0 + float(a) * 7.0) + 0.14 * bayer8(c3), 0.0, 1.0);',
+    '  return step(thr, mix(-0.02, 1.02, p));',
     '}',
-    'float lampsOn(float h, float r) {',
-    '  float on = h >= 12.0 ? smoothstep(18.2 + r * 0.9, 18.35 + r * 0.9, h) : 1.0 - smoothstep(6.0 + r * 0.6, 6.15 + r * 0.6, h);',
-    '  return on;',
+    // the painted sky gradient (rows 0-7) and cloud colours (rows 8-11)
+    'vec3 skyCol(sampler2D lut, int f, float xf, float y) {',
+    '  float u = (clamp(y, 0.0, 1.0) * 15.0 + 0.5) / 16.0;',
+    '  vec3 l = texture(lut, vec2(u, (float(2 * f) + 0.5) / 12.0)).rgb;',
+    '  vec3 r = texture(lut, vec2(u, (float(2 * f + 1) + 0.5) / 12.0)).rgb;',
+    '  return mix(l, r, smoothstep(0.18, 0.86, xf));',
     '}',
-    'float lightK(vec4 m, float h, bool night) {',
-    '  float kind = m.g * 255.0, r = m.r;',
-    '  if (kind > 250.0) {',                                    // star
-    '    if (!night) return 0.0;',
-    '    float tw = 0.5 + 0.5 * sin(uTime * (1.3 + r * 3.1) + r * 43.0);',
-    '    return mix(1.0, 0.25 + 0.95 * tw * tw, 1.0 - uStill);',
-    '  }',
-    '  if (kind > 160.0) {',                                    // lamp
-    '    return lampsOn(h, r) * mix(1.0, 0.86 + 0.14 * sin(uTime * 2.1 + r * 6.3), 1.0 - uStill);',
-    '  }',
-    '  if (kind > 100.0) {',                                    // window
-    '    float on = step(r, windowsOn(h));',
-    '    float tv = r > 0.9 ? 0.72 + 0.28 * sin(uTime * 11.0 + r * 50.0) * sin(uTime * 6.1 + r * 17.0) : 1.0;',
-    '    return on * mix(1.0, tv, 1.0 - uStill);',
-    '  }',
-    '  if (kind > 30.0) return lampsOn(h, r * 0.4);',            // floodlit architecture
-    '  return 0.0;',
+    'vec3 cloudCol(sampler2D lut, int f, int j) { return texture(lut, vec2((float(j) + 0.5) / 16.0, (float(8 + f) + 0.5) / 12.0)).rgb; }'
+  ].join('\n');
+
+  // pass 1 — the sky, drawn on the painting's own pixel grid (one texel = 2 painting px)
+  var SKY_FRAG = [
+    '#version 300 es',
+    'precision highp float;',
+    'uniform sampler2D tLut;',
+    'uniform vec2 uImg;',
+    'uniform float uRidge[46];',
+    'uniform int uA, uB;',
+    'uniform float uP, uHour, uTime, uStill;',
+    'out vec4 o;',
+    COMMON,
+    'float ridgeAt(float x) { float f = clamp(x / 29.0, 0.0, 44.999); int i = int(floor(f)); return mix(uRidge[i], uRidge[i + 1], fract(f)); }',
+    // is there cloud in this cell? decks of cloud: flat base, lumpy top
+    'float cloudAt(vec2 cell, float fl, float drift, float rY) {',
+    '  float yf = (cell.y + 0.5) * 2.0 / max(rY, 1.0);',
+    '  float decks = fl < 0.5 ? 4.0 : 3.0;',
+    '  float yr = yf * decks + fl * 0.45;',
+    '  float v = fract(yr);',
+    '  float deck = floor(yr);',
+    '  if (v > 0.8) return 0.0;',
+    '  float lo = fl < 0.5 ? 0.22 : 0.04, hi = fl < 0.5 ? 0.86 : 0.6;',
+    '  if (yf < lo || yf > hi) return 0.0;',
+    '  vec2 k = fl < 0.5 ? vec2(1.0 / 70.0, 1.0 / 10.0) : vec2(1.0 / 95.0, 1.0 / 13.0);',
+    '  vec2 b = vec2(cell.x - drift, cell.y) * k + vec2(deck * 13.1 + fl * 31.7, deck * 5.3);',
+    '  float dens = fbm3(b) + 0.1 * vnoise(b * vec2(3.6, 2.2));',
+    '  float thr = (fl < 0.5 ? 0.69 : 0.71) + (0.8 - v) * 0.15;',
+    '  return (dens - thr);',
     '}',
-    '',
-    'vec3 painting(int f, vec2 uv, vec3 lights, vec4 meta) {',
-    '  if (f == 0) return texture(tNight, uv).rgb + lights * lightK(meta, uHour, true);',
-    '  if (f == 1) return texture(tDawn, uv).rgb;',
-    '  if (f == 2) return texture(tDay, uv).rgb;',
-    '  float dusk = meta.g * 255.0 > 250.0 ? 0.0 : lightK(meta, uHour, false);',
-    '  return texture(tSunset, uv).rgb + lights * dusk * 0.9;',
-    '}',
-    '',
-    // a 5x3 bird sprite in two wing positions, drawn on the painting's pixel grid
+    // a 5x3 bird in two wing positions
     'float bird(vec2 q, float flap) {',
     '  q = floor(q);',
     '  if (q.x < 0.0 || q.x > 4.0 || q.y < 0.0 || q.y > 2.0) return 0.0;',
     '  float row = flap > 0.5 ? (q.y < 0.5 ? 17.0 : q.y < 1.5 ? 10.0 : 4.0) : (q.y < 0.5 ? 0.0 : q.y < 1.5 ? 27.0 : 4.0);',
     '  return mod(floor(row / exp2(q.x)), 2.0);',
     '}',
-    '',
     'void main() {',
-    '  vec2 fc = vec2(gl_FragCoord.x, uRes.y - gl_FragCoord.y);',   // top-left origin, canvas px
-    '  vec2 frame = vec2(uRes.x, uFrameH);',
-    '  float sc = max(frame.x / uImg.x, frame.y / uImg.y) * uZoom;',
-    '  vec2 disp = uImg * sc;',
-    '  vec2 off = (frame - disp) * uPos;',
-    '  vec2 ip = (fc - vec2(0.0, uBandTop) - off - vec2(0.0, uShift)) / sc;',   // painting px
-    '  vec2 uv = clamp(ip / uImg, vec2(0.0), vec2(1.0));',
-    '  vec2 cell = floor(ip / 2.0);',                                        // the painting\'s own pixel grid
+    '  vec2 cell = floor(gl_FragCoord.xy);',                   // texel row 0 = top of the painting, as sampled by the city pass
+    '  vec2 ip = (cell + 0.5) * 2.0;',
+    '  float rY = ridgeAt(ip.x);',
+    '  float yf = ip.y / max(rY, 1.0);',
+    '  float xf = ip.x / uImg.x;',
+    '  float w = sweepPick(ip, uImg.y, uA, uP, uStill);',
+    '  float t = uStill > 0.5 ? 40.0 : uTime;',
+    // banded gradient with dithered steps, like a hand-drawn pixel sky
+    '  float yq = (floor(yf * 18.0 + (bayer4(cell) - 0.5) * 0.95) + 0.5) / 18.0;',
+    '  vec3 col = mix(skyCol(tLut, uA, xf, yq), skyCol(tLut, uB, xf, yq), w);',
+    '  float wNight = (uA == 0 ? 1.0 - w : 0.0) + (uB == 0 ? w : 0.0);',
+    '  float wDawn = (uA == 1 ? 1.0 - w : 0.0) + (uB == 1 ? w : 0.0);',
+    '  float wDay = (uA == 2 ? 1.0 - w : 0.0) + (uB == 2 ? w : 0.0);',
+    '  float wSun = (uA == 3 ? 1.0 - w : 0.0) + (uB == 3 ? w : 0.0);',
     '',
-    '  vec3 lights = texture(tLights, uv).rgb;',
-    '  vec4 meta = texture(tMeta, uv);',
-    '  vec3 A = painting(uA, uv, lights, meta);',
-    '  vec3 B = painting(uB, uv, lights, meta);',
-    '',
-    // dither sweep: the sky turns first, a ragged front works down through the city
-    '  vec2 cell3 = floor(ip / 3.0);',
-    '  float thr = clamp(0.68 * uv.y + 0.18 * vnoise(cell3 / 14.0 + float(uA) * 7.0) + 0.14 * bayer8(cell3), 0.0, 1.0);',
-    '  float p = mix(-0.02, 1.02, uP);',
-    '  vec3 col = uStill > 0.5 ? mix(A, B, uP) : (thr < p ? B : A);',
-    '',
-    // lamp halos after dark
-    '  float nightK = (uA == 0 ? 1.0 - uP : 0.0) + (uB == 0 ? uP : 0.0) + 0.6 * ((uA == 3 ? 1.0 - uP : 0.0) + (uB == 3 ? uP : 0.0)) * smoothstep(18.3, 19.5, uHour);',
-    '  if (nightK > 0.01) {',
-    '    vec3 g = vec3(0.0);',
-    '    for (int i = 0; i < 12; i++) {',
-    '      float a = float(i) * 2.39996;',
-    '      float rr = 3.0 + 9.0 * fract(float(i) * 0.618);',
-    '      g += texture(tLights, clamp((ip + rr * vec2(cos(a), sin(a))) / uImg, 0.0, 1.0)).rgb;',
+    // stars
+    '  float dark = wNight + 0.4 * wDawn;',
+    '  if (dark > 0.01 && yf < 0.92) {',
+    '    float h = h12(cell * 1.37 + 7.0);',
+    '    if (h > 0.9922) {',
+    '      float h2 = h12(cell + 19.0);',
+    '      float tw = uStill > 0.5 ? 0.85 : 0.5 + 0.5 * sin(t * (0.7 + 2.8 * h2) + h2 * 60.0);',
+    '      col = mix(col, vec3(0.93, 0.95, 1.0), dark * (0.35 + 0.65 * h2) * (0.35 + 0.65 * tw) * (1.0 - smoothstep(0.6, 0.92, yf)));',
     '    }',
-    '    col += g / 12.0 * 0.55 * nightK * lampsOn(uHour, 0.5);',
+    '  }',
+    '',
+    // moon: rises low on the left at dusk, highest after midnight, sets on the right at dawn
+    '  float nh = mod(uHour - 19.5 + 24.0, 24.0) / 10.0;',
+    '  float mvis = clamp(wNight + 0.3 * wDawn + 0.35 * wSun, 0.0, 1.0);',
+    '  if (nh < 1.0 && mvis > 0.02) {',
+    '    float mx = mix(0.12, 0.9, nh) * uImg.x;',
+    '    vec2 mc = vec2(mx, ridgeAt(mx) * mix(0.96, 0.17, sin(nh * 3.14159))) / 2.0;',
+    '    vec2 q = cell + 0.5 - mc;',
+    '    float d = length(q), R = 6.5;',
+    '    float halo = (1.0 - smoothstep(R, R * 2.6, d)) * mvis;',
+    '    if (d > R && bayer8(cell) < halo * 0.4) col = mix(col, vec3(0.78, 0.82, 0.96), 0.22);',
+    '    float lit = step(d, R) * step(R * 0.9, length(q - vec2(3.4, -1.5)));',
+    '    col = mix(col, vec3(0.99, 0.96, 0.84), lit * mvis);',
+    '  }',
+    '',
+    // the sun, low over the ridge at dawn and dusk (the city pass hides it behind the peaks)
+    '  float warm = wSun + wDawn;',
+    '  if (warm > 0.02) {',
+    '    vec2 sc = vec2(-999.0);',
+    '    if (uHour > 16.2 && uHour < 19.7) sc = vec2(0.8 * uImg.x, mix(-95.0, 45.0, (uHour - 16.2) / 3.5));',
+    '    if (uHour > 4.7 && uHour < 7.9) sc = vec2(0.84 * uImg.x, mix(45.0, -95.0, (uHour - 4.7) / 3.2));',
+    '    if (sc.x > 0.0) {',
+    '      sc.y += ridgeAt(sc.x);',
+    '      vec2 q = cell + 0.5 - sc / 2.0;',
+    '      float d = length(q);',
+    '      float g = exp(-d * d / 320.0);',
+    '      float gq = floor(g * 5.0 + bayer4(cell)) / 5.0;',                 // glow in dithered rings
+    '      col = mix(col, vec3(1.0, 0.72, 0.42), gq * 0.45 * warm);',
+    '      if (d < 8.5) col = mix(col, d < 6.0 ? vec3(1.0, 0.96, 0.84) : vec3(1.0, 0.82, 0.55), warm);',
+    '    }',
+    '  }',
+    '',
+    // clouds: two decks of pixel cumulus drifting on the wind — flat bases, lumpy tops, lit from above
+    '  for (int L = 0; L < 2; L++) {',
+    '    float fl = float(L);',
+    '    float drift = t * (fl < 0.5 ? 0.7 : 1.35);',
+    '    float here = cloudAt(cell, fl, drift, rY);',
+    '    if (here > 0.0) {',
+    '      float up = cloudAt(cell - vec2(0.0, 1.0), fl, drift, rY);',
+    '      float dn1 = cloudAt(cell + vec2(0.0, 1.0), fl, drift, rY);',
+    '      float dn2 = cloudAt(cell + vec2(0.0, 2.0), fl, drift, rY);',
+    // lit tops and sunlit cores, shaded undersides
+    '      int j = up <= 0.0 ? 0 : ((dn1 <= 0.0 || dn2 <= 0.0) ? 2 : (here > 0.075 + (bayer4(cell) - 0.5) * 0.03 ? 0 : 1));',
+    '      col = mix(cloudCol(tLut, uA, j), cloudCol(tLut, uB, j), w);',
+    '    }',
     '  }',
     '',
     '  if (uStill < 0.5) {',
-    // shooting stars at night, in the band above the peaks
-    '    float nightOnly = (uA == 0 ? 1.0 - uP : 0.0) + (uB == 0 ? uP : 0.0);',
-    '    if (nightOnly > 0.5) {',
+    // shooting stars at night
+    '    if (wNight > 0.5) {',
     '      float per = 5.5;',
-    '      float k = floor(uTime / per);',
-    '      float lt = uTime - k * per;',
-    '      vec4 rn = h44(vec4(k, k * 1.7 + 3.1, 5.3, 9.1));',
+    '      float kk = floor(uTime / per);',
+    '      float lt = uTime - kk * per;',
+    '      vec4 rn = h44(vec4(kk, kk * 1.7 + 3.1, 5.3, 9.1));',
     '      if (rn.x < 0.75 && lt < 1.2) {',
     '        vec2 a = vec2(mix(0.12, 0.88, rn.y), mix(0.03, 0.15, rn.z)) * uImg;',
     '        vec2 dir = normalize(vec2(rn.w > 0.5 ? 1.0 : -1.0, 0.42));',
     '        float head = lt / 1.2 * 150.0;',
-    '        vec2 q = (cell + 0.5) * 2.0 - a;',
+    '        vec2 q = ip - a;',
     '        float along = dot(q, dir), perp = abs(dot(q, vec2(-dir.y, dir.x)));',
     '        float tail = 54.0;',
     '        if (perp < 1.6 && along < head && along > head - tail) {',
@@ -244,13 +270,12 @@
     '        }',
     '      }',
     '    }',
-    // birds by day, crossing the band above the peaks
-    '    float dayOnly = (uA == 2 ? 1.0 - uP : 0.0) + (uB == 2 ? uP : 0.0) + (uA == 1 ? (1.0 - uP) * 0.6 : 0.0);',
-    '    if (dayOnly > 0.5) {',
+    // birds by day
+    '    if (wDay + 0.6 * wDawn > 0.5) {',
     '      float per = 13.0;',
-    '      float k = floor(uTime / per);',
-    '      float lt = uTime - k * per;',
-    '      vec4 rn = h44(vec4(k + 11.0, k * 2.3, 1.9, 4.4));',
+    '      float kk = floor(uTime / per);',
+    '      float lt = uTime - kk * per;',
+    '      vec4 rn = h44(vec4(kk + 11.0, kk * 2.3, 1.9, 4.4));',
     '      float dirx = rn.x > 0.5 ? 1.0 : -1.0;',
     '      vec2 base = vec2(dirx > 0.0 ? -60.0 : uImg.x + 60.0, mix(0.07, 0.2, rn.y) * uImg.y);',
     '      for (int i = 0; i < 4; i++) {',
@@ -259,10 +284,147 @@
     '        float flap = step(0.5, fract(lt * 3.2 + fi * 0.37));',
     '        vec2 q = (ip - pos) / 2.0;',
     '        if (dirx < 0.0) q.x = 4.0 - q.x;',
-    '        float b = bird(q, flap);',
-    '        col = mix(col, vec3(0.1, 0.12, 0.17), b * 0.85);',
+    '        col = mix(col, vec3(0.1, 0.12, 0.17), bird(q, flap) * 0.85);',
     '      }',
     '    }',
+    '  }',
+    '  o = vec4(col, 1.0);',
+    '}'
+  ].join('\n');
+
+  // pass 2 — the city: paintings with depth parallax, wind, lights, mist and people; the sky pass shows above the ridge
+  var MAIN_FRAG = [
+    '#version 300 es',
+    'precision highp float;',
+    'uniform sampler2D tNight, tDawn, tDay, tSunset, tLights, tMeta, tScene, tSky, tLut;',
+    'uniform vec2 uRes, uImg, uPos, uCam;',
+    'uniform float uFrameH, uBandTop, uBand, uPx, uZoom, uShift, uWind;',
+    'uniform int uA, uB;',
+    'uniform float uP, uHour, uTime, uStill;',
+    'uniform vec3 uPage;',
+    'uniform vec4 uBandTint;',
+    'out vec4 o;',
+    COMMON,
+    // how many of the city\'s lights are on at this hour; a light is on if its id is below this
+    'float windowsOn(float h) {',
+    '  if (h >= 12.0) return smoothstep(17.3, 20.2, h) * mix(0.92, 0.6, smoothstep(22.0, 24.0, h));',
+    '  float p = mix(0.6, 0.28, smoothstep(0.0, 3.5, h)) + 0.3 * smoothstep(4.6, 6.4, h);',
+    '  return clamp(p * (1.0 - smoothstep(6.6, 8.2, h)), 0.0, 1.0);',
+    '}',
+    'float lampsOn(float h, float r) {',
+    '  return h >= 12.0 ? smoothstep(18.2 + r * 0.9, 18.35 + r * 0.9, h) : 1.0 - smoothstep(6.0 + r * 0.6, 6.15 + r * 0.6, h);',
+    '}',
+    'float lightK(vec4 m, float h, bool night) {',
+    '  float kind = m.g * 255.0, r = m.r;',
+    '  if (kind > 250.0) return 0.0;',                              // painted stars: the sky pass draws its own
+    '  if (kind > 160.0) return lampsOn(h, r) * mix(1.0, 0.86 + 0.14 * sin(uTime * 2.1 + r * 6.3), 1.0 - uStill);',
+    '  if (kind > 100.0) {',
+    '    float on = step(r, windowsOn(h));',
+    '    float tv = r > 0.9 ? 0.72 + 0.28 * sin(uTime * 11.0 + r * 50.0) * sin(uTime * 6.1 + r * 17.0) : 1.0;',
+    '    return on * mix(1.0, tv, 1.0 - uStill);',
+    '  }',
+    '  if (kind > 30.0) return lampsOn(h, r * 0.4);',
+    '  return 0.0;',
+    '}',
+    'vec3 painting(int f, vec2 uv, vec3 lights, vec4 meta) {',
+    '  if (f == 0) return texture(tNight, uv).rgb + lights * lightK(meta, uHour, true);',
+    '  if (f == 1) return texture(tDawn, uv).rgb;',
+    '  if (f == 2) return texture(tDay, uv).rgb;',
+    '  return texture(tSunset, uv).rgb + lights * lightK(meta, uHour, false) * 0.9;',
+    '}',
+    // a 3x5 walker, two leg positions: head, shoulders, body, legs
+    'float walker(vec2 q, float stepF, out int part) {',
+    '  part = 0;',
+    '  if (q.x < 0.0 || q.x > 2.0 || q.y < 0.0 || q.y > 4.0) return 0.0;',
+    '  float row = q.y < 0.5 ? 2.0 : q.y < 1.5 ? 7.0 : q.y < 2.5 ? 2.0 : q.y < 3.5 ? 2.0 : (stepF > 0.5 ? 5.0 : 2.0);',
+    '  part = q.y < 0.5 ? 1 : (q.y < 2.5 ? 2 : 3);',
+    '  return mod(floor(row / exp2(q.x)), 2.0);',
+    '}',
+    '',
+    'void main() {',
+    '  vec2 fc = vec2(gl_FragCoord.x, uRes.y - gl_FragCoord.y);',
+    '  vec2 frame = vec2(uRes.x, uFrameH);',
+    '  float sc = max(frame.x / uImg.x, frame.y / uImg.y) * uZoom;',
+    '  vec2 off = (frame - uImg * sc) * uPos;',
+    '  vec2 ip = (fc - vec2(0.0, uBandTop) - off - vec2(0.0, uShift)) / sc;',
+    '',
+    // depth parallax: near things (trees) move more than the city, the city more than the peaks
+    '  float d0 = texture(tScene, clamp(ip / uImg, 0.0, 1.0)).r;',
+    '  vec2 ipw = ip + d0 * uCam;',
+    '  float d1 = texture(tScene, clamp(ipw / uImg, 0.0, 1.0)).r;',
+    '  ipw = ip + d1 * uCam;',
+    // wind in the foreground trees, stepped at 8 frames a second like hand-drawn animation
+    '  vec4 sc0 = texture(tScene, clamp(ipw / uImg, 0.0, 1.0));',
+    '  float ts = floor(uTime * 8.0) / 8.0;',
+    '  float gust = 1.0 + 0.7 * max(0.0, sin(ts * 0.37));',
+    '  ipw.x += sc0.b * uWind * gust * (sin(ts * 1.9 + ipw.y * 0.045 + ipw.x * 0.006) * 1.3 + sin(ts * 3.1 + ipw.x * 0.021) * 0.6);',
+    '  vec2 uv = clamp(ipw / uImg, 0.0, 1.0);',
+    '  vec4 scn = texture(tScene, uv);',
+    '  float w = sweepPick(ipw, uImg.y, uA, uP, uStill);',
+    '  float wNight = (uA == 0 ? 1.0 - w : 0.0) + (uB == 0 ? w : 0.0);',
+    '  float wDawn = (uA == 1 ? 1.0 - w : 0.0) + (uB == 1 ? w : 0.0);',
+    '  float wDay = (uA == 2 ? 1.0 - w : 0.0) + (uB == 2 ? w : 0.0);',
+    '  float wSun = (uA == 3 ? 1.0 - w : 0.0) + (uB == 3 ? w : 0.0);',
+    '  vec3 col;',
+    '  if (scn.g > 0.5) {',
+    '    col = texture(tSky, uv).rgb;',
+    '  } else {',
+    '    vec3 lights = texture(tLights, uv).rgb;',
+    '    vec4 meta = texture(tMeta, uv);',
+    '    vec3 A = painting(uA, uv, lights, meta);',
+    '    vec3 B = painting(uB, uv, lights, meta);',
+    '    col = uStill > 0.5 ? mix(A, B, uP) : (w > 0.5 ? B : A);',
+    '',
+    // morning mist settling over the city at the foot of the mountains
+    '    float mistK = smoothstep(4.6, 5.8, uHour) * (1.0 - smoothstep(8.2, 9.8, uHour)) + 0.35 * smoothstep(18.8, 19.8, uHour) * (1.0 - smoothstep(21.4, 22.6, uHour));',
+    '    float dz = scn.r;',
+    '    float mband = smoothstep(0.1, 0.2, dz) * (1.0 - smoothstep(0.36, 0.5, dz)) * (1.0 - scn.b);',
+    '    if (mistK * mband > 0.01) {',
+    '      vec2 mc = floor(ipw / 2.0);',
+    '      float n = fbm(vec2(mc.x / 110.0 - (uStill > 0.5 ? 0.0 : uTime * 0.05), mc.y / 16.0));',
+    '      float m = clamp((n - 0.38) * 2.2, 0.0, 1.0) * mband * mistK;',
+    '      float q = floor(m * 4.0 + bayer8(mc)) / 4.0;',
+    '      vec3 hz = mix(skyCol(tLut, uA, uv.x, 0.97), skyCol(tLut, uB, uv.x, 0.97), w);',
+    '      col = mix(col, mix(hz, vec3(0.85, 0.87, 0.92), 0.35), q * 0.5);',
+    '    }',
+    '',
+    // people crossing the square; hidden behind the foreground trees
+    '    if (uStill < 0.5 && scn.b < 0.2 && ipw.y > 670.0 && ipw.y < 752.0) {',
+    '      float crowd = smoothstep(6.3, 7.3, uHour) * (1.0 - smoothstep(22.2, 23.2, uHour));',
+    '      float light = 0.3 + 0.7 * clamp(wDay + 0.75 * wDawn + 0.8 * wSun, 0.0, 1.0);',
+    '      for (int i = 0; i < 10; i++) {',
+    '        float fi = float(i);',
+    '        vec4 rn = h44(vec4(fi, fi * 3.1 + 1.0, 7.0, 2.0));',
+    '        if (rn.w > crowd * 1.05) continue;',
+    '        float laneY = i < 4 ? 744.0 : (i < 7 ? 728.0 : 690.0);',
+    '        float x0 = i < 4 ? 612.0 : 614.0;',
+    '        float x1 = i < 4 ? 1102.0 : 872.0;',
+    '        float dir = rn.x > 0.5 ? 1.0 : -1.0;',
+    '        float span = x1 - x0;',
+    '        float x = x0 + mod(rn.z * span + dir * mix(5.0, 10.0, rn.y) * uTime, span);',
+    '        vec2 q = floor((ipw - vec2(x - 3.0, laneY + (rn.w - 0.5) * 5.0 - 10.0)) / 2.0);',
+    '        if (dir < 0.0) q.x = 2.0 - q.x;',
+    '        int part;',
+    '        float hit = walker(q, step(0.5, fract(uTime * 2.4 + rn.y)), part);',
+    '        if (hit > 0.5) {',
+    '          vec3 shirt = vec3[5](vec3(0.18, 0.24, 0.42), vec3(0.62, 0.16, 0.14), vec3(0.86, 0.84, 0.78), vec3(0.2, 0.42, 0.28), vec3(0.8, 0.62, 0.2))[int(rn.y * 4.99)];',
+    '          vec3 pc = part == 1 ? vec3(0.86, 0.66, 0.5) : (part == 2 ? shirt : vec3(0.16, 0.17, 0.22));',
+    '          col = pc * light;',
+    '        }',
+    '      }',
+    '    }',
+    '  }',
+    '',
+    // lamp halos after dark
+    '  float nightK = wNight + 0.6 * wSun * smoothstep(18.3, 19.5, uHour);',
+    '  if (nightK > 0.01) {',
+    '    vec3 g = vec3(0.0);',
+    '    for (int i = 0; i < 12; i++) {',
+    '      float a = float(i) * 2.39996;',
+    '      float rr = 3.0 + 9.0 * fract(float(i) * 0.618);',
+    '      g += texture(tLights, clamp((ipw + rr * vec2(cos(a), sin(a))) / uImg, 0.0, 1.0)).rgb;',
+    '    }',
+    '    col += g / 12.0 * 0.55 * nightK * lampsOn(uHour, 0.5) * (1.0 - scn.g);',
     '  }',
     '',
     // pixel dissolve into the page: below the hero, above the footer
@@ -280,6 +442,10 @@
     '}'
   ].join('\n');
 
+  // the mountain ridge (painting px, every 29 px), from tools/bake-scene.py
+  var RIDGE = [241, 231, 221, 233, 237, 250, 246, 250, 259, 260, 255, 268, 276, 272, 278, 281, 274, 275, 288, 296, 305, 303, 302,
+    311, 301, 313, 321, 324, 319, 316, 328, 333, 334, 344, 337, 344, 357, 367, 358, 365, 375, 368, 367, 367, 369, 369];
+
   function compile(gl, type, src) {
     var s = gl.createShader(type);
     gl.shaderSource(s, src);
@@ -287,36 +453,55 @@
     if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s));
     return s;
   }
+  function link(gl, fs, names) {
+    var p = gl.createProgram();
+    gl.attachShader(p, compile(gl, gl.VERTEX_SHADER, VERT));
+    gl.attachShader(p, compile(gl, gl.FRAGMENT_SHADER, fs));
+    gl.linkProgram(p);
+    if (!gl.getProgramParameter(p, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(p));
+    var u = {};
+    names.forEach(function (n) { u[n] = gl.getUniformLocation(p, n); });
+    return { p: p, u: u };
+  }
 
   var IMG_DIR = (function () {
     var css = $('link[rel="stylesheet"][href*="skyline"]');
     return css ? css.getAttribute('href').replace(/skyline[^/]*$/, 'img/') : 'assets/img/';
   })();
 
-  // one renderer per canvas: the hero sky or the footer night
+  // one renderer per canvas: the hero or the footer
   function Sky(canvas, opts) {
     var gl = canvas.getContext('webgl2', { antialias: false, alpha: false, premultipliedAlpha: false, preserveDrawingBuffer: Q.has('shot') });
     if (!gl) throw new Error('no webgl2');
-    var prog = gl.createProgram();
-    gl.attachShader(prog, compile(gl, gl.VERTEX_SHADER, VERT));
-    gl.attachShader(prog, compile(gl, gl.FRAGMENT_SHADER, FRAG));
-    gl.linkProgram(prog);
-    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog));
-    gl.useProgram(prog);
-    var U = {};
-    ['tNight', 'tDawn', 'tDay', 'tSunset', 'tLights', 'tMeta', 'uRes', 'uImg', 'uPos', 'uFrameH', 'uBandTop', 'uBand', 'uPx', 'uZoom', 'uShift',
-      'uA', 'uB', 'uP', 'uHour', 'uTime', 'uStill', 'uPage', 'uBandTint'].forEach(function (n) { U[n] = gl.getUniformLocation(prog, n); });
+    var sky = link(gl, SKY_FRAG, ['tLut', 'uImg', 'uRidge', 'uA', 'uB', 'uP', 'uHour', 'uTime', 'uStill']);
+    var main = link(gl, MAIN_FRAG, ['tNight', 'tDawn', 'tDay', 'tSunset', 'tLights', 'tMeta', 'tScene', 'tSky', 'tLut',
+      'uRes', 'uImg', 'uPos', 'uCam', 'uFrameH', 'uBandTop', 'uBand', 'uPx', 'uZoom', 'uShift', 'uWind',
+      'uA', 'uB', 'uP', 'uHour', 'uTime', 'uStill', 'uPage', 'uBandTint']);
     var vb = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, vb);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
     gl.enableVertexAttribArray(0);
     gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
 
-    var names = opts.frames;   // which files feed night / dawn / day / sunset
-    var units = { tNight: 0, tDawn: 1, tDay: 2, tSunset: 3, tLights: 4, tMeta: 5 };
+    // the sky pass target: one texel per painting pixel-pair
+    var SW = 653, SH = 408;
+    var skyTex = gl.createTexture();
+    gl.activeTexture(gl.TEXTURE0 + 7);
+    gl.bindTexture(gl.TEXTURE_2D, skyTex);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA8, SW, SH, 0, gl.RGBA, gl.UNSIGNED_BYTE, null);
+    [gl.TEXTURE_MIN_FILTER, gl.TEXTURE_MAG_FILTER].forEach(function (k) { gl.texParameteri(gl.TEXTURE_2D, k, gl.NEAREST); });
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    var fbo = gl.createFramebuffer();
+    gl.bindFramebuffer(gl.FRAMEBUFFER, fbo);
+    gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, skyTex, 0);
+    gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+
+    var names = opts.frames;
+    var units = { tNight: 0, tDawn: 1, tDay: 2, tSunset: 3, tLights: 4, tMeta: 5, tScene: 6, tLut: 8 };
     var files = {
       tNight: 'alive-night-off.webp', tDawn: names.dawn, tDay: names.day, tSunset: names.sunset,
-      tLights: 'alive-lights.png', tMeta: 'alive-meta.png'
+      tLights: 'alive-lights.png', tMeta: 'alive-meta.png', tScene: 'alive-scene.png', tLut: 'alive-sky.png'
     };
     var pending = 0;
     var self = this;
@@ -337,7 +522,6 @@
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, nearest ? gl.NEAREST : gl.LINEAR);
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-        gl.uniform1i(U[k], units[k]);
         if (--pending === 0) { self.ready = true; if (opts.onready) opts.onready(); }
       };
       img.onerror = function () { if (opts.onerror) opts.onerror(); };
@@ -351,24 +535,47 @@
       if (area * dpr * dpr > 5.5e6) dpr = Math.max(1, Math.sqrt(5.5e6 / area));
       var w = Math.round(canvas.clientWidth * dpr), h = Math.round(canvas.clientHeight * dpr);
       if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; }
+
+      // pass 1: the sky
+      gl.bindFramebuffer(gl.FRAMEBUFFER, fbo);
+      gl.viewport(0, 0, SW, SH);
+      gl.useProgram(sky.p);
+      gl.uniform1i(sky.u.tLut, units.tLut);
+      gl.uniform2f(sky.u.uImg, 1305, 816);
+      gl.uniform1fv(sky.u.uRidge, RIDGE);
+      gl.uniform1i(sky.u.uA, s.a);
+      gl.uniform1i(sky.u.uB, s.b);
+      gl.uniform1f(sky.u.uP, s.p);
+      gl.uniform1f(sky.u.uHour, s.hour);
+      gl.uniform1f(sky.u.uTime, s.time);
+      gl.uniform1f(sky.u.uStill, reduceMotion ? 1 : 0);
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
+
+      // pass 2: the city, with the sky showing above the ridge
+      gl.bindFramebuffer(gl.FRAMEBUFFER, null);
       gl.viewport(0, 0, w, h);
-      gl.uniform2f(U.uRes, w, h);
-      gl.uniform2f(U.uImg, 1305, 816);
-      gl.uniform2f(U.uPos, opts.pos[0], opts.pos[1]);
-      gl.uniform1f(U.uFrameH, (canvas.clientHeight - opts.bandBelow - opts.bandAbove) * dpr);
-      gl.uniform1f(U.uBandTop, opts.bandAbove * dpr);
-      gl.uniform1f(U.uBand, (opts.bandBelow || opts.bandAbove) * dpr);
-      gl.uniform1f(U.uPx, dpr);
-      gl.uniform1f(U.uZoom, s.zoom);
-      gl.uniform1f(U.uShift, s.shift * dpr);
-      gl.uniform1i(U.uA, s.a);
-      gl.uniform1i(U.uB, s.b);
-      gl.uniform1f(U.uP, s.p);
-      gl.uniform1f(U.uHour, s.hour);
-      gl.uniform1f(U.uTime, s.time);
-      gl.uniform1f(U.uStill, reduceMotion ? 1 : 0);
-      gl.uniform3f(U.uPage, 250 / 255, 250 / 255, 250 / 255);
-      gl.uniform4f(U.uBandTint, opts.tint[0] / 255, opts.tint[1] / 255, opts.tint[2] / 255, opts.tint[3]);
+      gl.useProgram(main.p);
+      Object.keys(units).forEach(function (k) { gl.uniform1i(main.u[k], units[k]); });
+      gl.uniform1i(main.u.tSky, 7);
+      gl.uniform2f(main.u.uRes, w, h);
+      gl.uniform2f(main.u.uImg, 1305, 816);
+      gl.uniform2f(main.u.uPos, opts.pos[0], opts.pos[1]);
+      gl.uniform2f(main.u.uCam, s.cam[0], s.cam[1]);
+      gl.uniform1f(main.u.uFrameH, (canvas.clientHeight - opts.bandBelow - opts.bandAbove) * dpr);
+      gl.uniform1f(main.u.uBandTop, opts.bandAbove * dpr);
+      gl.uniform1f(main.u.uBand, (opts.bandBelow || opts.bandAbove) * dpr);
+      gl.uniform1f(main.u.uPx, dpr);
+      gl.uniform1f(main.u.uZoom, s.zoom);
+      gl.uniform1f(main.u.uShift, s.shift * dpr);
+      gl.uniform1f(main.u.uWind, reduceMotion ? 0 : 1);
+      gl.uniform1i(main.u.uA, s.a);
+      gl.uniform1i(main.u.uB, s.b);
+      gl.uniform1f(main.u.uP, s.p);
+      gl.uniform1f(main.u.uHour, s.hour);
+      gl.uniform1f(main.u.uTime, s.time);
+      gl.uniform1f(main.u.uStill, reduceMotion ? 1 : 0);
+      gl.uniform3f(main.u.uPage, 250 / 255, 250 / 255, 250 / 255);
+      gl.uniform4f(main.u.uBandTint, opts.tint[0] / 255, opts.tint[1] / 255, opts.tint[2] / 255, opts.tint[3]);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
     };
   }
@@ -457,6 +664,11 @@
   /* --------------------------------------------------------- the loop */
 
   var running = false, t0 = null, lastTs = 0;
+  var pointer = [0, 0], look = [0, 0];
+  window.addEventListener('pointermove', function (e) {
+    if (e.pointerType !== 'mouse' || reduceMotion) return;
+    pointer = [e.clientX / window.innerWidth * 2 - 1, e.clientY / window.innerHeight * 2 - 1];
+  }, { passive: true });
   var heroVisible = true, footVisible = false;
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function (es) { es.forEach(function (e) { heroVisible = e.isIntersecting; }); if (heroVisible) kick(); }).observe(hero || document.body);
@@ -466,7 +678,7 @@
 
   function sceneState(hour, time) {
     var s = segmentAt(hour);
-    return { a: s.a, b: s.b, p: reduceMotion ? clamp(s.t, 0, 1) : sweep(s.t), hour: wrap24(hour), time: time, zoom: 1, shift: 0 };
+    return { a: s.a, b: s.b, p: reduceMotion ? clamp(s.t, 0, 1) : sweep(s.t), hour: wrap24(hour), time: time, zoom: 1, shift: 0, cam: [0, 0] };
   }
 
   function frame(ts) {
@@ -491,13 +703,18 @@
       var s = sceneState(sceneHour, time);
       if (heroSky && heroSky.ready && heroVisible) {
         var y = window.scrollY;
-        s.zoom = 1.015 + 0.015 * (0.5 - 0.5 * Math.cos(time * 0.08)) + clamp(y / hh, 0, 1) * 0.04;
-        s.shift = clamp(y, 0, hh) * 0.32;
+        var k = 1 - Math.exp(-dt * 4);
+        look[0] += (pointer[0] - look[0]) * k;
+        look[1] += (pointer[1] - look[1]) * k;
+        s.zoom = 1.02 + 0.012 * (0.5 - 0.5 * Math.cos(time * 0.08)) + clamp(y / hh, 0, 1) * 0.03;
+        s.shift = clamp(y, 0, hh) * 0.25;
+        // depth parallax: the pointer looks around (desktop), scrolling lifts the near trees
+        s.cam = [look[0] * 7, look[1] * 4 + clamp(y / hh, 0, 1) * 12];
         heroSky.render(s);
       }
       if (footSky && footSky.ready && footVisible) {
         // the footer is night, always: the same lights, stars and shooting stars
-        footSky.render({ a: 0, b: 0, p: 0, hour: 23.2, time: time + 17, zoom: 1, shift: 0 });
+        footSky.render({ a: 0, b: 0, p: 0, hour: 23.2, time: time + 17, zoom: 1, shift: 0, cam: [look[0] * 4, 0] });
       }
     }
     if (reduceMotion) { running = false; return; }

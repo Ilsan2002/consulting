@@ -9,28 +9,35 @@ Not linked from production. Every page is `noindex`.
 
 ## What's new
 
-- **Pixel-dither timelapse.** The four paintings (night, dawn, day, sunset) still
-  follow the visitor's clock. Instead of cross-fading, they dissolve into each
-  other with an ordered dither on the painting's own pixel grid. The sky turns
-  first and the change sweeps down through the city. One day takes 40 seconds.
-- **The city lives.** About 1,300 lights were detected in the night painting
+- **The whole scene moves.** The paintings were split into layers
+  (`tools/bake-scene.py`): sky, a depth map from the ridge down to the square,
+  and the foreground trees.
+  - **The sky is drawn live on the painting's pixel grid.** It uses dithered
+    colour bands taken from each painting. Two layers of pixel clouds drift on
+    the wind. The sun sets and rises over the peaks, the crescent moon crosses
+    the night sky, stars twinkle and shooting stars fall.
+  - **Depth.** Moving the mouse lets you look around the scene, and scrolling
+    lifts the near trees faster than the city or the peaks.
+  - **Wind in the trees.** The foreground trees sway in stepped, hand-drawn-style
+    frames.
+  - **Morning mist** settles over the city at the foot of the mountains.
+  - **People cross the square** from morning until late evening.
+- **Pixel-dither timelapse.** The four paintings (night, dawn, day, sunset)
+  follow the visitor's clock. They dissolve into each other with an ordered
+  dither: the sky turns first, then the change sweeps down through the city.
+  One day takes 40 seconds.
+- **The city lights.** About 1,300 lights were detected in the night painting
   (`tools/bake-lights.py`):
-  - Street lamps and floodlit buildings switch on one by one at dusk and off at
-    dawn.
-  - Windows light up through the evening, thin out after midnight and come back
-    for early risers. A few flicker like a TV.
-  - Stars twinkle, and a shooting star crosses the sky every few seconds at night.
-  - Small flocks of birds cross the sky by day, and lamps glow after dark.
-- **You control the clock.** Scrolling through the hero runs the day forward by
-  up to 9 hours, and on desktop you can drag the sky left or right. The agent log
-  fires each entry as the clock passes its hour.
-- **Pixel-dissolve edges.** The hero dissolves into the page, and the page
-  dissolves into the footer's night scene, in dithered steps instead of hard cuts.
-- **The footer is alive too.** The same night scene runs there: stars, windows,
-  lamps and shooting stars.
+  - Lamps and floodlit buildings switch on one by one at dusk.
+  - Windows fill the evening and thin out after midnight. A few flicker like a TV.
+  - Lamps glow after dark, and birds cross the sky by day.
+- **You control the clock.** Scrolling runs the day forward, and on desktop you
+  can drag the sky. The agent log fires each entry as the clock passes its hour.
+- **Pixel-dissolve edges** between the hero, the page and the footer. The
+  footer's night scene is animated too.
 - **Small page motion:**
-  - Section headings type themselves in with a block cursor, like the agent log.
-  - The engagement rules draw in pixel steps.
+  - Section headings type themselves in.
+  - The engagement rules draw in steps.
   - The service rows arrive one after another.
 
 ## Fallbacks
@@ -49,7 +56,8 @@ Not linked from production. Every page is `noindex`.
 | `assets/skyline-2.css` | Live stylesheet, unchanged |
 | `assets/alive.css` | Everything added on top of it |
 | `assets/alive.js` | The WebGL sky, the clock and log, page motion, the contact form (same Web3Forms flow) |
-| `assets/img/alive-*` | Baked from `sky-night-4.webp` by `tools/bake-lights.py`: the night painting with its lights removed, the lights on their own, and a per-light id/kind map |
+| `assets/img/alive-night-off.webp`, `alive-lights.png`, `alive-meta.png` | Baked by `tools/bake-lights.py`: the night painting with its lights removed, the lights on their own, and a per-light id/kind map |
+| `assets/img/alive-scene.png`, `alive-sky.png` | Baked by `tools/bake-scene.py`: depth, sky mask and tree weight; the sky gradients and cloud colours of each painting |
 
 ## Preview
 
