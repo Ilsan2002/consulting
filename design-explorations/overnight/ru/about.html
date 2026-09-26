@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>О нас — Kenius · Сначала советуем. Потом создаём.</title>
+  <meta name="description" content="Kenius — бутиковый ИИ-консалтинг: сначала стратегия, потом внедрение. Мы советуем, где ИИ уместен, а затем проектируем и создаём решение — без хайпа, пилоты с фиксированной ценой, с расчётом на передачу вам." />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#070a11" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23070a11'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%238a93a3' stroke-width='1.6' stroke-dasharray='1.6 2.1'/%3E%3Ccircle cx='21.6' cy='9.4' r='3.2' fill='%2352e08f'/%3E%3C/svg%3E" />
+  <link rel="preload" href="../assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="../assets/fonts/geist-cyrillic.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="../assets/overnight.css" />
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <a class="skip" href="#main">Перейти к содержимому</a>
+  <div class="sky-fallback" aria-hidden="true"></div>
+  <canvas id="gl" aria-hidden="true"></canvas>
+  <div class="gl-labels" aria-hidden="true"></div>
+
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="index.html">Kenius<sup>®</sup><span class="vh"> — Главная</span></a>
+      <nav class="nav-links" aria-label="Основное меню"><a href="services.html">Услуги</a><a href="work.html">Сценарии</a><a href="about.html" aria-current="page">О нас</a></nav>
+      <div class="lang" role="group" aria-label="Язык"><a href="../about.html" hreflang="en" lang="en" aria-label="English">EN</a><span aria-current="true">RU</span></div>
+      <a class="btn btn--sm" href="contact.html">Записаться на звонок <span class="arw" aria-hidden="true"></span></a>
+      <details class="menu">
+        <summary>Меню <i aria-hidden="true"></i></summary>
+        <nav class="menu-panel" aria-label="Основное меню">
+          <a href="index.html">Главная</a><a href="services.html">Услуги</a><a href="work.html">Сценарии</a><a href="about.html" aria-current="page">О нас</a>
+          <a class="btn" href="contact.html">Записаться на звонок <span class="arw" aria-hidden="true"></span></a>
+          <div class="lang" role="group" aria-label="Язык"><a href="../about.html" hreflang="en" lang="en" aria-label="English">EN</a><span aria-current="true">RU</span></div>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <div class="page">
+    <main id="main">
+      <header class="page-hero" data-form="line">
+        <div class="stage" aria-hidden="true"></div>
+        <div class="wrap">
+          <div class="page-hero-copy">
+            <p class="kicker rv"><span class="dot" aria-hidden="true"></span>Kenius · о нас</p>
+            <h1 class="rv rv-d1">Сначала советуем. Потом создаём.</h1>
+            <p class="lead rv rv-d2">Вокруг ИИ много шума. Нам интереснее тихий вариант: один хорошо собранный агент, который каждую неделю экономит реальной команде реальные часы — и никому даже не нужно об этом думать.</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="sec" id="why" data-form="dust" aria-labelledby="why-title">
+        <div class="wrap">
+          <p class="cap rv" id="why-title" style="margin-bottom:26px">Зачем мы существуем</p>
+          <div class="prose-block"><p class="rv">Долгие годы «автоматизация» означала хрупкие скрипты, которые ломались, стоило чему-то измениться. Теперь ИИ может прочитать сумбурное письмо, понять телефонный разговор и сообразить, что делать дальше, как это сделал бы толковый новичок.</p><p class="rv">Но большинству компаний не нужен грандиозный прорыв. Им нужно, чтобы отвечали на звонки, разбирали входящие, вносили счета. Именно об этом мы консультируем и это создаём — и объясняем всё до мелочей простым языком.</p></div>
+        </div>
+      </section>
+
+      <section class="sec" id="beliefs" data-form="grid" data-sel=".commit li" aria-labelledby="bel-title">
+        <div class="wrap">
+          <div class="sec-head">
+            <p class="cap rv">Шесть обязательств</p>
+            <h2 id="bel-title" class="rv">Во что мы верим.</h2>
+          </div>
+          <div class="split">
+            <ol class="commit">
+              <li class="rv"><b>Начинаем с малого.</b><span>Один сценарий, запущенный и проверенный на деле, лучше громкого плана, который так и не выходит.</span></li>
+              <li class="rv"><b>Показываем, а не убеждаем.</b><span>Мы лучше покажем вам рабочий прототип, чем очередной слайд.</span></li>
+              <li class="rv"><b>Держим человека в контуре.</b><span>Агенты берут на себя рутину и спрашивают, прежде чем сделать что-то важное.</span></li>
+              <li class="rv"><b>Говорим просто.</b><span>Если мы не можем объяснить это без жаргона, значит, мы понимаем это недостаточно хорошо.</span></li>
+              <li class="rv"><b>Ваши данные — ваши.</b><span>Никогда не продаются, никогда не используются для обучения общедоступных моделей, ограничены текущей задачей.</span></li>
+              <li class="rv"><b>Создаём с расчётом на передачу.</b><span>Без привязки к нам. Вы сможете взять то, что мы создали, и дальше работать сами.</span></li>
+            </ol>
+            <div class="stage" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="team" data-form="timeline" aria-labelledby="team-title">
+        <div class="wrap">
+          <div class="sec-head">
+            <p class="cap rv">Никаких передач новичкам</p>
+            <h2 id="team-title" class="rv">Небольшая опытная команда.</h2>
+          </div>
+          <div class="prose-block" style="margin-bottom:12px"><p class="rv">Люди, с которыми вы встречаетесь на первом звонке, — это те, кто вас консультирует и создаёт ваше решение. Ради этого мы и остаёмся небольшой командой.</p></div>
+          <div class="stage stage--band" aria-hidden="true"></div>
+          <ol class="team">
+              <li class="rv"><p class="mono">Стратегия</p><h3>Ваш ведущий консультант</h3><p>Лично ведёт каждый проект. Человек, которого вы встречаете на первом звонке, — тот же, кто отвечает за результат при передаче.</p></li>
+              <li class="rv rv-d1"><p class="mono">Реализация</p><h3>Объём · сроки · цена</h3><p>Превращает «мы теряем на этом часы» в разработку с фиксированной ценой и понятными сроками, за которые с нас можно спросить.</p></li>
+              <li class="rv rv-d2"><p class="mono">Инженерия</p><h3>Агенты и ограничители</h3><p>Живёт ограничителями — агенты, которые поступают правильно и спрашивают человека, когда не должны решать в одиночку.</p></li>
+              <li class="rv rv-d3"><p class="mono">Поддержка</p><h3>После запуска</h3><p>Ваше контактное лицо, когда всё уже работает, — следит за показателями и подстраивает решение по мере вашего роста.</p></li>
+          </ol>
+          <p class="cap team-foot rv">Намеренно небольшие — без скамейки запасных, без новичков, без передач</p>
+        </div>
+      </section>
+
+      <section class="sec cta" id="contact" data-form="ring" data-dawn="1" aria-labelledby="cta-title">
+        <div class="wrap cta-grid">
+          <div class="cta-copy">
+            <p class="cap rv">Следующий шаг</p>
+            <h2 id="cta-title" class="rv">Давайте поговорим по-человечески.</h2>
+            <p class="lead rv rv-d1">Тридцать минут, без слайдов, без обязательств. Расскажите, что съедает время вашей команды, и мы честно скажем, может ли помочь ИИ.</p>
+            <div class="actions rv rv-d2">
+              <a class="btn" href="contact.html">Записаться на 30-минутный звонок <span class="arw" aria-hidden="true"></span></a>
+              <a class="link" href="mailto:hello@kenius.co">hello@kenius.co</a>
+            </div>
+          </div>
+          <div class="stage stage--ring" aria-hidden="true"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="wrap foot-grid">
+        <a class="brand brand--foot" href="index.html">Kenius<sup>®</sup><span class="vh"> — Главная</span></a>
+        <nav class="foot-links" aria-label="Подвал"><a href="index.html">Главная</a><a href="services.html">Услуги</a><a href="work.html">Сценарии</a><a href="about.html">О нас</a><a href="contact.html">Контакты</a></nav>
+        <p class="foot-line">Создано людьми · проверено людьми · работает на ИИ</p>
+        <p class="foot-meta">© <span data-year>2026</span> Kenius · kenius.us · <a href="mailto:hello@kenius.co">hello@kenius.co</a></p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../assets/overnight-gl.js" defer></script>
+  <script src="../assets/overnight.js" defer></script>
+</body>
+</html>
