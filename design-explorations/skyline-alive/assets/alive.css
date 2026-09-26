@@ -1,0 +1,79 @@
+/* Kenius — "Skyline Alive": additions on top of the live skyline-2.css.
+   Nothing here restyles the live design; it only adds the WebGL sky, the
+   pixel-dissolve edges and the typing / drawing motion. */
+
+/* the WebGL sky replaces the four stacked photos once it is ready */
+.sky-gl, .foot-gl {
+  position: absolute; left: 0; right: 0; top: 0; bottom: 0;
+  width: 100%; height: auto;
+  display: block;
+  opacity: 0; transition: opacity .8s ease;
+  pointer-events: none;
+}
+.sky-gl { height: calc(100% + 44px); }
+.foot-gl { height: calc(100% + 44px); z-index: 0; }
+.alive-on .sky-gl, .alive-foot .foot-gl { opacity: 1; }
+.alive-on .sky-img { opacity: 0 !important; transition: opacity .8s ease; }
+.alive-foot .foot-img { opacity: 0; transition: opacity .8s ease; }
+
+/* let the canvas run a few pixels past the hero / above the footer, where it
+   dissolves into the page on the painting's own pixel grid */
+.alive-on .hero { overflow: visible; }
+.alive-foot .foot { overflow: visible; }
+.foot-scrim { z-index: 0; }
+.foot-in { z-index: 1; }
+
+/* drag the sky to move the clock (mouse / pen) */
+@media (hover: hover) and (pointer: fine) {
+  .alive-on .hero { cursor: grab; }
+  .alive-on .hero a, .alive-on .hero .agent, .alive-on .hero h1, .alive-on .hero p { cursor: auto; }
+  .alive-on .hero a { cursor: pointer; }
+  .is-scrubbing, .is-scrubbing * { cursor: grabbing !important; user-select: none; }
+}
+
+/* headings type themselves in */
+.typing .ch { opacity: 0; }
+.typing .ch.on { opacity: 1; }
+.type-cursor {
+  display: inline-block; width: .55em; height: .95em; margin-left: .06em;
+  vertical-align: -.1em; background: currentColor;
+  animation: type-blink .7s steps(1) infinite;
+}
+@keyframes type-blink { 50% { opacity: 0; } }
+
+/* engagement steps: the ink rule draws itself in pixel steps */
+.steps.rv .step { border-top-color: transparent; position: relative; }
+.steps.rv .step::before {
+  content: ''; position: absolute; left: 0; right: 0; top: -2px; height: 2px;
+  background: var(--ink); transform: scaleX(0); transform-origin: left;
+}
+.steps.rv.in .step::before { transform: none; transition: transform .9s steps(12, end); }
+.steps.rv.in .step:nth-child(2)::before { transition-delay: .25s; }
+.steps.rv.in .step:nth-child(3)::before { transition-delay: .5s; }
+.steps.rv.in .step:nth-child(4)::before { transition-delay: .75s; }
+
+/* service rows arrive one after another */
+.index.rv .row { opacity: 0; transform: translateY(8px); }
+.index.rv.in .row { opacity: 1; transform: none; transition: opacity .5s ease, transform .5s ease, background .15s ease; }
+.index.rv.in .row:nth-child(2) { transition-delay: .06s; }
+.index.rv.in .row:nth-child(3) { transition-delay: .12s; }
+.index.rv.in .row:nth-child(4) { transition-delay: .18s; }
+.index.rv.in .row:nth-child(5) { transition-delay: .24s; }
+.index.rv.in .row:nth-child(6) { transition-delay: .3s; }
+
+/* screenshots and reduced motion: everything in its final state */
+.shot .rv, .shot .index.rv .row { opacity: 1 !important; transform: none !important; transition: none !important; }
+.shot .steps.rv .step::before { transform: none !important; transition: none !important; }
+.shot .sky-gl, .shot .foot-gl, .shot .sky-img { transition: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  .steps.rv .step { border-top-color: var(--ink); }
+  .steps.rv .step::before { display: none; }
+  .index.rv .row { opacity: 1; transform: none; }
+  .type-cursor { display: none; }
+}
+.reduce .steps.rv .step { border-top-color: var(--ink); }
+.reduce .steps.rv .step::before { display: none; }
+.reduce .index.rv .row, .reduce .rv { opacity: 1; transform: none; }
+
+/* the green "not yet" needs large-text size to clear AA on phones (3.15:1 on #fafafa) */
+.sec-quote blockquote { font-size: clamp(1.5rem, 1rem + 1.9vw, 2.1rem); }
