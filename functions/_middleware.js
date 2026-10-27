@@ -6,9 +6,10 @@ export async function onRequest(context) {
   const { request, next, env } = context;
   const url = new URL(request.url);
   const isRU = url.hostname === 'kenius.us' || url.hostname === 'www.kenius.us';
+  const isTemporaryHost = isRU || url.hostname === 'codex-ilsan-one-day.kenius.pages.dev';
   const path = url.pathname;
 
-  if (isRU && Date.now() < TEMPORARY_UNTIL) {
+  if (isTemporaryHost && Date.now() < TEMPORARY_UNTIL) {
     const headers = {
       'Cache-Control': 'no-store',
       'X-Robots-Tag': 'noindex, nofollow, noarchive',
@@ -20,7 +21,7 @@ export async function onRequest(context) {
         headers: { ...headers, 'Content-Type': 'text/plain; charset=utf-8' },
       });
     }
-    url.pathname = '/_temporary/index.html';
+    url.pathname = '/_temporary/';
     url.search = '';
     const page = await env.ASSETS.fetch(new Request(url, request));
     const response = new Response(page.body, page);

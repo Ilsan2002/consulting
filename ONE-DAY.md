@@ -16,7 +16,9 @@ The build uses Node.js built-ins and needs no dependency installation. `dist/`
 contains the verified original production snapshot plus `/_temporary/index.html`.
 The Pages Function in `functions/_middleware.js` switches only `kenius.us` and
 `www.kenius.us` to the temporary page. `kenius.co` and `www.kenius.co` retain the
-English site because all four domains share the `kenius` Pages project.
+English site because all four domains share the `kenius` Pages project. The branch
+preview alias `codex-ilsan-one-day.kenius.pages.dev` also exercises the temporary
+hostname route, so the same Function can be checked before production deployment.
 
 For a local static preview, run `python3 -m http.server 8000 --directory dist`
 and open http://localhost:8000/_temporary/. Production hostname routing requires
