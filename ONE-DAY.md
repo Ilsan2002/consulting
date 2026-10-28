@@ -30,8 +30,11 @@ The temporary hostname rule expires at **29 October 2026, 01:20 Asia/Bishkek**
 (`2026-10-28T19:20:00Z`). At and after that instant, the Function serves the original
 Russian pages using the original hostname router. This runs on each request, so
 no computer, reminder or scheduled deployment needs to be running at expiry.
-Temporary responses use `Cache-Control: no-store` and `X-Robots-Tag: noindex,
-nofollow, noarchive`. English responses retain the original behavior.
+Temporary responses use `Cache-Control: no-store`. Following the user's request
+to appear in Google, the .us page allows indexing and crawling, has a canonical
+homepage URL and supplies `/sitemap.xml`. The preview alias still blocks indexing.
+English responses retain the original behavior. Google indexing is neither
+instant nor guaranteed; the one-day expiry still applies unless the user changes it.
 
 ## Deployment and immediate rollback
 
