@@ -1,4 +1,4 @@
-# One-day contact page for kenius.us
+# Contact page for kenius.us
 
 Branch: `codex/ilsan-one-day` in `Ilsan2002/consulting`.
 
@@ -24,17 +24,16 @@ For a local static preview, run `python3 -m http.server 8000 --directory dist`
 and open http://localhost:8000/_temporary/. Production hostname routing requires
 Pages Functions. The retained Astro dev scripts describe the earlier site.
 
-## Automatic return
+## Duration and restoration
 
-The temporary hostname rule expires at **29 October 2026, 01:20 Asia/Bishkek**
-(`2026-10-28T19:20:00Z`). At and after that instant, the Function serves the original
-Russian pages using the original hostname router. This runs on each request, so
-no computer, reminder or scheduled deployment needs to be running at expiry.
+The user has requested that this page **stay live until they ask to restore** the
+original site. The earlier 29 October 2026 expiry has been removed from the code.
+There is no automatic return, scheduled rollback or time-dependent routing.
 Temporary responses use `Cache-Control: no-store`. Following the user's request
 to appear in Google, the .us page allows indexing and crawling, has a canonical
 homepage URL and supplies `/sitemap.xml`. The preview alias still blocks indexing.
 English responses retain the original behavior. Google indexing is neither
-instant nor guaranteed; the one-day expiry still applies unless the user changes it.
+instant nor guaranteed.
 
 ## Deployment and immediate rollback
 
@@ -53,9 +52,9 @@ Production promotion uses the exact built branch contents while supplying
 `--branch main` to Wrangler. This selects the Pages production environment;
 it does not merge, push or modify the GitHub `main` branch.
 
-To return early, use Cloudflare Pages > kenius > Deployments > the recorded original
+When the user requests restoration, use Cloudflare Pages > kenius > Deployments > the recorded original
 production deployment > Rollback to this deployment. Do not delete that deployment.
-The expiry changes site behavior automatically even without an early rollback.
+Restore only when the user asks.
 
 ## Verification — 28 October 2026
 
@@ -63,8 +62,9 @@ The original snapshot's five English pages matched live visible text, and the
 checked CSS, JavaScript and Cyrillic font matched live bytes. The contact page
 passed desktop, 390px and 320px rendering checks with JavaScript disabled; desktop
 and mobile screenshots were visually reviewed. Axe reported zero accessibility
-violations. Hostname checks covered .us, www, .co and preview hosts. Time simulation
-confirmed the original Russian homepage and routes resume exactly at expiry.
+violations. Hostname checks covered .us, www, .co and preview hosts. After removing
+the deadline, time simulation confirmed the contact page remains live beyond the
+former expiry while .co routing and public indexing controls stay unchanged.
 
 ## Design
 
