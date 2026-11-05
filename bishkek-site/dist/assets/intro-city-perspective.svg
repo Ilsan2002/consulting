@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000">
+<title>Bishkek civic architecture in perspective</title>
+<g fill="#e1d9c7" stroke="#490314" stroke-width="4" stroke-linejoin="miter">
+<!-- Smaller buildings beyond the figure, with rooflines receding toward the centre. -->
+<path d="M60 550 126 512 126 710 60 750Z"/>
+<path d="M126 512 157 535 157 726 126 710Z"/>
+<path d="M150 523 206 489 206 681 150 717Z"/>
+<path d="M206 489 235 516 235 697 206 681Z"/>
+<path d="M231 514 290 478 290 656 231 693Z"/>
+<path d="M290 478 315 502 315 672 290 656Z"/>
+<path d="M304 501 352 471 352 643 304 673Z"/>
+<path d="M352 471 377 491 377 654 352 643Z"/>
+<path d="M367 492 417 464 417 624 367 653Z"/>
+<path d="M417 464 438 482 438 638 417 624Z"/>
+<path d="M429 483 481 456 481 614 429 643Z"/>
+<path d="M481 456 504 476 504 626 481 614Z"/>
+
+<path fill="#490314" stroke="none" d="M69 544.0 76 540.0 76 726.0 69 730.0Z"/>
+<path fill="#490314" stroke="none" d="M84 535.3 91 531.3 91 717.3 84 721.3Z"/>
+<path fill="#490314" stroke="none" d="M99 526.6 106 522.6 106 708.6 99 712.6Z"/>
+<path fill="#490314" stroke="none" d="M114 517.9 121 513.9 121 699.9 114 703.9Z"/>
+<path fill="#490314" stroke="none" d="M158 518.0 165 514.0 165 693.0 158 697.0Z"/>
+<path fill="#490314" stroke="none" d="M173 509.3 180 505.3 180 684.3 173 688.3Z"/>
+<path fill="#490314" stroke="none" d="M188 500.6 195 496.6 195 675.6 188 679.6Z"/>
+<path fill="#490314" stroke="none" d="M241 508.0 248 504.0 248 671.0 241 675.0Z"/>
+<path fill="#490314" stroke="none" d="M256 499.3 263 495.3 263 662.3 256 666.3Z"/>
+<path fill="#490314" stroke="none" d="M271 490.6 278 486.6 278 653.6 271 657.6Z"/>
+<path fill="#490314" stroke="none" d="M314 495.0 321 491.0 321 653.0 314 657.0Z"/>
+<path fill="#490314" stroke="none" d="M329 486.3 336 482.3 336 644.3 329 648.3Z"/>
+<path fill="#490314" stroke="none" d="M377 486.0 384 482.0 384 633.0 377 637.0Z"/>
+<path fill="#490314" stroke="none" d="M392 477.3 399 473.3 399 624.3 392 628.3Z"/>
+<path fill="#490314" stroke="none" d="M439 477.0 446 473.0 446 622.0 439 626.0Z"/>
+<path fill="#490314" stroke="none" d="M454 468.3 461 464.3 461 613.3 454 617.3Z"/>
+<path fill="#490314" stroke="none" d="M469 459.6 476 455.6 476 604.6 469 608.6Z"/>
+
+<!-- Ala-Too museum: a solid, stepped volume viewed from below and to the left. -->
+<path d="M612 522 735 483 735 697 612 737Z"/>
+<path d="M735 483 783 512 783 727 735 697Z"/>
+<path d="M619 514 727 480 727 466 755 457 755 470 791 490 791 515 739 485 619 524Z"/>
+<path fill="#490314" stroke="none" d="M629 537 719 508 719 681 629 710Z"/>
+<path d="M640 545 707 523 707 678 640 701Z"/>
+<path fill="#490314" stroke="none" d="M650 554 697 539 697 674 650 689Z"/>
+<path d="M660 621 689 611 689 676 660 686Z"/>
+<path d="M667 463 667 408" fill="none" stroke="#e1d9c7" stroke-width="5"/>
+<path d="M668 409Q681 401 693 407T717 407L717 435Q704 439 693 433T668 436Z" stroke-width="3"/>
+<!-- The foreground civic block climbs toward the right edge. Its three visible
+     faces and diagonal cornices establish the same off-axis perspective. -->
+<path d="M752 506 881 458 881 793 752 842Z"/>
+<path d="M881 458 1007 529 1007 864 881 793Z"/>
+<path d="M740 503 880 450 1020 526 1020 547 880 474 740 527Z"/>
+<path d="M747 534 881 484 1013 556" fill="none" stroke-width="7"/>
+<!-- Pediment and civic spire, angled with the front facade. -->
+<path d="M760 492 815 432 872 450 896 472 815 450Z"/>
+<path d="M815 432 872 450 925 484 896 472Z"/>
+<path d="M796 444 796 407 832 394 848 408 848 448 832 438Z"/>
+<path d="M796 407 809 387 820 383 832 394 848 408 832 406 820 393 807 411Z"/>
+<path d="M809 387 812 358 817 351 817 326 822 324 822 352 829 362 832 394 820 383Z"/>
+<path fill="#490314" stroke="none" d="M804 414 811 411 811 435 804 438Z M818 408 824 406 824 430 818 433Z M837 416 842 420 842 438 837 435Z"/>
+
+<path fill="#490314" stroke="none" d="M762 542.3 772 538.6 772 803.4 762 807.2Z"/>
+<path fill="#490314" stroke="none" d="M781 535.2 791 531.5 791 796.2 781 800.0Z"/>
+<path fill="#490314" stroke="none" d="M800 528.1 810 524.4 810 789.0 800 792.8Z"/>
+<path fill="#490314" stroke="none" d="M819 521.1 829 517.4 829 781.8 819 785.6Z"/>
+<path fill="#490314" stroke="none" d="M838 514.0 848 510.3 848 774.5 838 778.3Z"/>
+<path fill="#490314" stroke="none" d="M857 506.9 867 503.2 867 767.3 857 771.1Z"/>
+<path fill="#490314" stroke="none" d="M893 511.8 905 518.6 905 786.6 893 779.8Z"/>
+<path fill="#490314" stroke="none" d="M915 524.2 927 531.0 927 799.0 915 792.2Z"/>
+<path fill="#490314" stroke="none" d="M937 536.6 949 543.4 949 811.4 937 804.6Z"/>
+<path fill="#490314" stroke="none" d="M959 549.0 971 555.8 971 823.8 959 817.0Z"/>
+<path fill="#490314" stroke="none" d="M981 561.3 993 568.1 993 836.1 981 829.3Z"/>
+
+<!-- Continuous plinth and broad steps sweep diagonally past the camera. -->
+<g fill="#490314" stroke="#e1d9c7" stroke-width="4">
+<path d="M607 736 736 694 754 705 881 784 1016 860 1026 881 879 806 749 853 607 763Z"/>
+<path d="M598 762 749 862 881 814 1031 894 1038 909 879 830 748 878 598 779Z"/>
+<path d="M585 784 748 887 878 839 1047 922 1053 938 877 854 747 902 585 803Z"/>
+<path d="M570 808 746 912 876 865 1067 953 1072 972 874 884 744 931 570 828Z"/>
+<path d="M580 791 744 894 877 846" fill="none" stroke="#e1d9c7" stroke-width="3"/>
+</g></g></svg>

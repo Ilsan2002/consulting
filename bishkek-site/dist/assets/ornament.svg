@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" fill="none">
+  <!-- An original mirrored horn-inspired ornament with space between repeats. -->
+  <defs>
+    <path id="horn" d="M0 48C-15 34-23 16-22-5C-21-34-40-57-69-57C-97-57-115-37-115-13C-115 8-100 22-82 22C-66 22-55 10-58-5C-60-19-74-25-85-15"/>
+    <g id="pair">
+      <use href="#horn"/>
+      <use href="#horn" transform="scale(-1 1)"/>
+    </g>
+  </defs>
+  <g transform="translate(200 200)" stroke="#e1d9c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <use href="#pair" transform="translate(0 -48)"/>
+    <use href="#pair" transform="translate(0 48) rotate(180)"/>
+    <path d="M0-134V-120M0 120V134M-145 0H-131M131 0H145" stroke-width="1"/>
+    <path d="m0-9 9 9-9 9-9-9Z"/>
+  </g>
+</svg>
