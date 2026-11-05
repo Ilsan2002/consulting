@@ -1,0 +1,106 @@
+{
+  "retrieved": "2026-11-05",
+  "scope": "Kyrgyz oymo and hand embroidery for a Kenius website background",
+  "sources": [
+    {
+      "id": "R",
+      "title": "Киргизский национальный узор",
+      "author": "М. В. Рындин; редактор И. А. Орбели",
+      "date": "1948",
+      "url": "https://www.neb.kg/ru/catalogue/kirgizskij-natsionalnyj-uzor/",
+      "type": "Historical collection catalogue, primary scan",
+      "read": "Selected descriptions: scan pages 28–34; plates X, XIII, XXV, XXVI–XXX; cover and title verified. Not a full-book reading.",
+      "claim": "The catalogue records motifs from nature, living creatures, plants, household objects, mythical imagery, and combinations; names depend on context.",
+      "limitation": "Historical terminology and interpretations are not a universal contemporary dictionary."
+    },
+    {
+      "id": "W",
+      "title": "Saima embroidery and tush-kiiz wall hanging",
+      "author": "Murat Suyunbaev / World Crafts Council Asia Pacific",
+      "date": null,
+      "url": "https://encyclocraftsapr.com/saima-embroidery-and-tush-kiiz-wall-hanging/",
+      "type": "Crafts encyclopedia; specialist contributor",
+      "claim": "Embroidered materials, ilme and basma stitches, named floral/animal motifs, three-sided tush-kiiz borders.",
+      "limitation": "Do not repeat its unquantified current-practitioner decline claim as a 2026 fact."
+    },
+    {
+      "id": "I",
+      "title": "Tush Kiiiz — Wall Decoration_Batken",
+      "author": "KyrgyzCraft / ICHCAP",
+      "date": "2025 copyright, item date unspecified",
+      "url": "https://kyrgyzcraft.ichlinks.com/archive/elements/elementsV.do?contentsI18NCd=en-US&elementsUid=13980574576540002779&page=&searchText=sing",
+      "type": "Field-research inventory",
+      "claim": "Batken wall textiles and techniques ilme, ilmedos, basma, tuura saima, ters kayyk.",
+      "limitation": "Regional record, not a national exhaustive stitch classification."
+    },
+    {
+      "id": "M",
+      "title": "The Ethnographic Collection of the Gapar Aitiev Kyrgyz National Museum of Fine Arts",
+      "author": "Snezhana Atanova, with museum director and conservators",
+      "date": "2019-12-04",
+      "url": "https://voicesoncentralasia.org/the-ethnographic-collection-of-the-gaspar-aitiev-kyrgyz-national-museum-of-fine-arts/",
+      "type": "Museum curator testimony and collection objects",
+      "claim": "Attributed early-20th-century tush-kiyiz, velvet and silk thread, three-sided border; embroidered clothing and bags.",
+      "limitation": "Museum objects are specific examples; arrangements are not a single rule for every region."
+    },
+    {
+      "id": "Q",
+      "title": "World Quilts: Around the Home",
+      "author": "International Quilt Museum / University of Nebraska–Lincoln",
+      "date": "2017 site copyright",
+      "url": "https://worldquilts.quiltstudy.org/centralasianstory/daily/home",
+      "type": "Museum exhibition research",
+      "claim": "Tush ki’iz horizontal format, embroidered or patchwork top and side panels.",
+      "limitation": "The collection includes regional and mixed-technique examples."
+    },
+    {
+      "id": "U",
+      "title": "Ala-kiyiz and Shyrdak: Art of Kyrgyz Traditional Felt Carpets",
+      "author": "UNESCO multimedia archive / CACSARC-kg / National Fine Art Museum",
+      "date": "2011 film, archive entry undated",
+      "url": "https://www.unesco.org/archives/multimedia/document-3761",
+      "type": "Primary heritage archive",
+      "claim": "Ala-kiyiz and shyrdak are felt-carpet traditions.",
+      "limitation": "The embroidery study is not interchangeable with felt carpet production."
+    },
+    {
+      "id": "K",
+      "title": "Embroidery (tush kiyiz)",
+      "author": "Kyrgyzjer",
+      "date": "2007-08-17",
+      "url": "https://www.kyrgyzjer.com/en/kg/section27/section249/3222.html",
+      "type": "Secondary cultural overview",
+      "claim": "Rounded embroidery motifs; radial and branching arrangements; chain-stitch texture.",
+      "limitation": "Corroborating context only; some regional and material claims are broad."
+    },
+    {
+      "id": "O",
+      "title": "Кыргызские орнаменты",
+      "author": "Open.kg",
+      "date": "2015-05-15",
+      "url": "https://open.kg/about-kyrgyzstan/art/arts-and-crafts/print:page,1,2502-kyrgyzskie-ornamenty.html",
+      "type": "Secondary historical overview",
+      "claim": "Single/double horn variants, kyial branching lines, S-shaped it kuiruk, regional naming differences.",
+      "limitation": "Unclear original author; do not treat as independent confirmation of historical interpretations."
+    }
+  ],
+  "confidence": "High for craft distinction and documented names; moderate for grouping; no universal symbolic meanings asserted.",
+  "contradictions": [
+    "A search-indexed AKI PDF labelled as ornament plates proved on visual inspection to be Bernshtam’s 1943 canal archaeology book. Excluded entirely.",
+    "Tush kiyiz placement and stitched central fields vary across sources; adopted composition as design inspiration, not a universal rule.",
+    "WCC felt-carpet page gives a UNESCO inscription date inconsistent with UNESCO itself; not used.",
+    "No reliable exhaustive count of Kyrgyz motifs or regional variants was established."
+  ],
+  "design": {
+    "asset": "dist/assets/ornament-saima.svg",
+    "status": "Original contemporary SVG interpretation, not a tracing or reproduction of an antique textile.",
+    "composition": "Floral rosettes, leaves, S-curving sprigs, small geometric spacers; looped contour detail.",
+    "basis": [
+      "Ryndin plate X: embroidery combinations and scrolling plant forms",
+      "Ryndin plate XXV: floral motif diversity",
+      "WCC and museum accounts of saima/tush kiyiz",
+      "Kyrgyzjer descriptions of radial and branching composition"
+    ],
+    "choice": "Floral embroidery family selected as the main website repeat. Animal, celestial, household and mythical motifs are studied, not all mixed into the live repeat."
+  }
+}
