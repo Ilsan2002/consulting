@@ -3,12 +3,16 @@
   const hero = document.querySelector('.hero');
   const stage = document.querySelector('.hero-stage');
   const slogan = document.querySelector('.hero-slogan');
-  const introCopy = document.querySelector('.hero-intro-copy');
+  const introCopy = document.querySelector('.intro-label');
   const scrollCue = document.querySelector('.scroll-cue');
   const caption = document.querySelector('.hero-caption');
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   // The HTML illustration and all navigation remain usable without animation.
-  if (!hero || !stage || !slogan || reducedMotion.matches) return;
+  if (!hero || !stage || !slogan) return;
+  let initialized = false;
+  function initializeAnimation() {
+  if (initialized || reducedMotion.matches) return;
+  initialized = true;
   const clamp = (value, min = 0, max = 1) => Math.max(min, Math.min(max, value));
   const range = (value, start, end) => clamp((value - start) / (end - start));
   const cream = '#e1d9c7', burgundy = '#490314';
@@ -138,9 +142,9 @@
     textureCache.set(src,promise);return promise;
   }
   const framebuffer=gl.createFramebuffer(),frameTexture=gl.createTexture();
-  let width=0,height=0,logoScale=1,progress=0,target=0,rotation=0,pointer=0;
+  let width=0,height=0,logoScale=1,progress=0,target=0,rotation=0,pointer=0,lastRenderedProgress=0,motionBlur=0;
   let centerX=.72,centerY=.48;
-  let ready=false,inView=true,raf=0,snap=null,startTime=performance.now();
+  let ready=false,inView=true,raf=0,snap=null,startTime=performance.now(),lastFrame=0;
   let touchStart=null,lastTouchY=0;
 
   function resize(){
@@ -185,7 +189,7 @@
     gl.bindFramebuffer(gl.FRAMEBUFFER,null);gl.disable(gl.BLEND);gl.useProgram(blurProgram);bindGeometry(blurProgram);
     gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,frameTexture);gl.uniform1i(blurUniforms.texture,0);
     gl.uniform2f(blurUniforms.center,centerX,centerY);
-    gl.uniform1f(blurUniforms.blur,progress*5);gl.drawArrays(gl.TRIANGLES,0,6);
+    gl.uniform1f(blurUniforms.blur,motionBlur);gl.drawArrays(gl.TRIANGLES,0,6);
     canvas.dataset.progress=progress.toFixed(3);canvas.dataset.visiblePlanes=visible;
     canvas.dataset.stage=progress<.55?'kurmanjan':progress<.78?'city':progress<.9?'hills':progress<.95?'mountains':'message';
     const textP=range(progress,.90,1);
@@ -205,22 +209,34 @@
     if(caption)caption.style.opacity=.6*(1-range(progress,0,.20));
   }
   function tick(now){
-    raf=0;if(!ready||!inView||reducedMotion.matches)return;
+    raf=0;if(!ready||!inView||document.hidden||reducedMotion.matches)return;
+    const frameTime=lastFrame?Math.min(now-lastFrame,64):16.67;lastFrame=now;
     if(snap){const p=clamp((now-snap.start)/snap.duration);const ease=snap.to===1?1-Math.pow(1-p,3):(p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2);progress=snap.from+(snap.to-snap.from)*ease;if(p===1){target=progress=snap.to;snap=null;}}
     else{progress=target;}
-    const wantedRotation=pointer*.2*Math.pow(1-progress,3);rotation+=(wantedRotation-rotation)*.1;
+    // Blur follows movement, so a paused view remains sharp. Cap its extent
+    // to keep the city and ridgelines legible during the fastest part.
+    const speed=Math.abs(progress-lastRenderedProgress)*1000/frameTime;
+    const wantedBlur=Math.min(1.6,speed*1.35)*Math.sin(Math.PI*progress);
+    motionBlur+=(wantedBlur-motionBlur)*(1-Math.exp(-frameTime/70));
+    lastRenderedProgress=progress;
+    const wantedRotation=pointer*.2*Math.pow(1-progress,3);rotation+=(wantedRotation-rotation)*(1-Math.exp(-frameTime/158));
     render((now-startTime)/1000);
     // The finished scene contains no moving artwork. Reverse input wakes it.
     if(progress<1||snap)raf=requestAnimationFrame(tick);
   }
-  function wake(){if(!raf&&ready&&inView&&!reducedMotion.matches)raf=requestAnimationFrame(tick);}
-  function snapTo(value){snap={from:progress,to:value,start:performance.now(),duration:1500};target=value;wake();}
+  function wake(){if(!raf&&ready&&inView&&!document.hidden&&!reducedMotion.matches)raf=requestAnimationFrame(tick);}
+  function snapTo(value){snap={from:progress,to:value,start:performance.now(),duration:Math.max(450,Math.abs(value-progress)*1875)};target=value;wake();}
   function applyDelta(delta,event){
-    if(!ready||reducedMotion.matches||document.querySelector('dialog[open]'))return false;
+    if(!ready||!event.cancelable||!delta||reducedMotion.matches||document.querySelector('dialog[open]'))return false;
     // Let compact screens reveal the illustration before consuming a scroll gesture.
     const revealOffset=Math.max(0,hero.offsetHeight-innerHeight);
     if(scrollY<revealOffset-2||scrollY>revealOffset+(revealOffset?innerHeight*.25:2))return false;
-    if(snap){if(event.cancelable)event.preventDefault();return true;}
+    if(snap){
+      event.preventDefault();
+      // A deliberate reverse gesture can turn the flight around immediately.
+      if((delta<0&&snap.to===1)||(delta>0&&snap.to===0))snapTo(snap.to===1?0:1);
+      return true;
+    }
     if((delta>0&&target>=1)||(delta<0&&target<=0))return false;
     if(event.cancelable)event.preventDefault();
     const previous=progress;progress=target=clamp(progress+delta*.001);
@@ -228,7 +244,7 @@
     else if(previous>.9&&target<=.9)snapTo(0);
     wake();return true;
   }
-  addEventListener('wheel',event=>{if(event.ctrlKey)return;const delta=event.deltaY*(event.deltaMode===1?16:event.deltaMode===2?innerHeight:1);applyDelta(delta,event);},{passive:false});
+  addEventListener('wheel',event=>{if(event.ctrlKey||Math.abs(event.deltaX)>Math.abs(event.deltaY))return;const delta=event.deltaY*(event.deltaMode===1?16:event.deltaMode===2?innerHeight:1);applyDelta(delta,event);},{passive:false});
   addEventListener('touchstart',event=>{if(event.touches.length!==1)return;touchStart={x:event.touches[0].clientX,y:event.touches[0].clientY};lastTouchY=touchStart.y;},{passive:true});
   addEventListener('touchmove',event=>{if(!touchStart||event.touches.length!==1)return;const point=event.touches[0];if(Math.abs(point.clientY-touchStart.y)<Math.abs(point.clientX-touchStart.x))return;const delta=lastTouchY-point.clientY;lastTouchY=point.clientY;applyDelta(delta,event);},{passive:false});
   addEventListener('touchend',()=>{touchStart=null;},{passive:true});
@@ -243,15 +259,22 @@
     wake();
   });
   addEventListener('resize',()=>{if(ready){resize();wake();}},{passive:true});
+  document.addEventListener('visibilitychange',()=>{
+    if(document.hidden){cancelAnimationFrame(raf);raf=0;lastFrame=0;}
+    else wake();
+  });
   reducedMotion.addEventListener('change',()=>{
     stage.classList.toggle('depth-scene-ready',ready&&!reducedMotion.matches);
     if(reducedMotion.matches){
+      cancelAnimationFrame(raf);raf=0;snap=null;progress=target=lastRenderedProgress=0;rotation=motionBlur=0;lastFrame=0;
+      slogan.style.opacity=0;
       if(introCopy){introCopy.style.opacity='';introCopy.inert=false;}
       if(scrollCue){scrollCue.style.opacity='';scrollCue.inert=false;}
+      if(caption)caption.style.opacity='';
     }
     wake();
   });
-  new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;if(inView)wake();},{threshold:0}).observe(hero);
+  new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;if(inView)wake();else{cancelAnimationFrame(raf);raf=0;lastFrame=0;}},{threshold:0}).observe(hero);
   canvas.addEventListener('webglcontextlost',event=>{
     event.preventDefault();ready=false;stage.classList.remove('depth-scene-ready');
     slogan.style.opacity=0;
@@ -263,4 +286,7 @@
   Promise.all(layers.map(async layer=>{layer.texture=await loadTexture(layer.src);})).then(()=>{
     ready=true;resize();stage.classList.toggle('depth-scene-ready',!reducedMotion.matches);wake();
   }).catch(error=>console.warn('The animated scene could not load; showing the static illustration.',error));
+  }
+  reducedMotion.addEventListener('change',initializeAnimation);
+  initializeAnimation();
 })();

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="256" viewBox="0 0 200 256">
+  <title>Kerege — the joined wooden lattice of a Kyrgyz yurt</title>
+  <defs>
+    <path id="slats" d="M-200 0 0 256M0 0 200 256M200 0 400 256M-200 256 0 0M0 256 200 0M200 256 400 0"/>
+    <g id="joint">
+      <path d="m-6-7.68 12 15.36" stroke="#490314" stroke-width="9"/>
+      <path d="m-6-7.68 12 15.36" stroke="#e1d9c7" stroke-width="6"/>
+      <path d="m-6-7.68 12 15.36" stroke="#490314" stroke-width="3.6"/>
+      <circle r="2.6" fill="#490314" stroke="#e1d9c7" stroke-width="1.15"/>
+      <circle r=".65" fill="#e1d9c7"/>
+    </g>
+  </defs>
+  <g fill="none" stroke-linecap="butt">
+    <use href="#slats" stroke="#e1d9c7" stroke-width="6"/>
+    <use href="#slats" stroke="#490314" stroke-width="3.6"/>
+    <use href="#joint" x="0" y="0"/>
+    <use href="#joint" x="200" y="0"/>
+    <use href="#joint" x="100" y="128"/>
+    <use href="#joint" x="0" y="256"/>
+    <use href="#joint" x="200" y="256"/>
+  </g>
+</svg>
