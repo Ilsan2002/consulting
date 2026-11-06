@@ -24,3 +24,14 @@ Verification:
 - 63 local page references resolve; SVG files parse successfully.
 - 10 Node regression checks pass: forward flight, reversal, blur, native gestures, initial and changing motion preference, paused rendering, navigation, touch input, and failed WebGL/image loading. WebGL is stubbed in these logic tests; real rendering was checked in the browser.
 - The contact links still open the existing kenius.us/contact form. The destination renders and responds successfully; no form was submitted and email delivery was not tested.
+
+## Timber refinement
+
+After visual feedback that the outlined version read as thin diamonds, replaced the repeat with solid red-brown laths. The SVG now has broad faces, slightly uneven edges, fine grain, separate front and rear lath layers, contact shadows, and small leather-like joint details. The repeat is tighter on phones and fades more strongly behind the central artwork. The asset is an original vector interpretation, not a photograph or an exact construction drawing.
+
+Additional references:
+- KyrgyzCraft / ICHCAP field record for kerege, including wall panels, intersections, and different mesh sizes: https://kyrgyzcraft.ichlinks.com/archive/elements/elementsV.do?contentsI18NCd=en-US&elementsUid=13980574583529023458&page=&searchText=sun
+- Little Foot Yurts, firsthand visit to a Kyrgyz yurt maker's completed yurt, noting the red frame and bentwood roof poles: https://littlefootyurts.ca/kyrgyzstan-blog/the-most-beautiful-yurt
+- Visual close-up of red wooden kerege, front/rear intersections and tied roof connections: https://www.etsy.com/listing/941528407/small19-kyrgyz-yurt-4-lattice-wall
+
+Checked the refined background at 1440×900 and 390×844, and during the mobile-size fly-through. SVG parses and all internal references resolve; no console errors or horizontal overflow in the checked view. No animation logic changed in this refinement.
