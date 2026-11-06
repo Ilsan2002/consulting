@@ -6,6 +6,7 @@
   const introCopy = document.querySelector('.intro-label');
   const scrollCue = document.querySelector('.scroll-cue');
   const caption = document.querySelector('.hero-caption');
+  const intro = document.querySelector('.intro-section');
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   // The HTML illustration and all navigation remain usable without animation.
   if (!hero || !stage || !slogan) return;
@@ -15,25 +16,24 @@
   initialized = true;
   const clamp = (value, min = 0, max = 1) => Math.max(min, Math.min(max, value));
   const range = (value, start, end) => clamp((value - start) / (end - start));
+  const smooth = value => value * value * (3 - 2 * value);
   const cream = '#e1d9c7', burgundy = '#490314';
   const svg = (body, width, height) => 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="${burgundy}" stroke="${cream}" stroke-width="5" stroke-linejoin="miter">${body}</svg>`);
   const ring = svg('<circle cx="420" cy="420" r="413" fill="none" stroke-width="10"/>',840,840);
   const cover = svg(`<circle cx="71" cy="71" r="71" fill="${burgundy}" stroke="none"/>`,142,142);
 
   // Fixed camera and vanishing point, as in the reference. Each art plane
-  // advances along Z at its own speed; X/Y stay fixed throughout the flight.
-  // Depth compensation preserves the user's approved composition at rest.
+  // advances along the same camera path. Spacing gives the foreground, city,
+  // hills and mountains separate passes, while depth compensation preserves
+  // the approved composition at rest. No sideways drift or changing scale pivot.
   const layers = [
-    {name:'mountains',src:'./assets/intro-mountains-v3.png',rect:[-140,295,1280,427],depth:1.4,speed:.82,duotone:true,fade:[.87,.95]},
-    {name:'hills',src:'./assets/intro-hills-v3.png',rect:[-140,475,1280,205],uv:[0,.4,1,.48],depth:1.2,speed:.82,duotone:true},
-    {name:'city',src:'./assets/intro-bishkek-landmarks-v5.png',rect:[-60,0,1000,1000],depth:.8,speed:.85,duotone:true},
-    {name:'sun-rays',src:'./assets/rays.png',rect:[-204,-106,1451,560],depth:.1,speed:.95,rays:true},
-    {name:'kurmanjan',src:'./assets/kurmanjan.png',rect:[105,195,690,746],depth:.1,speed:.95},
-    {name:'sun-backing',src:cover,rect:[656,193,142,142],depth:.1,speed:.95},
-    {name:'original-sun',src:'./assets/sun-source.png',rect:[661,196,134,127],uv:[680/845,0,165/845,157/906],depth:.1,speed:.95},
-    {name:'frame-trail-3',src:ring,rect:[80,80,840,840],depth:0,speed:1,acceleration:.9,power:1.5,opacity:.2,unmasked:true,slowRotation:true},
-    {name:'frame-trail-2',src:ring,rect:[80,80,840,840],depth:0,speed:1,acceleration:.6,power:1.4,opacity:.3,unmasked:true,slowRotation:true},
-    {name:'frame-trail-1',src:ring,rect:[80,80,840,840],depth:0,speed:1,acceleration:.3,power:1.3,opacity:.4,unmasked:true,slowRotation:true},
+    {name:'mountains',src:'./assets/intro-mountains-v3.png',rect:[-140,295,1280,427],depth:2.25,speed:1,duotone:true,fade:[.865,.945]},
+    {name:'hills',src:'./assets/intro-hills-v3.png',rect:[-140,475,1280,205],uv:[0,.4,1,.48],depth:1.8,speed:1,duotone:true,fade:[.82,.865]},
+    {name:'city',src:'./assets/intro-bishkek-landmarks-v5.png',rect:[-60,0,1000,1000],depth:1.2,speed:1,duotone:true},
+    {name:'sun-rays',src:'./assets/rays.png',rect:[-204,-106,1451,560],depth:.25,speed:1,rays:true},
+    {name:'kurmanjan',src:'./assets/kurmanjan.png',rect:[105,195,690,746],depth:.25,speed:1},
+    {name:'sun-backing',src:cover,rect:[656,193,142,142],depth:.25,speed:1},
+    {name:'original-sun',src:'./assets/sun-source.png',rect:[661,196,134,127],uv:[680/845,0,165/845,157/906],depth:.25,speed:1},
     {name:'outer-frame',src:ring,rect:[80,80,840,840],depth:0,speed:1,unmasked:true,slowRotation:true}
   ];
 
@@ -146,6 +146,23 @@
   let centerX=.72,centerY=.48;
   let ready=false,inView=true,raf=0,snap=null,startTime=performance.now(),lastFrame=0;
   let touchStart=null,lastTouchY=0;
+  let introShown=false, introAnimations=[];
+
+  // Entry effects are progressive enhancement: the actual copy stays in the
+  // document and remains visible if animation is unavailable or disabled.
+  const introObserver = intro ? new IntersectionObserver(entries => {
+    if (!entries[0].isIntersecting || introShown || reducedMotion.matches) return;
+    introShown=true;
+    const content=intro.querySelector('.intro-layout');
+    if (content && !intro.contains(document.activeElement)) {
+      introAnimations=[...content.children].map((element,index) => element.animate([
+        {opacity:0,transform:'translateY(24px)'},
+        {opacity:1,transform:'translateY(0)'}
+      ], {duration:800,delay:index*85,easing:'cubic-bezier(.22,1,.36,1)',fill:'backwards'}));
+    }
+    introObserver.disconnect();
+  }, {threshold:.12}) : null;
+  if (introObserver) introObserver.observe(intro);
 
   function resize(){
     width=stage.clientWidth;height=stage.clientHeight;
@@ -175,7 +192,7 @@
       const distance=3+layer.depth-travel;
       if(distance<.5)continue;
       const fade=layer.fade?range(progress,...layer.fade):0;
-      const opacity=(layer.opacity??1)*(1-fade*fade*(3-2*fade));
+      const opacity=(layer.opacity??1)*(1-smooth(fade));
       if(opacity<.001)continue;
       const [x,y,w,h]=layer.rect,unit=3.1666666667/1000;
       gl.uniform2f(uniforms.uOrigin,(x+w/2-500)*unit,(500-y-h/2)*unit);gl.uniform2f(uniforms.uSize,w*unit,h*unit);
@@ -191,11 +208,22 @@
     gl.uniform2f(blurUniforms.center,centerX,centerY);
     gl.uniform1f(blurUniforms.blur,motionBlur);gl.drawArrays(gl.TRIANGLES,0,6);
     canvas.dataset.progress=progress.toFixed(3);canvas.dataset.visiblePlanes=visible;
-    canvas.dataset.stage=progress<.55?'kurmanjan':progress<.78?'city':progress<.9?'hills':progress<.95?'mountains':'message';
-    const textP=range(progress,.90,1);
-    slogan.style.opacity=textP;
-    slogan.style.transform=`translateY(${(1-textP)*12}px)`;
-    [...slogan.children].forEach((span,index)=>{const p=range(progress,.90+index*.012,.975+index*.012);span.style.transform=`translateX(${(index<2?-1:1)*(1-p)*100}px)`;span.style.opacity=p;});
+    canvas.dataset.stage=progress<.55?'kurmanjan':progress<.74?'city':progress<.86?'hills':progress<.945?'mountains':'message';
+    // The last ridge recedes as the type arrives. Short vertical movement and
+    // staggered easing give the eye time to settle before normal page scrolling.
+    const revealOffset=Math.max(0,hero.offsetHeight-innerHeight);
+    const handoff=clamp(scrollY-revealOffset,0,height);
+    // Hold the scene while the next section rises over it. The hero clips the
+    // stage, so this never creates a fixed overlay above the rest of the page.
+    stage.style.transform=`translate3d(0,${handoff}px,0)`;
+    const exit=smooth(range(handoff/height,.25,.95));
+    slogan.style.opacity=1-exit;
+    slogan.style.transform=`translateY(${-exit*24}px)`;
+    [...slogan.children].forEach((span,index)=>{
+      const p=smooth(range(progress,.885+index*.025,.985+index*.015));
+      span.style.transform=`translateY(${(1-p)*28}px)`;
+      span.style.opacity=p;
+    });
     if(introCopy){
       const fade=range(progress,.05,.30);
       introCopy.style.opacity=1-fade*fade*(3-2*fade);
@@ -203,20 +231,21 @@
     }
     if(scrollCue){
       const cueOpacity=Math.max(1-range(progress,0,.16),range(progress,.95,1));
-      scrollCue.style.opacity=cueOpacity;
-      scrollCue.inert=cueOpacity<=.01;
+      const visibleCue=cueOpacity*(1-smooth(range(handoff/height,0,.25)));
+      scrollCue.style.opacity=visibleCue;
+      scrollCue.inert=visibleCue<=.01;
     }
     if(caption)caption.style.opacity=.6*(1-range(progress,0,.20));
   }
   function tick(now){
     raf=0;if(!ready||!inView||document.hidden||reducedMotion.matches)return;
     const frameTime=lastFrame?Math.min(now-lastFrame,64):16.67;lastFrame=now;
-    if(snap){const p=clamp((now-snap.start)/snap.duration);const ease=snap.to===1?1-Math.pow(1-p,3):(p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2);progress=snap.from+(snap.to-snap.from)*ease;if(p===1){target=progress=snap.to;snap=null;}}
-    else{progress=target;}
+    if(snap){const p=clamp((now-snap.start)/snap.duration);const ease=snap.to===1?1-Math.pow(1-p,2):smooth(p);progress=snap.from+(snap.to-snap.from)*ease;if(p===1){target=progress=snap.to;snap=null;}}
+    else{progress+=(target-progress)*(1-Math.exp(-frameTime/70));if(Math.abs(target-progress)<.0001)progress=target;}
     // Blur follows movement, so a paused view remains sharp. Cap its extent
     // to keep the city and ridgelines legible during the fastest part.
     const speed=Math.abs(progress-lastRenderedProgress)*1000/frameTime;
-    const wantedBlur=Math.min(1.6,speed*1.35)*Math.sin(Math.PI*progress);
+    const wantedBlur=Math.min(.65,speed*.75)*Math.sin(Math.PI*progress);
     motionBlur+=(wantedBlur-motionBlur)*(1-Math.exp(-frameTime/70));
     lastRenderedProgress=progress;
     const wantedRotation=pointer*.2*Math.pow(1-progress,3);rotation+=(wantedRotation-rotation)*(1-Math.exp(-frameTime/158));
@@ -225,7 +254,7 @@
     if(progress<1||snap)raf=requestAnimationFrame(tick);
   }
   function wake(){if(!raf&&ready&&inView&&!document.hidden&&!reducedMotion.matches)raf=requestAnimationFrame(tick);}
-  function snapTo(value){snap={from:progress,to:value,start:performance.now(),duration:Math.max(450,Math.abs(value-progress)*1875)};target=value;wake();}
+  function snapTo(value){snap={from:progress,to:value,start:performance.now(),duration:Math.max(650,Math.abs(value-progress)*3200)};target=value;wake();}
   function applyDelta(delta,event){
     if(!ready||!event.cancelable||!delta||reducedMotion.matches||document.querySelector('dialog[open]'))return false;
     // Let compact screens reveal the illustration before consuming a scroll gesture.
@@ -234,12 +263,12 @@
     if(snap){
       event.preventDefault();
       // A deliberate reverse gesture can turn the flight around immediately.
-      if((delta<0&&snap.to===1)||(delta>0&&snap.to===0))snapTo(snap.to===1?0:1);
+      if((delta<-12&&snap.to===1)||(delta>12&&snap.to===0))snapTo(snap.to===1?0:1);
       return true;
     }
     if((delta>0&&target>=1)||(delta<0&&target<=0))return false;
     if(event.cancelable)event.preventDefault();
-    const previous=progress;progress=target=clamp(progress+delta*.001);
+    const previous=target;target=clamp(target+delta*.001);
     if(previous<.2&&target>=.2)snapTo(1);
     else if(previous>.9&&target<=.9)snapTo(0);
     wake();return true;
@@ -259,14 +288,17 @@
     wake();
   });
   addEventListener('resize',()=>{if(ready){resize();wake();}},{passive:true});
+  addEventListener('scroll',wake,{passive:true});
   document.addEventListener('visibilitychange',()=>{
-    if(document.hidden){cancelAnimationFrame(raf);raf=0;lastFrame=0;}
-    else wake();
+    if(document.hidden){cancelAnimationFrame(raf);raf=0;lastFrame=0;if(snap)snap.pausedAt=performance.now();}
+    else{if(snap?.pausedAt!==undefined){snap.start+=performance.now()-snap.pausedAt;delete snap.pausedAt;}wake();}
   });
   reducedMotion.addEventListener('change',()=>{
     stage.classList.toggle('depth-scene-ready',ready&&!reducedMotion.matches);
     if(reducedMotion.matches){
       cancelAnimationFrame(raf);raf=0;snap=null;progress=target=lastRenderedProgress=0;rotation=motionBlur=0;lastFrame=0;
+      stage.style.transform='';
+      introAnimations.forEach(animation=>animation.cancel());
       slogan.style.opacity=0;
       if(introCopy){introCopy.style.opacity='';introCopy.inert=false;}
       if(scrollCue){scrollCue.style.opacity='';scrollCue.inert=false;}
@@ -277,6 +309,7 @@
   new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;if(inView)wake();else{cancelAnimationFrame(raf);raf=0;lastFrame=0;}},{threshold:0}).observe(hero);
   canvas.addEventListener('webglcontextlost',event=>{
     event.preventDefault();ready=false;stage.classList.remove('depth-scene-ready');
+    stage.style.transform='';
     slogan.style.opacity=0;
     if(introCopy){introCopy.style.opacity='';introCopy.inert=false;}
     if(scrollCue){scrollCue.style.opacity='';scrollCue.inert=false;}
