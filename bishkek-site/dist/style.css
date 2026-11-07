@@ -30,3 +30,12 @@
 .intro-layout h1{font-size:clamp(42px,5.6vw,84px)}
 @media(max-width:700px){.engagement{grid-template-columns:40px minmax(0,1fr)}.engagement h3{font-size:clamp(32px,7.2vw,46px)}.engagement-body{margin-top:20px}.team-layout h2{font-size:clamp(50px,9.7vw,78px)}.intro-layout h1{font-size:clamp(30px,7.5vw,52px)}}
 @media(max-width:360px){.engagement{grid-template-columns:28px minmax(0,1fr)}.engagement h3{font-size:28px}}
+
+/* Direct messenger contacts share the site's simple underlined link style. */
+.contact-channels{display:flex;flex-wrap:wrap;gap:12px 32px;align-items:center}
+.contact-channels .text-link{min-width:135px;width:auto;flex:1;max-width:240px;gap:24px}
+.intro-body .contact-channels .text-link{margin-top:30px}
+.nav-messengers{display:flex;flex-wrap:wrap;gap:24px;max-width:1100px;margin:36px auto 0;font-size:14px}
+.nav-messengers a{display:inline-flex;align-items:center;min-height:44px;border-bottom:1px solid currentColor}
+.nav-messengers+.nav-email{margin-top:18px}
+@media(max-width:700px){.contact-channels{gap:12px 24px}.contact-channels .text-link{min-width:110px}.intro-body .contact-channels .text-link{margin-top:22px}}
