@@ -254,7 +254,7 @@
     if(progress<1||snap)raf=requestAnimationFrame(tick);
   }
   function wake(){if(!raf&&ready&&inView&&!document.hidden&&!reducedMotion.matches)raf=requestAnimationFrame(tick);}
-  function snapTo(value){snap={from:progress,to:value,start:performance.now(),duration:Math.max(650,Math.abs(value-progress)*3200)};target=value;wake();}
+  function snapTo(value){snap={from:progress,to:value,start:performance.now(),duration:Math.max(650,Math.abs(value-progress)*2600)};target=value;wake();}
   function applyDelta(delta,event){
     if(!ready||!event.cancelable||!delta||reducedMotion.matches||document.querySelector('dialog[open]'))return false;
     // Let compact screens reveal the illustration before consuming a scroll gesture.
